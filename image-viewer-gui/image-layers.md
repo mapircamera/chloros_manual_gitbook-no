@@ -1,352 +1,352 @@
-# Image Layers
+# Bildelag
 
-The Image Layers dropdown in the Chloros Image Viewer allows you to quickly switch between different versions of the same image - from the original captures to processed reflectance outputs and calculated index images.
+I rullegardinmenyen Bildelag i Chloros Image Viewer kan du raskt veksle mellom forskjellige versjoner av det samme bildet – fra originale opptak til bearbeidede refleksjonsutdata og beregnede indeksbilder.
 
-## What are Image Layers?
+## Hva er bildelag?
 
-In Chloros, **layers** refer to the different image outputs available for a single source image. When you process images, Chloros creates multiple versions:
+I Chloros refererer **lag** til de forskjellige bildeutskriftene som er tilgjengelige for et enkelt kildebilde. Når du behandler bilder, oppretter Chloros flere versjoner:
 
-* **Original images** (JPG and RAW files from your camera)
-* **Reflectance calibrated** outputs (if reflectance calibration was enabled)
-* **Target images** (if the image contains calibration targets)
-* **Index images** (NDVI, NDRE, GNDVI, etc. if indices were configured)
+* **Originalbilder** (JPG- og RAW-filer fra kameraet ditt)
+* **Refleksjonskalibrerte** utdata (hvis refleksjonskalibrering var aktivert)
+* **Målbilder** (hvis bildet inneholder kalibreringsmål)
+* **Indeksbilder** (NDVI, NDRE, GNDVI osv. hvis indekser ble konfigurert)
 
-The **Layer Selector dropdown** in the top-right of the Image Viewer lets you instantly switch between these versions without leaving the viewer.
+**Lagvelger-rullegardinmenyen** øverst til høyre i bildeviseren lar deg umiddelbart bytte mellom disse versjonene uten å forlate viseren.
 
 ***
 
-## Available Layer Types
+## Tilgjengelige lagtyper
 
 ### JPG
 
-* The original JPG preview image from your camera
-* Always available for all images
-* Unprocessed, as captured by the camera
-* Fastest to load and display
+* Det originale JPG-forhåndsvisningsbildet fra kameraet ditt
+* Alltid tilgjengelig for alle bilder
+* Ubehandlet, slik det ble tatt av kameraet
+* Raskest å laste inn og vise
 
-**When to view:**
+**Når du skal vise:**
 
-* Quick preview of original capture
-* Checking image composition and framing
-* Verifying capture quality before processing
+* Rask forhåndsvisning av originalopptaket
+* Kontrollere bildesammensetning og innramming
+* Kontrollere opptakskvaliteten før behandling
 
-### RAW (Original)
+### RAW (original)
 
-* The original RAW sensor data from your camera
-* Debayered with no post processing applied
-* Higher bit depth than JPG (typically 12-bit or 14-bit sensor data)
+* De originale RAW-sensordataene fra kameraet ditt
+* Debayered uten etterbehandling
+* Høyere bitdybde enn JPG (vanligvis 12-bit eller 14-bit sensordata)
 
-**When to view:**
+**Når skal du vise:**
 
-* Inspecting original sensor data quality
-* Checking for sensor issues or artifacts
-* Comparing before/after processing results
+* Kontrollere kvaliteten på de originale sensordataene
+* Kontrollere for sensorproblemer eller artefakter
+* Sammenligne resultater før og etter behandling
 
-### RAW (Target)
+### RAW (mål)
 
-* Only appears for images identified as containing calibration targets
-* Shows the original RAW image with target detected
-* Used to verify target detection was successful
+* Vises bare for bilder som er identifisert som inneholder kalibreringsmål
+* Viser det originale RAW-bildet med oppdaget mål
+* Brukes til å verifisere at måldeteksjonen var vellykket
 
-**When to view:**
+**Når skal du vise:**
 
-* Confirming calibration targets were detected correctly
-* Checking target image quality
-* Troubleshooting calibration issues
+* Bekrefte at kalibreringsmålene ble oppdaget riktig
+* Sjekke målbildets kvalitet
+* Feilsøke kalibreringsproblemer
 
-{% hint style="info" %}
-**Target Layer**: This layer only appears in the dropdown for images that contain calibration targets. Regular capture images will not have this option.
+{% hint style=&quot;info&quot; %}
+**Mållag**: Dette laget vises bare i rullegardinmenyen for bilder som inneholder kalibreringsmål. Vanlige bilder har ikke dette alternativet.
 {% endhint %}
 
-### RAW (Reflectance)
+### RAW (refleksjonsgrad)
 
-* The calibrated reflectance output image
-* Vignette corrected (if enabled in processing)
-* Reflectance calibrated using target data (if enabled)
-* Multi-band TIFF with all camera channels
-* Pixel values represent percent reflectance (when using percent mode)
-* Ready to manipulate with the [Index/LUT Sandbox](index-lut-sandbox.md)
+* Det kalibrerte refleksjonsgradutbildet
+* Vignettkorrigert (hvis aktivert i behandlingen)
+* Refleksjonskalibrert ved hjelp av måldata (hvis aktivert)
+* Multibånd TIFF med alle kamerakanaler
+* Pikselverdier representerer prosentvis refleksjon (når du bruker prosentmodus)
+* Klar til å manipuleres med [Index/LUT Sandbox](index-lut-sandbox.md)
 
-**When to view:**
+**Når skal du vise:**
 
-* Inspecting calibrated results
-* Verifying calibration quality
-* Checking pixel values for scientific accuracy
-* Comparing with original to see calibration effects
+* Inspisere kalibrerte resultater
+* Verifisere kalibreringskvalitet
+* Sjekke pikselverdier for vitenskapelig nøyaktighet
+* Sammenligne med originalen for å se kalibreringseffekter
 
-{% hint style="success" %}
-**Recommended**: Use RAW (Reflectance) layer when checking pixel values for scientific measurements and analysis.
+{% hint style=&quot;success&quot; %}
+**Anbefalt**: Bruk RAW (Refleksjons) lag når du sjekker pikselverdier for vitenskapelige målinger og analyser.
 {% endhint %}
 
-### RAW (NDVI Index)... and similar
+### RAW (NDVI Index)... og lignende
 
-* Calculated vegetation index image (NDVI in this example)
-* The index name changes based on which index was configured during processing
-* Examples: RAW (NDVI Index), RAW (NDRE Index), RAW (GNDVI Index), etc.
-* Single-band grayscale image showing index calculation results
-* One layer appears for each index configured in Project Settings
+* Beregnet vegetasjonsindeksbilde (NDVI i dette eksemplet)
+* Indeksnavnet endres basert på hvilken indeks som ble konfigurert under behandlingen
+* Eksempler: RAW (NDVI-indeks), RAW (NDRE-indeks), RAW (GNDVI-indeks) osv.
+* Enkeltbånds gråtonebilde som viser indeksberegningsresultater
+* Det vises ett lag for hver indeks som er konfigurert i prosjektinnstillingene
 
-**Possible index names:**
+**Mulige indeksnavn:**
 
-* RAW (NDVI Index)
-* RAW (NDRE Index)
-* RAW (GNDVI Index)
-* RAW (OSAVI Index)
-* RAW (EVI Index)
-* RAW (SAVI Index)
-* And many more... (see [Multispectral Index Formulas](../project-settings/multispectral-index-formulas.md))
+* RAW (NDVI-indeks)
+* RAW (NDRE-indeks)
+* RAW (GNDVI-indeks)
+* RAW (OSAVI-indeks)
+* RAW (EVI-indeks)
+* RAW (SAVI-indeks)
+* Og mange flere... (se [Multispektrale indeksformler](../project-settings/multispectral-index-formulas.md))
 
-**When to view:**
+**Når skal du vise:**
 
-* Examining index calculation results
-* Checking index value ranges
-* Identifying areas of interest
-* Verifying index images before using in GIS or analysis
-
-***
-
-## Using the Layer Selector
-
-### Opening the Dropdown
-
-1. Open an image in fullscreen mode (click any thumbnail in the Image Viewer)
-2. Locate the **layer dropdown** in the top-right corner of the viewer
-3. The dropdown shows the currently selected layer (e.g., "JPG")
-4. Click the dropdown to see all available layers
-
-### Switching Layers
-
-1. Click the layer dropdown to open the list
-2. All available layers for the current image are shown
-3. Click any layer name to switch to that version
-4. The image updates immediately to show the selected layer
-
-**Quick switching:**
-
-* The dropdown remembers your last selection
-* When navigating to the next image, Chloros attempts to show the same layer type
-* If that layer doesn't exist on the next image, it defaults to JPG
-
-### Layer Availability
-
-Not all layers are available for every image:
-
-**Always available:**
-
-* ✅ JPG (every image has a JPG preview)
-
-**Conditionally available:**
-
-* ⚠️ RAW (Original) - Only if image was captured in RAW or RAW+JPG mode
-* ⚠️ RAW (Target) - Only if image contains detected calibration targets
-* ⚠️ RAW (Reflectance) - Only after processing with reflectance calibration enabled
-* ⚠️ RAW (\[Index] Index) - Only after processing with indices configured
+* Undersøke indeksberegningsresultater
+* Sjekke indeksverdier
+* Identifisere områder av interesse
+* Verifisere indeksbilder før bruk i GIS eller analyse
 
 ***
 
-## Layer Persistence
+## Bruke lagvelgeren
 
-### Navigating Between Images
+### Åpne rullegardinmenyen
 
-When you navigate to a different image (using arrow keys or clicking thumbnails):
+1. Åpne et bilde i fullskjermmodus (klikk på en miniatyrbilde i bildeviseren)
+2. Finn **lagrullmenyen** øverst til høyre i viseren
+3. Rullmenyen viser det valgte laget (f.eks. «JPG»)
+4. Klikk på rullmenyen for å se alle tilgjengelige lag
 
-**Layer preference is preserved:**
+### Bytte mellom lag
 
-* If viewing "RAW (Reflectance)", next image shows "RAW (Reflectance)" (if available)
-* If viewing "RAW (NDVI Index)", next image shows "RAW (NDVI Index)" (if available)
-* If the same layer doesn't exist, defaults to JPG
+1. Klikk på lagrullmenyen for å åpne listen
+2. Alle tilgjengelige lag for det aktuelle bildet vises
+3. Klikk på et hvilket som helst lagnavn for å bytte til den versjonen
+4. Bildet oppdateres umiddelbart for å vise det valgte laget
 
-**Example workflow:**
+**Rask bytte:**
 
-1. Open Image 1, switch to RAW (NDVI Index)
-2. Press → to view Image 2
-3. Image 2 automatically displays RAW (NDVI Index) layer
-4. Continue navigating - all images show NDVI layer
-5. Very efficient for reviewing index results across many images
+* Nedtrekksmenyen husker ditt siste valg
+* Når du navigerer til neste bilde, prøver Chloros å vise samme lagtype
+* Hvis det laget ikke finnes på neste bilde, blir JPG standard
 
-***
+### Lagertilgjengelighet
 
-## Common Workflows
+Ikke alle lag er tilgjengelige for hvert bilde:
 
-### Workflow 1: Before/After Comparison
+**Alltid tilgjengelig:**
 
-**Goal**: Compare original vs. calibrated image
+* ✅ JPG (hvert bilde har en JPG-forhåndsvisning)
 
-1. Open processed image in Image Viewer
-2. Select **RAW (Original)** from dropdown
-3. Note the vignetting and uncalibrated values
-4. Switch to **RAW (Reflectance)** from dropdown
-5. Compare - vignetting removed, values calibrated
+**Betinget tilgjengelig:**
 
-### Workflow 2: Index Review
-
-**Goal**: Quickly review NDVI results across dataset
-
-1. Open first processed image
-2. Select **RAW (NDVI Index)** from dropdown
-3. Use → arrow key to navigate to next image
-4. NDVI layer persists automatically
-5. Continue through all images, checking NDVI patterns
-6. Switch to **RAW (NDRE Index)** to compare
-
-### Workflow 3: Target Verification
-
-**Goal**: Verify all target images were detected correctly
-
-1. Navigate to a target image
-2. Select **RAW (Target)** from dropdown
-3. Verify calibration targets are clearly visible and detected
-4. Navigate to next target image
-5. Repeat verification for all targets
-
-### Workflow 4: Pixel Value Inspection
-
-**Goal**: Check reflectance values for scientific accuracy
-
-1. Open processed image
-2. Select **RAW (Reflectance)** layer
-3. Enable **Pixel Percent** mode (button in top-right toolbar)
-4. Move cursor over vegetation areas
-5. Verify pixel values are in expected ranges (30-70% for NIR, 5-15% for Red)
-6. Check soil and water areas for appropriate values
+* ⚠️ RAW (Original) – Bare hvis bildet ble tatt i RAW- eller RAW+JPG-modus
+* ⚠️ RAW (Mål) – Bare hvis bildet inneholder oppdagede kalibreringsmål
+* ⚠️ RAW (Refleksjonsgrad) – Kun etter behandling med refleksjonskalibrering aktivert
+* ⚠️ RAW (\[Indeks] Indeks) – Kun etter behandling med konfigurerte indekser
 
 ***
 
-## Understanding Pixel Values by Layer
+## Lagring av lag
 
-Different layers show different pixel value ranges:
+### Navigering mellom bilder
 
-### JPG Layer
+Når du navigerer til et annet bilde (ved hjelp av piltastene eller ved å klikke på miniatyrbilder):
 
-* **Range**: 0-255 (8-bit)
-* **Meaning**: Display values, gamma-corrected
-* **Use**: Visual inspection only, not for scientific measurement
+**Lagpreferansen beholdes:**
 
-### RAW (Original)
+* Hvis du viser «RAW (Refleksjonsgrad)», viser neste bilde «RAW (Refleksjonsgrad)» (hvis tilgjengelig)
+* Hvis du viser «RAW (NDVI Indeks)», viser neste bilde «RAW (NDVI Indeks)» (hvis tilgjengelig)
+* Hvis det samme laget ikke finnes, brukes JPG som standard
 
-* **Range**: 0-65535 (16-bit)
-* **Meaning**: Raw sensor digital numbers
-* **Use**: Checking sensor performance, not calibrated
+**Eksempel på arbeidsflyt:**
 
-### RAW (Reflectance)
-
-* **Range**: 0-65,535 (16-bit TIFF) or 0.0-1.0 (32-bit Percent)
-* **Meaning**: Calibrated percent reflectance
-* **Use**: Scientific measurements and analysis
-
-**For 16-bit TIFF:** Divide by 65,535 to get percent reflectance **For 32-bit Percent:** Values directly represent percent (0.5 = 50% reflectance)
-
-### RAW (Index Images)
-
-* **Range**: Varies by index (typically -1.0 to +1.0 for normalized indices)
-* **Meaning**: Index calculation result
-* **Examples**:
-  * NDVI: -1 to +1 (vegetation typically 0.4 to 0.9)
-  * NDRE: -1 to +1 (stress detection)
-  * EVI: 0 to 1 (enhanced vegetation)
+1. Åpne bilde 1, bytt til RAW (NDVI Index)
+2. Trykk på → for å vise bilde 2
+3. Bilde 2 viser automatisk RAW (NDVI Index)-laget
+4. Fortsett å navigere – alle bildene viser NDVI-laget
+5. Veldig effektivt for å gjennomgå indeksresultater på tvers av mange bilder
 
 ***
 
-## Tips and Best Practices
+## Vanlige arbeidsflyter
 
-### Efficient Layer Switching
+### Arbeidsflyt 1: Før/etter-sammenligning
 
-* **Keyboard shortcut awareness**: While there's no keyboard shortcut for layers, navigation arrows (←/→) work across all layers
-* **Consistent workflows**: Pick one layer (e.g., NDVI) and review entire dataset before switching to another
-* **Quick comparisons**: Toggle between Original and Reflectance to verify processing quality
+**Mål**: Sammenligne originalbildet med det kalibrerte bildet
 
-### Performance Considerations
+1. Åpne det behandlede bildet i Image Viewer
+2. Velg **RAW (Original)** fra rullegardinmenyen
+3. Legg merke til vignettering og ukalibrerte verdier
+4. Bytt til **RAW (Reflectance)** fra rullegardinmenyen
+5. Sammenlign – vignettering fjernet, verdier kalibrert
 
-* **JPG loads fastest**: Use for quick navigation through many images
-* **RAW layers load slower**: Higher resolution and bit depth
-* **Index layers**: Similar speed to Reflectance layers
-* **First load is slowest**: Subsequent views of same layer are cached and faster
+### Arbeidsflyt 2: Gjennomgang av indeks
 
-### Quality Verification
+**Mål**: Gjennomgå raskt NDVI-resultater på tvers av datasettet
 
-* **Always check RAW (Original)**: Verify source data quality before trusting processed outputs
-* **Compare layers**: Use layer switching to validate processing worked correctly
-* **Check index ranges**: Use Pixel Percent mode with index layers to verify values are reasonable
+1. Åpne det første behandlede bildet
+2. Velg **RAW (NDVI-indeks)** fra rullegardinmenyen
+3. Bruk → piltasten for å navigere til neste bilde
+4. NDVI-laget beholdes automatisk
+5. Fortsett gjennom alle bildene og sjekk NDVI-mønstrene
+6. Bytt til **RAW (NDRE Index)** for å sammenligne
 
-***
+### Arbeidsflyt 3: Målverifisering
 
-## Troubleshooting
+**Mål**: Verifisere at alle målbilder ble oppdaget riktig
 
-### Layer Not Available
+1. Naviger til et målbilde
+2. Velg **RAW (Target)** fra rullegardinmenyen
+3. Verifiser at kalibreringsmålene er tydelig synlige og oppdaget
+4. Naviger til neste målbilde
+5. Gjenta verifiseringen for alle målene
 
-**Problem**: Expected layer doesn't appear in dropdown
+### Arbeidsflyt 4: Inspeksjon av pikselverdier
 
-**Possible causes:**
+**Mål**: Kontroller refleksjonsverdiene for vitenskapelig nøyaktighet
 
-* Image wasn't processed (only JPG and RAW (Original) available)
-* Reflectance calibration was disabled during processing
-* Specific index wasn't configured in Project Settings
-* Image is a target-only image (no indices generated for targets)
-
-**Solutions:**
-
-1. Verify image was processed (check output folder for processed files)
-2. Check Project Settings to confirm indices were configured
-3. Reprocess with desired indices enabled
-
-### Wrong Layer Shown
-
-**Problem**: Image opens in unexpected layer
-
-**Cause**: Layer preference from previous image carried forward, but that layer doesn't exist on current image
-
-**Solution**: Chloros automatically falls back to JPG when preferred layer unavailable - this is normal behavior
-
-### Can't See Calibration Targets
-
-**Problem**: RAW (Target) layer doesn't show target detection
-
-**Possible causes:**
-
-* Targets weren't detected during processing
-* Image doesn't actually contain targets
-* Target detection settings too strict
-
-**Solutions:**
-
-1. Check Debug Log for "Target found" messages
-2. Verify image actually contains visible calibration targets
-3. Adjust target detection settings in Project Settings
-4. See [Choosing Target Images](../processing-images-gui/choosing-target-images.md)
+1. Åpne det behandlede bildet
+2. Velg **RAW (Refleksjon)**-laget
+3. Aktiver **Pikselprosent**-modus (knappen øverst til høyre i verktøylinjen)
+4. Flytt markøren over vegetasjonsområdene
+5. Kontroller at pikselverdiene ligger innenfor forventede områder (30–70 % for NIR, 5–15 % for Red)
+6. Kontroller at jord- og vannområdene har riktige verdier
 
 ***
 
-## Related Features
+## Forstå pikselverdier etter lag
 
-### Image Viewer Tools
+Ulike lag viser forskjellige pikselverdier:
 
-When viewing any layer, you can use:
+### JPG-lag
 
-* **Zoom controls**: Magnify to inspect details
-* **Pan**: Click and drag to move around zoomed image
-* **Pixel value inspection**: See values at cursor location
-* **Navigation arrows**: Move between images while maintaining layer
-* **Pixel Percent mode**: Toggle between DN and percent display
+* **Område**: 0–255 (8-bit)
+* **Betydning**: Visningsverdier, gammakorrigert
+* **Bruk**: Kun visuell inspeksjon, ikke for vitenskapelig måling
 
-See [Opening an Image Full Screen](page-3.md) for complete Image Viewer documentation.
+### RAW (original)
 
-### Index/LUT Sandbox
+* **Område**: 0–65535 (16-bit)
+* **Betydning**: Rå digitale tall fra sensoren
+* **Bruk**: Kontroll av sensorens ytelse, ikke kalibrert
 
-For interactive index testing and visualization:
+### RAW (refleksjonsgrad)
 
-* **Real-time index calculation**: Test different index formulas
-* **LUT color mapping**: Apply color gradients to grayscale indices
-* **Export visualizations**: Save colored index images
+* **Område**: 0–65 535 (16-bit TIFF) eller 0,0–1,0 (32-bit prosent)
+* **Betydning**: Kalibrert prosentvis refleksjonsevne
+* **Bruk**: Vitenskapelige målinger og analyser
 
-See [Index/LUT Sandbox](index-lut-sandbox.md) for details.
+**For 16-bit TIFF:** Del med 65 535 for å få prosentvis refleksjonsevne **For 32-bit prosent:** Verdiene representerer direkte prosent (0,5 = 50 % refleksjonsevne)
+
+### RAW (indeksbilder)
+
+* **Område**: Varierer etter indeks (vanligvis -1,0 til +1,0 for normaliserte indekser)
+* **Betydning**: Resultat av indeksberegning
+* **Eksempler**:
+  * NDVI: -1 til +1 (vegetasjon vanligvis 0,4 til 0,9)
+  * NDRE: -1 til +1 (stressdeteksjon)
+  * EVI: 0 til 1 (forbedret vegetasjon)
 
 ***
 
-## Next Steps
+## Tips og beste praksis
 
-Now that you understand image layers:
+### Effektiv lagbytte
 
-* [**Opening an Image Full Screen**](page-3.md) - Complete Image Viewer guide
-* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Interactive index visualization
-* [**Multispectral Index Formulas**](../project-settings/multispectral-index-formulas.md) - Available indices reference
-* [**Finishing the Processing**](../processing-images-gui/finishing-the-processing.md) - Understanding processed outputs
+* **Kortkommandoer**: Det finnes ingen kortkommandoer for lag, men navigasjonspilene (←/→) fungerer på alle lag.
+* **Konsistente arbeidsflyter**: Velg ett lag (f.eks. NDVI) og gjennomgå hele datasettet før du bytter til et annet.
+* **Raske sammenligninger**: Veksle mellom Original og Refleksjonsgrad for å verifisere behandlingskvaliteten
+
+### Ytelseshensyn
+
+* **JPG lastes raskest**: Brukes for rask navigering gjennom mange bilder
+* **RAW-lag lastes saktere**: Høyere oppløsning og bitdybde
+* **Indekslag**: Lignende hastighet som refleksjonsgradlag
+* **Første lasting er tregest**: Påfølgende visninger av samme lag blir lagret i hurtigbufferen og er raskere
+
+### Kvalitetsverifisering
+
+* **Sjekk alltid RAW (Original)**: Kontroller kildedatakvaliteten før du stoler på behandlede resultater
+* **Sammenlign lag**: Bruk lagbytte for å validere at behandlingen fungerte riktig
+* **Sjekk indeksområder**: Bruk Pixel Percent-modus med indekslag for å verifisere at verdiene er rimelige
+
+***
+
+## Feilsøking
+
+### Lag ikke tilgjengelig
+
+**Problem**: Det forventede laget vises ikke i rullegardinmenyen
+
+**Mulige årsaker:**
+
+* Bildet ble ikke behandlet (bare JPG og RAW (Original) er tilgjengelig)
+* Refleksjonskalibrering ble deaktivert under behandlingen
+* Spesifikk indeks ble ikke konfigurert i prosjektinnstillingene
+* Bildet er et mål-bare-bilde (ingen indekser generert for mål)
+
+**Løsninger:**
+
+1. Kontroller at bildet ble behandlet (sjekk utdatamappen for behandlede filer)
+2. Sjekk prosjektinnstillingene for å bekrefte at indeksene ble konfigurert
+3. Behandle på nytt med ønskede indekser aktivert
+
+### Feil lag vises
+
+**Problem**: Bildet åpnes i et uventet lag.
+
+**Årsak**: Lagpreferansen fra forrige bilde ble overført, men det laget finnes ikke i det aktuelle bildet.
+
+**Løsning**: Chloros faller automatisk tilbake til JPG når det foretrukne laget ikke er tilgjengelig – dette er normal oppførsel.
+
+### Kan ikke se kalibreringsmål
+
+**Problem**: RAW-laget (mål) viser ikke måldeteksjon.
+
+**Mulige årsaker:**
+
+* Målene ble ikke oppdaget under behandlingen.
+* Bildet inneholder faktisk ikke mål.
+* Innstillingene for måldeteksjon er for strenge.
+
+**Løsninger:**
+
+1. Sjekk feilsøkingsloggen for meldinger om «Mål funnet».
+2. Kontroller at bildet faktisk inneholder synlige kalibreringsmål.
+3. Juster innstillingene for måldeteksjon i prosjektinnstillingene.
+4. Se [Velge målbilder](../processing-images-gui/choosing-target-images.md)
+
+***
+
+## Relaterte funksjoner
+
+### Verktøy for bildevisning
+
+Når du viser et lag, kan du bruke:
+
+* **Zoomkontroller**: Forstørr for å se detaljer
+* **Panorering**: Klikk og dra for å flytte rundt på det forstørrede bildet
+* **Pikselverdiinspeksjon**: Se verdier på markørens plassering
+* **Navigasjonspiler**: Flytt mellom bilder mens du beholder laget
+* **Pikselprosentmodus**: Veksle mellom DN- og prosentvisning
+
+Se [Åpne et bilde i full skjerm](opening-an-image-full-screen.md) for fullstendig dokumentasjon om bildevisningsverktøyet.
+
+### Indeks/LUT-sandkasse
+
+For interaktiv indekseringstesting og visualisering:
+
+* **Indeksberegning i sanntid**: Test forskjellige indeksformler
+* **LUT-fargekartlegging**: Bruk fargegraderinger på gråtonede indekser
+* **Eksporter visualiseringer**: Lagre fargede indeksbilder
+
+Se [Indeks/LUT Sandbox](index-lut-sandbox.md) for detaljer.
+
+***
+
+## Neste trinn
+
+Nå som du forstår bildelag:
+
+* [**Åpne et bilde i fullskjerm**](opening-an-image-full-screen.md) – Komplett guide til bildevisningen
+* [**Index/LUT Sandbox**](index-lut-sandbox.md) – Interaktiv indeksvisualisering
+* [**Multispektrale indeksformler**](../project-settings/multispectral-index-formulas.md) – Tilgjengelige indeksreferanser
+* [**Fullføre behandlingen**](../processing-images-gui/finishing-the-processing.md) – Forstå behandlede resultater

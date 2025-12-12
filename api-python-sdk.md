@@ -1,48 +1,48 @@
 # API : Python SDK
 
-The **Chloros Python SDK** provides programmatic access to the Chloros image processing engine, enabling automation, custom workflows, and seamless integration with your Python applications and research pipelines.
+**Chloros Python SDK** gir programmatisk tilgang til Chloros bildebehandlingsmotor, som muliggjør automatisering, tilpassede arbeidsflyter og sømløs integrering med dine Python applikasjoner og forskningspipelines.
 
-### Key Features
+### Viktige funksjoner
 
-* 🐍 **Native Python** - Clean, Pythonic API for image processing
-* 🔧 **Full API Access** - Complete control over Chloros processing
-* 🚀 **Automation** - Build custom batch processing workflows
-* 🔗 **Integration** - Embed Chloros in existing Python applications
-* 📊 **Research-Ready** - Perfect for scientific analysis pipelines
-* ⚡ **Parallel Processing** - Scales to your CPU cores (Chloros+)
+* 🐍 **Native Python** - Ren, Pythonic API for bildebehandling
+* 🔧 **Full API-tilgang** - Full kontroll over Chloros-behandling
+* 🚀 **Automatisering** - Bygg tilpassede arbeidsflyter for batchbehandling
+* 🔗 **Integrasjon** - Integrer Chloros i eksisterende Python-applikasjoner
+* 📊 **Klar for forskning** - Perfekt for vitenskapelige analyseprosesser
+* ⚡ **Parallellbehandling** - Skaleres til CPU-kjernene dine (Chloros+)
 
-### Requirements
+### Krav
 
-| Requirement          | Details                                                             |
+| Krav          | Detaljer                                                             |
 | -------------------- | ------------------------------------------------------------------- |
-| **Chloros Desktop**  | Must be installed locally                                           |
-| **License**          | Chloros+ ([paid plan required](https://cloud.mapir.camera/pricing)) |
-| **Operating System** | Windows 10/11 (64-bit)                                              |
-| **Python**           | Python 3.7 or higher                                                |
-| **Memory**           | 8GB RAM minimum (16GB recommended)                                  |
-| **Internet**         | Required for license activation                                     |
+| **Chloros Desktop**  | Må være installert lokalt                                           |
+| **Lisens**          | Chloros+ ([betalt abonnement kreves](https://cloud.mapir.camera/pricing)) |
+| **Operativsystem** | Windows 10/11 (64-bit)                                              |
+| **Python**           | Python 3.7 eller høyere                                                |
+| **Minne**           | Minimum 8 GB RAM (16 GB anbefalt)                                  |
+| **Internett**         | Kreves for lisensaktivering                                     |
 
-{% hint style="warning" %}
-**License Requirement**: The Python SDK requires a paid Chloros+ subscription for API access. Standard (free) plans do not have API/SDK access. Visit [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) to upgrade.
+{% hint style=&quot;warning&quot; %}
+**Lisenskrav**: Python SDK krever et betalt Chloros+ abonnement for API-tilgang. Standard (gratis) abonnementer har ikke tilgang til API/SDK. Besøk [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) for å oppgradere.
 {% endhint %}
 
-## Quick Start
+## Hurtigstart
 
-### Installation
+### Installasjon
 
-Install via pip:
+Installer via pip:
 
 ```bash
 pip install chloros-sdk
 ```
 
-{% hint style="info" %}
-**First-Time Setup**: Before using the SDK, activate your Chloros+ license by opening Chloros, Chloros (Browser) or Chloros CLI and logging in with your credentials. This only needs to be done once.
+{% hint style=&quot;info&quot; %}
+**Første gangs oppsett**: Før du bruker SDK, må du aktivere Chloros+-lisensen din ved å åpne Chloros, Chloros (nettleser) eller Chloros CLI og logge inn med påloggingsinformasjonen din. Dette trenger bare gjøres én gang.
 {% endhint %}
 
-### Basic Usage
+### Grunnleggende bruk
 
-Process a folder with just a few lines:
+Behandle en mappe med bare noen få linjer:
 
 ```python
 from chloros_sdk import process_folder
@@ -51,9 +51,9 @@ from chloros_sdk import process_folder
 results = process_folder("C:\\DroneImages\\Flight001")
 ```
 
-### Full Control
+### Full kontroll
 
-For advanced workflows:
+For avanserte arbeidsflyter:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -80,39 +80,39 @@ chloros.process(mode="parallel", wait=True)
 
 ***
 
-## Installation Guide
+## Installasjonsveiledning
 
-### Prerequisites
+### Forutsetninger
 
-Before installing the SDK, ensure you have:
+Før du installerer SDK, må du sørge for at du har:
 
-1. **Chloros Desktop** installed ([download](download.md))
-2. **Python 3.7+** installed ([python.org](https://www.python.org))
-3. **Active Chloros+ license** ([upgrade](https://cloud.mapir.camera/pricing))
+1. **Chloros Desktop** installert ([nedlasting](download.md))
+2. **Python 3.7+** installert ([python.org](https://www.python.org))
+3. **Aktiv Chloros+-lisens** ([oppgradering](https://cloud.mapir.camera/pricing))
 
-### Install via pip
+### Installer via pip
 
-**Standard installation:**
+**Standardinstallasjon:**
 
 ```bash
 pip install chloros-sdk
 ```
 
-**With progress monitoring support:**
+**Med støtte for fremdriftskontroll:**
 
 ```bash
 pip install chloros-sdk[progress]
 ```
 
-**Development installation:**
+**Utviklingsinstallasjon:**
 
 ```bash
 pip install chloros-sdk[dev]
 ```
 
-### Verify Installation
+### Bekreft installasjonen
 
-Test that the SDK is installed correctly:
+Test at SDK er installert riktig:
 
 ```python
 import chloros_sdk
@@ -121,23 +121,23 @@ print(f"Chloros SDK version: {chloros_sdk.__version__}")
 
 ***
 
-## First-Time Setup
+## Første gangs oppsett
 
-### License Activation
+### Lisensaktivering
 
-The SDK uses the same license as Chloros, Chloros (Browser), and Chloros CLI. Activate once via the GUI or CLI:
+SDK bruker samme lisens som Chloros, Chloros (nettleser) og Chloros CLI. Aktiver én gang via GUI eller CLI:
 
-1. Open **Chloros or Chloros (Browser)** and login on the User <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> tab. Or, open the **CLI**.
-2. Enter your Chloros+ credentials and log in
-3. License is cached locally (persists across reboots)
+1. Åpne **Chloros eller Chloros (nettleser)** og logg inn på brukerfanen <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> -fanen. Eller åpne **CLI**.
+2. Skriv inn Chloros+-påloggingsinformasjonen din og logg inn
+3. Lisensen lagres lokalt (beholdes ved omstart)
 
-{% hint style="success" %}
-**One-Time Setup**: After logging in via the GUI or CLI, the SDK automatically uses the cached license. No additional authentication needed!
+{% hint style=&quot;success&quot; %}
+**Engangsoppsett**: Etter at du har logget inn via GUI eller CLI, bruker SDK automatisk den lagrede lisensen. Ingen ekstra autentisering er nødvendig!
 {% endhint %}
 
-### Test Connection
+### Test tilkobling
 
-Verify the SDK can connect to Chloros:
+Kontroller at SDK kan koble seg til Chloros:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -152,13 +152,13 @@ print(f"Backend running: {status['running']}")
 
 ***
 
-## API Reference
+## API-referanse
 
-### ChlorosLocal Class
+### ChlorosLocal-klasse
 
-Main class for local Chloros image processing.
+Hovedklasse for lokal Chloros-bildebehandling.
 
-#### Constructor
+#### Konstruktør
 
 ```python
 ChlorosLocal(
@@ -170,17 +170,17 @@ ChlorosLocal(
 )
 ```
 
-**Parameters:**
+**Parametere:**
 
-| Parameter                 | Type | Default                   | Description                           |
+| Parameter                 | Type | Standard                   | Beskrivelse                           |
 | ------------------------- | ---- | ------------------------- | ------------------------------------- |
-| `api_url`                 | str  | `"http://localhost:5000"` | URL of local Chloros backend          |
-| `auto_start_backend`      | bool | `True`                    | Automatically start backend if needed |
-| `backend_exe`             | str  | `None` (auto-detect)      | Path to backend executable            |
-| `timeout`                 | int  | `30`                      | Request timeout in seconds            |
-| `backend_startup_timeout` | int  | `60`                      | Timeout for backend startup (seconds) |
+| `api_url`                 | str  | `"http://localhost:5000"` | URL av lokal Chloros backend          |
+| `auto_start_backend`      | bool | `True`                    | Start automatisk backend om nødvendig |
+| `backend_exe`             | str  | `None` (auto-detect)      | Sti til backend-kjørbar fil            |
+| `timeout`                 | int  | `30`                      | Tidsavbrudd for forespørsel i sekunder            |
+| `backend_startup_timeout` | int  | `60`                      | Tidsavbrudd for oppstart av backend (sekunder) |
 
-**Examples:**
+**Eksempler:**
 
 ```python
 # Default (auto-start backend)
@@ -198,22 +198,22 @@ chloros = ChlorosLocal(timeout=60)
 
 ***
 
-### Methods
+### Metoder
 
 #### `create_project(project_name, camera=None)`
 
-Create a new Chloros project.
+Opprett et nytt Chloros-prosjekt.
 
-**Parameters:**
+**Parametere:**
 
-| Parameter      | Type | Required | Description                                              |
+| Parameter      | Type | Påkrevd | Beskrivelse                                              |
 | -------------- | ---- | -------- | -------------------------------------------------------- |
-| `project_name` | str  | Yes      | Name for the project                                     |
-| `camera`       | str  | No       | Camera template (e.g., "Survey3N\_RGN", "Survey3W\_OCN") |
+| `project_name` | str  | Ja      | Navn på prosjektet                                     |
+| `camera`       | str  | Nei       | Kameramall (f.eks. «Survey3N\_RGN», «Survey3W\_OCN») |
 
-**Returns:** `dict` - Project creation response
+**Returnerer:** `dict` – Svar på opprettelse av prosjekt
 
-**Example:**
+**Eksempel:**
 
 ```python
 # Basic project
@@ -227,18 +227,18 @@ chloros.create_project("DroneField_A", camera="Survey3N_RGN")
 
 #### `import_images(folder_path, recursive=False)`
 
-Import images from a folder.
+Importer bilder fra en mappe.
 
-**Parameters:**
+**Parametere:**
 
-| Parameter     | Type     | Required | Description                        |
+| Parameter     | Type     | Påkrevd | Beskrivelse                        |
 | ------------- | -------- | -------- | ---------------------------------- |
-| `folder_path` | str/Path | Yes      | Path to folder with images         |
-| `recursive`   | bool     | No       | Search subfolders (default: False) |
+| `folder_path` | str/Path | Ja      | Sti til mappe med bilder         |
+| `recursive`   | bool     | Nei       | Søk i undermapper (standard: False) |
 
-**Returns:** `dict` - Import results with file count
+**Returnerer:** `dict` - Importer resultater med antall filer
 
-**Example:**
+**Eksempel:**
 
 ```python
 # Import from folder
@@ -252,32 +252,32 @@ chloros.import_images("C:\\DroneImages", recursive=True)
 
 #### `configure(**settings)`
 
-Configure processing settings.
+Konfigurer behandlingsinnstillinger.
 
-**Parameters:**
+**Parametere:**
 
-| Parameter                 | Type | Default                 | Description                     |
+| Parameter                 | Type | Standard                 | Beskrivelse                     |
 | ------------------------- | ---- | ----------------------- | ------------------------------- |
-| `debayer`                 | str  | "High Quality (Faster)" | Debayer method                  |
-| `vignette_correction`     | bool | `True`                  | Enable vignette correction      |
-| `reflectance_calibration` | bool | `True`                  | Enable reflectance calibration  |
-| `indices`                 | list | `None`                  | Vegetation indices to calculate |
-| `export_format`           | str  | "TIFF (16-bit)"         | Output format                   |
-| `ppk`                     | bool | `False`                 | Enable PPK corrections          |
-| `custom_settings`         | dict | `None`                  | Advanced custom settings        |
+| `debayer`                 | str  | «Høy kvalitet (raskere)» | Debayer-metode                  |
+| `vignette_correction`     | bool | `True`                  | Aktiver vignettkorreksjon      |
+| `reflectance_calibration` | bool | `True`                  | Aktiver refleksjonskalibrering  |
+| `indices`                 | liste | `None`                  | Vegetasjonsindekser som skal beregnes |
+| `export_format`           | str  | &quot;TIFF (16-bit)&quot;         | Utdataformat                   |
+| `ppk`                     | bool | `False`                 | Aktiver PPK-korreksjoner          |
+| `custom_settings`         | dict | `None`                  | Avanserte tilpassede innstillinger        |
 
-**Export Formats:**
+**Eksportformater:**
 
-* `"TIFF (16-bit)"` - Recommended for GIS/photogrammetry
-* `"TIFF (32-bit, Percent)"` - Scientific analysis
-* `"PNG (8-bit)"` - Visual inspection
-* `"JPG (8-bit)"` - Compressed output
+* `"TIFF (16-bit)"` – Anbefales for GIS/fotogrammetri
+* `"TIFF (32-bit, Percent)"` – Vitenskapelig analyse
+* `"PNG (8-bit)"` – Visuell inspeksjon
+* `"JPG (8-bit)"` – Komprimert utdata
 
-**Available Indices:**
+**Tilgjengelige indekser:**
 
-NDVI, NDRE, GNDVI, OSAVI, CIG, EVI, SAVI, MSAVI, MTVI2, and more.
+NDVI, NDRE, GNDVI, OSAVI, CIG, EVI, SAVI, MSAVI, MTVI2 og flere.
 
-**Example:**
+**Eksempel:**
 
 ```python
 # Basic configuration
@@ -302,24 +302,24 @@ chloros.configure(
 
 #### `process(mode="parallel", wait=True, progress_callback=None)`
 
-Process the project images.
+Behandle prosjektbildene.
 
-**Parameters:**
+**Parametere:**
 
-| Parameter           | Type     | Default      | Description                               |
+| Parameter           | Type     | Standard      | Beskrivelse                               |
 | ------------------- | -------- | ------------ | ----------------------------------------- |
-| `mode`              | str      | `"parallel"` | Processing mode: "parallel" or "serial"   |
-| `wait`              | bool     | `True`       | Wait for completion                       |
-| `progress_callback` | callable | `None`       | Progress callback function(progress, msg) |
-| `poll_interval`     | float    | `2.0`        | Polling interval for progress (seconds)   |
+| `mode`              | str      | `"parallel"` | Behandlingsmodus: «parallel» eller «serial»   |
+| `wait`              | bool     | `True`       | Vent på fullføring                       |
+| `progress_callback` | callable | `None`       | Tilbakemeldingsfunksjon for fremdrift (progress, msg) |
+| `poll_interval`     | float    | `2.0`        | Pollingintervall for fremdrift (sekunder)   |
 
-**Returns:** `dict` - Processing results
+**Returnerer:** `dict` - Behandlingsresultater
 
-{% hint style="warning" %}
-**Parallel Mode**: Requires Chloros+ license. Automatically scales to your CPU cores (up to 16 workers).
+{% hint style=&quot;warning&quot; %}
+**Parallellmodus**: Krever Chloros+ lisens. Skaleres automatisk til CPU-kjernene dine (opptil 16 arbeidere).
 {% endhint %}
 
-**Example:**
+**Eksempel:**
 
 ```python
 # Simple processing
@@ -343,11 +343,11 @@ chloros.process(wait=False)
 
 #### `get_config()`
 
-Get current project configuration.
+Henter gjeldende prosjektkonfigurasjon.
 
-**Returns:** `dict` - Current project configuration
+**Returnerer:** `dict` – Gjeldende prosjektkonfigurasjon
 
-**Example:**
+**Eksempel:**
 
 ```python
 config = chloros.get_config()
@@ -358,11 +358,11 @@ print(config['Project Settings'])
 
 #### `get_status()`
 
-Get backend status information.
+Hent informasjon om backend-status.
 
-**Returns:** `dict` - Backend status
+**Returnerer:** `dict` - Backend-status
 
-**Example:**
+**Eksempel:**
 
 ```python
 status = chloros.get_status()
@@ -374,9 +374,9 @@ print(f"URL: {status['url']}")
 
 #### `shutdown_backend()`
 
-Shutdown the backend (if started by SDK).
+Slå av backend (hvis startet av SDK).
 
-**Example:**
+**Eksempel:**
 
 ```python
 chloros.shutdown_backend()
@@ -384,29 +384,29 @@ chloros.shutdown_backend()
 
 ***
 
-### Convenience Functions
+### Praktiske funksjoner
 
 #### `process_folder(folder_path, **options)`
 
-One-line convenience function to process a folder.
+Enkel praktisk funksjon for å behandle en mappe.
 
-**Parameters:**
+**Parametere:**
 
-| Parameter                 | Type     | Default         | Description                    |
+| Parameter                 | Type     | Standard         | Beskrivelse                    |
 | ------------------------- | -------- | --------------- | ------------------------------ |
-| `folder_path`             | str/Path | Required        | Path to folder with images     |
-| `project_name`            | str      | Auto-generated  | Project name                   |
-| `camera`                  | str      | `None`          | Camera template                |
-| `indices`                 | list     | `["NDVI"]`      | Indices to calculate           |
-| `vignette_correction`     | bool     | `True`          | Enable vignette correction     |
-| `reflectance_calibration` | bool     | `True`          | Enable reflectance calibration |
-| `export_format`           | str      | "TIFF (16-bit)" | Output format                  |
-| `mode`                    | str      | `"parallel"`    | Processing mode                |
-| `progress_callback`       | callable | `None`          | Progress callback              |
+| `folder_path`             | str/Path | Påkrevd        | Sti til mappe med bilder     |
+| `project_name`            | str      | Autogenerert  | Prosjektnavn                   |
+| `camera`                  | str      | `None`          | Kameramall                |
+| `indices`                 | liste     | `["NDVI"]`      | Indekser som skal beregnes           |
+| `vignette_correction`     | bool     | `True`          | Aktiver vignettkorrigering     |
+| `reflectance_calibration` | bool     | `True`          | Aktiver refleksjonskalibrering |
+| `export_format`           | str      | &quot;TIFF (16-bit)&quot; | Utdataformat                  |
+| `mode`                    | str      | `"parallel"`    | Behandlingsmodus                |
+| `progress_callback`       | callable | `None`          | Fremdrifts-tilbakeringing              |
 
-**Returns:** `dict` - Processing results
+**Returnerer:** `dict` - Behandlingsresultater
 
-**Example:**
+**Eksempel:**
 
 ```python
 from chloros_sdk import process_folder
@@ -435,9 +435,9 @@ results = process_folder(
 
 ***
 
-## Context Manager Support
+## Støtte for kontekstbehandling
 
-The SDK supports context managers for automatic cleanup:
+SDK støtter kontekstbehandling for automatisk opprydding:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -453,11 +453,11 @@ with ChlorosLocal() as chloros:
 
 ***
 
-## Complete Examples
+## Komplette eksempler
 
-### Example 1: Basic Processing
+### Eksempel 1: Grunnleggende behandling
 
-Process a folder with default settings:
+Behandle en mappe med standardinnstillinger:
 
 ```python
 from chloros_sdk import process_folder
@@ -470,9 +470,9 @@ print(f"Processing complete: {results}")
 
 ***
 
-### Example 2: Custom Workflow
+### Eksempel 2: Tilpasset arbeidsflyt
 
-Full control over processing pipeline:
+Full kontroll over behandlingsrørledningen:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -512,9 +512,9 @@ print("Processing complete!")
 
 ***
 
-### Example 3: Batch Processing Multiple Folders
+### Eksempel 3: Batchbehandling av flere mapper
 
-Process multiple flight datasets:
+Behandle flere flygedatasett:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -564,9 +564,9 @@ print("All flights processed!")
 
 ***
 
-### Example 4: Research Pipeline Integration
+### Eksempel 4: Integrering av forskningsrørledning
 
-Integrate Chloros with data analysis:
+Integrer Chloros med dataanalyse:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -619,9 +619,9 @@ print(df)
 
 ***
 
-### Example 5: Custom Progress Monitoring
+### Eksempel 5: Tilpasset fremdriftskontroll
 
-Advanced progress tracking with logging:
+Avansert fremdriftskontroll med loggføring:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -658,9 +658,9 @@ logging.info("Processing complete!")
 
 ***
 
-### Example 6: Error Handling
+### Eksempel 6: Feilhåndtering
 
-Robust error handling for production use:
+Robust feilhåndtering for produksjonsbruk:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -710,9 +710,9 @@ else:
 
 ***
 
-### Example 7: Command-Line Tool
+### Eksempel 7: Kommandolinjeverktøy
 
-Build a custom CLI tool with the SDK:
+Bygg et tilpasset CLI-verktøy med SDK:
 
 ```python
 #!/usr/bin/env python
@@ -775,7 +775,7 @@ if __name__ == '__main__':
     sys.exit(main())
 ```
 
-**Usage:**
+**Bruk:**
 
 ```bash
 python my_processor.py "C:\Flight001" "C:\Flight002" --indices NDVI NDRE GNDVI
@@ -783,11 +783,11 @@ python my_processor.py "C:\Flight001" "C:\Flight002" --indices NDVI NDRE GNDVI
 
 ***
 
-## Exception Handling
+## Unntakshåndtering
 
-The SDK provides specific exception classes for different error types:
+SDK tilbyr spesifikke unntaksklasser for forskjellige feiltyper:
 
-### Exception Hierarchy
+### Unntakshierarki
 
 ```python
 ChlorosError                    # Base exception
@@ -799,7 +799,7 @@ ChlorosError                    # Base exception
 └── ChlorosConfigurationError  # Configuration errors
 ```
 
-### Exception Examples
+### Eksempler på unntak
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -824,11 +824,11 @@ except ChlorosError as e:
 
 ***
 
-## Advanced Topics
+## Avanserte emner
 
-### Custom Backend Configuration
+### Tilpasset backend-konfigurasjon
 
-Use a custom backend location or configuration:
+Bruk en tilpasset backend-plassering eller -konfigurasjon:
 
 ```python
 chloros = ChlorosLocal(
@@ -839,9 +839,9 @@ chloros = ChlorosLocal(
 )
 ```
 
-### Non-Blocking Processing
+### Ikke-blokkerende behandling
 
-Start processing and continue with other tasks:
+Start behandlingen og fortsett med andre oppgaver:
 
 ```python
 # Start processing (non-blocking)
@@ -861,9 +861,9 @@ while True:
 print("Processing complete!")
 ```
 
-### Memory Management
+### Minnebehandling
 
-For large datasets, process in batches:
+For store datasett, behandle i batcher:
 
 ```python
 from pathlib import Path
@@ -888,15 +888,15 @@ for i in range(0, len(images), batch_size):
 
 ***
 
-## Troubleshooting
+## Feilsøking
 
-### Backend Not Starting
+### Backend starter ikke
 
-**Issue:** SDK fails to start backend
+**Problem:** SDK klarer ikke å starte backend
 
-**Solutions:**
+**Løsninger:**
 
-1. Verify Chloros Desktop is installed:
+1. Kontroller at Chloros Desktop er installert:
 
 ```python
 import os
@@ -904,8 +904,8 @@ backend_path = r"C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backen
 print(f"Backend exists: {os.path.exists(backend_path)}")
 ```
 
-2. Check Windows Firewall isn't blocking
-3. Try manual backend path:
+2. Kontroller at Windows brannmur ikke blokkerer
+3. Prøv manuell backend-bane:
 
 ```python
 chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
@@ -913,14 +913,14 @@ chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
 
 ***
 
-### License Not Detected
+### Lisens oppdages ikke
 
-**Issue:** SDK warns about missing license
+**Problem:** SDK advarer om manglende lisens
 
-**Solutions:**
+**Løsninger:**
 
-1. Open Chloros, Chloros (Browser) or Chloros CLI and login.
-2. Verify license is cached:
+1. Åpne Chloros, Chloros (nettleser) eller Chloros CLI og logg inn.
+2. Kontroller at lisensen er lagret i hurtigbufferen:
 
 ```python
 from pathlib import Path
@@ -931,15 +931,15 @@ cache_path = Path(os.getenv('APPDATA')) / 'Chloros' / 'cache'
 print(f"Cache exists: {cache_path.exists()}")
 ```
 
-3. Contact support: info@mapir.camera
+3. Kontakt kundestøtte: info@mapir.camera
 
 ***
 
-### Import Errors
+### Importfeil
 
-**Issue:** `ModuleNotFoundError: No module named 'chloros_sdk'`
+**Problem:** `ModuleNotFoundError: No module named 'chloros_sdk'`
 
-**Solutions:**
+**Løsninger:**
 
 ```bash
 # Verify installation
@@ -955,36 +955,36 @@ python -c "import sys; print(sys.path)"
 
 ***
 
-### Processing Timeout
+### Behandlingstidsavbrudd
 
-**Issue:** Processing times out
+**Problem:** Behandlingen avbrytes
 
-**Solutions:**
+**Løsninger:**
 
-1. Increase timeout:
+1. Øk tidsavbruddet:
 
 ```python
 chloros = ChlorosLocal(timeout=120)  # 2 minutes
 ```
 
-2. Process smaller batches
-3. Check available disk space
-4. Monitor system resources
+2. Behandle mindre batcher
+3. Kontroller tilgjengelig diskplass
+4. Overvåk systemressurser
 
 ***
 
-### Port Already in Use
+### Port allerede i bruk
 
-**Issue:** Backend port 5000 occupied
+**Problem:** Backend-port 5000 opptatt
 
-**Solutions:**
+**Løsninger:**
 
 ```python
 # Use different port
 chloros = ChlorosLocal(api_url="http://localhost:5001")
 ```
 
-Or find and close conflicting process:
+Eller finn og lukk prosessen som forårsaker konflikten:
 
 ```powershell
 # PowerShell
@@ -993,36 +993,36 @@ Get-NetTCPConnection -LocalPort 5000
 
 ***
 
-## Performance Tips
+## Tips for ytelse
 
-### Optimize Processing Speed
+### Optimaliser behandlingshastigheten
 
-1. **Use Parallel Mode** (requires Chloros+)
+1. **Bruk parallellmodus** (krever Chloros+)
 
 ```python
 chloros.process(mode="parallel")  # Up to 16 workers
 ```
 
-2. **Reduce Output Resolution** (if acceptable)
+2. **Reduser utskriftsoppløsningen** (hvis akseptabelt)
 
 ```python
 chloros.configure(export_format="PNG (8-bit)")  # Faster than TIFF
 ```
 
-3. **Disable Unnecessary Indices**
+3. **Deaktiver unødvendige indekser**
 
 ```python
 # Only calculate needed indices
 chloros.configure(indices=["NDVI"])  # Not all indices
 ```
 
-4. **Process on SSD** (not HDD)
+4. **Behandle på SSD** (ikke HDD)
 
 ***
 
-### Memory Optimization
+### Minneoptimalisering
 
-For large datasets:
+For store datasett:
 
 ```python
 # Process in batches instead of all at once
@@ -1031,9 +1031,9 @@ For large datasets:
 
 ***
 
-### Background Processing
+### Bakgrunnsbehandling
 
-Free up Python for other tasks:
+Frigjør Python til andre oppgaver:
 
 ```python
 chloros.process(wait=False)  # Non-blocking
@@ -1044,9 +1044,9 @@ chloros.process(wait=False)  # Non-blocking
 
 ***
 
-## Integration Examples
+## Integreringseksempler
 
-### Django Integration
+### Django-integrering
 
 ```python
 # views.py
@@ -1119,49 +1119,49 @@ chloros.process(progress_callback=notebook_progress)
 
 ***
 
-## FAQ
+## Vanlige spørsmål
 
-### Q: Does the SDK require an internet connection?
+### Spørsmål: Krever SDK internettforbindelse?
 
-**A:** Only for initial license activation. After logging in via Chloros, Chloros (Browser) or Chloros CLI the license is cached locally and works offline for 30 days.
-
-***
-
-### Q: Can I use the SDK on a server without GUI?
-
-**A:** Yes! Requirements:
-
-* Windows Server 2016 or later
-* Chloros installed (one-time)
-* License activated on any machine (cached license copied to server)
+**Svar:** Bare for første aktivering av lisensen. Etter at du har logget inn via Chloros, Chloros (nettleser) eller Chloros CLI, blir lisensen lagret lokalt og fungerer offline i 30 dager.
 
 ***
 
-### Q: What's the difference between Desktop, CLI, and SDK?
+### Spørsmål: Kan jeg bruke SDK på en server uten GUI?
 
-| Feature         | Desktop GUI | CLI Command Line | Python SDK  |
+**Svar:** Ja! Krav:
+
+* Windows Server 2016 eller nyere
+* Chloros installert (engangs)
+* Lisens aktivert på en hvilken som helst maskin (bufferlagret lisens kopiert til server)
+
+***
+
+### Spørsmål: Hva er forskjellen mellom Desktop, CLI og SDK?
+
+| Funksjon         | Desktop GUI | CLI Kommandolinje | Python SDK  |
 | --------------- | ----------- | ---------------- | ----------- |
-| **Interface**   | Point-click | Command          | Python API  |
-| **Best For**    | Visual work | Scripting        | Integration |
-| **Automation**  | Limited     | Good             | Excellent   |
-| **Flexibility** | Basic       | Good             | Maximum     |
-| **License**     | Chloros+    | Chloros+         | Chloros+    |
+| **Grensesnitt**   | Pek og klikk | Kommando          | Python API  |
+| **Best egnet for**    | Visuelt arbeid | Skripting        | Integrasjon |
+| **Automatisering**  | Begrenset     | God             | Utmerket   |
+| **Fleksibilitet** | Grunnleggende       | God             | Maksimal     |
+| **Lisens**     | Chloros+    | Chloros+         | Chloros+    |
 
 ***
 
-### Q: Can I distribute apps built with the SDK?
+### Spørsmål: Kan jeg distribuere apper som er laget med SDK?
 
-**A:** SDK code can be integrated into your applications, but:
+**Svar:** SDK-koden kan integreres i applikasjonene dine, men:
 
-* End users need Chloros installed
-* End users need active Chloros+ licenses
-* Commercial distribution requires OEM licensing
+* Sluttbrukere må ha Chloros installert.
+* Sluttbrukere må ha aktive Chloros+-lisenser.
+* Kommersiell distribusjon krever OEM-lisensiering.
 
-Contact info@mapir.camera for OEM inquiries.
+Kontakt info@mapir.camera for spørsmål om OEM.
 
 ***
 
-### Q: How do I update the SDK?
+### Spørsmål: Hvordan oppdaterer jeg SDK?
 
 ```bash
 pip install --upgrade chloros-sdk
@@ -1169,9 +1169,9 @@ pip install --upgrade chloros-sdk
 
 ***
 
-### Q: Where are processed images saved?
+### Spørsmål: Hvor lagres behandlede bilder?
 
-By default, in the Project Path :
+Som standard i prosjektbanen:
 
 ```
 Project_Path/
@@ -1181,9 +1181,9 @@ Project_Path/
 
 ***
 
-### Q: Can I process images from Python scripts running on schedule?
+### Spørsmål: Kan jeg behandle bilder fra Python-skript som kjører etter tidsplan?
 
-**A:** Yes! Use Windows Task Scheduler with Python scripts:
+**Svar:** Ja! Bruk Windows Task Scheduler med Python-skript:
 
 ```python
 # scheduled_processing.py
@@ -1193,13 +1193,13 @@ from chloros_sdk import process_folder
 results = process_folder("C:\\Flights\\Today")
 ```
 
-Schedule via Task Scheduler to run daily.
+Planlegg via Task Scheduler for å kjøre daglig.
 
 ***
 
-### Q: Does the SDK support async/await?
+### Spørsmål: Støtter SDK async/await?
 
-**A:** Current version is synchronous. For async behavior, use `wait=False` or run in separate thread:
+**Svar:** Den nåværende versjonen er synkron. For asynkron atferd, bruk `wait=False` eller kjør i en egen tråd:
 
 ```python
 import threading
@@ -1215,26 +1215,26 @@ thread.start()
 
 ***
 
-## Getting Help
+## Få hjelp
 
-### Documentation
+### Dokumentasjon
 
-* **API Reference**: This page
+* **API-referanse**: Denne siden
 
-### Support Channels
+### Supportkanaler
 
-* **Email**: info@mapir.camera
-* **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* **Pricing**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
+* **E-post**: info@mapir.camera
+* **Nettsted**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
+* **Priser**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
-### Sample Code
+### Eksempelkode
 
-All examples listed here are tested and production-ready. Copy and adapt them for your use case.
+Alle eksemplene som er oppført her, er testet og klare for produksjon. Kopier og tilpass dem til ditt bruksområde.
 
 ***
 
-## License
+## Lisens
 
-**Proprietary Software** - Copyright (c) 2025 MAPIR Inc.
+**Proprietær programvare** – Copyright (c) 2025 MAPIR Inc.
 
-SDK requires an active Chloros+ subscription. Unauthorized use, distribution, or modification is prohibited.
+SDK krever et aktivt Chloros+-abonnement. Uautorisert bruk, distribusjon eller modifisering er forbudt.

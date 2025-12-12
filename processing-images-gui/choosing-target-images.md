@@ -1,221 +1,221 @@
-# Choosing Target Images
+# Velge målbilder
 
-Marking which images contain calibration targets is a crucial step that significantly speeds up the Chloros processing pipeline. By pre-selecting target images, you eliminate the need for Chloros to scan every image in your dataset for calibration targets.
+Å merke hvilke bilder som inneholder kalibreringsmål er et viktig trinn som øker hastigheten på Chloros-behandlingsprosessen betydelig. Ved å forhåndsvelge målbilder eliminerer du behovet for at Chloros skal skanne hvert bilde i datasettet ditt for kalibreringsmål.
 
-## Why Mark Target Images?
+## Hvorfor merke målbilder?
 
-### Processing Speed
+### Behandlingshastighet
 
-Without marking target images, Chloros must:
+Uten å merke målbilder må Chloros:
 
-* Scan every single image in your project
-* Run target detection algorithms on each image
-* Check hundreds or thousands of images unnecessarily
+* Skanne hvert eneste bilde i prosjektet ditt
+* Kjøre måldeteksjonsalgoritmer på hvert bilde
+* Sjekke hundrevis eller tusenvis av bilder unødvendig
 
-**Result**: Processing can take significantly longer, especially for large datasets.
+**Resultat**: Behandlingen kan ta betydelig lengre tid, spesielt for store datasett.
 
-### With Marked Target Images
+### Med merkede målbilder
 
-When you check the Target column for specific images:
+Når du merker av for bestemte bilder i kolonnen Mål:
 
-* Chloros only scans the checked images for targets
-* Target detection completes much faster
-* Overall processing time is greatly reduced
+* Chloros skanner bare de merkede bildene for mål
+* Målregistreringen fullføres mye raskere
+* Den totale behandlingstiden reduseres betydelig
 
-{% hint style="success" %}
-**Speed Improvement**: Marking 2-3 target images in a 500-image dataset can reduce target detection time from 30+ minutes to under 1 minute.
+{% hint style=&quot;success&quot; %}
+**Hastighetsforbedring**: Å merke 2-3 målbilder i et datasett med 500 bilder kan redusere måldeteksjonstiden fra over 30 minutter til under 1 minutt.
 {% endhint %}
 
 ***
 
-## How to Mark Target Images
+## Hvordan merke målbilder
 
-### Step 1: Identify Your Target Images
+### Trinn 1: Identifiser målbildene dine
 
-Look through your imported images in the File Browser and identify which images contain calibration targets.
+Se gjennom de importerte bildene i filbrowseren og identifiser hvilke bilder som inneholder kalibreringsmål.
 
-**Common scenarios:**
+**Vanlige scenarier:**
 
-* **Pre-capture target**: Captured before starting the session
-* **Post-capture target**: Captured after completing the session
-* **In-field targets**: Targets placed within the capture area
-* **Multiple targets**: 2-3 target images per session (recommended)
+* **Mål før opptak**: Opptatt før sesjonen starter
+* **Mål etter opptak**: Opptatt etter at sesjonen er fullført
+* **Mål i feltet**: Mål plassert innenfor opptaksområdet
+* **Flere mål**: 2–3 målbilder per sesjon (anbefalt)
 
-### Step 2: Check the Target Column
+### Trinn 2: Kontroller målkolonnen
 
-For each image containing a calibration target:
+For hvert bilde som inneholder et kalibreringsmål:
 
-1. Locate the image in the File Browser table
-2. Find the **Target** column (rightmost column)
-3. Click the checkbox in the Target column for that image
-4. Repeat for all images containing targets
+1. Finn bildet i filbrowser-tabellen.
+2. Finn kolonnen **Mål** (kolonnen helt til høyre).
+3. Klikk på avmerkingsboksen i målkolonnen for det bildet.
+4. Gjenta for alle bilder som inneholder mål.
 
-### Step 3: Verify Your Selection
+### Trinn 3: Bekreft valget ditt
 
-Before processing, double-check:
+Før du behandler, må du dobbeltsjekke:
 
-* [ ] All images with calibration targets are checked
-* [ ] No non-target images are accidentally checked
-* [ ] Targets are clearly visible in checked images
-
-***
-
-## Best Practices for Target Images
-
-### Target Capture Guidelines
-
-**Timing:**
-
-* Capture target images immediately before and throughout your capture session
-* Within the same lighting conditions as your DAQ light sensor
-* Ideally capture target images as often as possible for the best results. Otherwise, the light sensor data will be used to adjust the calibration over time.
-
-**Camera Position:**
-
-* Hold camera above target such that is is centered and fills around 40-60% of the image center.
-* Keep camera parallel/nadir to target surface
-
-**Lighting:**
-
-* Same ambient lighting as your DAQ light sensor
-* Avoid shadows on the target surfaces
-* Don't block your light source with your body, vehicle or vegetation
-* Overcast conditions provide most consistent results
-
-**Target Condition:**
-
-* Keep target panels clean and dry
-* All 4 panels should be clearly visible and unobstructed
-* Targets perpendicular/nadir to the light source if possible
-
-### How Many Target Images?
-
-**Minimum:** 1 target image per session. **Recommended:** 3-5 target images per session.
-
-**Best practice schedule:**
-
-* 3-5 images captured shortly after the light sensor is recording
-* Rotate the camera between captures for the best results
-* Optional: periodically mid-session if lighting conditions change constantly
+* [ ] Alle bilder med kalibreringsmål er merket av
+* [ ] Ingen bilder uten mål er merket av ved en feiltakelse
+* [ ] Målene er tydelig synlige i de merkede bildene
 
 ***
 
-## Working with Multiple Cameras
+## Beste praksis for målbilder
 
-### Dual-Camera Setups
+### Retningslinjer for målopptak
 
-If using two MAPIR cameras simultaneously (e.g., Survey3W RGN + Survey3N OCN):
+**Tidspunkt:**
 
-1. Capture target images with **both cameras** at the same time
-2. Use the **same physical target** for both cameras
-3. Mark target images for **both camera types** in the File Browser
-4. Chloros will use appropriate targets for each camera's calibration
+* Ta målbilder umiddelbart før og under opptakssesjonen
+* Under de samme lysforholdene som DAQ-lyssensoren
+* Ideelt sett bør du ta målbilder så ofte som mulig for å oppnå best mulig resultat. Ellers vil lyssensordataene brukes til å justere kalibreringen over tid.
 
-### Camera Model Column
+**Kameraposisjon:**
 
-The **Camera Model** column helps identify which images came from which camera:
+* Hold kameraet over målet slik at det er sentrert og fyller rundt 40–60 % av bildets sentrum.
+* Hold kameraet parallelt/nadir med måloverflaten
+
+**Belysning:**
+
+* Samme omgivelsesbelysning som DAQ-lyssensoren
+* Unngå skygger på måloverflatene
+* Ikke blokker lyskilden med kroppen, kjøretøy eller vegetasjon
+* Overskyet vær gir de mest konsistente resultatene
+
+**Målbetingelser:**
+
+* Hold målpanelene rene og tørre
+* Alle 4 panelene skal være tydelig synlige og uten hindringer
+* Målene skal være vinkelrette/nadir i forhold til lyskilden hvis mulig
+
+### Hvor mange målbilder?
+
+**Minimum:** 1 målbilde per økt. **Anbefalt:** 3–5 målbilder per økt.
+
+**Beste praksis:**
+
+* Ta 3–5 bilder kort tid etter at lyssensoren begynner å ta opp.
+* Roter kameraet mellom opptakene for å få best mulig resultat.
+* Valgfritt: Ta bilder med jevne mellomrom midt i økten hvis lysforholdene endrer seg kontinuerlig.
+
+***
+
+## Arbeide med flere kameraer
+
+### Oppsett med to kameraer
+
+Hvis du bruker to MAPIR-kameraer samtidig (f.eks. Survey3W RGN + Survey3N OCN):
+
+1. Ta bilder av målet med **begge kameraene** samtidig.
+2. Bruk **samme fysiske mål** for begge kameraene.
+3. Merk målbildene for **begge kameratypene** i filbrowseren.
+4. Chloros vil bruke passende mål for kalibrering av hvert kamera.
+
+### Kolonnen Kameramodell
+
+Kolonnen **Kameramodell** hjelper deg med å identifisere hvilke bilder som kommer fra hvilket kamera:
 
 * Survey3W\_RGN
 * Survey3N\_OCN
 * Survey3W\_RGB
-* etc.
+* osv.
 
-Use this column to verify you've marked targets for each camera type in your project.
-
-***
-
-## Target Detection Settings
-
-### Adjusting Detection Sensitivity
-
-If Chloros isn't detecting your targets correctly, adjust these settings in [Project Settings](adjusting-project-settings.md):
-
-**Minimum calibration sample area:**
-
-* **Default**: 25 pixels
-* **Increase** if getting false detections on small artifacts
-* **Decrease** if targets aren't being detected
-
-**Minimum target clustering:**
-
-* **Default**: 60
-* **Increase** if targets are being split into multiple detections
-* **Decrease** if targets with color variation aren't fully detected
+Bruk denne kolonnen til å kontrollere at du har merket mål for hver kameratype i prosjektet ditt.
 
 ***
 
-## Common Target Image Issues
+## Innstillinger for måldeteksjon
 
-### Problem: No Targets Detected
+### Justere deteksjonsfølsomhet
 
-**Possible causes:**
+Hvis Chloros ikke oppdager målene dine riktig, kan du justere disse innstillingene i [Prosjektinnstillinger](adjusting-project-settings.md):
 
-* Target images not marked in File Browser
-* Target too small in frame (< 30% of image)
-* Poor lighting (shadows, glare)
-* Target detection settings too strict
+**Minimum kalibreringsprøveområde:**
 
-**Solutions:**
+* **Standard**: 25 piksler
+* **Øk** hvis du får falske deteksjoner på små gjenstander
+* **Reduser** hvis målene ikke blir detektert
 
-1. Verify Target column is checked for correct images
-2. Review target image quality in preview
-3. Recapture targets if quality is poor
-4. Adjust target detection settings if needed
+**Minimum målklynging:**
 
-### Problem: False Target Detections
-
-**Possible causes:**
-
-* White buildings, vehicles, or ground cover mistaken for targets
-* Bright patches in vegetation
-* Detection sensitivity too low
-
-**Solutions:**
-
-1. Mark only actual target images to limit detection scope
-2. Increase minimum calibration sample area
-3. Increase minimum target clustering value
-4. Ensure target images show only the target (minimal background clutter)
+* **Standard**: 60
+* **Øk** hvis målene blir delt opp i flere deteksjoner
+* **Reduser** hvis mål med fargevariasjoner ikke blir fullstendig oppdaget
 
 ***
 
-## Verification Checklist
+## Vanlige problemer med målbilder
 
-Before starting processing, verify your target image selection:
+### Problem: Ingen mål oppdaget
 
-* [ ] At least 1 target image marked per session
-* [ ] Target column checkboxes are checked for all target images
-* [ ] Target images captured within same timeframe as survey
-* [ ] Targets clearly visible in preview when clicked
-* [ ] All 4 calibration panels visible in each target image
-* [ ] No shadows or obstructions on targets
-* [ ] For dual-camera: Targets marked for both camera types
+**Mulige årsaker:**
+
+* Målbilder ikke merket i filbrowseren
+* Målet er for lite i rammen (&lt; 30 % av bildet)
+* Dårlig belysning (skygger, gjenskinn)
+* Innstillingene for måldeteksjon er for strenge
+
+**Løsninger:**
+
+1. Kontroller at kolonnen Mål er merket av for riktige bilder
+2. Gjennomgå kvaliteten på målbildet i forhåndsvisningen
+3. Ta opp målene på nytt hvis kvaliteten er dårlig
+4. Juster innstillingene for måldeteksjon om nødvendig
+
+### Problem: Falske måldeteksjoner
+
+**Mulige årsaker:**
+
+* Hvite bygninger, kjøretøy eller bakkeoverflate forveksles med mål
+* Lyse flekker i vegetasjonen
+* Deteksjonsfølsomheten er for lav
+
+**Løsninger:**
+
+1. Merk bare faktiske målbilder for å begrense deteksjonsområdet
+2. Øk minimumsområdet for kalibreringsprøven
+3. Øk minimumsverdien for målklynging
+4. Sørg for at målbildene bare viser målet (minimalt med bakgrunnsstøy)
 
 ***
 
-## Target-Free Processing
+## Sjekkliste for verifisering
 
-### Processing Without Calibration Targets
+Før du starter behandlingen, må du verifisere valg av målbilder:
 
-While not recommended for scientific work, you can process without targets:
+* [ ] Minst 1 målbilde merket per økt
+* [ ] Avmerkingsboksene i målkolonnen er merket for alle målbilder
+* [ ] Målbilder tatt innenfor samme tidsramme som undersøkelsen
+* [ ] Målene er tydelig synlige i forhåndsvisningen når du klikker på dem
+* [ ] Alle 4 kalibreringspanelene er synlige i hvert målbilde
+* [ ] Ingen skygger eller hindringer på målene
+* [ ] For dobbeltkamera: Mål merket for begge kameratyper
 
-1. Leave all Target column checkboxes unchecked
-2. **Disable** "Reflectance calibration" in Project Settings
-3. Vignette correction will still be applied
-4. Output will not be calibrated for absolute reflectance
+***
 
-{% hint style="warning" %}
-**Not Recommended**: Without reflectance calibration, pixel values represent relative brightness only, not scientific reflectance measurements. Use calibration targets for accurate, repeatable results.
+## Målfri behandling
+
+### Behandling uten kalibreringsmål
+
+Selv om det ikke anbefales for vitenskapelig arbeid, kan du behandle uten mål:
+
+1. La alle avmerkingsboksene i målkolonnen være umerkede
+2. **Deaktiver** «Refleksjonskalibrering» i prosjektinnstillingene
+3. Vignettkorreksjon vil fortsatt bli brukt
+4. Utdataene vil ikke bli kalibrert for absolutt refleksjonsevne
+
+{% hint style=&quot;warning&quot; %}
+**Anbefales ikke**: Uten refleksjonskalibrering representerer pikselverdiene bare relativ lysstyrke, ikke vitenskapelige refleksjonsmålinger. Bruk kalibreringsmål for nøyaktige, repeterbare resultater.
 {% endhint %}
 
 ***
 
-## Next Steps
+## Neste trinn
 
-Once you've marked your target images:
+Når du har merket målbildene dine:
 
-1. **Review your settings** - See [Adjusting Project Settings](adjusting-project-settings.md)
-2. **Start processing** - See [Starting the Processing](starting-the-processing.md)
-3. **Monitor progress** - See [Monitoring the Processing](monitoring-the-processing.md)
+1. **Gjennomgå innstillingene dine** – Se [Justere prosjektinnstillinger](adjusting-project-settings.md)
+2. **Start behandlingen** – Se [Starte behandlingen](starting-the-processing.md)
+3. **Overvåk fremdriften** – Se [Overvåke behandlingen](monitoring-the-processing.md)
 
-For more information about calibration targets themselves, see [Calibration Targets](../calibration-targets.md).
+For mer informasjon om kalibreringsmålene, se [Kalibreringsmål](../calibration-targets.md).

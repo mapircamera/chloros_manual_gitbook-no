@@ -1,247 +1,247 @@
-# Opening an Image Full Screen
+# Åpne et bilde i fullskjermmodus
 
-The Chloros Image Viewer provides a dedicated full-screen interface for viewing, analyzing, and manipulating your multispectral images. Whether viewing original images or processed outputs, the Image Viewer offers powerful tools for inspection and analysis.
+Chloros Image Viewer har et dedikert fullskjermgrensesnitt for visning, analyse og manipulering av multispektrale bilder. Uansett om du viser originale bilder eller bearbeidede resultater, tilbyr Image Viewer kraftige verktøy for inspeksjon og analyse.
 
-## Accessing the Image Viewer
+## Åpne Image Viewer
 
-### From the File Browser
+### Fra filbrowseren
 
-The most common way to open an image in the Image Viewer:
+Den vanligste måten å åpne et bilde i Image Viewer på:
 
-1. Ensure you're in the **File Browser** tab <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Click any **image thumbnail** in the image grid
-3. The image opens in the **main preview area** (center of screen)
-4. The image is now loaded and ready for full-screen viewing
+1. Forsikre deg om at du er i fanen **File Browser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
+2. Klikk på et hvilket som helst **miniatyrbilde** i bildegitteret
+3. Bildet åpnes i **hovedforhåndsvisningsområdet** (midt på skjermen)
+4. Bildet er nå lastet inn og klart for visning i fullskjermmodus
 
-### Opening the Image Viewer Tab
+### Åpne fanen Image Viewer
 
-Once an image is loaded in the preview area:
+Når et bilde er lastet inn i forhåndsvisningsområdet:
 
-1. Click the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> icon in the left sidebar
-2. The Image Viewer tab opens, displaying the selected image full-screen
-3. Advanced viewing and analysis tools become available in the left sidebar
-
-***
-
-## Image Viewer Interface Overview
-
-### Main Display Area
-
-The largest portion of the screen shows your image:
-
-* **Full resolution**: Images displayed at native resolution
-* **Zoomable**: Use controls or mouse wheel to zoom
-* **Pannable**: Click and drag to move around when zoomed
-* **Aspect ratio maintained**: Images scale proportionally
+1. Klikk på **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> i venstre sidefelt
+2. Fanen Bildeselger åpnes og viser det valgte bildet i fullskjermmodus
+3. Avanserte visnings- og analyseverktøy blir tilgjengelige i venstre sidefelt
 
 ***
 
-## Viewing Options
+## Oversikt over grensesnittet til bildeselgeren
 
-### Basic Image Navigation
+### Hovedvisningsområdet
 
-#### Browse Through Images
+Den største delen av skjermen viser bildet ditt:
 
-Navigate through your image set using keyboard shortcuts or buttons:
-
-* **Next image**: Click → button or press **→** (Right Arrow) key
-* **Previous image**: Click ← button or press **←** (Left Arrow) key
-* **Jump to specific image**: Return to File Browser and click desired thumbnail
-
-#### Zoom Controls
-
-Adjust magnification to inspect image details:
-
-**Zoom In:**
-
-* Click **+** (Plus) button
-* Press **+** or **=** key
-* Scroll mouse wheel **up**
-
-**Zoom Out:**
-
-* Click **−** (Minus) button
-* Press **−** (Minus) key
-* Scroll mouse wheel **down**
-
-**Fit to Screen:**
-
-* Click **↔** (Fit) button
-* Press **0** (Zero) key
-* Double-click on image
-
-#### Pan When Zoomed
-
-When zoomed in beyond screen size:
-
-1. Move mouse cursor over image
-2. Click and **hold left mouse button**
-3. **Drag** to move image around
-4. Release to stop panning
-
-**Alternative**: Use arrow keys to pan in small increments
+* **Full oppløsning**: Bilder vises i opprinnelig oppløsning
+* **Zoombar**: Bruk kontrollene eller mushjulet til å zoome
+* **Panorerbar**: Klikk og dra for å flytte rundt når du har zoomet
+* **Bildeforhold opprettholdes**: Bildene skaleres proporsjonalt
 
 ***
 
-## Pixel Value Inspection
+## Visningsalternativer
 
-### Viewing Pixel Values at Cursor
+### Grunnleggende bildnavigering
 
-As you move your mouse cursor over the image, pixel values display in real-time:
+#### Bla gjennom bilder
 
-**Value display location:**
+Naviger gjennom bildesettet ditt ved hjelp av hurtigtaster eller knapper:
 
-* **Floating number and red line in right side index LUT gradient legend**
-* **When zoomed in further, floating value near cursor and highlighted pixel**
-* Shows values for pixel **under cursor or highlighted**
-* Updates as you move mouse
+* **Neste bilde**: Klikk på →-knappen eller trykk på **→** (høyre pil)-tasten
+* **Forrige bilde**: Klikk på ←-knappen eller trykk på **←** (venstre pil)-tasten
+* **Gå til et bestemt bilde**: Gå tilbake til filbrowseren og klikk på ønsket miniatyrbilde
 
-***
+#### Zoomkontroller
 
-## Image Types You Can View
+Juster forstørrelsen for å se på bildedetaljer:
 
-### Original Images (Pre-Processing)
+**Zoom inn:**
 
-**RAW + JPG images from camera:**
+* Klikk på **+** (pluss)-knappen
+* Trykk på **+** eller **=**-tasten
+* Rull mushjulet **opp**
 
-* Display RAW data as previewed
-* Show original, uncorrected values
-* Useful for checking image quality before processing
+**Zoom ut:**
 
-### Calibrated Reflectance Images
+* Klikk på **−** (minus)-knappen
+* Trykk på **−** (minus)-tasten
+* Rull mushjulet **ned**
 
-**After processing:**
+**Tilpass til skjerm:**
 
-* Vignette corrected
-* Reflectance calibrated
-* Multi-band TIFF (Red, Green, NIR, etc.)
-* Scientific data ready for analysis
+* Klikk på **↔** (Tilpass)-knappen
+* Trykk på **0** (null)-tasten
+* Dobbeltklikk på bildet
 
-### Index Images
+#### Panorering når du zoomer
 
-**NDVI, NDRE, GNDVI, etc. (\_NDVI.tif files):**
+Når du zoomer utover skjermstørrelsen:
 
-* Single-band grayscale images
-* Pixel values represent index calculation results
-* Range typically -1 to +1 for normalized indices
-* Can apply color LUTs for visualization
+1. Flytt musepekeren over bildet
+2. Klikk og **hold venstre museknapp nede**
+3. **Dra** for å flytte bildet rundt
+4. Slipp for å stoppe panorering
 
-***
-
-## Index and LUT Application
-
-Apply multispectral indices and color Look-Up Tables:
-
-1. Locate **Index/LUT Sandbox** in **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebar
-2. Select vegetation index (NDVI, NDRE, etc.)
-3. Select multispectral formula, or create your own custom one (Chloros+ only)
-4. Apply color LUT gradient for visualization
-5. Adjust value ranges and thresholds
-
-See [Index/LUT Sandbox](index-lut-sandbox.md) for detailed instructions.
+**Alternativ**: Bruk piltastene for å panorere i små trinn
 
 ***
 
-## Keyboard Shortcuts
+## Inspeksjon av pikselverdi
 
-### Navigation
+### Visning av pikselverdier ved markøren
 
-* **→** (Right Arrow): Next image
-* **←** (Left Arrow): Previous image
-* **Home**: First image in list
-* **End**: Last image in list
+Når du beveger musepekeren over bildet, vises pikselverdiene i sanntid:
+
+**Plassering av verdivisning:**
+
+* **Flytende tall og rød linje i indeks LUT-gradientlegenden på høyre side**
+* **Når du zoomer inn ytterligere, vises flytende verdi nær markøren og uthevet piksel**
+* Viser verdier for piksel **under markøren eller uthevet**
+* Oppdateres når du beveger musen
+
+***
+
+## Bildetyper du kan vise
+
+### Originalbilder (før behandling)
+
+**RAW + JPG-bilder fra kamera:**
+
+* Viser RAW-data som forhåndsvisning
+* Viser originale, ukorrigerte verdier
+* Nyttig for å sjekke bildekvaliteten før behandling
+
+### Kalibrerte refleksjonsbilder
+
+**Etter behandling:**
+
+* Vignettkorrigert
+* Refleksjonskalibrert
+* Multibånd TIFF (Red, Green, NIR, etc.)
+* Vitenskapelige data klare for analyse
+
+### Indeksbilder
+
+**NDVI, NDRE, GNDVI, etc. (\_NDVI.tif-filer):**
+
+* Enkeltbånds gråtonebilder
+* Pikselverdiene representerer indeksberegningsresultater
+* Område vanligvis -1 til +1 for normaliserte indekser
+* Kan bruke farge-LUT-er for visualisering
+
+***
+
+## Indeks- og LUT-applikasjon
+
+Bruk multispektrale indekser og farge-Look-Up-tabeller:
+
+1. Finn **Index/LUT Sandbox** i **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidefeltet
+2. Velg vegetasjonsindeks (NDVI, NDRE, etc.)
+3. Velg multispektral formel, eller lag din egen tilpassede formel (kun Chloros+)
+4. Bruk fargeluttgradient for visualisering
+5. Juster verdier og terskler
+
+Se [Indeks/LUT Sandbox](index-lut-sandbox.md) for detaljerte instruksjoner.
+
+***
+
+## Tastatursnarveier
+
+### Navigering
+
+* **→** (høyre pil): Neste bilde
+* **←** (venstre pil): Forrige bilde
+* **Hjem**: Første bilde i listen
+* **End**: Siste bilde i listen
 
 ### Zoom
 
-* **+** or **=**: Zoom in
-* **−**: Zoom out
-* **0** (Zero): Fit to screen
-* **Mouse Wheel**: Zoom in/out
+* **+** eller **=**: Zoom inn
+* **−**: Zoom ut
+* **0** (null): Tilpass til skjermen
+* **Mushjul**: Zoom inn/ut
 
-### View Controls
+### Visningskontroller
 
-* **P**: Toggle pixel percent mode
-* **L**: Toggle layers panel
-* **Esc**: Close full-screen or return to File Browser
+* **P**: Veksle mellom pikselprosentmodus
+* **L**: Veksle mellom lagpaneler
+* **Esc**: Lukk fullskjerm eller gå tilbake til filbrowseren
 
-### Other
+### Annet
 
-* **Ctrl+S**: Save current image
-* **F**: Full-screen mode (if available)
-
-***
-
-### Verifying Index Calculations
-
-Check that indices calculated correctly:
-
-1. Open NDVI or other index image
-2. Check vegetation areas:
-   * **NDVI**: Should show 0.4-0.9 for healthy plants
-   * **NDRE**: Higher values for vigorous growth
-   * **GNDVI**: Similar to NDVI but chlorophyll-sensitive
-3. Check non-vegetation:
-   * **Soil**: Near 0 or slightly negative
-   * **Water**: Negative values (-0.5 to 0)
+* **Ctrl+S**: Lagre gjeldende bilde
+* **F**: Fullskjermmodus (hvis tilgjengelig)
 
 ***
 
-## Troubleshooting Viewing Issues
+### Kontrollere indeksberegninger
 
-### Image Won't Open
+Kontroller at indeksene er beregnet riktig:
 
-**Possible causes:**
-
-* File corrupted during processing
-* Unsupported file format
-* Insufficient memory for large image
-
-**Solutions:**
-
-1. Try opening in external viewer to verify file integrity
-2. Check file format matches expected type
-3. Close other applications to free memory
-4. Try smaller/different image
-
-### Black or White Image Display
-
-**Possible causes:**
-
-* Value range outside display capability
-* 32-bit float image with unusual values
-* Index calculation error
-
-**Solutions:**
-
-1. Check pixel values - if all very low or very high, adjust display range
-2. Try opening in QGIS or similar with auto-range adjustment
-3. Check Debug Log from processing for errors
-
-### Pixel Values Seem Wrong
-
-**Possible causes:**
-
-* Viewing wrong image (original vs processed)
-* Calibration didn't apply correctly
-* Light sensor data wasn't included in input
-* Percent mode toggled incorrectly
-
-**Solutions:**
-
-1. Verify you're viewing processed output (check filename suffix)
-2. Check percent mode button state
-3. Compare with known-good images from same dataset
+1. Åpne NDVI eller et annet indeksbilde
+2. Kontroller vegetasjonsområdene:
+   * **NDVI**: Skal vise 0,4–0,9 for sunne planter
+   * **NDRE**: Høyere verdier for kraftig vekst
+   * **GNDVI**: Ligner på NDVI, men klorofyllfølsom
+3. Kontroller ikke-vegetasjon:
+   * **Jord**: Nær 0 eller svakt negativ
+   * **Vann**: Negative verdier (-0,5 til 0)
 
 ***
 
-## Next Steps
+## Feilsøking av visningsproblemer
 
-Now that you can view images full-screen:
+### Bildet åpnes ikke
 
-* [**Image Layers**](image-layers.md) - Learn about multi-band visualization
-* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Apply custom indices and color mapping
-* [**Multispectral Index Formulas**](../project-settings/multispectral-index-formulas.md) - Understand available indices
+**Mulige årsaker:**
 
-For processing workflow, see:
+* Fil ødelagt under behandling
+* Filformat som ikke støttes
+* Utilstrekkelig minne for stort bilde
 
-* [**Processing Images (GUI)**](../processing-images-gui/page-1.md) - Complete processing guide
+**Løsninger:**
+
+1. Prøv å åpne i ekstern visningsprogram for å kontrollere filens integritet
+2. Kontroller at filformatet samsvarer med forventet type
+3. Lukk andre programmer for å frigjøre minne
+4. Prøv et mindre/annet bilde
+
+### Svart eller hvitt bilde
+
+**Mulige årsaker:**
+
+* Verdier utenfor skjermens kapasitet
+* 32-biters flytende bilde med uvanlige verdier
+* Feil i indeksberegningen
+
+**Løsninger:**
+
+1. Kontroller pikselverdiene – hvis alle er svært lave eller svært høye, juster visningsområdet.
+2. Prøv å åpne i QGIS eller lignende med automatisk justering av området.
+3. Kontroller feilsøkingsloggen fra behandlingen for feil.
+
+### Pikselverdiene virker feil
+
+**Mulige årsaker:**
+
+* Viser feil bilde (original vs. behandlet)
+* Kalibreringen ble ikke brukt riktig
+* Lyssensordata ble ikke inkludert i inndataene
+* Prosentmodus ble slått feil
+
+**Løsninger:**
+
+1. Kontroller at du ser på behandlet utdata (sjekk filnavnet)
+2. Sjekk statusen til prosentmodusknappen
+3. Sammenlign med bilder fra samme datasett som du vet er gode
+
+***
+
+## Neste trinn
+
+Nå som du kan vise bilder i full skjerm:
+
+* [**Bildelag**](image-layers.md) – Lær om multibåndvisualisering
+* [**Indeks/LUT-sandkasse**](index-lut-sandbox.md) – Bruk tilpassede indekser og fargekartlegging
+* [**Multispektrale indeksformler**](../project-settings/multispectral-index-formulas.md) – Forstå tilgjengelige indekser
+
+For behandlingsarbeidsflyt, se:
+
+* [**Behandling av bilder (GUI)**](../processing-images-gui/adding-files-to-a-project.md) – Komplett behandlingsveiledning

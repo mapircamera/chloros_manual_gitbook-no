@@ -1,255 +1,255 @@
-# Project Settings
+# Prosjektinnstillinger
 
-The Project Settings <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> sidebar in Chloros allows you to configure all aspects of image processing, calibration target detection, multispectral index calculations, and export options for your project. These settings are saved with your project and can be saved as templates for reuse across multiple projects.
+Prosjektinnstillinger <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> i Chloros lar deg konfigurere alle aspekter av bildebehandling, kalibreringsmåldeteksjon, multispektrale indeksberegninger og eksportalternativer for prosjektet ditt. Disse innstillingene lagres sammen med prosjektet ditt og kan lagres som maler for gjenbruk i flere prosjekter.
 
-## Accessing Project Settings
+## Tilgang til prosjektinnstillinger
 
-To access Project Settings:
+Slik får du tilgang til prosjektinnstillinger:
 
-1. Open a project in Chloros
-2. Click the **Project Settings**  <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> tab in the left sidebar
-3. The settings panel will display all available configuration options organized by category
-
-***
-
-## Target Detection
-
-These settings control how Chloros detects and processes calibration targets in your images.
-
-### Minimum calibration sample area (px)
-
-* **Type**: Number
-* **Range**: 0 to 10,000 pixels
-* **Default**: 25 pixels
-* **Description**: Sets the minimum area (in pixels) required for a detected region to be considered a valid calibration target sample. Smaller values will detect smaller targets but may increase false positives. Larger values require bigger, clearer target regions for detection.
-* **When to adjust**:
-  * Increase if you're getting false detections on small image artifacts
-  * Decrease if your calibration targets appear small in your images and are not being detected
-
-### Minimum Target Clustering (0-100)
-
-* **Type**: Number
-* **Range**: 0 to 100
-* **Default**: 60
-* **Description**: Controls the clustering threshold for grouping similar colored regions when detecting calibration targets. Higher values require more similar colors to be grouped together, resulting in more conservative target detection. Lower values allow more color variation within a target group.
-* **When to adjust**:
-  * Increase if calibration targets are being split into multiple detections
-  * Decrease if calibration targets with color variation are not being fully detected
+1. Åpne et prosjekt i Chloros
+2. Klikk på **Prosjektinnstillinger**  <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> i venstre sidefelt
+3. Innstillingspanelet viser alle tilgjengelige konfigurasjonsalternativer organisert etter kategori
 
 ***
 
-## Processing
+## Målregistrering
 
-These settings control how Chloros processes and calibrates your images.
+Disse innstillingene styrer hvordan Chloros registrerer og behandler kalibreringsmål i bildene dine.
 
-### Vignette correction
+### Minimum kalibreringsprøveområde (px)
 
-* **Type**: Checkbox
-* **Default**: Enabled (checked)
-* **Description**: Applies vignette correction to compensate for lens darkening at the edges of images. Vignetting is a common optical phenomenon where the corners and edges of an image appear darker than the center due to lens characteristics.
-* **When to disable**: Only disable if your camera/lens combination has already applied vignette correction, or if you want to manually correct vignetting in post-processing.
+* **Type**: Tall
+* **Område**: 0 til 10 000 piksler
+* **Standard**: 25 piksler
+* **Beskrivelse**: Angir minimumsarealet (i piksler) som kreves for at et oppdaget område skal anses som et gyldig kalibreringsmålprøve. Mindre verdier vil oppdage mindre mål, men kan øke antall falske positive resultater. Større verdier krever større, tydeligere målområder for oppdagelse.
+* **Når du skal justere**:
+  * Øk hvis du får falske deteksjoner på små bildeartefakter.
+  * Reduser hvis kalibreringsmålene dine vises små i bildene dine og ikke blir oppdaget.
 
-### Reflectance calibration / white balance
+### Minimum målklynging (0-100)
 
-* **Type**: Checkbox
-* **Default**: Enabled (checked)
-* **Description**: Enables automatic reflectance calibration using detected calibration targets in your images. This normalizes the reflectance values across your dataset and ensures consistent measurements regardless of lighting conditions.
-* **When to disable**: Disable only if you want to process raw, uncalibrated images or if you're using a different calibration workflow.
-
-### Debayer method
-
-* **Type**: Dropdown selection
-* **Options**:
-  * High Quality (Faster) - Currently the only option available
-* **Default**: High Quality (Faster)
-* **Description**: Selects the demosaicing algorithm used to convert raw Bayer pattern sensor data into full-color images. The "High Quality (Faster)" method provides an optimal balance between processing speed and image quality.
-* **Note**: Additional debayer methods may be added in future versions of Chloros.
-
-### Minimum recalibration interval
-
-* **Type**: Number
-* **Range**: 0 to 3,600 seconds
-* **Default**: 0 seconds
-* **Description**: Sets the minimum time interval (in seconds) between using calibration targets. When set to 0, Chloros will use every detected calibration target. When set to a higher value, Chloros will only use calibration targets that are separated by at least this many seconds, reducing processing time for datasets with frequent calibration target captures.
-* **When to adjust**:
-  * Set to 0 for maximum calibration accuracy when lighting conditions vary
-  * Increase (e.g., to 60-300 seconds) for faster processing when lighting is consistent and you have frequent calibration target images
-
-### Light sensor timezone offset
-
-* **Type**: Number
-* **Range**: -12 to +12 hours
-* **Default**: 0 hours
-* **Description**: Specifies the timezone offset (in hours from UTC) for light sensor data timestamps. This is used when processing PPK (Post-Processed Kinematic) data files to ensure correct time synchronization between image captures and GPS data.
-* **When to adjust**: Set this to your local timezone offset if your PPK data uses local time instead of UTC. For example:
-  * Pacific Time: -8 or -7 (depending on DST)
-  * Eastern Time: -5 or -4 (depending on DST)
-  * Central European Time: +1 or +2 (depending on DST)
-
-### Apply PPK corrections
-
-* **Type**: Checkbox
-* **Default**: Disabled (unchecked)
-* **Description**: Enables the use of Post-Processed Kinematic (PPK) corrections from MAPIR DAQ recorders containing a GPS (GNSS). When enabled, Chloros will use any .daq log files containing exposure pin data in your project directory and apply precise geolocation corrections to your images.
-* **Requirement**: .daq log file with exposure pin entries must be present in your project directory
-* **When to enable**: It is recommended to always enable PPK correction if you have exposure feedback entries in your .daq log file.
-
-### Exposure Pin 1
-
-* **Type**: Dropdown selection
-* **Visibility**: Only visible when "Apply PPK corrections" is enabled AND exposure data is available for Pin 1
-* **Options**:
-  * Camera model names detected in the project
-  * "Do Not Use" - Ignore this exposure pin
-* **Default**: Auto-selected based on project configuration
-* **Description**: Assigns a specific camera to Exposure Pin 1 for PPK time synchronization. The exposure pin records the exact timing when the camera shutter is triggered, which is critical for accurate PPK geolocation.
-* **Auto-selection behavior**:
-  * Single camera + single pin: Automatically selects the camera
-  * Single camera + two pins: Pin 1 automatically assigned to the camera
-  * Multiple cameras: Manual selection required
-
-### Exposure Pin 2
-
-* **Type**: Dropdown selection
-* **Visibility**: Only visible when "Apply PPK corrections" is enabled AND exposure data is available for Pin 2
-* **Options**:
-  * Camera model names detected in the project
-  * "Do Not Use" - Ignore this exposure pin
-* **Default**: Auto-selected based on project configuration
-* **Description**: Assigns a specific camera to Exposure Pin 2 for PPK time synchronization when using a dual-camera setup.
-* **Auto-selection behavior**:
-  * Single camera + single pin: Pin 2 automatically set to "Do Not Use"
-  * Single camera + two pins: Pin 2 automatically set to "Do Not Use"
-  * Multiple cameras: Manual selection required
-* **Note**: The same camera cannot be assigned to both Pin 1 and Pin 2 simultaneously.
+* **Type**: Tall
+* **Område**: 0 til 100
+* **Standard**: 60
+* **Beskrivelse**: Kontrollerer grupperingsterskelen for å gruppere områder med lignende farger når kalibreringsmål oppdages. Høyere verdier krever at flere lignende farger grupperes sammen, noe som resulterer i mer konservativ målopdagelse. Lavere verdier tillater større fargevariasjon innenfor en målgruppe.
+* **Når skal du justere**:
+  * Øk hvis kalibreringsmål blir delt opp i flere oppdagelser.
+  * Reduser hvis kalibreringsmål med fargevariasjon ikke oppdages fullt ut.
 
 ***
 
-## Index
+## Behandling
 
-These settings allow you to configure multispectral indices for analysis and visualization.
+Disse innstillingene styrer hvordan Chloros behandler og kalibrerer bildene dine.
 
-### Add index
+### Vignettkorreksjon
 
-* **Type**: Special index configuration panel
-* **Description**: Opens an interactive panel where you can select and configure multispectral vegetation indices (NDVI, NDRE, EVI, etc.) to calculate during image processing. You can add multiple indices, each with its own visualization settings.
-* **Available indices**: The system includes 30+ pre-defined multispectral indices including:
-  * NDVI (Normalized Difference Vegetation Index)
-  * NDRE (Normalized Difference RedEdge)
-  * EVI (Enhanced Vegetation Index)
+* **Type**: Avkryssingsboks
+* **Standard**: Aktivert (avkrysset)
+* **Beskrivelse**: Bruker vignettkorreksjon for å kompensere for mørkere kanter på bildene. Vignettering er et vanlig optisk fenomen der hjørnene og kantene på et bilde virker mørkere enn midten på grunn av linsens egenskaper.
+* **Når du skal deaktivere**: Deaktiver bare hvis kamera-/linsekombinasjonen din allerede har brukt vignettkorreksjon, eller hvis du vil korrigere vignettering manuelt i etterbehandlingen.
+
+### Refleksjonskalibrering / hvitbalanse
+
+* **Type**: Avkryssingsboks
+* **Standard**: Aktivert (avkrysset)
+* **Beskrivelse**: Aktiverer automatisk refleksjonskalibrering ved hjelp av kalibreringsmål som er oppdaget i bildene dine. Dette normaliserer refleksjonsverdiene i datasettet ditt og sikrer konsistente målinger uavhengig av lysforhold.
+* **Når du skal deaktivere**: Deaktiver bare hvis du ønsker å behandle rå, ukalibrerte bilder eller hvis du bruker en annen kalibreringsarbeidsflyt.
+
+### Debayer-metode
+
+* **Type**: Nedtrekksmeny
+* **Alternativer**:
+  * Høy kvalitet (raskere) – For øyeblikket det eneste tilgjengelige alternativet
+* **Standard**: Høy kvalitet (raskere)
+* **Beskrivelse**: Velger demosaicing-algoritmen som brukes til å konvertere rå Bayer-mønstersensordata til fullfargebilder. Metoden «Høy kvalitet (raskere)» gir en optimal balanse mellom behandlingshastighet og bildekvalitet.
+* **Merk**: Ytterligere debayer-metoder kan bli lagt til i fremtidige versjoner av Chloros.
+
+### Minimum intervall for rekalibrering
+
+* **Type**: Tall
+* **Område**: 0 til 3600 sekunder
+* **Standard**: 0 sekunder
+* **Beskrivelse**: Angir minimum tidsintervall (i sekunder) mellom bruk av kalibreringsmål. Når verdien er satt til 0, vil Chloros bruke alle kalibreringsmål som oppdages. Når verdien er satt til en høyere verdi, vil Chloros bare bruke kalibreringsmål som er adskilt med minst dette antallet sekunder, noe som reduserer behandlingstiden for datasett med hyppige kalibreringsmålopptak.
+* **Når skal du justere**:
+  * Sett til 0 for maksimal kalibreringsnøyaktighet når lysforholdene varierer.
+  * Øk (f.eks. til 60–300 sekunder) for raskere behandling når lysforholdene er jevne og du har hyppige kalibreringsmålbilder.
+
+### Tidssoneforskyvning for lyssensor
+
+* **Type**: Tall
+* **Område**: -12 til +12 timer
+* **Standard**: 0 timer
+* **Beskrivelse**: Angir tidssoneforskyvningen (i timer fra UTC) for tidsstempler for lyssensordata. Dette brukes ved behandling av PPK-datafiler (Post-Processed Kinematic) for å sikre korrekt tidssynkronisering mellom bildeopptak og GPS-data.
+* **Når skal du justere**: Sett dette til din lokale tidssoneforskyvning hvis PPK-dataene dine bruker lokal tid i stedet for UTC. For eksempel:
+  * Pacific Time: -8 eller -7 (avhengig av sommertid)
+  * Eastern Time: -5 eller -4 (avhengig av sommertid)
+  * Central European Time: +1 eller +2 (avhengig av sommertid)
+
+### Bruk PPK-korreksjoner
+
+* **Type**: Avkryssingsboks
+* **Standard**: Deaktivert (ikke avkrysset)
+* **Beskrivelse**: Aktiverer bruk av etterbehandlede kinematiske (PPK) korreksjoner fra MAPIR DAQ-opptakere som inneholder GPS (GNSS). Når denne funksjonen er aktivert, vil Chloros bruke alle .daq-loggfiler som inneholder eksponeringspinndata i prosjektkatalogen din og bruke presise geolokasjonskorreksjoner på bildene dine.
+* **Krav**: .daq-loggfil med eksponeringspinneoppføringer må være til stede i prosjektkatalogen din
+* **Når skal du aktivere**: Det anbefales å alltid aktivere PPK-korreksjon hvis du har eksponeringsfeedbackoppføringer i .daq-loggfilen din.
+
+### Eksponeringspinne 1
+
+* **Type**: Nedtrekksmeny
+* **Synlighet**: Kun synlig når «Bruk PPK-korreksjoner» er aktivert OG eksponeringsdata er tilgjengelig for pinne 1
+* **Alternativer**:
+  * Kameramodellnavn oppdaget i prosjektet
+  * «Ikke bruk» – Ignorer denne eksponeringspinnen
+* **Standard**: Valges automatisk basert på prosjektkonfigurasjonen
+* **Beskrivelse**: Tilordner et bestemt kamera til eksponeringspinne 1 for PPK-tidssynkronisering. Eksponeringspinnen registrerer det nøyaktige tidspunktet når kameraets lukker utløses, noe som er avgjørende for nøyaktig PPK-geolokalisering.
+* **Automatisk valg**:
+  * Ett kamera + én pinne: Velger automatisk kameraet
+  * Ett kamera + to pinner: Pinne 1 tilordnes automatisk til kameraet
+  * Flere kameraer: Manuell valg kreves
+
+### Eksponeringspinne 2
+
+* **Type**: Valg fra rullegardinmeny
+* **Synlighet**: Kun synlig når «Bruk PPK-korreksjoner» er aktivert OG eksponeringsdata er tilgjengelig for pinne 2
+* **Alternativer**:
+  * Kameramodellnavn oppdaget i prosjektet
+  * «Ikke bruk» – Ignorer denne eksponeringspinnen
+* **Standard**: Velges automatisk basert på prosjektkonfigurasjonen
+* **Beskrivelse**: Tilordner et bestemt kamera til eksponeringspinne 2 for PPK-tidssynkronisering når du bruker et oppsett med to kameraer.
+* **Automatisk valg**:
+  * Ett kamera + én pinne: Pinne 2 settes automatisk til «Ikke bruk»
+  * Ett kamera + to pinner: Pinne 2 settes automatisk til «Ikke bruk»
+  * Flere kameraer: Manuell valg kreves
+* **Merk**: Det samme kameraet kan ikke tilordnes både pinne 1 og pinne 2 samtidig.
+
+***
+
+## Indeks
+
+Disse innstillingene lar deg konfigurere multispektrale indekser for analyse og visualisering.
+
+### Legg til indeks
+
+* **Type**: Spesielt indekskonfigurasjonspanel
+* **Beskrivelse**: Åpner et interaktivt panel hvor du kan velge og konfigurere multispektrale vegetasjonsindekser (NDVI, NDRE, EVI, etc.) som skal beregnes under bildebehandling. Du kan legge til flere indekser, hver med sine egne visualiseringsinnstillinger.
+* **Tilgjengelige indekser**: Systemet inkluderer over 30 forhåndsdefinerte multispektrale indekser, blant annet:
+  * NDVI (normaliserte forskjellsvegetasjonsindekser)
+  * NDRE (Normaliserte forskjeller RedEdge)
+  * EVI (Forbedret vegetasjonsindeks)
   * GNDVI, SAVI, OSAVI, MSAVI2
-  * And many more (see [Multispectral Index Formulas](multispectral-index-formulas.md) for complete list)
-* **Features**:
-  * Select from pre-defined index formulas
-  * Configure visualization color gradients (LUT - Look-Up Tables)
-  * Set threshold values for analysis
-  * Create custom index formulas
+  * Og mange flere (se [Multispektrale indeksformler](multispectral-index-formulas.md) for fullstendig liste)
+* **Funksjoner**:
+  * Velg mellom forhåndsdefinerte indeksformler
+  * Konfigurer visualiseringsfargegraderinger (LUT – Look-Up Tables)
+  * Angi terskelverdier for analyse
+  * Opprett tilpassede indeksformler
 
-### Custom Formulas (Chloros+ Feature)
+### Tilpassede formler (Chloros+ funksjon)
 
-* **Type**: Array of custom formula definitions
-* **Description**: Allows you to create and save custom multispectral index formulas using band math. Custom formulas are saved with your project settings and can be used just like built-in indices.
-* **How to create**:
-  1. In the Index configuration panel, look for the custom formula option
-  2. Define your formula using band identifiers (e.g., NIR, Red, Green, Blue)
-  3. Save the formula with a descriptive name
-* **Formula syntax**: Standard mathematical operations are supported, including:
-  * Arithmetic: `+`, `-`, `*`, `/`
-  * Parentheses for order of operations
-  * Band references: NIR, Red, Green, Blue, RedEdge, Cyan, Orange, NIR1, NIR2
-
-***
-
-## Export
-
-These settings control the format and quality of exported processed images.
-
-### Calibrated image format
-
-* **Type**: Dropdown selection
-* **Options**:
-  * **TIFF (16-bit)** - Uncompressed 16-bit TIFF format
-  * **TIFF (32-bit, Percent)** - 32-bit floating-point TIFF with reflectance values as percentages
-  * **PNG (8-bit)** - Compressed 8-bit PNG format
-  * **JPG (8-bit)** - Compressed 8-bit JPEG format
-* **Default**: TIFF (16-bit)
-* **Description**: Selects the file format for saving processed and calibrated images.
-* **Format recommendations**:
-  * **TIFF (16-bit)**: Recommended for scientific analysis and professional workflows. Preserves maximum data quality with no compression artifacts. Best for multispectral analysis and further processing in GIS software.
-  * **TIFF (32-bit, Percent)**: Best for workflows that require reflectance values as percentages (0-100%). Offers maximum precision for radiometric measurements.
-  * **PNG (8-bit)**: Good for web viewing and general visualization. Smaller file sizes with lossless compression, but reduced dynamic range.
-  * **JPG (8-bit)**: Smallest file sizes, best for previews and web display only. Uses lossy compression which is not suitable for scientific analysis.
+* **Type**: Matrise med tilpassede formeldefinisjoner
+* **Beskrivelse**: Lar deg opprette og lagre tilpassede multispektrale indeksformler ved hjelp av båndmatematikk. Tilpassede formler lagres med prosjektinnstillingene dine og kan brukes på samme måte som innebygde indekser.
+* **Slik oppretter du**:
+  1. I indekskonfigurasjonspanelet finner du alternativet for tilpassede formler
+  2. Definer formelen ved hjelp av båndidentifikatorer (f.eks. NIR, Red, Green, Blue)
+  3. Lagre formelen med et beskrivende navn
+* **Formelsyntaks**: Standard matematiske operasjoner støttes, inkludert:
+  * Aritmetikk: `+`, `-`, `*`, `/`
+  * Parenteser for rekkefølgen av operasjoner
+  * Båndreferanser: NIR, Red, Green, Blue, RedEdge, Cyan, Orange, NIR1, NIR2
 
 ***
 
-## Save Project Template
+## Eksport
 
-This feature allows you to save your current project settings as a reusable template.
+Disse innstillingene styrer formatet og kvaliteten på eksporterte behandlede bilder.
 
-* **Type**: Text input + Save button
-* **Description**: Enter a descriptive name for your settings template and click the save icon. The template will store all your current project settings (target detection, processing options, indices, and export format) for easy reuse in future projects.
-* **Use cases**:
-  * Create templates for different camera systems (RGB, multispectral, NIR)
-  * Save standard configurations for specific crop types or analysis workflows
-  * Share consistent settings across a team
-* **How to use**:
-  1. Configure all your desired project settings
-  2. Enter a template name (e.g., "RedEdge Survey3 NDVI Standard")
-  3. Click the save icon
-  4. The template can now be loaded when creating new projects
+### Kalibrert bildeformat
 
-***
-
-## Save Project Folder
-
-This setting specifies where new projects are saved by default.
-
-* **Type**: Directory path display + Edit button
-* **Default**: `C:\Users\[Username]\Chloros Projects`
-* **Description**: Shows the current default directory where new Chloros projects are created. Click the edit icon to select a different directory.
-* **When to change**:
-  * Set to a network drive for team collaboration
-  * Change to a drive with more storage space for large datasets
-  * Organize projects by year, client, or project type in different folders
-* **Note**: Changing this setting only affects NEW projects. Existing projects remain in their original locations.
+* **Type**: Nedtrekksmeny
+* **Alternativer**:
+  * **TIFF (16-bit)** – Ukomprimert 16-bit TIFF-format
+  * **TIFF (32-bit, prosent)** – 32-biters flytende komma TIFF med refleksjonsverdier i prosent
+  * **PNG (8-bit)** - Komprimert 8-biters PNG-format
+  * **JPG (8-biters)** - Komprimert 8-biters JPEG-format
+* **Standard**: TIFF (16-biters)
+* **Beskrivelse**: Velger filformat for lagring av behandlede og kalibrerte bilder.
+* **Format anbefalinger**:
+  * **TIFF (16-bit)**: Anbefales for vitenskapelig analyse og profesjonelle arbeidsflyter. Bevarer maksimal datakvalitet uten komprimeringsartefakter. Best for multispektral analyse og videre behandling i GIS-programvare.
+  * **TIFF (32-bit, prosent)**: Best egnet for arbeidsflyter som krever refleksjonsverdier i prosent (0–100 %). Gir maksimal presisjon for radiometriske målinger.
+  * **PNG (8-bit)**: Bra for visning på nettet og generell visualisering. Mindre filstørrelser med tapsfri komprimering, men redusert dynamisk område.
+  * **JPG (8-bit)**: Minste filstørrelser, best for forhåndsvisning og visning på nettet. Bruker tapsrik komprimering som ikke er egnet for vitenskapelig analyse.
 
 ***
 
-## Settings Persistence
+## Lagre prosjektmal
 
-All project settings are automatically saved with your project file (`.mapir` project format). When you reopen a project, all settings are restored exactly as you left them.
+Denne funksjonen lar deg lagre gjeldende prosjektinnstillinger som en gjenbrukbar mal.
 
-### Settings Hierarchy
-
-Settings are applied in the following order:
-
-1. **System defaults** - Built-in defaults defined by Chloros
-2. **Template settings** - If you load a template when creating a project
-3. **Saved project settings** - Settings saved with the project file
-4. **Manual adjustments** - Any changes you make during the current session
-
-### Settings and Image Processing
-
-Most settings changes (especially in Processing and Export categories) will trigger reprocessing of images to reflect the new settings. However, some settings are "export-only" and don't require immediate reprocessing:
-
-* Save Project Template
-* Working Directory
-* Calibrated image format (applies when exporting)
+* **Type**: Tekstinngang + Lagre-knapp
+* **Beskrivelse**: Skriv inn et beskrivende navn for innstillingsmalen og klikk på lagre-ikonet. Malen lagrer alle gjeldende prosjektinnstillinger (måldeteksjon, behandlingsalternativer, indekser og eksportformat) for enkel gjenbruk i fremtidige prosjekter.
+* **Bruksområder**:
+  * Opprett maler for forskjellige kamerasystemer (RGB, multispektral, NIR)
+  * Lagre standardkonfigurasjoner for bestemte avlingstyper eller analysearbeidsflyter
+  * Del konsistente innstillinger på tvers av et team
+* **Slik bruker du**:
+  1. Konfigurer alle ønskede prosjektinnstillinger
+  2. Skriv inn et malnavn (f.eks. «RedEdge Survey3 NDVI Standard»)
+  3. Klikk på lagringsikonet
+  4. Malen kan nå lastes inn når du oppretter nye prosjekter
 
 ***
 
-## Best Practices
+## Lagre prosjektmappe
 
-1. **Start with defaults**: The default settings work well for most MAPIR camera systems and typical workflows.
-2. **Create templates**: Once you've optimized settings for a specific workflow or camera, save them as a template to ensure consistency across projects.
-3. **Test before full processing**: When experimenting with new settings, test on a small subset of images before processing your entire dataset.
-4. **Document your settings**: Use descriptive template names that indicate the camera system, processing type, and intended use (e.g., "Survey3\_RGB\_NDVI\_Agriculture").
-5. **Export format selection**: Choose your export format based on your end use:
-   * Scientific analysis → TIFF (16-bit or 32-bit)
-   * GIS processing → TIFF (16-bit)
-   * Quick visualization → PNG (8-bit)
-   * Web sharing → JPG (8-bit)
+Denne innstillingen angir hvor nye prosjekter lagres som standard.
+
+* **Type**: Visning av katalogbane + Rediger-knapp
+* **Standard**: `C:\Users\[Username]\Chloros Projects`
+* **Beskrivelse**: Viser den gjeldende standardkatalogen der nye Chloros-prosjekter opprettes. Klikk på redigeringsikonet for å velge en annen katalog.
+* **Når du bør endre**:
+  * Sett til en nettverksstasjon for teamsamarbeid.
+  * Endre til en stasjon med mer lagringsplass for store datasett.
+  * Organiser prosjekter etter år, klient eller prosjekttype i forskjellige mapper.
+* **Merk**: Endring av denne innstillingen påvirker bare NYE prosjekter. Eksisterende prosjekter forblir på sine opprinnelige plasseringer.
 
 ***
 
-For more information on multispectral indices in Chloros, see [Multispectral Index Formulas](multispectral-index-formulas.md) page.
+## Innstillingspersistens
+
+Alle prosjektinnstillinger lagres automatisk med prosjektfilen din (`.mapir`-prosjektformat). Når du åpner et prosjekt på nytt, gjenopprettes alle innstillinger nøyaktig slik du forlot dem.
+
+### Innstillingshierarki
+
+Innstillinger brukes i følgende rekkefølge:
+
+1. **Systemstandarder** – Innebygde standarder definert av Chloros
+2. **Malinnstillinger** – Hvis du laster inn en mal når du oppretter et prosjekt
+3. **Lagrede prosjektinnstillinger** – Innstillinger som er lagret med prosjektfilen
+4. **Manuelle justeringer** – Eventuelle endringer du gjør under den aktuelle økten
+
+### Innstillinger og bildebehandling
+
+De fleste endringer i innstillingene (spesielt i kategoriene Behandling og Eksport) vil utløse ny behandling av bildene for å gjenspeile de nye innstillingene. Noen innstillinger er imidlertid «kun for eksport» og krever ikke umiddelbar ny behandling:
+
+* Lagre prosjektmal
+* Arbeidskatalog
+* Kalibrert bildeformat (gjelder ved eksport)
+
+***
+
+## Beste praksis
+
+1. **Start med standardinnstillingene**: Standardinnstillingene fungerer godt for de fleste MAPIR-kamerasystemer og typiske arbeidsflyter.
+2. **Opprett maler**: Når du har optimalisert innstillingene for en bestemt arbeidsflyt eller et bestemt kamera, lagrer du dem som en mal for å sikre konsistens på tvers av prosjekter.
+3. **Test før full behandling**: Når du eksperimenterer med nye innstillinger, bør du teste på et lite utvalg av bilder før du behandler hele datasettet.
+4. **Dokumenter innstillingene dine**: Bruk beskrivende malnavn som angir kamerasystemet, behandlingstypen og tiltenkt bruk (f.eks. «Survey3\_RGB\_NDVI\_Agriculture»).
+5. **Valg av eksportformat**: Velg eksportformat basert på sluttbruken:
+   * Vitenskapelig analyse → TIFF (16-bit eller 32-bit)
+   * GIS-behandling → TIFF (16-bit)
+   * Rask visualisering → PNG (8-bit)
+   * Deling på nettet → JPG (8-bit)
+
+***
+
+For mer informasjon om multispektrale indekser i Chloros, se siden [Multispektrale indeksformler](multispectral-index-formulas.md).

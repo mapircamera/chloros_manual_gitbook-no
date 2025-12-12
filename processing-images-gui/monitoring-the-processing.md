@@ -1,165 +1,165 @@
-# Monitoring the Processing
+# Overvåking av behandlingen
 
-Once processing has started, Chloros provides several ways to monitor progress, check for issues, and understand what's happening with your dataset. This page explains how to track your processing and interpret the information Chloros provides.
+Når behandlingen har startet, tilbyr Chloros flere måter å overvåke fremdriften på, sjekke for problemer og forstå hva som skjer med datasettet ditt. Denne siden forklarer hvordan du kan spore behandlingen og tolke informasjonen som Chloros gir.
 
-## Progress Bar Overview
+## Oversikt over fremdriftslinje
 
-The progress bar in the top header shows real-time processing status and completion percentage.
+Fremdriftslinjen øverst i overskriften viser behandlingsstatus og fullføringsprosent i sanntid.
 
-### Free Mode Progress Bar
+### Fremdriftslinje i gratis modus
 
-For users without Chloros+ license:
+For brukere uten Chloros+-lisens:
 
-**2-Stage Progress Display:**
+**2-trinns fremdriftsvisning:**
 
-1. **Target Detect** - Finding calibration targets in images
-2. **Processing** - Applying corrections and exporting
+1. **Måldeteksjon** – Finne kalibreringsmål i bilder
+2. **Behandling** – Bruke korreksjoner og eksportere
 
-**Progress bar shows:**
+**Fremdriftslinjen viser:**
 
-* Overall completion percentage (0-100%)
-* Current stage name
-* Simple horizontal bar visualization
+* Samlet fullføringsprosent (0–100 %)
+* Navn på gjeldende trinn
+* Enkel horisontal linjevisualisering
 
-### Chloros+ Progress Bar
+### Fremdriftslinje for Chloros+
 
-For users with Chloros+ license:
+For brukere med Chloros+-lisens:
 
-**4-Stage Progress Display:**
+**4-trinns fremdriftsvisning:**
 
-1. **Detecting** - Finding calibration targets
-2. **Analyzing** - Examining images and preparing pipeline
-3. **Calibrating** - Applying vignette and reflectance corrections
-4. **Exporting** - Saving processed files
+1. **Deteksjon** – Finne kalibreringsmål
+2. **Analyse** – Undersøke bilder og forberede pipeline
+3. **Kalibrering** – Bruke vignett- og refleksjonskorrigeringer
+4. **Eksport** – Lagre behandlede filer
 
-**Interactive Features:**
+**Interaktive funksjoner:**
 
-* **Hover over** progress bar to see expanded 4-stage panel
-* **Click** progress bar to freeze/pin the expanded panel
-* **Click again** to unfreeze and auto-hide on mouse leave
-* Each stage shows individual progress (0-100%)
-
-***
-
-## Understanding Each Processing Stage
-
-### Stage 1: Detecting (Target Detection)
-
-**What's happening:**
-
-* Chloros scans images marked with Target checkbox
-* Computer vision algorithms identify the 4 calibration panels
-* Reflectance values extracted from each panel
-* Target timestamps recorded for proper calibration scheduling
-
-**Duration:**
-
-* With marked targets: 10-60 seconds
-* Without marked targets: 5-30+ minutes (scans all images)
-
-**Progress indicator:**
-
-* Detecting: 0% → 100%
-* Number of images scanned
-* Targets found count
-
-**What to watch for:**
-
-* Should complete quickly if targets properly marked
-* If taking too long, targets may not be marked
-* Check Debug Log for "Target found" messages
-
-### Stage 2: Analyzing
-
-**What's happening:**
-
-* Reading image EXIF metadata (timestamps, exposure settings)
-* Determining calibration strategy based on target timestamps
-* Organizing image processing queue
-* Preparing parallel processing workers (Chloros+ only)
-
-**Duration:** 5-30 seconds
-
-**Progress indicator:**
-
-* Analyzing: 0% → 100%
-* Fast stage, usually completes quickly
-
-**What to watch for:**
-
-* Should progress steadily without pauses
-* Warnings about missing metadata will appear in Debug Log
-
-### Stage 3: Calibrating
-
-**What's happening:**
-
-* **Debayering**: Converting RAW Bayer pattern to 3 channels
-* **Vignette correction**: Removing lens edge darkening
-* **Reflectance calibration**: Normalizing with target values
-* **Index calculation**: Computing multispectral indices
-* Processing each image through the full pipeline
-
-**Duration:** Majority of total processing time (60-80%)
-
-**Progress indicator:**
-
-* Calibrating: 0% → 100%
-* Current image being processed
-* Images completed / Total images
-
-**Processing behavior:**
-
-* **Free mode**: Processes one image at a time sequentially
-* **Chloros+ mode**: Processes up to 16 images simultaneously
-* **GPU acceleration**: Significantly speeds up this stage
-
-**What to watch for:**
-
-* Steady progress through image count
-* Check Debug Log for per-image completion messages
-* Warnings about image quality or calibration issues
-
-### Stage 4: Exporting
-
-**What's happening:**
-
-* Writing calibrated images to disk in selected format
-* Exporting multispectral index images with LUT colors
-* Creating camera model subfolders
-* Preserving original filenames with appropriate suffixes
-
-**Duration:** 10-20% of total processing time
-
-**Progress indicator:**
-
-* Exporting: 0% → 100%
-* Files being written
-* Export format and destination
-
-**What to watch for:**
-
-* Disk space warnings
-* File write errors
-* Completion of all configured outputs
+* **Hold musepekeren over** fremdriftslinjen for å se utvidet 4-trinns panel
+* **Klikk** på fremdriftslinjen for å fryse/feste det utvidede panelet
+* **Klikk igjen** for å frigjøre og skjule automatisk når musen forlater
+* Hvert trinn viser individuell fremdrift (0-100 %)
 
 ***
 
-## Debug Log Tab
+## Forstå hvert behandlingsstadium
 
-The Debug Log provides detailed information about processing progress and any issues encountered.
+### Trinn 1: Deteksjon (målregistrering)
 
-### Accessing the Debug Log
+**Hva skjer:**
 
-1. Click the **Debug Log** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> icon in the left sidebar
-2. Log panel opens showing real-time processing messages
-3. Auto-scrolls to show latest messages
+* Chloros skanner bilder merket med mål-avkrysningsruten
+* Datasynsalgoritmer identifiserer de 4 kalibreringspanelene
+* Refleksjonsverdier hentet fra hvert panel
+* Mål-tidsstempler registrert for riktig kalibreringsplanlegging
 
-### Understanding Log Messages
+**Varighet:**
 
-#### Information Messages (White/Gray)
+* Med merkede mål: 10-60 sekunder
+* Uten merkede mål: 5-30+ minutter (skanner alle bilder)
 
-Normal processing updates:
+**Fremdriftsindikator:**
+
+* Oppdager: 0 % → 100 %
+* Antall skannede bilder
+* Antall funnet mål
+
+**Hva du bør se etter:**
+
+* Bør fullføres raskt hvis målene er riktig merket
+* Hvis det tar for lang tid, kan det være at målene ikke er merket
+* Sjekk feilsøkingsloggen for meldinger om «Mål funnet»
+
+### Trinn 2: Analyse
+
+**Hva skjer:**
+
+* Leser EXIF-metadata for bilder (tidsstempler, eksponeringsinnstillinger)
+* Bestemmer kalibreringsstrategi basert på målets tidsstempler
+* Organiserer bildebehandlingskøen
+* Forbereder parallelle behandlingsarbeidere (kun Chloros+)
+
+**Varighet:** 5–30 sekunder
+
+**Fremdriftsindikator:**
+
+* Analyserer: 0 % → 100 %
+* Rask fase, fullføres vanligvis raskt
+
+**Hva du bør se etter:**
+
+* Bør gå jevnt uten pauser
+* Advarsler om manglende metadata vises i feilsøkingsloggen
+
+### Trinn 3: Kalibrering
+
+**Hva skjer:**
+
+* **Debayering**: Konvertering av RAW Bayer-mønster til 3 kanaler
+* **Vignettkorrigering**: Fjerner mørkningen i kantene av linsen
+* **Refleksjonskalibrering**: Normaliserer med målverdier
+* **Indeksberegning**: Beregner multispektrale indekser
+* Behandler hvert bilde gjennom hele prosessen
+
+**Varighet:** Størstedelen av den totale behandlingstiden (60–80 %)
+
+**Fremdriftsindikator:**
+
+* Kalibrering: 0 % → 100 %
+* Gjeldende bilde behandles
+* Fullførte bilder / Totalt antall bilder
+
+**Behandlingsatferd:**
+
+* **Fri modus**: Behandler ett bilde om gangen sekvensielt
+* **Chloros+ modus**: Behandler opptil 16 bilder samtidig
+* **GPU-akselerasjon**: Fremskynder denne fasen betydelig
+
+**Hva du bør se etter:**
+
+* Jevn fremgang gjennom antall bilder
+* Sjekk feilsøkingsloggen for meldinger om fullføring per bilde
+* Advarsler om bildekvalitet eller kalibreringsproblemer
+
+### Fase 4: Eksport
+
+**Hva skjer:**
+
+* Skriver kalibrerte bilder til disk i valgt format
+* Eksporterer multispektrale indeksbilder med LUT-farger
+* Oppretter undermapper for kameramodeller
+* Bevarer originale filnavn med passende suffikser
+
+**Varighet:** 10–20 % av total behandlingstid
+
+**Fremdriftsindikator:**
+
+* Eksportering: 0 % → 100 %
+* Filer som skrives
+* Eksportformat og destinasjon
+
+**Hva du bør være oppmerksom på:**
+
+* Advarsler om diskplass
+* Filskrivefeil
+* Fullføring av alle konfigurerte utdata
+
+***
+
+## Fanen Debug Log (Feilsøkingslogg)
+
+Feilsøkingsloggen gir detaljert informasjon om behandlingsfremdriften og eventuelle problemer som oppstår.
+
+### Tilgang til feilsøkingsloggen
+
+1. Klikk på **Debug Log** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> i venstre sidefelt
+2. Loggpanelet åpnes og viser behandlingsmeldinger i sanntid
+3. Ruller automatisk for å vise de nyeste meldingene
+
+### Forstå loggmeldinger
+
+#### Informasjonsmeldinger (hvite/grå)
+
+Normale behandlingsoppdateringer:
 
 ```
 [INFO] Processing started
@@ -169,9 +169,9 @@ Normal processing updates:
 [INFO] Processing complete
 ```
 
-#### Warning Messages (Yellow)
+#### Advarselsmeldinger (gule)
 
-Non-critical issues that don't stop processing:
+Ikke-kritiske problemer som ikke stopper behandlingen:
 
 ```
 [WARN] No GPS data found in IMG_0145.RAW
@@ -179,11 +179,11 @@ Non-critical issues that don't stop processing:
 [WARN] Low contrast in calibration panel - results may vary
 ```
 
-**Action:** Review warnings after processing, but don't interrupt
+**Handling:** Gjennomgå advarsler etter behandling, men ikke avbryt
 
-#### Error Messages (Red)
+#### Feilmeldinger (Red)
 
-Critical issues that may cause processing to fail:
+Kritiske problemer som kan føre til at behandlingen mislykkes:
 
 ```
 [ERROR] Cannot write file - disk full
@@ -191,202 +191,202 @@ Critical issues that may cause processing to fail:
 [ERROR] No targets detected - enable reflectance calibration or mark target images
 ```
 
-**Action:** Stop processing, resolve error, restart
+**Handling:** Stopp behandlingen, løse feilen, start på nytt.
 
-### Common Log Messages
+### Vanlige loggmeldinger
 
-| Message                          | Meaning                                | Action Needed                                         |
+| Meldinger                          | Betydning                                | Nødvendig handling                                         |
 | -------------------------------- | -------------------------------------- | ----------------------------------------------------- |
-| "Target detected in \[filename]" | Calibration target found successfully  | None - normal                                         |
-| "Processing image X of Y"        | Current progress update                | None - normal                                         |
-| "No targets found"               | No calibration targets detected        | Mark target images or disable reflectance calibration |
-| "Insufficient disk space"        | Not enough storage for output          | Free up disk space                                    |
-| "Skipping corrupted file"        | Image file is damaged                  | Re-copy file from SD card                             |
-| "PPK data applied"               | GPS corrections from .daq file applied | None - normal                                         |
+| «Mål oppdaget i \[filnavn]» | Kalibreringsmål funnet  | Ingen – normalt                                         |
+| «Behandler bilde X av Y»        | Oppdatering av gjeldende fremdrift                | Ingen – normalt                                         |
+| «Ingen mål funnet»               | Ingen kalibreringsmål oppdaget        | Merk målbilder eller deaktiver refleksjonskalibrering |
+| «Utilstrekkelig diskplass»        | Ikke nok lagringsplass for utdata          | Frigjør diskplass                                    |
+| «Hopper over ødelagt fil»        | Bildet er skadet                  | Kopier filen på nytt fra SD-kortet                             |
+| «PPK-data brukt»               | GPS-korreksjoner fra .daq-fil brukt | Ingen – normalt                                         |
 
-### Copying Log Data
+### Kopiere loggdata
 
-To copy log for troubleshooting or support:
+Slik kopierer du loggen for feilsøking eller support:
 
-1. Open Debug Log panel
-2. Click **"Copy Log"** button (or right-click → Select All)
-3. Paste into text file or email
-4. Send to MAPIR support if needed
+1. Åpne Debug Log-panelet.
+2. Klikk på **«Copy Log»**-knappen (eller høyreklikk → Select All).
+3. Lim inn i tekstfil eller e-post.
+4. Send til MAPIR-support om nødvendig.
 
 ***
 
-## System Resource Monitoring
+## Overvåking av systemressurser
 
-### CPU Usage
+### CPU-bruk
 
-**Free Mode:**
+**Fri modus:**
 
-* 1 CPU core at \~100%
-* Other cores idle or available
-* System remains responsive
+* 1 CPU-kjerne på \~100 %
+* Andre kjerner er inaktive eller tilgjengelige
+* Systemet forblir responsivt
 
-**Chloros+ Parallel Mode:**
+**Chloros+ Parallell modus:**
 
-* Multiple cores at 80-100% (up to 16 cores)
-* High overall CPU utilization
-* System may feel less responsive
+* Flere kjerner på 80–100 % (opptil 16 kjerner)
+* Høy total CPU-bruk
+* Systemet kan føles mindre responsivt
 
-**To monitor:**
+**For å overvåke:**
 
-* Windows Task Manager (Ctrl+Shift+Esc)
-* Performance tab → CPU section
-* Look for "Chloros" or "chloros-backend" processes
+* Windows Oppgavebehandling (Ctrl+Shift+Esc)
+* Fanen Ytelse → CPU-delen
+* Se etter prosessene «Chloros» eller «chloros-backend»
 
-### Memory (RAM) Usage
+### Minnebruk (RAM)
 
-**Typical usage:**
+**Typisk bruk:**
 
-* Small projects (< 100 images): 2-4 GB
-* Medium projects (100-500 images): 4-8 GB
-* Large projects (500+ images): 8-16 GB
-* Chloros+ parallel mode uses more RAM
+* Små prosjekter (&lt; 100 bilder): 2–4 GB
+* Mellomstore prosjekter (100–500 bilder): 4–8 GB
+* Store prosjekter (500+ bilder): 8–16 GB
+* Chloros+ parallellmodus bruker mer RAM
 
-**If memory is low:**
+**Hvis minnet er lavt:**
 
-* Process smaller batches
-* Close other applications
-* Upgrade RAM if regularly processing large datasets
+* Behandle mindre batcher
+* Lukk andre applikasjoner
+* Oppgrader RAM hvis du regelmessig behandler store datasett
 
-### GPU Usage (Chloros+ with CUDA)
+### GPU-bruk (Chloros+ med CUDA)
 
-When GPU acceleration is enabled:
+Når GPU-akselerasjon er aktivert:
 
-* NVIDIA GPU shows high utilization (60-90%)
-* VRAM usage increases (requires 4GB+ VRAM)
-* Calibrating stage is significantly faster
+* NVIDIA GPU viser høy utnyttelse (60-90 %)
+* VRAM-bruk øker (krever 4 GB+ VRAM)
+* Kalibreringsfasen er betydelig raskere
 
-**To monitor:**
+**For å overvåke:**
 
-* NVIDIA System Tray icon
-* Task Manager → Performance → GPU
-* GPU-Z or similar monitoring tool
+* NVIDIA-ikonet i systemstatusfeltet
+* Oppgavebehandling → Ytelse → GPU
+* GPU-Z eller lignende overvåkingsverktøy
 
 ### Disk I/O
 
-**What to expect:**
+**Hva du kan forvente:**
 
-* High disk read during Analyzing stage
-* High disk write during Exporting stage
-* SSD significantly faster than HDD
+* Høy disklesing under analyseringsfasen
+* Høy diskskriving under eksporteringsfasen
+* SSD er betydelig raskere enn HDD
 
-**Performance tip:**
+**Ytelsestips:**
 
-* Use SSD for project folder when possible
-* Avoid network drives for large datasets
-* Ensure disk isn't near capacity (affects write speed)
-
-***
-
-## Detecting Problems During Processing
-
-### Warning Signs
-
-**Progress stalls (no change for 5+ minutes):**
-
-* Check Debug Log for errors
-* Verify disk space available
-* Check Task Manager to ensure Chloros is running
-
-**Error messages appear frequently:**
-
-* Stop processing and review errors
-* Common causes: disk space, corrupted files, memory issues
-* See Troubleshooting section below
-
-**System becomes unresponsive:**
-
-* Chloros+ parallel mode using too many resources
-* Consider reducing concurrent tasks or upgrading hardware
-* Free mode is less resource-intensive
-
-### When to Stop Processing
-
-Stop processing if you see:
-
-* ❌ "Disk full" or "Cannot write file" errors
-* ❌ Repeated image file corruption errors
-* ❌ System completely frozen (not responding)
-* ❌ Realized wrong settings were configured
-* ❌ Wrong images imported
-
-**How to stop:**
-
-1. Click **Stop/Cancel button** (replaces Start button)
-2. Processing halts, progress is lost
-3. Fix issues and restart from beginning
+* Bruk SSD for prosjektmappen når det er mulig
+* Unngå nettverksstasjoner for store datasett
+* Sørg for at disken ikke er nær kapasitet (påvirker skrivehastigheten)
 
 ***
 
-## Troubleshooting During Processing
+## Oppdage problemer under behandling
 
-### Processing is Very Slow
+### Advarselstegn
 
-**Possible causes:**
+**Fremdriften stopper opp (ingen endring i 5+ minutter):**
 
-* Unmarked target images (scanning all images)
-* HDD instead of SSD storage
-* Insufficient system resources
-* Many indices configured
-* Network drive access
+* Sjekk feilsøkingsloggen for feil
+* Kontroller at det er ledig diskplass
+* Sjekk Oppgavebehandling for å sikre at Chloros kjører
 
-**Solutions:**
+**Feilmeldinger vises ofte:**
 
-1. If just started and in Detecting stage: Cancel, mark targets, restart
-2. For future: Use SSD, reduce indices, upgrade hardware
-3. Consider CLI for batch processing large datasets
+* Stopp behandlingen og gjennomgå feilene
+* Vanlige årsaker: diskplass, ødelagte filer, minneproblemer
+* Se avsnittet Feilsøking nedenfor
 
-### "Disk Space" Warnings
+**Systemet svarer ikke:**
 
-**Solutions:**
+* Chloros+ parallellmodus bruker for mange ressurser
+* Vurder å redusere antall samtidige oppgaver eller oppgradere maskinvaren
+* Fri modus er mindre ressurskrevende
 
-1. Free up disk space immediately
-2. Move project to drive with more space
-3. Reduce number of indices to export
-4. Use JPG format instead of TIFF (smaller files)
+### Når du skal stoppe behandlingen
 
-### Frequent "Corrupted File" Messages
+Stopp behandlingen hvis du ser:
 
-**Solutions:**
+* ❌ Feilmeldinger om «Disk full» eller «Kan ikke skrive fil»
+* ❌ Gjentatte feil med ødelagte bildefiler
+* ❌ Systemet er helt frosset (svarer ikke)
+* ❌ Oppdaget at feil innstillinger ble konfigurert
+* ❌ Feil bilder importert
 
-1. Re-copy images from SD card to ensure integrity
-2. Test SD card for errors
-3. Remove corrupted files from project
-4. Continue processing remaining images
+**Slik stopper du:**
 
-### System Overheating / Throttling
-
-**Solutions:**
-
-1. Ensure adequate ventilation
-2. Clean dust from computer vents
-3. Reduce processing load (use Free mode instead of Chloros+)
-4. Process during cooler times of day
+1. Klikk på **Stopp/Avbryt-knappen** (erstatter Start-knappen)
+2. Behandlingen stoppes, fremdriften går tapt
+3. Løs problemene og start på nytt fra begynnelsen
 
 ***
 
-## Processing Complete Notification
+## Feilsøking under behandling
 
-When processing finishes:
+### Behandlingen er veldig treg
 
-* Progress bar reaches 100%
-* **"Processing Complete"** message appears in Debug Log
-* Start button becomes enabled again
-* All output files are in camera model subfolder
+**Mulige årsaker:**
+
+* Ummerkede målbilder (skanner alle bilder)
+* HDD i stedet for SSD-lagring
+* Utilstrekkelige systemressurser
+* Mange indekser konfigurert
+* Tilgang til nettverksstasjon
+
+**Løsninger:**
+
+1. Hvis du nettopp har startet og er i detekteringsfasen: Avbryt, merk mål, start på nytt
+2. For fremtiden: Bruk SSD, reduser indekser, oppgrader maskinvare
+3. Vurder CLI for batchbehandling av store datasett
+
+### Advarsler om «diskplass»
+
+**Løsninger:**
+
+1. Frigjør diskplass umiddelbart
+2. Flytt prosjektet til en stasjon med mer plass
+3. Reduser antall indekser som skal eksporteres
+4. Bruk JPG-format i stedet for TIFF (mindre filer)
+
+### Hyppige meldinger om «korrupte filer»
+
+**Løsninger:**
+
+1. Kopier bildene på nytt fra SD-kortet for å sikre integriteten
+2. Test SD-kortet for feil
+3. Fjern korrupte filer fra prosjektet
+4. Fortsett behandlingen av de gjenværende bildene
+
+### Systemet blir overopphetet/bremset
+
+**Løsninger:**
+
+1. Sørg for tilstrekkelig ventilasjon
+2. Rengjør støv fra datamaskinens ventilasjonsåpninger
+3. Reduser behandlingsbelastningen (bruk Free-modus i stedet for Chloros+)
+4. Behandle på kjøligere tidspunkter av døgnet
 
 ***
 
-## Next Steps
+## Meldingen «Behandling fullført»
 
-Once processing completes:
+Når behandlingen er fullført:
 
-1. **Review results** - See [Finishing the Processing](finishing-the-processing.md)
-2. **Check output folder** - Verify all files exported correctly
-3. **Review Debug Log** - Check for any warnings or errors
-4. **Preview processed images** - Use Image Viewer or external software
+* Fremdriftslinjen når 100 %
+* Meldingen **«Behandling fullført»** vises i feilsøkingsloggen
+* Startknappen blir aktivert igjen
+* Alle utdatafilene ligger i undermappen for kameramodellen
 
-For information about reviewing and using your processed results, see [Finishing the Processing](finishing-the-processing.md).
+***
+
+## Neste trinn
+
+Når behandlingen er fullført:
+
+1. **Gjennomgå resultatene** – Se [Fullføre behandlingen](finishing-the-processing.md)
+2. **Kontroller utdatamappen** – Kontroller at alle filer er eksportert riktig
+3. **Gjennomgå feilsøkingsloggen** – Se etter eventuelle advarsler eller feil
+4. **Forhåndsvis behandlede bilder** – Bruk Image Viewer eller ekstern programvare
+
+For informasjon om gjennomgang og bruk av behandlede resultater, se [Fullføre behandlingen](finishing-the-processing.md).

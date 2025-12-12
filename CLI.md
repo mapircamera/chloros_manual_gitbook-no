@@ -1,48 +1,46 @@
-# CLI : Command Line
+# CLI : Kommandolinje
 
-<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>**Chloros CLI** gir kraftig kommandolinjetilgang til Chloros bildebehandlingsmotor, noe som muliggjør automatisering, skripting og headless-drift for bildebehandlingsarbeidsflytene dine.
 
-The **Chloros CLI** provides powerful command-line access to the Chloros image processing engine, enabling automation, scripting, and headless operation for your imaging workflows.
+### Viktige funksjoner
 
-### Key Features
+* 🚀 **Automatisering** – Skriptbasert batchbehandling av flere datasett
+* 🔗 **Integrasjon** – Integrer i eksisterende arbeidsflyter og rørledninger
+* 💻 **Headless drift** – Kjør uten GUI
+* 🌍 **Fler språk** – Støtte for 38 språk
+* ⚡ **Parallell behandling** – Skaleres dynamisk til CPU-en din (opptil 16 parallelle arbeidere)
 
-* 🚀 **Automation** - Script batch processing of multiple datasets
-* 🔗 **Integration** - Embed in existing workflows and pipelines
-* 💻 **Headless Operation** - Run without GUI
-* 🌍 **Multi-Language** - Support for 38 languages
-* ⚡ **Parallel Processing** - Dynamically scales to your CPU (up to 16 parallel workers)
+### Krav
 
-### Requirements
-
-| Requirement          | Details                                                             |
+| Krav          | Detaljer                                                             |
 | -------------------- | ------------------------------------------------------------------- |
-| **Operating System** | Windows 10/11 (64-bit)                                              |
-| **License**          | Chloros+ ([paid plan required](https://cloud.mapir.camera/pricing)) |
-| **Memory**           | 8GB RAM minimum (16GB recommended)                                  |
-| **Internet**         | Required for license activation                                     |
-| **Disk Space**       | Varies by project size                                              |
+| **Operativsystem** | Windows 10/11 (64-bit)                                              |
+| **Lisens**          | Chloros+ ([betalt abonnement kreves](https://cloud.mapir.camera/pricing)) |
+| **Minne**           | Minimum 8 GB RAM (16 GB anbefales)                                  |
+| **Internett**         | Kreves for lisensaktivering                                     |
+| **Diskplass**       | Varierer etter prosjektstørrelse                                              |
 
-{% hint style="warning" %}
-**License Requirement**: The CLI requires a paid Chloros+ subscription. Standard (free) plans do not have CLI access. Visit [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) to upgrade.
+{% hint style=&quot;warning&quot; %}
+**Lisenskrav**: CLI krever et betalt Chloros+-abonnement. Standard (gratis) abonnementer har ikke tilgang til CLI. Besøk [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) for å oppgradere.
 {% endhint %}
 
-## Quick Start
+## Hurtigstart
 
-### Installation
+### Installasjon
 
-The CLI is automatically included with the Chloros installer:
+CLI er automatisk inkludert i Chloros-installasjonsprogrammet:
 
-1. Download and run **Chloros Installer.exe**
-2. Complete the installation wizard
-3. CLI installed to: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
+1. Last ned og kjør **Chloros Installer.exe**
+2. Fullfør installasjonsveiviseren
+3. CLI installert til: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
 
-{% hint style="success" %}
-The installer automatically adds `chloros-cli` to your system PATH. Restart your terminal after installation.
+{% hint style=&quot;success&quot; %}
+Installasjonsprogrammet legger automatisk til `chloros-cli` i systemets PATH. Start terminalen på nytt etter installasjonen.
 {% endhint %}
 
-### First-Time Setup
+### Første gangs oppsett
 
-Before using the CLI, activate your Chloros+ license:
+Før du bruker CLI, må du aktivere Chloros+-lisensen din:
 
 ```bash
 # Login with your Chloros+ account
@@ -55,9 +53,9 @@ chloros-cli status
 chloros-cli process "C:\Images\Dataset001"
 ```
 
-### Basic Usage
+### Grunnleggende bruk
 
-Process a folder with default settings:
+Behandle en mappe med standardinnstillinger:
 
 ```powershell
 chloros-cli process "C:\Images\Dataset001"
@@ -65,9 +63,9 @@ chloros-cli process "C:\Images\Dataset001"
 
 ***
 
-## Command Reference
+## Kommandoreferanse
 
-### General Syntax
+### Generell syntaks
 
 ```
 chloros-cli [global-options] <command> [command-options]
@@ -75,89 +73,87 @@ chloros-cli [global-options] <command> [command-options]
 
 ***
 
-## Commands
+## Kommandoer
 
-### `process` - Process Images
+### `process` – Behandle bilder
 
-Process images in a folder with calibration.
+Behandle bilder i en mappe med kalibrering.
 
-**Syntax:**
+**Syntaks:**
 
 ```bash
 chloros-cli process <input-folder> [options]
 ```
 
-**Example:**
+**Eksempel:**
 
 ```powershell
 chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 ```
 
-#### Process Command Options
+#### Behandlingskommandoalternativer
 
-| Option                | Type    | Default        | Description                                                                            |
+| Alternativ                | Type    | Standard        | Beskrivelse                                                                            |
 | --------------------- | ------- | -------------- | -------------------------------------------------------------------------------------- |
-| `<input-folder>`      | Path    | _Required_     | Folder containing RAW/JPG multispectral images                                         |
-| `-o, --output`        | Path    | Same as input  | Output folder for processed images                                                     |
-| `-n, --project-name`  | String  | Auto-generated | Custom project name                                                                    |
-| `--vignette`          | Flag    | Enabled        | Enable vignette correction                                                             |
-| `--no-vignette`       | Flag    | -              | Disable vignette correction                                                            |
-| `--reflectance`       | Flag    | Enabled        | Enable reflectance calibration                                                         |
-| `--no-reflectance`    | Flag    | -              | Disable reflectance calibration                                                        |
-| `--ppk`               | Flag    | Disabled       | Apply PPK corrections from .daq light sensor data                                      |
-| `--format`            | Choice  | TIFF (16-bit)  | Output format: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
-| `--min-target-size`   | Integer | Auto           | Minimum target size in pixels for calibration panel detection                          |
-| `--target-clustering` | Integer | Auto           | Target clustering threshold (0-100)                                                    |
-| `--exposure-pin-1`    | String  | None           | Lock exposure for camera model (Pin 1)                                                 |
-| `--exposure-pin-2`    | String  | None           | Lock exposure for camera model (Pin 2)                                                 |
-| `--recal-interval`    | Integer | Auto           | Recalibration interval in seconds                                                      |
-| `--timezone-offset`   | Integer | 0              | Timezone offset in hours                                                               |
+| `<input-folder>`      | Sti    | _Påkrevd_     | Mappe som inneholder RAW/JPG multispektrale bilder                                         |
+| `-o, --output`        | Sti    | Samme som inngang  | Utgangsmappe for behandlede bilder                                                     |
+| `-n, --project-name`  | Streng  | Autogenerert | Tilpasset prosjektnavn                                                                    |
+| `--vignette`          | Flagg    | Aktivert        | Aktiver vignettkorreksjon                                                             |
+| `--no-vignette`       | Flagg    | -              | Deaktiver vignettkorreksjon                                                            |
+| `--reflectance`       | Flagg    | Aktivert        | Aktiver refleksjonskalibrering                                                         |
+| `--no-reflectance`    | Flagg    | -              | Deaktiver refleksjonskalibrering                                                        |
+| `--ppk`               | Flagg    | Deaktivert       | Bruk PPK-korreksjoner fra .daq lyssensordata                                      |
+| `--format`            | Valg  | TIFF (16-bit)  | Utdataformat: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
+| `--min-target-size`   | Heltall | Auto           | Minimum målstørrelse i piksler for kalibreringspaneldeteksjon                          |
+| `--target-clustering` | Heltall | Auto           | Terskel for målklynging (0-100)                                                    |
+| `--exposure-pin-1`    | Streng  | Ingen           | Lås eksponering for kameramodell (Pin 1)                                                 |
+| `--exposure-pin-2`    | Streng  | Ingen           | Lås eksponering for kameramodell (Pin 2)                                                 |
+| `--recal-interval`    | Heltall | Auto           | Rekalibreringsintervall i sekunder                                                      |
+| `--timezone-offset`   | Heltall | 0              | Tidssoneforskjell i timer                                                               |
 
 ***
 
-### `login` - Authenticate Account
+### `login` – Autentiser konto
 
-Login with your Chloros+ credentials to enable CLI processing.
+Logg inn med Chloros+-påloggingsinformasjonen din for å aktivere CLI-behandling.
 
-**Syntax:**
+**Syntaks:**
 
 ```bash
 chloros-cli login <email> <password>
 ```
 
-**Example:**
+**Eksempel:**
 
 ```powershell
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% hint style="warning" %}
-**Special Characters**: Use single quotes around passwords containing characters like `$`, `!`, or spaces.
+{% hint style=&quot;warning&quot; %}
+**Spesialtegn**: Bruk enkelt anførselstegn rundt passord som inneholder tegn som `$`, `!` eller mellomrom.
 {% endhint %}
 
-**Output:**
+**Utdata:**
 
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
 
-***
+### `logout` - Slett påloggingsinformasjon
 
-### `logout` - Clear Credentials
+Slett lagret påloggingsinformasjon og logg ut av kontoen din.
 
-Clear stored credentials and logout from your account.
-
-**Syntax:**
+**Syntaks:**
 
 ```bash
 chloros-cli logout
 ```
 
-**Example:**
+**Eksempel:**
 
 ```powershell
 chloros-cli logout
 ```
 
-**Output:**
+**Utdata:**
 
 ```
 ✓ Logout successful
@@ -166,23 +162,23 @@ chloros-cli logout
 
 ***
 
-### `status` - Check License Status
+### `status` - Sjekk lisensstatus
 
-Display current license and authentication status.
+Vis gjeldende lisens- og autentiseringsstatus.
 
-**Syntax:**
+**Syntaks:**
 
 ```bash
 chloros-cli status
 ```
 
-**Example:**
+**Eksempel:**
 
 ```powershell
 chloros-cli status
 ```
 
-**Output:**
+**Utdata:**
 
 ```
 ╔══════════════════════════════════════╗
@@ -197,31 +193,31 @@ chloros-cli status
 
 ***
 
-### `export-status` - Check Export Progress
+### `export-status` – Sjekk eksportfremdrift
 
-Monitor Thread 4 export progress during or after processing.
+Overvåk eksportfremdriften for tråd 4 under eller etter behandlingen.
 
-**Syntax:**
+**Syntaks:**
 
 ```bash
 chloros-cli export-status
 ```
 
-**Example:**
+**Eksempel:**
 
 ```powershell
 chloros-cli export-status
 ```
 
-**Use Case:** Call this command while processing is running to check export progress.
+**Bruksområde:** Kall denne kommandoen mens behandlingen pågår for å sjekke eksportfremdriften.
 
 ***
 
-### `language` - Manage Interface Language
+### `language` – Administrer grensesnittspråk
 
-View or change the CLI interface language.
+Vis eller endre grensesnittspråket CLI.
 
-**Syntax:**
+**Syntaks:**
 
 ```bash
 # Show current language
@@ -234,7 +230,7 @@ chloros-cli language --list
 chloros-cli language <language-code>
 ```
 
-**Examples:**
+**Eksempler:**
 
 ```powershell
 # View current language
@@ -250,66 +246,66 @@ chloros-cli language es
 chloros-cli language ja
 ```
 
-#### Supported Languages (38 Total)
+#### Støttede språk (38 totalt)
 
-| Code    | Language              | Native Name      |
+| Kode    | Språk              | Opprinnelig navn      |
 | ------- | --------------------- | ---------------- |
-| `en`    | English               | English          |
-| `es`    | Spanish               | Español          |
-| `pt`    | Portuguese            | Português        |
-| `fr`    | French                | Français         |
-| `de`    | German                | Deutsch          |
-| `it`    | Italian               | Italiano         |
-| `ja`    | Japanese              | 日本語              |
-| `ko`    | Korean                | 한국어              |
-| `zh`    | Chinese (Simplified)  | 简体中文             |
-| `zh-TW` | Chinese (Traditional) | 繁體中文             |
-| `ru`    | Russian               | Русский          |
-| `nl`    | Dutch                 | Nederlands       |
-| `ar`    | Arabic                | العربية          |
-| `pl`    | Polish                | Polski           |
-| `tr`    | Turkish               | Türkçe           |
+| `en`    | Engelsk               | English          |
+| `es`    | Spansk               | Español          |
+| `pt`    | Portugisisk            | Português        |
+| `fr`    | Fransk                | Français         |
+| `de`    | Tysk                | Deutsch          |
+| `it`    | Italiensk               | Italiano         |
+| `ja`    | Japansk              | 日本語              |
+| `ko`    | Koreansk                | 한국어              |
+| `zh`    | Kinesisk (forenklet)  | 简体中文             |
+| `zh-TW` | Kinesisk (tradisjonell) | 繁體中文             |
+| `ru`    | Russisk               | Русский          |
+| `nl`    | Nederlandsk                 | Nederlands       |
+| `ar`    | Arabisk                | العربية          |
+| `pl`    | Polsk                | Polski           |
+| `tr`    | Tyrkisk               | Türkçe           |
 | `hi`    | Hindi                 | हिंदी            |
-| `id`    | Indonesian            | Bahasa Indonesia |
-| `vi`    | Vietnamese            | Tiếng Việt       |
+| `id`    | Indonesisk            | Bahasa Indonesia |
+| `vi`    | Vietnamesisk            | Tiếng Việt       |
 | `th`    | Thai                  | ไทย              |
-| `sv`    | Swedish               | Svenska          |
-| `da`    | Danish                | Dansk            |
-| `no`    | Norwegian             | Norsk            |
-| `fi`    | Finnish               | Suomi            |
-| `el`    | Greek                 | Ελληνικά         |
-| `cs`    | Czech                 | Čeština          |
-| `hu`    | Hungarian             | Magyar           |
-| `ro`    | Romanian              | Română           |
-| `uk`    | Ukrainian             | Українська       |
-| `pt-BR` | Brazilian Portuguese  | Português Brasileiro |
-| `zh-HK` | Cantonese             | 粵語             |
-| `ms`    | Malay                 | Bahasa Melayu    |
-| `sk`    | Slovak                | Slovenčina       |
-| `bg`    | Bulgarian             | Български        |
-| `hr`    | Croatian              | Hrvatski         |
-| `lt`    | Lithuanian            | Lietuvių         |
-| `lv`    | Latvian               | Latviešu         |
-| `et`    | Estonian              | Eesti            |
-| `sl`    | Slovenian             | Slovenščina      |
+| `sv`    | Svensk               | Svenska          |
+| `da`    | Dansk                | Dansk            |
+| `no`    | Norsk             | Norsk            |
+| `fi`    | Finsk               | Suomi            |
+| `el`    | Gresk                 | Ελληνικά         |
+| `cs`    | Tsjekkisk                 | Čeština          |
+| `hu`    | Ungarsk             | Magyar           |
+| `ro`    | Rumensk              | Română           |
+| `uk`    | Ukrainsk             | Українська       |
+| `pt-BR` | Brasiliansk portugisisk  | Português Brasileiro |
+| `zh-HK` | Kantonesisk             | 粵語             |
+| `ms`    | Malayisk                 | Bahasa Melayu    |
+| `sk`    | Slovakisk                | Slovenčina       |
+| `bg`    | Bulgarsk             | Български        |
+| `hr`    | Kroatisk              | Hrvatski         |
+| `lt`    | Litauisk            | Lietuvių         |
+| `lv`    | Lettisk               | Latviešu         |
+| `et`    | Estisk              | Eesti            |
+| `sl`    | Slovensk             | Slovenščina      |
 
-{% hint style="success" %}
-**Automatic Persistence**: Your language preference is saved to `~/.chloros/cli_language.json` and persists across all sessions.
+{% hint style=&quot;success&quot; %}
+**Automatisk lagring**: Språkinnstillingen din lagres i `~/.chloros/cli_language.json` og beholdes gjennom alle økter.
 {% endhint %}
 
 ***
 
-### `set-project-folder` - Set Default Project Folder
+### `set-project-folder` - Angi standard prosjektmappe
 
-Change the default project folder location (shared with GUI).
+Endre standardplasseringen for prosjektmappen (deles med GUI).
 
-**Syntax:**
+**Syntaks:**
 
 ```bash
 chloros-cli set-project-folder <folder-path>
 ```
 
-**Example:**
+**Eksempel:**
 
 ```powershell
 chloros-cli set-project-folder "C:\Projects\2025"
@@ -317,23 +313,23 @@ chloros-cli set-project-folder "C:\Projects\2025"
 
 ***
 
-### `get-project-folder` - Show Project Folder
+### `get-project-folder` – Vis prosjektmappe
 
-Display the current default project folder location.
+Vis gjeldende standardplassering for prosjektmappen.
 
-**Syntax:**
+**Syntaks:**
 
 ```bash
 chloros-cli get-project-folder
 ```
 
-**Example:**
+**Eksempel:**
 
 ```powershell
 chloros-cli get-project-folder
 ```
 
-**Output:**
+**Utdata:**
 
 ```
 ℹ Current project folder: C:\Projects\2025
@@ -341,11 +337,11 @@ chloros-cli get-project-folder
 
 ***
 
-### `reset-project-folder` - Reset to Default
+### `reset-project-folder` – Tilbakestill til standard
 
-Reset the project folder to the default location.
+Tilbakestill prosjektmappen til standardplasseringen.
 
-**Syntax:**
+**Syntaks:**
 
 ```bash
 chloros-cli reset-project-folder
@@ -353,19 +349,19 @@ chloros-cli reset-project-folder
 
 ***
 
-## Global Options
+## Globale alternativer
 
-These options apply to all commands:
+Disse alternativene gjelder for alle kommandoer:
 
-| Option          | Type    | Default       | Description                                      |
+| Alternativ          | Type    | Standard       | Beskrivelse                                      |
 | --------------- | ------- | ------------- | ------------------------------------------------ |
-| `--backend-exe` | Path    | Auto-detected | Path to backend executable                       |
-| `--port`        | Integer | 5000          | Backend API port number                          |
-| `--restart`     | Flag    | -             | Force restart backend (kills existing processes) |
-| `--version`     | Flag    | -             | Show version information and exit                |
-| `--help`        | Flag    | -             | Show help information and exit                   |
+| `--backend-exe` | Sti    | Automatisk oppdaget | Sti til kjørbar backend                       |
+| `--port`        | Heltall | 5000          | Backend API portnummer                          |
+| `--restart`     | Flagg    | -             | Tving omstart av backend (avslutter eksisterende prosesser) |
+| `--version`     | Flagg    | -             | Vis versjonsinformasjon og avslutt                |
+| `--help`        | Flagg    | -             | Vis hjelpeinformasjon og avslutt                   |
 
-**Example with Global Options:**
+**Eksempel med globale alternativer:**
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Survey_001"
@@ -373,80 +369,78 @@ chloros-cli --port 5001 process "C:\Datasets\Survey_001"
 
 ***
 
-## Processing Settings Guide
+## Veiledning for behandlingsinnstillinger
 
-### Parallel Processing
+### Parallell behandling
 
-Chloros+ CLI **automatically scales** parallel processing to match your computer's capabilities:
+Chloros+ CLI **skalerer automatisk** parallell behandling for å tilpasse seg datamaskinens kapasitet:
 
-**How It Works:**
+**Slik fungerer det:**
 
-* Detects your CPU cores and RAM
-* Allocates workers: **2× CPU cores** (uses hyperthreading)
-* **Maximum: 16 parallel workers** (for stability)
+* Oppdager CPU-kjernene og RAM-minnet
+* Tildeler arbeidere: **2× CPU-kjerner** (bruker hyperthreading)
+* **Maksimum: 16 parallelle arbeidere** (for stabilitet)
 
-**System Tiers:**
+**Systemnivåer:**
 
-| System Type   | CPU        | RAM      | Workers  | Performance     |
+| Systemtype   | CPU        | RAM      | Arbeidere  | Ytelse     |
 | ------------- | ---------- | -------- | -------- | --------------- |
-| **High-End**  | 16+ cores  | 32+ GB   | Up to 16 | Maximum speed   |
-| **Mid-Range** | 8-15 cores | 16-31 GB | 8-16     | Excellent speed |
-| **Low-End**   | 4-7 cores  | 8-15 GB  | 4-8      | Good speed      |
+| **High-End**  | 16+ kjerner  | 32+ GB   | Opptil 16 | Maksimal hastighet   |
+| **Mid-Range** | 8-15 kjerner | 16-31 GB | 8-16     | Utmerket hastighet |
+| **Low-End**   | 4-7 kjerner  | 8-15 GB  | 4-8      | God hastighet      |
 
-{% hint style="success" %}
-**Automatic Optimization**: The CLI automatically detects your system specs and configures optimal parallel processing. No manual configuration needed!
+{% hint style=&quot;success&quot; %}
+**Automatisk optimalisering**: CLI oppdager automatisk systemspesifikasjonene dine og konfigurerer optimal parallellbehandling. Ingen manuell konfigurasjon nødvendig!
 {% endhint %}
 
-### Debayer Methods
+### Debayer-metoder
 
-The CLI uses **High Quality (Faster)** as the default and recommended debayer algorithm:
+CLI bruker **Høy kvalitet (raskere)** som standard og anbefalt debayer-algoritme:
 
-| Method                      | Quality | Speed | Description                                 |
+| Metode                      | Kvalitet | Hastighet | Beskrivelse                                 |
 | --------------------------- | ------- | ----- | ------------------------------------------- |
-| **High Quality (Faster)** ⭐ | ⭐⭐⭐⭐    | ⚡⚡⚡   | Edge-aware algorithm (default, recommended) |
+| **Høy kvalitet (raskere)** ⭐ | ⭐⭐⭐⭐    | ⚡⚡⚡   | Kantbevisst algoritme (standard, anbefalt) |
 
-### Vignette Correction
+### Vignettkorreksjon
 
-**What it does:** Corrects light falloff at image edges (darker corners common in camera imagery).
+**Hva den gjør:** Korrigerer lysfall ved bildets kanter (mørkere hjørner som er vanlige i kamerabilder).
 
-* **Enabled by default** - Most users should keep this enabled
-* Use `--no-vignette` to disable
+* **Aktivert som standard** – De fleste brukere bør holde denne funksjonen aktivert
+* Bruk `--no-vignette` for å deaktivere
 
-{% hint style="success" %}
-**Recommendation**: Always enable vignette correction to ensure uniform brightness across the frame.
+{% hint style=&quot;success&quot; %}
+**Anbefaling**: Aktiver alltid vignettkorreksjon for å sikre jevn lysstyrke i hele bildet.
 {% endhint %}
 
-### Reflectance Calibration
+### Refleksjonskalibrering
 
-Converts raw sensor values to standardized reflectance percentages using calibration panels.
+Konverterer rå sensorverdier til standardiserte refleksjonsprosentandeler ved hjelp av kalibreringspaneler.
 
-* **Enabled by default** - Essential for vegetation analysis
-* Requires calibration target panels in images
-* Use `--no-reflectance` to disable
+* **Aktivert som standard** – Viktig for vegetasjonsanalyse.
+* Krever kalibreringsmålpaneler i bildene.
+* Bruk `--no-reflectance` for å deaktivere.
 
-{% hint style="info" %}
-**Requirements**: Ensure calibration panels are properly exposed and visible in your images for accurate reflectance conversion.
+{% hint style=&quot;info&quot; %}
+**Krav**: Sørg for at kalibreringspanelene er riktig eksponert og synlige i bildene dine for nøyaktig refleksjonskonvertering.
 {% endhint %}
 
-### PPK Corrections
+### PPK-korreksjoner
 
-**What it does:** Applies Post-Processed Kinematic corrections using DAQ-A-SD log data for improved GPS accuracy.
+**Hva det gjør:** Bruker etterbehandlede kinematiske korreksjoner ved hjelp av DAQ-A-SD-loggdata for forbedret GPS-nøyaktighet.
 
-* **Disabled by default**
-* Use `--ppk` to enable
-* Requires .daq files in project folder from MAPIR DAQ-A-SD light sensor.
+* **Deaktivert som standard**
+* Bruk `--ppk` for å aktivere
+* Krever .daq-filer i prosjektmappen fra MAPIR DAQ-A-SD lyssensor.
 
-### Output Formats
+### Utdataformater
 
-<table><thead><tr><th width="197">Format</th><th width="130.20001220703125">Bit Depth</th><th width="116.5999755859375">File Size</th><th>Best For</th></tr></thead><tbody><tr><td><strong>TIFF (16-bit)</strong> ⭐</td><td>16-bit integer</td><td>Large</td><td>GIS analysis, photogrammetry (recommended)</td></tr><tr><td><strong>TIFF (32-bit, Percent)</strong></td><td>32-bit float</td><td>Very Large</td><td>Scientific analysis, research</td></tr><tr><td><strong>PNG (8-bit)</strong></td><td>8-bit integer</td><td>Medium</td><td>Visual inspection, web sharing</td></tr><tr><td><strong>JPG (8-bit)</strong></td><td>8-bit integer</td><td>Small</td><td>Quick preview, compressed output</td></tr></tbody></table>
+<table><thead><tr><th width="197">Format</th><th width="130.20001220703125">Bittdybde</th><th width="116.5999755859375">Filstørrelse</th><th>Best egnet for</th></tr></thead><tbody><tr><td><strong>TIFF (16-bit)</strong> ⭐</td><td>16-biters heltall</td><td>Stor</td><td>GIS-analyse, fotogrammetri (anbefalt)</td></tr><tr><td><strong>TIFF (32-bit, prosent)</strong></td><td>32-biters flytende</td><td>Svært stor</td><td>Vitenskapelig analyse, forskning</td></tr><tr><td><strong>PNG (8-bit)</strong></td><td>8-biters heltall</td><td>Middels</td><td>Visuell inspeksjon, deling på nettet</td></tr><tr><td><strong>JPG (8-bit)</strong></td><td>8-biters heltall</td><td>Liten</td><td>Rask forhåndsvisning, komprimert utdata</td></tr></tbody></table>***
 
-***
+## Automatisering og skripting
 
-## Automation & Scripting
+### PowerShell-batchbehandling
 
-### PowerShell Batch Processing
-
-Process multiple dataset folders automatically:
+Behandle flere datasettmapper automatisk:
 
 ```powershell
 # process_all_datasets.ps1
@@ -470,9 +464,9 @@ foreach ($dataset in $datasets) {
 Write-Host "All datasets processed!" -ForegroundColor Green
 ```
 
-### Windows Batch Script
+### Windows-batchskript
 
-Simple loop for batch processing:
+Enkel sløyfe for batchbehandling:
 
 ```batch
 @echo off
@@ -497,9 +491,9 @@ echo All datasets processed!
 pause
 ```
 
-### Python Automation Script
+### Python automatiseringsskript
 
-Advanced automation with error handling:
+Avansert automatisering med feilhåndtering:
 
 ```python
 import subprocess
@@ -578,16 +572,16 @@ if __name__ == '__main__':
 
 ***
 
-## Processing Workflow
+## Behandlingsarbeidsflyt
 
-### Standard Workflow
+### Standard arbeidsflyt
 
-1. **Input**: Folder containing RAW/JPG image pairs
-2. **Discovery**: CLI auto-scans for supported image files
-3. **Processing**: Parallel mode scales to your CPU cores (Chloros+)
-4. **Output**: Creates camera-model subfolders with processed images
+1. **Inndata**: Mappe som inneholder RAW/JPG-bildepar
+2. **Oppdagelse**: CLI skanner automatisk etter støttede bildefiler
+3. **Behandling**: Parallellmodus skaleres til CPU-kjernene dine (Chloros+)
+4. **Utdata**: Oppretter undermapper for kameramodeller med behandlede bilder
 
-### Example Output Structure
+### Eksempel på utdatastruktur
 
 ```
 MyProject/
@@ -600,72 +594,72 @@ MyProject/
     └── ...
 ```
 
-### Processing Time Estimates
+### Estimert behandlingstid
 
-Typical processing times for 100 images (12MP each):
+Typisk behandlingstid for 100 bilder (12 MP hver):
 
-| Mode              | Time      | Hardware                                     |
+| Modus              | Tid      | Maskinvare                                     |
 | ----------------- | --------- | -------------------------------------------- |
-| **Parallel Mode** | 5-10 min  | i7/Ryzen 7, 16GB RAM, SSD (up to 16 workers) |
-| **Parallel Mode** | 10-15 min | i5/Ryzen 5, 8GB RAM, HDD (up to 8 workers)   |
+| **Parallell modus** | 5–10 min  | i7/Ryzen 7, 16 GB RAM, SSD (opptil 16 arbeidere) |
+| **Parallell modus** | 10–15 min | i5/Ryzen 5, 8 GB RAM, HDD (opptil 8 arbeidere)   |
 
-{% hint style="info" %}
-**Performance Tip**: Processing time varies based on image count, resolution, and computer specs.
+{% hint style=&quot;info&quot; %}
+**Ytelsestips**: Behandlingstiden varierer avhengig av antall bilder, oppløsning og datamaskinens spesifikasjoner.
 {% endhint %}
 
 ***
 
-## Troubleshooting
+## Feilsøking
 
-### CLI Not Found
+### CLI ikke funnet
 
-**Error:**
+**Feil:**
 
 ```
 'chloros-cli' is not recognized as an internal or external command
 ```
 
-**Solutions:**
+**Løsninger:**
 
-1. Verify installation location:
+1. Kontroller installasjonsstedet:
 
 ```powershell
 dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
 ```
 
-2. Use full path if not in PATH:
+2. Bruk full sti hvis ikke i PATH:
 
 ```powershell
 "C:\Program Files\Chloros\resources\cli\chloros-cli.exe" process "C:\Datasets\Field_A"
 ```
 
-3. Add to PATH manually:
-   * Open System Properties → Environment Variables
-   * Edit PATH variable
-   * Add: `C:\Program Files\Chloros\resources\cli`
-   * Restart terminal
+3. Legg til PATH manuelt:
+   * Åpne Systemegenskaper → Miljøvariabler
+   * Rediger PATH-variabelen
+   * Legg til: `C:\Program Files\Chloros\resources\cli`
+   * Start terminalen på nytt
 
 ***
 
-### Backend Failed to Start
+### Backend kunne ikke startes
 
-**Error:**
+**Feil:**
 
 ```
 Backend failed to start within 30 seconds
 ```
 
-**Solutions:**
+**Løsninger:**
 
-1. Check if backend already running (close it first)
-2. Check Windows Firewall is not blocking
-3. Try different port:
+1. Kontroller om backend allerede kjører (lukk den først)
+2. Kontroller at Windows brannmur ikke blokkerer
+3. Prøv en annen port:
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
 ```
 
-4. Force restart backend:
+4. Tving omstart av backend:
 
 ```powershell
 chloros-cli --restart process "C:\Datasets\Field_A"
@@ -673,71 +667,71 @@ chloros-cli --restart process "C:\Datasets\Field_A"
 
 ***
 
-### License / Authentication Issues
+### Lisens-/autentiseringsproblemer
 
-**Error:**
+**Feil:**
 
 ```
 Chloros+ license required for CLI access
 ```
 
-**Solutions:**
+**Løsninger:**
 
-1. Verify you have an active Chloros+ subscription
-2. Login with your credentials:
+1. Kontroller at du har et aktivt Chloros+-abonnement.
+2. Logg inn med påloggingsinformasjonen din:
 
 ```powershell
 chloros-cli login user@example.com 'password'
 ```
 
-3. Check license status:
+3. Kontroller lisensstatus:
 
 ```powershell
 chloros-cli status
 ```
 
-4. Contact support: info@mapir.camera
+4. Kontakt kundestøtte: info@mapir.camera
 
 ***
 
-### No Images Found
+### Ingen bilder funnet
 
-**Error:**
+**Feil:**
 
 ```
 No images found in the specified folder
 ```
 
-**Solutions:**
+**Løsninger:**
 
-1. Verify folder contains supported formats (.RAW, .TIF, .JPG)
-2. Check folder path is correct (use quotes for paths with spaces)
-3. Ensure you have read permissions for the folder
-4. Check file extensions are correct
-
-***
-
-### Processing Stalls or Hangs
-
-**Solutions:**
-
-1. Check available disk space (ensure enough for output)
-2. Close other applications to free memory
-3. Reduce image count (process in batches)
+1. Kontroller at mappen inneholder støttede formater (.RAW, .TIF, .JPG)
+2. Kontroller at mappestien er riktig (bruk anførselstegn for stier med mellomrom)
+3. Kontroller at du har lesetillatelse for mappen
+4. Kontroller at filtypen er riktig
 
 ***
 
-### Port Already in Use
+### Behandlingen stopper eller henger seg opp
 
-**Error:**
+**Løsninger:**
+
+1. Kontroller ledig diskplass (sørg for at det er nok til utdata)
+2. Lukk andre programmer for å frigjøre minne
+3. Reduser antall bilder (behandle i grupper)
+
+***
+
+### Porten er allerede i bruk
+
+**Feil:**
 
 ```
 Port 5000 is already in use
 ```
 
-**Solution:**
+**Løsning:**
 
-Specify a different port:
+Angi en annen port:
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
@@ -745,35 +739,35 @@ chloros-cli --port 5001 process "C:\Datasets\Field_A"
 
 ***
 
-## FAQ
+## Vanlige spørsmål
 
-### Q: Do I need a license for the CLI?
+### Spørsmål: Trenger jeg en lisens for CLI?
 
-**A:** Yes! The CLI requires a paid **Chloros+ license**.
+**Svar:** Ja! CLI krever en betalt **Chloros+ lisens**.
 
-* ❌ Standard (free) plan: CLI disabled
-* ✅ Chloros+ (paid) plans: CLI fully enabled
+* ❌ Standard (gratis) plan: CLI deaktivert
+* ✅ Chloros+ (betalte) planer: CLI fullt aktivert
 
-Subscribe at: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
-
-***
-
-### Q: Can I use the CLI on a server without GUI?
-
-**A:** Yes! The CLI runs completely headless. Requirements:
-
-* Windows Server 2016 or later
-* Visual C++ Redistributable installed
-* Sufficient RAM (8GB minimum, 16GB recommended)
-* One-time GUI license activation on any machine
+Abonner på: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
 ***
 
-### Q: Where are processed images saved?
+### Spørsmål: Kan jeg bruke CLI på en server uten GUI?
 
-**A:** By default, processed images are saved in the **same folder as input** in camera-model subfolders (e.g., `Survey3N_RGN/`).
+**Svar:** Ja! CLI kjører helt uten skjerm. Krav:
 
-Use `-o` option to specify different output folder:
+* Windows Server 2016 eller nyere
+* Visual C++ Redistributable installert
+* Tilstrekkelig RAM (minst 8 GB, 16 GB anbefales)
+* Engangsaktivering av GUI-lisens på en hvilken som helst maskin
+
+***
+
+### Spørsmål: Hvor lagres behandlede bilder?
+
+**Svar:** Som standard lagres behandlede bilder i **samme mappe som inndata** i undermapper for kameramodeller (f.eks. `Survey3N_RGN/`).
+
+Bruk alternativet `-o` for å angi en annen utdatamappe:
 
 ```powershell
 chloros-cli process "C:\Input" -o "D:\Output"
@@ -781,13 +775,13 @@ chloros-cli process "C:\Input" -o "D:\Output"
 
 ***
 
-### Q: Can I process multiple folders at once?
+### Spørsmål: Kan jeg behandle flere mapper samtidig?
 
-**A:** Not directly in one command, but you can use scripting to process folders sequentially. See [Automation & Scripting](CLI.md#automation--scripting) section.
+**Svar:** Ikke direkte med én kommando, men du kan bruke skript for å behandle mapper sekvensielt. Se avsnittet [Automatisering og skripting](CLI.md#automation--scripting).
 
 ***
 
-### Q: How do I save CLI output to a log file?
+### Spørsmål: Hvordan lagrer jeg CLI-utdata i en loggfil?
 
 **PowerShell:**
 
@@ -803,33 +797,33 @@ chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
 
 ***
 
-### Q: What happens if I press Ctrl+C during processing?
+### Spørsmål: Hva skjer hvis jeg trykker Ctrl+C under behandlingen?
 
-**A:** The CLI will:
+**Svar:** CLI vil:
 
-1. Stop processing gracefully
-2. Shut down the backend
-3. Exit with code 130
+1. Stoppe behandlingen på en ordentlig måte
+2. Slå av backenden
+3. Avslutte med kode 130
 
-Partially processed images may remain in the output folder.
-
-***
-
-### Q: Can I automate CLI processing?
-
-**A:** Absolutely! The CLI is designed for automation. See [Automation & Scripting](CLI.md#automation--scripting) for PowerShell, Batch, and Python examples.
+Delvis behandlede bilder kan forbli i utdatamappen.
 
 ***
 
-### Q: How do I check the CLI version?
+### Spørsmål: Kan jeg automatisere CLI-behandlingen?
 
-**A:**
+**Svar:** Absolutt! CLI er designet for automatisering. Se [Automatisering og skripting](CLI.md#automation--scripting) for eksempler på PowerShell, Batch og Python.
+
+***
+
+### Spørsmål: Hvordan sjekker jeg CLI-versjonen?
+
+**Svar:**
 
 ```powershell
 chloros-cli --version
 ```
 
-**Output:**
+**Utdata:**
 
 ```
 Chloros CLI 1.0.2
@@ -837,11 +831,11 @@ Chloros CLI 1.0.2
 
 ***
 
-## Getting Help
+## Få hjelp
 
-### Command-Line Help
+### Kommandolinjehjelp
 
-View help information directly in the CLI:
+Vis hjelpeinformasjon direkte i CLI:
 
 ```powershell
 # General help
@@ -853,19 +847,19 @@ chloros-cli login --help
 chloros-cli language --help
 ```
 
-### Support Channels
+### Supportkanaler
 
-* **Email**: info@mapir.camera
-* **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* **Pricing**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
+* **E-post**: info@mapir.camera
+* **Nettsted**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
+* **Priser**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
 ***
 
-## Complete Examples
+## Komplette eksempler
 
-### Example 1: Basic Processing
+### Eksempel 1: Grunnleggende behandling
 
-Process with default settings (vignette, reflectance):
+Behandling med standardinnstillinger (vignett, refleksjonsgrad):
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A_2025_01_15"
@@ -873,9 +867,9 @@ chloros-cli process "C:\Datasets\Field_A_2025_01_15"
 
 ***
 
-### Example 2: High-Quality Scientific Output
+### Eksempel 2: Vitenskapelig utdata av høy kvalitet
 
-32-bit float TIFF:
+32-biters flytende TIFF:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
@@ -886,9 +880,9 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 ***
 
-### Example 3: Fast Preview Processing
+### Eksempel 3: Rask forhåndsvisning
 
-8-bit PNG without calibration for quick review:
+8-biters PNG uten kalibrering for rask gjennomgang:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
@@ -899,9 +893,9 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 ***
 
-### Example 4: PPK-Corrected Processing
+### Eksempel 4: PPK-korrigert behandling
 
-Apply PPK corrections with reflectance:
+Bruk PPK-korrigeringer med reflektans:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
@@ -911,9 +905,9 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 ***
 
-### Example 5: Custom Output Location
+### Eksempel 5: Tilpasset utdataposisjon
 
-Process to different drive with specific format:
+Behandle til en annen stasjon med spesifikt format:
 
 ```powershell
 chloros-cli process "C:\Input\Raw_Images" ^
@@ -923,9 +917,9 @@ chloros-cli process "C:\Input\Raw_Images" ^
 
 ***
 
-### Example 6: Authentication Workflow
+### Eksempel 6: Autentiseringsarbeidsflyt
 
-Complete authentication flow:
+Fullfør autentiseringsflyten:
 
 ```powershell
 # Step 1: Login
@@ -943,9 +937,9 @@ chloros-cli logout
 
 ***
 
-### Example 7: Multi-Language Usage
+### Eksempel 7: Flerspråklig bruk
 
-Change interface language:
+Endre grensesnittspråk:
 
 ```powershell
 # List available languages

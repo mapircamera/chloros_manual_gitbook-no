@@ -1,16 +1,14 @@
-# Chloros+ Logg inn
+# Chloros+ Innlogging
 
-## Chloros og Chloros (nettleser) Logg inn
+## Chloros og Chloros (nettleser) Innlogging
 
-Brukeren <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> sidefeltmenyen lar deg logge på Chloros+-kontoen din og låse opp tilleggsfunksjoner.
+Bruker <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> sidebar-menyen lar deg logge inn på din Chloros+-konto og låse opp tilleggsfunksjoner.
 
-Når du er logget på vil kontoopplysningene dine vises:
+Når du er logget inn, vises kontoopplysningene dine:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>## CLI Innlogging
 
-## CLI-pålogging
-
-Logg på med Chloros+-legitimasjonen din for å aktivere CLI-behandling.
+Logg inn med Chloros+-påloggingsinformasjonen din for å aktivere CLI-behandling.
 
 **Syntaks:**
 
@@ -24,20 +22,18 @@ chloros-cli login <email> <password>
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% hint style="warning" %}
-**Spesialtegn**: Bruk enkle anførselstegn rundt passord som inneholder tegn som `$`, `!` eller mellomrom.
+{% hint style=&quot;warning&quot; %}
+**Spesialtegn**: Bruk enkelt anførselstegn rundt passord som inneholder tegn som `$`, `!` eller mellomrom.
 {% endhint %}
 
-**Produksjon:**
+**Utdata:**
 
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>### Planens utløpsdato
 
-### Planens utløp
+Planens utløpsdato i GUI viser når lisensen din blir ugyldig. For gjentakende månedlige abonnementer er utløpsdatoen ved slutten av måneden. For årlige abonnementer er det ett år etter at du startet abonnementet. Lisenskontrollen krever en månedlig internettforbindelse for å verifisere, med en 30 dagers nådeperiode.
 
-Planens utløp i GUI viser når lisensen din blir ugyldig. For tilbakevendende månedlige abonnementer er utløpet ved slutten av måneden. For årsabonnement er det ett år etter at du startet abonnementet. Lisenssjekken krever en månedlig internettforbindelse for å bekrefte, med en 30-dagers utsettelsesperiode.
+### Enhetsbegrensning
 
-### Enhetsgrense
+Hver Chloros+-plan tilbyr et forskjellig antall registrerte enheter. Hver enhet du logger inn på med en Chloros+-konto, teller med i antall registrerte enheter. Du kan endre navn på og fjerne en enhet på MAPIR Cloud-kontosiden.
 
-Hver Chloros+-plan tilbyr et annet antall registrerte enheter. Hver enhet du logger på med en Chloros+-konto vil telle mot antallet registrerte enheter. Du kan gi nytt navn til og fjerne en enhet på MAPIR Cloud-kontosiden din.
-
-<table><thead><tr><th width="168.5999755859375" align="right">Chloros+ Plan</th><th align="center">KOPER</th><th align="center">BRONSE</th><th align="center">SØLV</th><th align="center">GULL</th></tr></thead><tbody><tr><td align="right">Enheter Støttes</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>
+<table><thead><tr><th width="168.5999755859375" align="right">Chloros+-abonnement</th><th align="center">KOBBER</th><th align="center">BRONZE</th><th align="center">SØLV</th><th align="center">GULL</th></tr></thead><tbody><tr><td align="right">Støttede enheter</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>
