@@ -4,21 +4,21 @@ metaLinks:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/output-image-formats
 ---
 
-# Output Image Formats
+# Utdata bildeformater
 
 ### TIFF (16-bit)
 
-16-bit (pixel digital number 0 - 65535) TIFF (.tif) format output.
+16-biters (digitalt pikselnummer 0 - 65535) TIFF-format (.tif).
 
-### TIFF (32-bit, Percent %)
+### TIFF (32-bit, prosent %)
 
-32-bit (pixel float 0.0 - 1.0) TIFF (.tif) format output. Pixel values represent reflectance percentages where 0.0 = 0% and 1.0 = 100%.
+32-biters (pixel float 0,0 - 1,0) TIFF (.tif) formatutgang. Pikselverdier representerer refleksjonsprosent der 0,0 = 0 % og 1,0 = 100 %.
 
 ### **JPG (8-bit)**
 
-8-bit (pixel digital number 0 -255) JPG (.jpg) format output.
+8-biters (digitalt pikselnummer 0 -255) JPG-format (.jpg).
 
 ### **PNG (8-bit)**
 
-8-bit (pixel digital number 0 - 255) PNG (.png) format output. Lossless compression suitable for web viewing and visualization.
+8-biters (digitalt pikselnummer 0 - 255) PNG-format (.png). Tapsfri komprimering egnet for nettvisning og visualisering.
 

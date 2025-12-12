@@ -1,34 +1,34 @@
-# Table of contents
+# Innholdsfortegnelse
 
-* [Getting Started](README.md)
-* [GUI : Navigation](navigation.md)
-* [GUI : Projects](projects.md)
-* [CLI : Command Line](CLI.md)
-* [API : Python SDK](api-python-sdk.md)
-* [Supported Cameras](supported-cameras.md)
-* [Output Image Formats](output-image-formats.md)
-* [Chloros+ Login](chloros+-login.md)
-* [Calibration Targets](calibration-targets.md)
-* [Supported Languages](supported-languages.md)
-* [Download](download.md)
+* [Komme i gang](README.md)
+* [GUI: Navigasjon](navigation.md)
+* [GUI: Prosjekter](projects.md)
+* [CLI: Kommandolinje](CLI.md)
+* [API: Python SDK](api-python-sdk.md)
+* [Støttede kameraer](supported-cameras.md)
+* [Utdata bildeformater](output-image-formats.md)
+* [Chloros+ Logg inn](chloros+-login.md)
+* [Kalibreringsmål](calibration-targets.md)
+* [Støttede språk](supported-languages.md)
+* [Last ned](download.md)
 * [FAQ](faq.md)
 
-## Processing Images (GUI)
+## Behandler bilder (GUI)
 
-* [Adjusting Project Settings](processing-images-gui/adjusting-project-settings.md)
-* [Adding Files to a Project](processing-images-gui/page-1.md)
-* [Choosing Target Images](processing-images-gui/choosing-target-images.md)
-* [Starting the Processing](processing-images-gui/starting-the-processing.md)
-* [Monitoring the Processing](processing-images-gui/monitoring-the-processing.md)
-* [Finishing the Processing](processing-images-gui/finishing-the-processing.md)
+* [Justering av prosjektinnstillinger](processing-images-gui/adjusting-project-settings.md)
+* [Legge til filer i et prosjekt](processing-images-gui/page-1.md)
+* [Velge målbilder](processing-images-gui/choosing-target-images.md)
+* [Starte behandlingen](processing-images-gui/starting-the-processing.md)
+* [Overvåking av behandlingen](processing-images-gui/monitoring-the-processing.md)
+* [Fullføre behandlingen](processing-images-gui/finishing-the-processing.md)
 
-## PROJECT SETTINGS
+## PROSJEKTINNSTILLINGER
 
-* [Project Settings](project-settings/page-2.md)
-* [Multispectral Index Formulas](project-settings/multispectral-index-formulas.md)
+* [Prosjektinnstillinger](project-settings/page-2.md)
+* [Multispektrale indeksformler](project-settings/multispectral-index-formulas.md)
 
-## IMAGE VIEWER (GUI)
+## BILDEVISER (GUI)
 
-* [Opening an Image Full Screen](image-viewer-gui/page-3.md)
-* [Image Layers](image-viewer-gui/image-layers.md)
-* [Index/LUT Sandbox](image-viewer-gui/index-lut-sandbox.md)
+* [Åpne et bilde i fullskjerm](image-viewer-gui/page-3.md)
+* [Bildelag](image-viewer-gui/image-layers.md)
+* [Indeks/LUT Sandkasse](image-viewer-gui/index-lut-sandbox.md)
