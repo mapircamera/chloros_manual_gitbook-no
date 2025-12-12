@@ -4,57 +4,78 @@ Chloros tilbyr full grensesnittstøtte på **38 språk over hele verden**, noe s
 
 Chloros støtter følgende språk:
 
-1. 🇺🇸 **Engelsk**
-2. 🇪🇸 **Español** (spansk)
-3. 🇵🇹 **Português** (portugisisk)
-4. 🇫🇷 **Français** (fransk)
-5. 🇩🇪 **Deutsch** (tysk)
-6. 🇮🇹 **Italiano** (italiensk)
-7. 🇯🇵 **日本語** (japansk)
-8. 🇰🇷 **한국어** (koreansk)
-9. 🇨🇳 **简体中文** (forenklet kinesisk)
-10. 🇹🇼 **繁體中文** (Tradisjonell kinesisk)
-11. 🇷🇺 **Русский** (Russisk)
-12. 🇳🇱 **Nederlands** (Nederlandsk)
-13. 🇸🇦 **العربية** (Arabisk)
-14. 🇵🇱 **Polski** (polsk)
-15. 🇹🇷 **Türkçe** (tyrkisk)
-16. 🇮🇳 **हिंदी** (hindi)
-17. 🇮🇩 **Bahasa Indonesia** (indonesisk)
-18. 🇻🇳 **Tiếng Việt** (vietnamesisk)
-19. 🇹🇭 **ไทย** (thailandsk)
-20. 🇸🇪 **Svenska** (svensk)
-21. 🇩🇰 **Dansk** (dansk)
-22. 🇳🇴 **Norsk** (norsk)
-23. 🇫🇮 **Suomi** (finsk)
-24. 🇬🇷 **Ελληνικά** (gresk)
-25. 🇨🇿 **Čeština** (Tsjekkisk)
-26. 🇭🇺 **Magyar** (Ungarsk)
-27. 🇷🇴 **Română** (Rumensk)
-28. 🇺🇦 **Українська** (Ukrainsk)
-29. 🇧🇷 **Português Brasileiro** (brasiliansk portugisisk)
-30. 🇭🇰 **粵語** (kantonesisk)
-31. 🇲🇾 **Bahasa Melayu** (malaysisk)
-32. 🇸🇰 **Slovenčina** (Slovakisk)
-33. 🇧🇬 **Български** (Bulgarsk)
-34. 🇭🇷 **Hrvatski** (Kroatisk)
-35. 🇱🇹 **Lietuvių** (Litauisk)
-36. 🇱🇻 **Latviešu** (latvisk)
-37. 🇪🇪 **Eesti** (estisk)
-38. 🇸🇮 **Slovenščina** (slovensk)
+| # | Språk | Innfødt navn | CLI-kode |
+|---|----------|-------------|----------|
+| 1 | 🇺🇸 Engelsk | Engelsk | `en` |
+| 2 | 🇪🇸 Spansk | Español | `es` |
+| 3 | 🇵🇹 Portugisisk | Português | `pt` |
+| 4 | 🇫🇷 Fransk | Français | `fr` |
+| 5 | 🇩🇪 Tysk | Deutsch | `de` |
+| 6 | 🇮🇹 Italiensk | Italiano | `it` |
+| 7 | 🇯🇵 Japansk | 日本語 | `ja` |
+| 8 | 🇰🇷 Koreansk | 한국어 | `ko` |
+| 9 | 🇨🇳 Kinesisk (forenklet) | 简体中文 | `zh` |
+| 10 | 🇹🇼 Kinesisk (tradisjonell) | 繁體中文 | `zh-TW` |
+| 11 | 🇷🇺 Russisk | Русский | `ru` |
+| 12 | 🇳🇱 Nederlandsk | Nederlands | `nl` |
+| 13 | 🇸🇦 Arabisk | العربية | `ar` |
+| 14 | 🇵🇱 Polsk | Polski | `pl` |
+| 15 | 🇹🇷 Tyrkisk | Türkçe | `tr` |
+| 16 | 🇮🇳 Hindi | हिंदी | `hi` |
+| 17 | 🇮🇩 Indonesisk | Bahasa Indonesia | `id` |
+| 18 | 🇻🇳 Vietnamesisk | Tiếng Việt | `vi` |
+| 19 | 🇹🇭 Thai | ไทย | `th` |
+| 20 | 🇸🇪 Svensk | Svenska | `sv` |
+| 21 | 🇩🇰 Dansk | Dansk | `da` |
+| 22 | 🇳🇴 Norsk | Norsk | `no` |
+| 23 | 🇫🇮 Finsk | Suomi | `fi` |
+| 24 | 🇬🇷 Gresk | Ελληνικά | `el` |
+| 25 | 🇨🇿 Tsjekkisk | Čeština | `cs` |
+| 26 | 🇭🇺 Ungarsk | Magyar | `hu` |
+| 27 | 🇷🇴 Rumensk | Română | `ro` |
+| 28 | 🇺🇦 Ukrainsk | Українська | `uk` |
+| 29 | 🇧🇷 Brasiliansk portugisisk | Português Brasileiro | `pt-BR` |
+| 30 | 🇭🇰 Kantonesisk | 粵語 | `zh-HK` |
+| 31 | 🇲🇾 Malay | Bahasa Melayu | `ms` |
+| 32 | 🇸🇰 Slovak | Slovenčina | `sk` |
+| 33 | 🇧🇬 Bulgarsk | Български | `bg` |
+| 34 | 🇭🇷 Kroatisk | Hrvatski | `hr` |
+| 35 | 🇱🇹 Litauisk | Lietuvių | `lt` |
+| 36 | 🇱🇻 Lettisk | Latviešu | `lv` |
+| 37 | 🇪🇪 Estisk | Eesti | `et` |
+| 38 | 🇸🇮 Slovensk | Slovenščina | `sl` |
 
 ## Hvordan endre språk
 
 ### I Chloros Desktop/Browser
 
-1. Åpne programinnstillingene
-2. Naviger til menyen for språkvalg
-3. Velg ønsket språk fra listen
-4. Grensesnittet oppdateres umiddelbart
+1. Åpne applikasjonsinnstillingene.
+2. Naviger til menyen for språkvalg.
+3. Velg ønsket språk fra listen.
+4. Grensesnittet oppdateres umiddelbart.
 
 ### I Chloros CLI
 
-Bruk språkparameteren sammen med kommandoene dine for å angi grensesnittspråket.
+Bruk kommandoen `language` for å vise eller endre språket i grensesnittet CLI:
+
+```bash
+# View current language
+chloros-cli language
+
+# Change to Spanish
+chloros-cli language es
+
+# Change to Chinese (Simplified)
+chloros-cli language zh
+
+# Change to Brazilian Portuguese
+chloros-cli language pt-BR
+
+# List all available languages
+chloros-cli language --list
+```
+
+For mer informasjon, se [CLI-dokumentasjonen](CLI.md).
 
 ### I Chloros Python SDK
 
@@ -67,6 +88,6 @@ Alle 38 språk støttes fullt ut i:
 * **Chloros Desktop** – Fullstendig oversettelse av GUI
 * **Chloros Browser** – Webgrensesnitt på alle språk
 * **Chloros CLI** – Kommandolinjegrensesnitt og utdatameldinger
-* **Chloros Python SDK** - API-meldinger og dokumentasjon
+* **Chloros Python SDK** - API meldinger og dokumentasjon
 
 Språkstøtte sikrer at brukere over hele verden kan arbeide effektivt på sitt eget språk uten barrierer.
