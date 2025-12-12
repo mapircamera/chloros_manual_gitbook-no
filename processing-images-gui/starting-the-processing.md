@@ -31,7 +31,7 @@ Start-/avspillingsknappen finnes i den øverste overskriftslinjen i Chloros:
 
 ### Klikk for å starte
 
-1. Klikk på **Spill av/Start-knappen** i øverste overskrift
+1. Klikk på **Spill av/Start-knappen** øverst i overskriften
 2. Behandlingen starter umiddelbart
 3. Knappen blir deaktivert (grå) under behandlingen
 4. Fremdriftslinjen oppdateres og viser behandlingsstatus
@@ -77,14 +77,14 @@ Chloros fungerer i to forskjellige behandlingsmoduser, avhengig av lisensen din:
 * Utnytter flere CPU-kjerner
 * Valgfri GPU (CUDA)-akselerasjon med NVIDIA-grafikkort
 
-**Fremdriftslinjen viser fire trinn:**
+**Fremdriftslinjen viser 4 trinn:**
 
 1. **Deteksjon** – Finne kalibreringsmål
-2. **Analyse** – Undersøker bildemetadata og forbereder pipeline
+2. **Analyse** – Undersøke bildemetadata og forberede pipeline
 3. **Kalibrerer** – Bruker korreksjoner og kalibreringer
 4. **Eksporterer** – Lagrer behandlede bilder og indekser
 
-**Interaksjon med fremdriftslinje:**
+**Interaksjon med fremdriftslinjen:**
 
 * **Hold musen** over linjen for å se et detaljert nedtrekkspanel med 4 trinn
 * **Klikk** på fremdriftslinjen for å fryse nedtrekkspanelet på plass
@@ -129,9 +129,9 @@ Chloros fungerer i to forskjellige behandlingsmoduser, avhengig av lisensen din:
 
 **Hva Chloros gjør:**
 
-* **Vignettkorrigering**: Fjerner mørkningen av linsen i kantene
+* **Vignettkorreksjon**: Fjerner mørkningen av linsen i kantene
 * **Refleksjonskalibrering**: Normaliserer ved hjelp av målrefleksjonsverdier
-* Bruker korrigeringer på tvers av alle bånd/kanaler
+* Bruker korreksjoner på tvers av alle bånd/kanaler
 * Bruker passende kalibreringsmål for hvert bilde basert på tidsstempel
 
 **Varighet:** Størstedelen av behandlingstiden
@@ -155,7 +155,7 @@ Chloros fungerer i to forskjellige behandlingsmoduser, avhengig av lisensen din:
 * Skriver filer til undermapper for kameramodeller
 * Bevarer originale filnavn med suffikser
 
-**Varighet:** Varierer etter eksportformat og filstørrelse
+**Varighet:** Varierer avhengig av eksportformat og filstørrelse
 
 ***
 
@@ -223,7 +223,7 @@ Hvis du trenger å stoppe behandlingen:
 1. Finn **Stopp/Avbryt-knappen** (erstatter Start-knappen under behandlingen)
 2. Klikk på Stopp-knappen
 3. Behandlingen stoppes umiddelbart
-4. Delvise resultater forkastes
+4. Delvise resultater blir forkastet
 
 ### Når du bør avbryte
 
@@ -254,13 +254,13 @@ Den faktiske behandlingstiden varierer sterkt avhengig av:
 * Antall bilder
 * Bildeoppløsning
 * RAW vs JPG-inndataformat
-* Behandlingsmodus (Free vs Chloros+)
+* Behandlingsmodus (Gratis vs Chloros+)
 * CPU-hastighet og antall kjerner
 * GPU-tilgjengelighet (kun Chloros+)
 * Antall indekser som skal beregnes
 * Eksportformatets kompleksitet
 
-### Grove estimater (Chloros+, 12 MP-bilder, moderne CPU)
+### Grove estimater (Chloros+, 12 MP bilder, moderne CPU)
 
 | Antall bilder | Gratis modus | Chloros+ (CPU) | Chloros+ (GPU) |
 | ----------- | --------- | -------------- | -------------- |
@@ -278,14 +278,14 @@ Den faktiske behandlingstiden varierer sterkt avhengig av:
 
 ## Vanlige problemer ved oppstart
 
-### Startknappen er deaktivert (grå)
+### Startknappen deaktivert (grå)
 
 **Mulige årsaker:**
 
 * Ingen bilder importert
-* Backend er ikke fullstendig startet
+* Backend ikke fullstendig startet
 * Forrige behandling kjører fortsatt
-* Prosjektet er ikke fullstendig lastet inn
+* Prosjektet ikke fullstendig lastet inn
 
 **Løsninger:**
 
@@ -307,15 +307,15 @@ Den faktiske behandlingstiden varierer sterkt avhengig av:
 
 1. Sjekk feilsøkingsloggen <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> for feilmeldinger
 2. Kontroller at det er tilstrekkelig diskplass
-3. Prøv å behandle et mindre utvalg av bilder
+3. Prøv å behandle en mindre delmengde av bildene
 4. Kontroller at bildene ikke er ødelagte
 
 ### Advarsel «Ingen mål oppdaget»
 
 **Mulige årsaker:**
 
-* Glemte å merke målbilder
-* Målbilder inneholder ikke synlige mål
+* Glemte å merke målbildene
+* Målbildene inneholder ikke synlige mål
 * Innstillingene for måldeteksjon er for strenge
 
 **Løsninger:**
@@ -331,17 +331,17 @@ Den faktiske behandlingstiden varierer sterkt avhengig av:
 
 ### Før du starter
 
-1. **Test med et lite delsett først** – Behandle 10–20 bilder for å kontrollere innstillingene
-2. **Kontroller tilgjengelig diskplass** – Sørg for at du har 2–3 ganger så mye ledig plass som datasettets størrelse
-3. **Lukk unødvendige programmer** – Frigjør systemressurser
-4. **Kontroller målbildene** – Forhåndsvis merkede mål for å sikre kvaliteten
-5. **Lagre prosjektet** – Prosjektet lagres automatisk, men det er lurt å lagre manuelt.
+1. **Test først med et lite delsett** – Behandle 10–20 bilder for å kontrollere innstillingene.
+2. **Kontroller tilgjengelig diskplass** – Sørg for at du har 2–3 ganger så mye ledig plass som datasettets størrelse.
+3. **Lukk unødvendige programmer** – Frigjør systemressurser.
+4. **Kontroller målbildene** – Forhåndsvis merkede mål for å sikre kvaliteten.
+5. **Lagre prosjektet** – Prosjektet lagres automatisk, men det er lurt å lagre manuelt
 
 ### Under behandlingen
 
-1. **Unngå at systemet går i dvale** – Deaktiver strømsparingsmodus.
-2. **Hold Chloros i forgrunnen** – Eller i det minste synlig i oppgavelinjen.
-3. **Overvåk fremdriften av og til** – Sjekk om det er advarsler eller feil.
+1. **Unngå at systemet går i dvale** – Deaktiver strømsparingsmodus
+2. **Hold Chloros i forgrunnen** – Eller i det minste synlig i oppgavelinjen
+3. **Følg med på fremdriften av og til** – Sjekk om det er advarsler eller feil
 4. **Ikke last inn andre tunge applikasjoner** – Spesielt med Chloros+ parallellmodus
 
 ### Chloros+ GPU-akselerasjon

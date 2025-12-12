@@ -4,7 +4,7 @@ Før du behandler bildene dine, er det viktig å konfigurere prosjektinnstilling
 
 ## Tilgang til prosjektinnstillinger
 
-1. Åpne prosjektet ditt i Chloros
+1. Åpne prosjektet i Chloros
 2. Klikk på **Prosjektinnstillinger** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> i venstre sidefelt
 3. Panelet Prosjektinnstillinger viser alle konfigurasjonsalternativer
 
@@ -16,12 +16,12 @@ Før du behandler bildene dine, er det viktig å konfigurere prosjektinnstilling
 
 ## Rask oppsett for vanlige arbeidsflyter
 
-### Standardinnstillinger (anbefalt for de fleste brukere)
+### Standardinnstillinger (anbefales for de fleste brukere)
 
 For typiske MAPIR Survey3 kameraarbeidsflyter fungerer standardinnstillingene godt:
 
 * ✅ **Vignettkorreksjon**: Aktivert
-* ✅ **Refleksjonskalibrering**: Aktivert (krever bilder av MAPIR mål)
+* ✅ **Refleksjonskalibrering**: Aktivert (krever bilder av MAPIR-mål)
 * ✅ **Debayer-metode**: Høy kvalitet (raskere)
 * ✅ **Eksportformat**: TIFF (16-bit)
 
@@ -158,15 +158,15 @@ Hvis du bruker MAPIR DAQ-opptakere med GPS for presis geolokalisering:
 
 1. Plasser .daq-loggfilen i prosjektmappen din.
 2. I prosjektinnstillingene aktiverer du avmerkingsboksen **«Bruk PPK-korreksjoner»**.
-3. Angi **«Tidssoneforskyvning for lyssensor»** om nødvendig (standard: 0 for UTC).
+3. Angi **«Lyssensorens tidssoneforskjell»** om nødvendig (standard: 0 for UTC).
 4. Tilordne kameraer til eksponeringspinner:
-   * **Enkelt kamera**: Tildeles automatisk til pinne 1
-   * **To kameraer**: Tildel hvert kamera manuelt til riktig pinne
+   * **Enkelt kamera**: Tildeles automatisk til pin 1
+   * **To kameraer**: Tildel hvert kamera manuelt til riktig pin
 
 **Tildeling av eksponeringspinner:**
 
-* **Eksponeringspinne 1**: Velg kameramodell fra rullegardinmenyen
-* **Eksponeringspinne 2**: Velg andre kamera eller «Ikke bruk»
+* **Eksponeringspin 1**: Velg kameramodell fra rullegardinmenyen
+* **Eksponeringspin 2**: Velg andre kamera eller «Ikke bruk»
 * Samme kamera kan ikke tildeles begge pinnene
 
 {% hint style=&quot;warning&quot; %}
@@ -192,9 +192,9 @@ Når du behandler bilder fra flere MAPIR-kameraer i ett prosjekt:
 
 For gjentatte undersøkelser av samme område over tid:
 
-1. Opprett en mal med standardinnstillingene dine
+1. Lag en mal med standardinnstillingene dine
 2. Bruk konsistent kalibreringsmåloppsett for hver økt
-3. Behandle hver dato som et separat prosjekt
+3. Behandle hver dato som et eget prosjekt
 4. Bruk identiske innstillinger for sammenlignbare resultater
 5. Eksporter i samme format for tidsanalyse
 
@@ -211,10 +211,10 @@ For prosjekter med mange bilder (500+):
 
 ## Kontrollere innstillingene
 
-Før du starter behandlingen, må du kontrollere disse viktige innstillingene:
+Før du starter behandlingen, må du gå gjennom disse viktige innstillingene:
 
 * [ ] Kameramodell riktig oppdaget i filbrowseren
-* [ ] Vignettkorrigering aktivert
+* [ ] Vignettkorreksjon aktivert
 * [ ] Refleksjonskalibrering aktivert
 * [ ] Minst ett kalibreringsmålbilde importert
 * [ ] Ønskede multispektrale indekser lagt til

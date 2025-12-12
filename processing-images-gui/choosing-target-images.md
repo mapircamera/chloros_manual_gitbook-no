@@ -36,8 +36,8 @@ Se gjennom de importerte bildene i filbrowseren og identifiser hvilke bilder som
 
 **Vanlige scenarier:**
 
-* **Mål før opptak**: Opptatt før sesjonen starter
-* **Mål etter opptak**: Opptatt etter at sesjonen er fullført
+* **Mål før opptak**: Opptatt før sesjonen startet
+* **Mål etter opptak**: Opptatt etter at sesjonen var fullført
 * **Mål i feltet**: Mål plassert innenfor opptaksområdet
 * **Flere mål**: 2–3 målbilder per sesjon (anbefalt)
 
@@ -50,9 +50,9 @@ For hvert bilde som inneholder et kalibreringsmål:
 3. Klikk på avmerkingsboksen i målkolonnen for det bildet.
 4. Gjenta for alle bilder som inneholder mål.
 
-### Trinn 3: Bekreft valget ditt
+### Trinn 3: Kontroller valget ditt
 
-Før du behandler, må du dobbeltsjekke:
+Før du fortsetter, må du dobbeltsjekke følgende:
 
 * [ ] Alle bilder med kalibreringsmål er merket av
 * [ ] Ingen bilder uten mål er merket av ved en feiltakelse
@@ -78,8 +78,8 @@ Før du behandler, må du dobbeltsjekke:
 **Belysning:**
 
 * Samme omgivelsesbelysning som DAQ-lyssensoren
-* Unngå skygger på måloverflatene
-* Ikke blokker lyskilden med kroppen, kjøretøy eller vegetasjon
+* Unngå skygger på målflatene
+* Ikke blokker lyskilden med kroppen, kjøretøyet eller vegetasjonen
 * Overskyet vær gir de mest konsistente resultatene
 
 **Målbetingelser:**
@@ -111,7 +111,7 @@ Hvis du bruker to MAPIR-kameraer samtidig (f.eks. Survey3W RGN + Survey3N OCN):
 3. Merk målbildene for **begge kameratypene** i filbrowseren.
 4. Chloros vil bruke passende mål for kalibrering av hvert kamera.
 
-### Kolonnen Kameramodell
+### Kolonne for kameramodell
 
 Kolonnen **Kameramodell** hjelper deg med å identifisere hvilke bilder som kommer fra hvilket kamera:
 
@@ -157,8 +157,8 @@ Hvis Chloros ikke oppdager målene dine riktig, kan du justere disse innstilling
 
 **Løsninger:**
 
-1. Kontroller at kolonnen Mål er merket av for riktige bilder
-2. Gjennomgå kvaliteten på målbildet i forhåndsvisningen
+1. Kontroller at kolonnen Mål er merket for riktige bilder
+2. Gjennomgå kvaliteten på målbildene i forhåndsvisningen
 3. Ta opp målene på nytt hvis kvaliteten er dårlig
 4. Juster innstillingene for måldeteksjon om nødvendig
 
@@ -166,7 +166,7 @@ Hvis Chloros ikke oppdager målene dine riktig, kan du justere disse innstilling
 
 **Mulige årsaker:**
 
-* Hvite bygninger, kjøretøy eller bakkeoverflate forveksles med mål
+* Hvite bygninger, kjøretøy eller bakkeoverflater forveksles med mål
 * Lyse flekker i vegetasjonen
 * Deteksjonsfølsomheten er for lav
 

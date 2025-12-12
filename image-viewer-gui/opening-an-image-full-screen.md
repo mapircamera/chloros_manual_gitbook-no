@@ -1,6 +1,6 @@
 # Åpne et bilde i fullskjermmodus
 
-Chloros Image Viewer har et dedikert fullskjermgrensesnitt for visning, analyse og manipulering av multispektrale bilder. Uansett om du viser originale bilder eller bearbeidede resultater, tilbyr Image Viewer kraftige verktøy for inspeksjon og analyse.
+Chloros Image Viewer har et dedikert fullskjermgrensesnitt for visning, analyse og bearbeiding av multispektrale bilder. Uansett om du viser originale bilder eller bearbeidede resultater, tilbyr Image Viewer kraftige verktøy for inspeksjon og analyse.
 
 ## Åpne Image Viewer
 
@@ -23,7 +23,7 @@ Når et bilde er lastet inn i forhåndsvisningsområdet:
 
 ***
 
-## Oversikt over grensesnittet til bildeselgeren
+## Oversikt over grensesnittet til Bildeselger
 
 ### Hovedvisningsområdet
 
@@ -122,7 +122,7 @@ Når du beveger musepekeren over bildet, vises pikselverdiene i sanntid:
 **NDVI, NDRE, GNDVI, etc. (\_NDVI.tif-filer):**
 
 * Enkeltbånds gråtonebilder
-* Pikselverdiene representerer indeksberegningsresultater
+* Pikselverdier representerer indeksberegningsresultater
 * Område vanligvis -1 til +1 for normaliserte indekser
 * Kan bruke farge-LUT-er for visualisering
 
@@ -177,11 +177,11 @@ Kontroller at indeksene er beregnet riktig:
 
 1. Åpne NDVI eller et annet indeksbilde
 2. Kontroller vegetasjonsområdene:
-   * **NDVI**: Skal vise 0,4–0,9 for sunne planter
+   * **NDVI**: Bør vise 0,4–0,9 for sunne planter
    * **NDRE**: Høyere verdier for kraftig vekst
    * **GNDVI**: Ligner på NDVI, men klorofyllfølsom
 3. Kontroller ikke-vegetasjon:
-   * **Jord**: Nær 0 eller svakt negativ
+   * **Jord**: Nær 0 eller svakt negativt
    * **Vann**: Negative verdier (-0,5 til 0)
 
 ***
@@ -192,9 +192,9 @@ Kontroller at indeksene er beregnet riktig:
 
 **Mulige årsaker:**
 
-* Fil ødelagt under behandling
-* Filformat som ikke støttes
-* Utilstrekkelig minne for stort bilde
+* Filen ble ødelagt under behandlingen
+* Filformatet støttes ikke
+* Utilstrekkelig minne for store bilder
 
 **Løsninger:**
 
@@ -221,14 +221,14 @@ Kontroller at indeksene er beregnet riktig:
 
 **Mulige årsaker:**
 
-* Viser feil bilde (original vs. behandlet)
+* Visning av feil bilde (original vs. behandlet)
 * Kalibreringen ble ikke brukt riktig
-* Lyssensordata ble ikke inkludert i inndataene
+* Lyssensordata ble ikke inkludert i inndata
 * Prosentmodus ble slått feil
 
 **Løsninger:**
 
-1. Kontroller at du ser på behandlet utdata (sjekk filnavnet)
+1. Kontroller at du viser behandlet utdata (sjekk filnavnsuffikset)
 2. Sjekk statusen til prosentmodusknappen
 3. Sammenlign med bilder fra samme datasett som du vet er gode
 
@@ -236,7 +236,7 @@ Kontroller at indeksene er beregnet riktig:
 
 ## Neste trinn
 
-Nå som du kan vise bilder i full skjerm:
+Nå som du kan vise bilder i fullskjerm:
 
 * [**Bildelag**](image-layers.md) – Lær om multibåndvisualisering
 * [**Indeks/LUT-sandkasse**](index-lut-sandbox.md) – Bruk tilpassede indekser og fargekartlegging

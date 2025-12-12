@@ -1,6 +1,6 @@
 # Overvåking av behandlingen
 
-Når behandlingen har startet, tilbyr Chloros flere måter å overvåke fremdriften på, sjekke for problemer og forstå hva som skjer med datasettet ditt. Denne siden forklarer hvordan du kan spore behandlingen og tolke informasjonen som Chloros gir.
+Når behandlingen er startet, tilbyr Chloros flere måter å overvåke fremdriften, sjekke for problemer og forstå hva som skjer med datasettet ditt. Denne siden forklarer hvordan du kan spore behandlingen og tolke informasjonen som Chloros gir.
 
 ## Oversikt over fremdriftslinje
 
@@ -21,7 +21,7 @@ For brukere uten Chloros+-lisens:
 * Navn på gjeldende trinn
 * Enkel horisontal linjevisualisering
 
-### Fremdriftslinje for Chloros+
+### Chloros+ fremdriftslinje
 
 For brukere med Chloros+-lisens:
 
@@ -36,7 +36,7 @@ For brukere med Chloros+-lisens:
 
 * **Hold musepekeren over** fremdriftslinjen for å se utvidet 4-trinns panel
 * **Klikk** på fremdriftslinjen for å fryse/feste det utvidede panelet
-* **Klikk igjen** for å frigjøre og skjule automatisk når musen forlater
+* **Klikk igjen** for å frigjøre og skjule automatisk når musen fjernes
 * Hvert trinn viser individuell fremdrift (0-100 %)
 
 ***
@@ -95,12 +95,12 @@ For brukere med Chloros+-lisens:
 **Hva skjer:**
 
 * **Debayering**: Konvertering av RAW Bayer-mønster til 3 kanaler
-* **Vignettkorrigering**: Fjerner mørkningen i kantene av linsen
+* **Vignettkorrigering**: Fjerner mørkere kanter på objektivet
 * **Refleksjonskalibrering**: Normaliserer med målverdier
 * **Indeksberegning**: Beregner multispektrale indekser
 * Behandler hvert bilde gjennom hele prosessen
 
-**Varighet:** Størstedelen av den totale behandlingstiden (60–80 %)
+**Varighet:** Størstedelen av total behandlingstid (60–80 %)
 
 **Fremdriftsindikator:**
 
@@ -112,7 +112,7 @@ For brukere med Chloros+-lisens:
 
 * **Fri modus**: Behandler ett bilde om gangen sekvensielt
 * **Chloros+ modus**: Behandler opptil 16 bilder samtidig
-* **GPU-akselerasjon**: Fremskynder denne fasen betydelig
+* **GPU-akselerasjon**: Øker hastigheten betydelig i denne fasen
 
 **Hva du bør se etter:**
 
@@ -133,14 +133,14 @@ For brukere med Chloros+-lisens:
 
 **Fremdriftsindikator:**
 
-* Eksportering: 0 % → 100 %
+* Eksporterer: 0 % → 100 %
 * Filer som skrives
 * Eksportformat og destinasjon
 
 **Hva du bør være oppmerksom på:**
 
 * Advarsler om diskplass
-* Filskrivefeil
+* Feil ved skriving av filer
 * Fullføring av alle konfigurerte utdata
 
 ***
@@ -201,7 +201,7 @@ Kritiske problemer som kan føre til at behandlingen mislykkes:
 | «Behandler bilde X av Y»        | Oppdatering av gjeldende fremdrift                | Ingen – normalt                                         |
 | «Ingen mål funnet»               | Ingen kalibreringsmål oppdaget        | Merk målbilder eller deaktiver refleksjonskalibrering |
 | «Utilstrekkelig diskplass»        | Ikke nok lagringsplass for utdata          | Frigjør diskplass                                    |
-| «Hopper over ødelagt fil»        | Bildet er skadet                  | Kopier filen på nytt fra SD-kortet                             |
+| «Hopper over ødelagt fil»        | Bildfilen er skadet                  | Kopier filen på nytt fra SD-kortet                             |
 | «PPK-data brukt»               | GPS-korreksjoner fra .daq-fil brukt | Ingen – normalt                                         |
 
 ### Kopiere loggdata
@@ -266,7 +266,7 @@ Når GPU-akselerasjon er aktivert:
 * Oppgavebehandling → Ytelse → GPU
 * GPU-Z eller lignende overvåkingsverktøy
 
-### Disk I/O
+### Disk-I/O
 
 **Hva du kan forvente:**
 
@@ -328,7 +328,7 @@ Stopp behandlingen hvis du ser:
 
 **Mulige årsaker:**
 
-* Ummerkede målbilder (skanner alle bilder)
+* Umerkede målbilder (skanner alle bilder)
 * HDD i stedet for SSD-lagring
 * Utilstrekkelige systemressurser
 * Mange indekser konfigurert
@@ -336,7 +336,7 @@ Stopp behandlingen hvis du ser:
 
 **Løsninger:**
 
-1. Hvis du nettopp har startet og er i detekteringsfasen: Avbryt, merk mål, start på nytt
+1. Hvis du nettopp har startet og er i deteksjonsfasen: Avbryt, merk mål, start på nytt
 2. For fremtiden: Bruk SSD, reduser indekser, oppgrader maskinvare
 3. Vurder CLI for batchbehandling av store datasett
 
@@ -356,7 +356,7 @@ Stopp behandlingen hvis du ser:
 1. Kopier bildene på nytt fra SD-kortet for å sikre integriteten
 2. Test SD-kortet for feil
 3. Fjern korrupte filer fra prosjektet
-4. Fortsett behandlingen av de gjenværende bildene
+4. Fortsett å behandle de gjenværende bildene
 
 ### Systemet blir overopphetet/bremset
 
@@ -365,18 +365,18 @@ Stopp behandlingen hvis du ser:
 1. Sørg for tilstrekkelig ventilasjon
 2. Rengjør støv fra datamaskinens ventilasjonsåpninger
 3. Reduser behandlingsbelastningen (bruk Free-modus i stedet for Chloros+)
-4. Behandle på kjøligere tidspunkter av døgnet
+4. Behandle på kjøligere tider av døgnet
 
 ***
 
-## Meldingen «Behandling fullført»
+## Meldingen «Behandlingen er fullført»
 
 Når behandlingen er fullført:
 
 * Fremdriftslinjen når 100 %
 * Meldingen **«Behandling fullført»** vises i feilsøkingsloggen
 * Startknappen blir aktivert igjen
-* Alle utdatafilene ligger i undermappen for kameramodellen
+* Alle utdatafiler ligger i undermappen for kameramodellen
 
 ***
 
@@ -385,8 +385,8 @@ Når behandlingen er fullført:
 Når behandlingen er fullført:
 
 1. **Gjennomgå resultatene** – Se [Fullføre behandlingen](finishing-the-processing.md)
-2. **Kontroller utdatamappen** – Kontroller at alle filer er eksportert riktig
-3. **Gjennomgå feilsøkingsloggen** – Se etter eventuelle advarsler eller feil
+2. **Kontroller utdata-mappen** – Kontroller at alle filer er eksportert riktig
+3. **Gjennomgå feilsøkingsloggen** – Kontroller om det er advarsler eller feil
 4. **Forhåndsvis behandlede bilder** – Bruk Image Viewer eller ekstern programvare
 
 For informasjon om gjennomgang og bruk av behandlede resultater, se [Fullføre behandlingen](finishing-the-processing.md).

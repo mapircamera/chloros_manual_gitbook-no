@@ -18,7 +18,7 @@ Når disse formlene brukes, kan navnet ende på «\_1» eller «\_2», som tilsv
 
 ## EVI – Forbedret vegetasjonsindeks
 
-Denne indeksen ble opprinnelig utviklet for bruk med MODIS-data som en forbedring av NDVI ved å optimalisere vegetasjonssignalet i områder med høy bladarealindeks (LAI). Den er mest nyttig i regioner med høy LAI hvor NDVI kan bli mettet. Den bruker det blå refleksjonsområdet til å korrigere for bakgrunnssignaler fra jorda og redusere atmosfæriske påvirkninger, inkludert aerosolspredning.
+Denne indeksen ble opprinnelig utviklet for bruk med MODIS-data som en forbedring av NDVI ved å optimalisere vegetasjonssignalet i områder med høy bladarealindeks (LAI). Den er mest nyttig i områder med høy LAI hvor NDVI kan bli mettet. Den bruker det blå refleksjonsområdet til å korrigere for bakgrunnssignaler fra jorda og redusere atmosfæriske påvirkninger, inkludert aerosolspredning.
 
 $$
 EVI = 2.5 *  {(NIR - Red) \over (NIR + 6 * Red - 7.5 * Blue + 1)}
@@ -26,7 +26,7 @@ $$
 
 EVI-verdiene bør ligge mellom 0 og 1 for vegetasjonspiksler. Lyse elementer som skyer og hvite bygninger, sammen med mørke elementer som vann, kan føre til unormale pikselverdier i et EVI-bilde. Før du oppretter et EVI-bilde, bør du maskere ut skyer og lyse elementer fra refleksjonsbildet, og eventuelt sette terskelverdien for pikselverdiene fra 0 til 1.
 
-_Referanse: Huete, A., et al. «Overview of the Radiometric and Biophysical Performance of the MODIS Vegetation Indices.» Remote Sensing of Environment 83 (2002):195–213._
+_Referanse: Huete, A., et al. «Oversikt over den radiometriske og biofysiske ytelsen til MODIS-vegetasjonsindeksene.» Remote Sensing of Environment 83 (2002):195–213._
 
 ***
 
@@ -46,7 +46,7 @@ _Referanse: Becker, Sarah J., Craig S.T. Daughtry og Andrew L. Russ. «Robuste s
 
 ## FCI2 – Skogdekkeindeks 2
 
-Denne indeksen skiller skogskroner fra andre typer vegetasjon ved hjelp av multispektrale refleksjonsbilder som ikke inkluderer et rødt kantbånd.
+Denne indeksen skiller skogkroner fra andre typer vegetasjon ved hjelp av multispektrale refleksjonsbilder som ikke inkluderer et rødt kantbånd.
 
 $$
 FCI2 = Red * NIR
@@ -98,7 +98,7 @@ $$
 GCI = {NIR \over Green} - 1
 $$
 
-Å ha brede NIR og grønne bølgelengder gir en bedre prediksjon av klorofyllinnholdet, samtidig som det gir større følsomhet og et høyere signal-støy-forhold.
+Bred NIR og grønne bølgelengder gir en bedre prediksjon av klorofyllinnholdet, samtidig som det gir større følsomhet og et høyere signal-støy-forhold.
 
 _Referanse: Gitelson, A., Y. Gritz og M. Merzlyak. «Relationships Between Leaf Chlorophyll Content and Spectral Reflectance and Algorithms for Non-Destructive Chlorophyll Assessment in Higher Plant Leaves.» Journal of Plant Physiology 160 (2003): 271-282._
 
@@ -106,7 +106,7 @@ _Referanse: Gitelson, A., Y. Gritz og M. Merzlyak. «Relationships Between Leaf 
 
 ## GLI - Green Bladindeks
 
-Denne indeksen ble opprinnelig utviklet for bruk med et digitalt RGB-kamera for å måle hveteavling, hvor de digitale tallene (DN) for rødt, grønt og blått varierer fra 0 til 255.
+Denne indeksen ble opprinnelig utviklet for bruk med et digitalt RGB-kamera for å måle hveteavling, hvor de digitale tallene for rødt, grønt og blått (DN) varierer fra 0 til 255.
 
 $$
 GLI = {(Green - Red) + (Green - Blue)  \over (2 * Green) + Red + Blue }
@@ -118,7 +118,7 @@ _Referanse: Louhaichi, M., M. Borman og D. Johnson. «Spatially Located Platform
 
 ***
 
-## GNDVI - Green Normaliserte forskjeller i vegetasjonsindeks
+## GNDVI - Green Normaliserte forskjellsvegetasjonsindeks
 
 Denne indeksen ligner NDVI, bortsett fra at den måler det grønne spekteret fra 540 til 570 nm i stedet for det røde spekteret. Denne indeksen er mer følsom for klorofyllkonsentrasjon enn NDVI.
 
@@ -150,7 +150,7 @@ $$
 GRVI = {NIR \over Green }
 $$
 
-_Referanse: Sripada, R., et al. «Luftfoto med infrarødt lys for å bestemme nitrogenbehovet i mais tidlig i sesongen.» Agronomy Journal 98 (2006): 968-977._
+_Referanse: Sripada, R., et al. «Luftfoto i infrarødt for å bestemme nitrogenbehovet i mais tidlig i sesongen.» Agronomy Journal 98 (2006): 968-977._
 
 ***
 
@@ -180,7 +180,7 @@ $$
 EVI = 2.5 *  {(NIR - Red) \over (NIR + 6 * Red - 7.5 * Blue + 1)}
 $$
 
-Høye LAI-verdier varierer vanligvis fra omtrent 0 til 3,5. Men når scenen inneholder skyer og andre lyse elementer som gir mettede piksler, kan LAI-verdiene overstige 3,5. Ideelt sett bør du maskere ut skyer og lyse elementer fra scenen før du oppretter et LAI-bilde.
+Høye LAI-verdier varierer vanligvis fra omtrent 0 til 3,5. Men når scenen inneholder skyer og andre lyse elementer som gir mettede piksler, kan LAI-verdiene overstige 3,5. Ideelt sett bør du maskere ut skyer og lyse elementer fra scenen før du lager et LAI-bilde.
 
 _Referanse: Boegh, E., H. Soegaard, N. Broge, C. Hasager, N. Jensen, K. Schelde og A. Thomsen. «Airborne Multi-spectral Data for Quantifying Leaf Area Index, Nitrogen Concentration and Photosynthetic Efficiency in Agriculture.» Remote Sensing of Environment 81, nr. 2-3 (2002): 179-193._
 
@@ -200,7 +200,7 @@ _Referanse: Datt, B. «Fjernmåling av vanninnholdet i eukalyptusblader.» Journ
 
 ## MNLI – Modifisert ikke-lineær indeks
 
-Denne indeksen er en forbedring av den ikke-lineære indeksen (NLI) som inkluderer den jordjusterte vegetasjonsindeksen (SAVI) for å ta hensyn til jordbakgrunnen. ENVI bruker en justeringsfaktor for bakgrunnsdekke (_L_) på 0,5.
+Denne indeksen er en forbedring av den ikke-lineære indeksen (NLI) som inkluderer den jordjusterte vegetasjonsindeksen (SAVI) for å ta hensyn til jordbakgrunnen. ENVI bruker en justeringsfaktor for bakgrunn i trekronene (_L_) på 0,5.
 
 $$
 MNLI = {(NIR^{2} - Red) * (1 + L) \over (NIR^{2} + Red + L)  }
@@ -270,7 +270,7 @@ _Referanse: Rondeaux, G., M. Steven og F. Baret. «Optimization of Soil-Adjusted
 
 ***
 
-## RDVI – Renormalized Difference Vegetation Index
+## RDVI – Renormalisert differansevegetasjonsindeks
 
 Denne indeksen bruker forskjellen mellom nær-infrarøde og røde bølgelengder, sammen med NDVI, for å fremheve sunn vegetasjon. Den er ufølsom for effekten av jord og solens geometri.
 
@@ -284,7 +284,7 @@ _Referanse: Roujean, J., og F. Breon. «Estimering av PAR absorbert av vegetasjo
 
 ## SAVI – Jordjustert vegetasjonsindeks
 
-Denne indeksen ligner på NDVI, men den undertrykker effekten av jordpiksler. Den bruker en justeringsfaktor for bakgrunnsdekke, _L_, som er en funksjon av vegetasjonstetthet og ofte krever forhåndskunnskap om vegetasjonsmengder. Huete (1988) foreslår en optimal verdi på _L_=0,5 for å ta hensyn til førsteordens variasjoner i jordbakgrunnen. Denne indeksen brukes best i områder med relativt sparsom vegetasjon hvor jorda er synlig gjennom trekronene.
+Denne indeksen ligner på NDVI, men den undertrykker effekten av jordpiksler. Den bruker en justeringsfaktor for bakgrunnsdekke, _L_, som er en funksjon av vegetasjonstetthet og ofte krever forhåndskunnskap om vegetasjonsmengder. Huete (1988) foreslår en optimal verdi på _L_=0,5 for å ta hensyn til førsteordens variasjoner i jordbakgrunnen. Denne indeksen brukes best i områder med relativt sparsom vegetasjon hvor jorda er synlig gjennom bladverket.
 
 $$
 SAVI = {1.5 * (NIR- Red) \over (NIR + Red + 0.5)  }

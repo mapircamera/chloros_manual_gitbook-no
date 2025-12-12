@@ -79,7 +79,7 @@ For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-ku
 
 ***
 
-## Vanlige utdata-problemer og løsninger
+## Vanlige utdataproblemer og løsninger
 
 ### Problem: Manglende utdatafiler
 
@@ -177,7 +177,7 @@ For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-ku
 **Anbefalt arbeidsflyt:**
 
 1. **Bruk indeksbilder med LUT-farger** for visuelle rapporter
-2. **Utdrag statistikk**: Gjennomsnittlig NDVI per felt/tomt
+2. **Ekstraher statistikk**: Gjennomsnittlig NDVI per felt/tomt
 3. **Tidsserier**: Sammenlign indekser på tvers av flere økter
 4. **Generer rapporter**: Inkluder kart, statistikk og visualiseringer
 
@@ -193,7 +193,7 @@ For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-ku
 * ✅ **Behandlede resultater** – Oppbevar kalibrerte bilder og indekser
 * ✅ **Prosjektfil** – Inneholder alle innstillinger for ombehandling om nødvendig
 * ✅ **Feilsøkingslogg** – Dokumenterer behandlingsdetaljer
-* ✅ **Kalibreringsmålbilder** – For verifisering og ombehandling
+* ✅ **Kalibreringsmålbilder** – For verifisering og ny behandling
 
 **Anbefalinger for lagring:**
 
@@ -203,7 +203,7 @@ For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-ku
 
 ***
 
-## Neste behandlingskjøring
+## Neste behandlingskjøringer
 
 ### Gjenbruk av prosjektinnstillinger
 
@@ -271,14 +271,14 @@ Hvis du støter på problemer:
 
 ## Oppsummering: Fullfør arbeidsflyten
 
-Du har nå fullført hele arbeidsflyten for Chloros-behandling:
+Du har nå fullført hele arbeidsflyten for Chloros-behandlingen:
 
 1. ✅ **Opprettet prosjekt** – Se [Prosjekter](../projects.md)
 2. ✅ **Lagt til filer** – Se [Legge til filer](adding-files-to-a-project.md)
 3. ✅ **Justert innstillinger** – Se [Justere prosjektinnstillinger](adjusting-project-settings.md)
 4. ✅ **Merkede mål** – Se [Velge målbilder](choosing-target-images.md)
 5. ✅ **Startet behandling** – Se [Starte behandlingen](starting-the-processing.md)
-6. ✅ **Overvåket fremdrift** - Se [Overvåke behandlingen](monitoring-the-processing.md)
+6. ✅ **Overvåket fremgang** - Se [Overvåke behandlingen](monitoring-the-processing.md)
 7. ✅ **Gjennomgått resultater** - Denne siden
 
 **Dine kalibrerte, refleksjonskorrigerte multispektrale bilder er klare for analyse!**

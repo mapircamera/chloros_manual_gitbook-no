@@ -55,11 +55,11 @@ Når bildene er importert, vises de i en tabell med følgende kolonner:
 
 * Dato og klokkeslett da bildet ble tatt.
 * Hentet fra bildets EXIF-metadata.
-* Brukes til PPK-synkronisering og kalibreringsmåldeteksjon
+* Brukes til PPK-synkronisering og kalibreringsmålregistrering
 
 ### Kameramodell
 
-* Automatisk detektert kamera- og filterkonfigurasjon
+* Automatisk registrert kamera- og filterkonfigurasjon
 * Eksempler: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
 * Brukes til å anvende riktige behandlingsprofiler
 
@@ -67,7 +67,7 @@ Når bildene er importert, vises de i en tabell med følgende kolonner:
 
 * Merk av i denne boksen for bilder som inneholder kalibreringsmål
 * Fremskynder måldeteksjonen betydelig under behandlingen
-* Se [Velge målbilder](choosing-target-images.md) for mer informasjon
+* Se [Velge målbilder](choosing-target-images.md) for detaljer
 
 ***
 
@@ -96,7 +96,7 @@ Slik fjerner du uønskede bilder fra prosjektet:
 Klikk på et hvilket som helst miniatyrbilde i filbrowseren for å vise det i hovedforhåndsvisningsområdet:
 
 1. Bildet vises i forhåndsvisningspanelet i midten
-2. Bruk zoomkontrollene til å inspisere bildedetaljer
+2. Bruk zoomkontrollene for å se på bildedetaljer
 3. Naviger mellom bildene ved hjelp av piltastene
 
 ### Rask navigering
@@ -154,7 +154,7 @@ Hvis prosjektet ditt inneholder bilder fra flere MAPIR-kameraer:
 * Inkluder alltid 1–2 kalibreringsmålbilder per økt.
 * Ta bilder av målene før og etter fotograferingsøkten.
 * Plasser målene i samme lysforhold som fotograferingsområdet.
-* Merk målbildene ved å merke av for Target (Mål) for å øke behandlingshastigheten.
+* Merk målbildene ved å merke av for Mål for å øke behandlingshastigheten.
 
 ***
 

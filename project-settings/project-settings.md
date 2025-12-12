@@ -31,8 +31,8 @@ Disse innstillingene styrer hvordan Chloros registrerer og behandler kalibrering
 * **Type**: Tall
 * **Område**: 0 til 100
 * **Standard**: 60
-* **Beskrivelse**: Kontrollerer grupperingsterskelen for å gruppere områder med lignende farger når kalibreringsmål oppdages. Høyere verdier krever at flere lignende farger grupperes sammen, noe som resulterer i mer konservativ målopdagelse. Lavere verdier tillater større fargevariasjon innenfor en målgruppe.
-* **Når skal du justere**:
+* **Beskrivelse**: Kontrollerer grupperingsterskelen for å gruppere områder med lignende farger når kalibreringsmål oppdages. Høyere verdier krever at flere lignende farger grupperes sammen, noe som resulterer i en mer konservativ målopdagelse. Lavere verdier tillater større fargevariasjon innenfor en målgruppe.
+* **Når du bør justere**:
   * Øk hvis kalibreringsmål blir delt opp i flere oppdagelser.
   * Reduser hvis kalibreringsmål med fargevariasjon ikke oppdages fullt ut.
 
@@ -53,7 +53,7 @@ Disse innstillingene styrer hvordan Chloros behandler og kalibrerer bildene dine
 
 * **Type**: Avkryssingsboks
 * **Standard**: Aktivert (avkrysset)
-* **Beskrivelse**: Aktiverer automatisk refleksjonskalibrering ved hjelp av kalibreringsmål som er oppdaget i bildene dine. Dette normaliserer refleksjonsverdiene i datasettet ditt og sikrer konsistente målinger uavhengig av lysforhold.
+* **Beskrivelse**: Aktiverer automatisk refleksjonskalibrering ved hjelp av kalibreringsmål som er oppdaget i bildene dine. Dette normaliserer refleksjonsverdiene i datasettet ditt og sikrer konsistente målinger uavhengig av lysforholdene.
 * **Når du skal deaktivere**: Deaktiver bare hvis du ønsker å behandle rå, ukalibrerte bilder eller hvis du bruker en annen kalibreringsarbeidsflyt.
 
 ### Debayer-metode
@@ -63,25 +63,25 @@ Disse innstillingene styrer hvordan Chloros behandler og kalibrerer bildene dine
   * Høy kvalitet (raskere) – For øyeblikket det eneste tilgjengelige alternativet
 * **Standard**: Høy kvalitet (raskere)
 * **Beskrivelse**: Velger demosaicing-algoritmen som brukes til å konvertere rå Bayer-mønstersensordata til fullfargebilder. Metoden «Høy kvalitet (raskere)» gir en optimal balanse mellom behandlingshastighet og bildekvalitet.
-* **Merk**: Ytterligere debayer-metoder kan bli lagt til i fremtidige versjoner av Chloros.
+* **Merk**: Flere debayer-metoder kan bli lagt til i fremtidige versjoner av Chloros.
 
 ### Minimum intervall for rekalibrering
 
 * **Type**: Tall
 * **Område**: 0 til 3600 sekunder
 * **Standard**: 0 sekunder
-* **Beskrivelse**: Angir minimum tidsintervall (i sekunder) mellom bruk av kalibreringsmål. Når verdien er satt til 0, vil Chloros bruke alle kalibreringsmål som oppdages. Når verdien er satt til en høyere verdi, vil Chloros bare bruke kalibreringsmål som er adskilt med minst dette antallet sekunder, noe som reduserer behandlingstiden for datasett med hyppige kalibreringsmålopptak.
+* **Beskrivelse**: Angir minimumsintervallet (i sekunder) mellom bruk av kalibreringsmål. Når verdien er satt til 0, vil Chloros bruke alle kalibreringsmål som oppdages. Når verdien er satt til en høyere verdi, vil Chloros bare bruke kalibreringsmål som er adskilt med minst dette antallet sekunder, noe som reduserer behandlingstiden for datasett med hyppige kalibreringsmålopptak.
 * **Når skal du justere**:
   * Sett til 0 for maksimal kalibreringsnøyaktighet når lysforholdene varierer.
-  * Øk (f.eks. til 60–300 sekunder) for raskere behandling når lysforholdene er jevne og du har hyppige kalibreringsmålbilder.
+  * Øk (f.eks. til 60-300 sekunder) for raskere behandling når lysforholdene er jevne og du har hyppige kalibreringsmålbilder.
 
 ### Tidssoneforskyvning for lyssensor
 
 * **Type**: Tall
 * **Område**: -12 til +12 timer
 * **Standard**: 0 timer
-* **Beskrivelse**: Angir tidssoneforskyvningen (i timer fra UTC) for tidsstempler for lyssensordata. Dette brukes ved behandling av PPK-datafiler (Post-Processed Kinematic) for å sikre korrekt tidssynkronisering mellom bildeopptak og GPS-data.
-* **Når skal du justere**: Sett dette til din lokale tidssoneforskyvning hvis PPK-dataene dine bruker lokal tid i stedet for UTC. For eksempel:
+* **Beskrivelse**: Angir tidssoneforskjellen (i timer fra UTC) for tidsstempler for lyssensordata. Dette brukes ved behandling av PPK-datafiler (Post-Processed Kinematic) for å sikre korrekt tidssynkronisering mellom bildeopptak og GPS-data.
+* **Når skal du justere**: Sett dette til din lokale tidssoneforskjell hvis PPK-dataene dine bruker lokal tid i stedet for UTC. For eksempel:
   * Pacific Time: -8 eller -7 (avhengig av sommertid)
   * Eastern Time: -5 eller -4 (avhengig av sommertid)
   * Central European Time: +1 eller +2 (avhengig av sommertid)
@@ -110,12 +110,12 @@ Disse innstillingene styrer hvordan Chloros behandler og kalibrerer bildene dine
 
 ### Eksponeringspinne 2
 
-* **Type**: Valg fra rullegardinmeny
+* **Type**: Nedtrekksmeny
 * **Synlighet**: Kun synlig når «Bruk PPK-korreksjoner» er aktivert OG eksponeringsdata er tilgjengelig for pinne 2
 * **Alternativer**:
   * Kameramodellnavn oppdaget i prosjektet
   * «Ikke bruk» – Ignorer denne eksponeringspinnen
-* **Standard**: Velges automatisk basert på prosjektkonfigurasjonen
+* **Standard**: Valges automatisk basert på prosjektkonfigurasjonen
 * **Beskrivelse**: Tilordner et bestemt kamera til eksponeringspinne 2 for PPK-tidssynkronisering når du bruker et oppsett med to kameraer.
 * **Automatisk valg**:
   * Ett kamera + én pinne: Pinne 2 settes automatisk til «Ikke bruk»
@@ -132,11 +132,11 @@ Disse innstillingene lar deg konfigurere multispektrale indekser for analyse og 
 ### Legg til indeks
 
 * **Type**: Spesielt indekskonfigurasjonspanel
-* **Beskrivelse**: Åpner et interaktivt panel hvor du kan velge og konfigurere multispektrale vegetasjonsindekser (NDVI, NDRE, EVI, etc.) som skal beregnes under bildebehandling. Du kan legge til flere indekser, hver med sine egne visualiseringsinnstillinger.
+* **Beskrivelse**: Åpner et interaktivt panel hvor du kan velge og konfigurere multispektrale vegetasjonsindekser (NDVI, NDRE, EVI, etc.) som skal beregnes under bildebehandlingen. Du kan legge til flere indekser, hver med sine egne visualiseringsinnstillinger.
 * **Tilgjengelige indekser**: Systemet inkluderer over 30 forhåndsdefinerte multispektrale indekser, blant annet:
   * NDVI (normaliserte forskjellsvegetasjonsindekser)
-  * NDRE (Normaliserte forskjeller RedEdge)
-  * EVI (Forbedret vegetasjonsindeks)
+  * NDRE (normaliserte forskjells-RedEdge)
+  * EVI (forbedret vegetasjonsindeks)
   * GNDVI, SAVI, OSAVI, MSAVI2
   * Og mange flere (se [Multispektrale indeksformler](multispectral-index-formulas.md) for fullstendig liste)
 * **Funksjoner**:
@@ -150,9 +150,9 @@ Disse innstillingene lar deg konfigurere multispektrale indekser for analyse og 
 * **Type**: Matrise med tilpassede formeldefinisjoner
 * **Beskrivelse**: Lar deg opprette og lagre tilpassede multispektrale indeksformler ved hjelp av båndmatematikk. Tilpassede formler lagres med prosjektinnstillingene dine og kan brukes på samme måte som innebygde indekser.
 * **Slik oppretter du**:
-  1. I indekskonfigurasjonspanelet finner du alternativet for tilpassede formler
-  2. Definer formelen ved hjelp av båndidentifikatorer (f.eks. NIR, Red, Green, Blue)
-  3. Lagre formelen med et beskrivende navn
+  1. I indekskonfigurasjonspanelet, se etter alternativet for tilpassede formler.
+  2. Definer formelen ved hjelp av båndidentifikatorer (f.eks. NIR, Red, Green, Blue).
+  3. Lagre formelen med et beskrivende navn.
 * **Formelsyntaks**: Standard matematiske operasjoner støttes, inkludert:
   * Aritmetikk: `+`, `-`, `*`, `/`
   * Parenteser for rekkefølgen av operasjoner
@@ -171,14 +171,14 @@ Disse innstillingene styrer formatet og kvaliteten på eksporterte behandlede bi
   * **TIFF (16-bit)** – Ukomprimert 16-bit TIFF-format
   * **TIFF (32-bit, prosent)** – 32-biters flytende komma TIFF med refleksjonsverdier i prosent
   * **PNG (8-bit)** - Komprimert 8-biters PNG-format
-  * **JPG (8-biters)** - Komprimert 8-biters JPEG-format
-* **Standard**: TIFF (16-biters)
+  * **JPG (8-bit)** - Komprimert 8-biters JPEG-format
+* **Standard**: TIFF (16-bit)
 * **Beskrivelse**: Velger filformat for lagring av behandlede og kalibrerte bilder.
 * **Format anbefalinger**:
   * **TIFF (16-bit)**: Anbefales for vitenskapelig analyse og profesjonelle arbeidsflyter. Bevarer maksimal datakvalitet uten komprimeringsartefakter. Best for multispektral analyse og videre behandling i GIS-programvare.
-  * **TIFF (32-bit, prosent)**: Best egnet for arbeidsflyter som krever refleksjonsverdier i prosent (0–100 %). Gir maksimal presisjon for radiometriske målinger.
+  * **TIFF (32-bit, prosent)**: Best for arbeidsflyter som krever refleksjonsverdier i prosent (0–100 %). Tilbyr maksimal presisjon for radiometriske målinger.
   * **PNG (8-bit)**: Bra for visning på nettet og generell visualisering. Mindre filstørrelser med tapsfri komprimering, men redusert dynamisk område.
-  * **JPG (8-bit)**: Minste filstørrelser, best for forhåndsvisning og visning på nettet. Bruker tapsrik komprimering som ikke er egnet for vitenskapelig analyse.
+  * **JPG (8-bit)**: Minste filstørrelser, best for forhåndsvisning og kun visning på nettet. Bruker tapsrik komprimering som ikke er egnet for vitenskapelig analyse.
 
 ***
 
@@ -187,10 +187,10 @@ Disse innstillingene styrer formatet og kvaliteten på eksporterte behandlede bi
 Denne funksjonen lar deg lagre gjeldende prosjektinnstillinger som en gjenbrukbar mal.
 
 * **Type**: Tekstinngang + Lagre-knapp
-* **Beskrivelse**: Skriv inn et beskrivende navn for innstillingsmalen og klikk på lagre-ikonet. Malen lagrer alle gjeldende prosjektinnstillinger (måldeteksjon, behandlingsalternativer, indekser og eksportformat) for enkel gjenbruk i fremtidige prosjekter.
+* **Beskrivelse**: Skriv inn et beskrivende navn for innstillingsmalen din og klikk på lagre-ikonet. Malen lagrer alle gjeldende prosjektinnstillinger (måldeteksjon, behandlingsalternativer, indekser og eksportformat) for enkel gjenbruk i fremtidige prosjekter.
 * **Bruksområder**:
-  * Opprett maler for forskjellige kamerasystemer (RGB, multispektral, NIR)
-  * Lagre standardkonfigurasjoner for bestemte avlingstyper eller analysearbeidsflyter
+  * Lag maler for forskjellige kamerasystemer (RGB, multispektral, NIR)
+  * Lagre standardkonfigurasjoner for spesifikke avlingstyper eller analysearbeidsflyter
   * Del konsistente innstillinger på tvers av et team
 * **Slik bruker du**:
   1. Konfigurer alle ønskede prosjektinnstillinger
@@ -242,8 +242,8 @@ De fleste endringer i innstillingene (spesielt i kategoriene Behandling og Ekspo
 
 1. **Start med standardinnstillingene**: Standardinnstillingene fungerer godt for de fleste MAPIR-kamerasystemer og typiske arbeidsflyter.
 2. **Opprett maler**: Når du har optimalisert innstillingene for en bestemt arbeidsflyt eller et bestemt kamera, lagrer du dem som en mal for å sikre konsistens på tvers av prosjekter.
-3. **Test før full behandling**: Når du eksperimenterer med nye innstillinger, bør du teste på et lite utvalg av bilder før du behandler hele datasettet.
-4. **Dokumenter innstillingene dine**: Bruk beskrivende malnavn som angir kamerasystemet, behandlingstypen og tiltenkt bruk (f.eks. «Survey3\_RGB\_NDVI\_Agriculture»).
+3. **Test før full behandling**: Når du eksperimenterer med nye innstillinger, må du teste på et lite utvalg av bilder før du behandler hele datasettet.
+4. **Dokumenter innstillingene dine**: Bruk beskrivende malnavn som angir kamerasystemet, behandlingstypen og den tiltenkte bruken (f.eks. «Survey3\_RGB\_NDVI\_Agriculture»).
 5. **Valg av eksportformat**: Velg eksportformat basert på sluttbruken:
    * Vitenskapelig analyse → TIFF (16-bit eller 32-bit)
    * GIS-behandling → TIFF (16-bit)

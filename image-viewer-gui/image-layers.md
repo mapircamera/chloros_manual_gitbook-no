@@ -1,6 +1,6 @@
 # Bildelag
 
-I rullegardinmenyen Bildelag i Chloros Image Viewer kan du raskt veksle mellom forskjellige versjoner av det samme bildet – fra originale opptak til bearbeidede refleksjonsutdata og beregnede indeksbilder.
+I rullegardinmenyen Bildelag i Chloros Image Viewer kan du raskt bytte mellom forskjellige versjoner av det samme bildet – fra originale opptak til bearbeidede refleksjonsutdata og beregnede indeksbilder.
 
 ## Hva er bildelag?
 
@@ -9,9 +9,9 @@ I Chloros refererer **lag** til de forskjellige bildeutskriftene som er tilgjeng
 * **Originalbilder** (JPG- og RAW-filer fra kameraet ditt)
 * **Refleksjonskalibrerte** utdata (hvis refleksjonskalibrering var aktivert)
 * **Målbilder** (hvis bildet inneholder kalibreringsmål)
-* **Indeksbilder** (NDVI, NDRE, GNDVI osv. hvis indekser ble konfigurert)
+* **Indeksbilder** (NDVI, NDRE, GNDVI osv. hvis indekser var konfigurert)
 
-**Lagvelger-rullegardinmenyen** øverst til høyre i bildeviseren lar deg umiddelbart bytte mellom disse versjonene uten å forlate viseren.
+Med **lagvelgermenyen** øverst til høyre i bildeviseren kan du umiddelbart bytte mellom disse versjonene uten å forlate viseren.
 
 ***
 
@@ -38,8 +38,8 @@ I Chloros refererer **lag** til de forskjellige bildeutskriftene som er tilgjeng
 
 **Når skal du vise:**
 
-* Kontrollere kvaliteten på de originale sensordataene
-* Kontrollere for sensorproblemer eller artefakter
+* Inspisere kvaliteten på de originale sensordataene
+* Sjekke for sensorproblemer eller artefakter
 * Sammenligne resultater før og etter behandling
 
 ### RAW (mål)
@@ -60,7 +60,7 @@ I Chloros refererer **lag** til de forskjellige bildeutskriftene som er tilgjeng
 
 ### RAW (refleksjonsgrad)
 
-* Det kalibrerte refleksjonsgradutbildet
+* Det kalibrerte refleksjonsgradbildet
 * Vignettkorrigert (hvis aktivert i behandlingen)
 * Refleksjonskalibrert ved hjelp av måldata (hvis aktivert)
 * Multibånd TIFF med alle kamerakanaler
@@ -99,7 +99,7 @@ I Chloros refererer **lag** til de forskjellige bildeutskriftene som er tilgjeng
 **Når skal du vise:**
 
 * Undersøke indeksberegningsresultater
-* Sjekke indeksverdier
+* Kontrollere indeksverdier
 * Identifisere områder av interesse
 * Verifisere indeksbilder før bruk i GIS eller analyse
 
@@ -110,26 +110,26 @@ I Chloros refererer **lag** til de forskjellige bildeutskriftene som er tilgjeng
 ### Åpne rullegardinmenyen
 
 1. Åpne et bilde i fullskjermmodus (klikk på en miniatyrbilde i bildeviseren)
-2. Finn **lagrullmenyen** øverst til høyre i viseren
-3. Rullmenyen viser det valgte laget (f.eks. «JPG»)
-4. Klikk på rullmenyen for å se alle tilgjengelige lag
+2. Finn **lagrullegardinmenyen** øverst til høyre i viseren
+3. Rullemenyen viser det valgte laget (f.eks. «JPG»)
+4. Klikk på rullemenyen for å se alle tilgjengelige lag
 
-### Bytte mellom lag
+### Bytt lag
 
-1. Klikk på lagrullmenyen for å åpne listen
+1. Klikk på lagrullemenyen for å åpne listen
 2. Alle tilgjengelige lag for det aktuelle bildet vises
 3. Klikk på et hvilket som helst lagnavn for å bytte til den versjonen
 4. Bildet oppdateres umiddelbart for å vise det valgte laget
 
 **Rask bytte:**
 
-* Nedtrekksmenyen husker ditt siste valg
-* Når du navigerer til neste bilde, prøver Chloros å vise samme lagtype
-* Hvis det laget ikke finnes på neste bilde, blir JPG standard
+* Nedtrekksmenyen husker ditt siste valg.
+* Når du navigerer til neste bilde, prøver Chloros å vise samme lagtype.
+* Hvis det laget ikke finnes på neste bilde, blir JPG standard.
 
-### Lagertilgjengelighet
+### Lagtilgjengelighet
 
-Ikke alle lag er tilgjengelige for hvert bilde:
+Ikke alle lag er tilgjengelige for alle bilder:
 
 **Alltid tilgjengelig:**
 
@@ -139,7 +139,7 @@ Ikke alle lag er tilgjengelige for hvert bilde:
 
 * ⚠️ RAW (Original) – Bare hvis bildet ble tatt i RAW- eller RAW+JPG-modus
 * ⚠️ RAW (Mål) – Bare hvis bildet inneholder oppdagede kalibreringsmål
-* ⚠️ RAW (Refleksjonsgrad) – Kun etter behandling med refleksjonskalibrering aktivert
+* ⚠️ RAW (Reflektans) – Kun etter behandling med reflektanskalibrering aktivert
 * ⚠️ RAW (\[Indeks] Indeks) – Kun etter behandling med konfigurerte indekser
 
 ***
@@ -180,7 +180,7 @@ Når du navigerer til et annet bilde (ved hjelp av piltastene eller ved å klikk
 
 ### Arbeidsflyt 2: Gjennomgang av indeks
 
-**Mål**: Gjennomgå raskt NDVI-resultater på tvers av datasettet
+**Mål**: Raskt gjennomgå NDVI-resultater på tvers av datasettet
 
 1. Åpne det første behandlede bildet
 2. Velg **RAW (NDVI-indeks)** fra rullegardinmenyen
@@ -195,7 +195,7 @@ Når du navigerer til et annet bilde (ved hjelp av piltastene eller ved å klikk
 
 1. Naviger til et målbilde
 2. Velg **RAW (Target)** fra rullegardinmenyen
-3. Verifiser at kalibreringsmålene er tydelig synlige og oppdaget
+3. Kontroller at kalibreringsmålene er tydelig synlige og oppdaget
 4. Naviger til neste målbilde
 5. Gjenta verifiseringen for alle målene
 
@@ -205,7 +205,7 @@ Når du navigerer til et annet bilde (ved hjelp av piltastene eller ved å klikk
 
 1. Åpne det behandlede bildet
 2. Velg **RAW (Refleksjon)**-laget
-3. Aktiver **Pikselprosent**-modus (knappen øverst til høyre i verktøylinjen)
+3. Aktiver **Pikselprosent**-modus (knapp øverst til høyre i verktøylinjen)
 4. Flytt markøren over vegetasjonsområdene
 5. Kontroller at pikselverdiene ligger innenfor forventede områder (30–70 % for NIR, 5–15 % for Red)
 6. Kontroller at jord- og vannområdene har riktige verdier
@@ -266,7 +266,7 @@ Ulike lag viser forskjellige pikselverdier:
 
 * **Sjekk alltid RAW (Original)**: Kontroller kildedatakvaliteten før du stoler på behandlede resultater
 * **Sammenlign lag**: Bruk lagbytte for å validere at behandlingen fungerte riktig
-* **Sjekk indeksområder**: Bruk Pixel Percent-modus med indekslag for å verifisere at verdiene er rimelige
+* **Sjekk indeksområder**: Bruk Pixel Percent-modus med indekslag for å kontrollere at verdiene er rimelige
 
 ***
 
@@ -278,7 +278,7 @@ Ulike lag viser forskjellige pikselverdier:
 
 **Mulige årsaker:**
 
-* Bildet ble ikke behandlet (bare JPG og RAW (Original) er tilgjengelig)
+* Bildet ble ikke behandlet (bare JPG og RAW (Original) tilgjengelig)
 * Refleksjonskalibrering ble deaktivert under behandlingen
 * Spesifikk indeks ble ikke konfigurert i prosjektinnstillingene
 * Bildet er et mål-bare-bilde (ingen indekser generert for mål)
@@ -293,7 +293,7 @@ Ulike lag viser forskjellige pikselverdier:
 
 **Problem**: Bildet åpnes i et uventet lag.
 
-**Årsak**: Lagpreferansen fra forrige bilde ble overført, men det laget finnes ikke i det aktuelle bildet.
+**Årsak**: Lagpreferansen fra forrige bilde ble videreført, men det laget finnes ikke i det aktuelle bildet.
 
 **Løsning**: Chloros faller automatisk tilbake til JPG når det foretrukne laget ikke er tilgjengelig – dette er normal oppførsel.
 
@@ -322,23 +322,23 @@ Ulike lag viser forskjellige pikselverdier:
 
 Når du viser et lag, kan du bruke:
 
-* **Zoomkontroller**: Forstørr for å se detaljer
+* **Zoomkontroller**: Forstørr for å se på detaljer
 * **Panorering**: Klikk og dra for å flytte rundt på det forstørrede bildet
-* **Pikselverdiinspeksjon**: Se verdier på markørens plassering
+* **Pikselverdiinspeksjon**: Se verdier på cursorens plassering
 * **Navigasjonspiler**: Flytt mellom bilder mens du beholder laget
 * **Pikselprosentmodus**: Veksle mellom DN- og prosentvisning
 
-Se [Åpne et bilde i full skjerm](opening-an-image-full-screen.md) for fullstendig dokumentasjon om bildevisningsverktøyet.
+Se [Åpne et bilde i full skjerm](opening-an-image-full-screen.md) for fullstendig dokumentasjon om bildeviseren.
 
 ### Indeks/LUT-sandkasse
 
-For interaktiv indekseringstesting og visualisering:
+For interaktiv indeksering og visualisering:
 
 * **Indeksberegning i sanntid**: Test forskjellige indeksformler
 * **LUT-fargekartlegging**: Bruk fargegraderinger på gråtonede indekser
 * **Eksporter visualiseringer**: Lagre fargede indeksbilder
 
-Se [Indeks/LUT Sandbox](index-lut-sandbox.md) for detaljer.
+Se [Indeks/LUT-sandkasse](index-lut-sandbox.md) for detaljer.
 
 ***
 
@@ -346,7 +346,7 @@ Se [Indeks/LUT Sandbox](index-lut-sandbox.md) for detaljer.
 
 Nå som du forstår bildelag:
 
-* [**Åpne et bilde i fullskjerm**](opening-an-image-full-screen.md) – Komplett guide til bildevisningen
+* [**Åpne et bilde i fullskjerm**](opening-an-image-full-screen.md) – Komplett guide til Image Viewer
 * [**Index/LUT Sandbox**](index-lut-sandbox.md) – Interaktiv indeksvisualisering
 * [**Multispektrale indeksformler**](../project-settings/multispectral-index-formulas.md) – Tilgjengelige indeksreferanser
 * [**Fullføre behandlingen**](../processing-images-gui/finishing-the-processing.md) – Forstå behandlede resultater
