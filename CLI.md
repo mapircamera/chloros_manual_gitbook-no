@@ -1,12 +1,12 @@
 # CLI : Kommandolinje
 
-<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>**Chloros CLI** gir kraftig kommandolinjetilgang til Chloros bildebehandlingsmotor, noe som muliggjør automatisering, skripting og headless-drift for bildebehandlingsarbeidsflytene dine.
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>**Chloros CLI** gir kraftig kommandolinjetilgang til Chloros bildebehandlingsmotor, som muliggjør automatisering, skripting og headless-drift for bildebehandlingsarbeidsflytene dine.
 
 ### Viktige funksjoner
 
 * 🚀 **Automatisering** – Skriptbasert batchbehandling av flere datasett
 * 🔗 **Integrasjon** – Integrer i eksisterende arbeidsflyter og rørledninger
-* 💻 **Headless drift** – Kjør uten GUI
+* 💻 **Headless-drift** – Kjør uten GUI
 * 🌍 **Fler språk** – Støtte for 38 språk
 * ⚡ **Parallell behandling** – Skaleres dynamisk til CPU-en din (opptil 16 parallelle arbeidere)
 
@@ -102,7 +102,7 @@ chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 | `--no-vignette`       | Flagg    | -              | Deaktiver vignettkorreksjon                                                            |
 | `--reflectance`       | Flagg    | Aktivert        | Aktiver refleksjonskalibrering                                                         |
 | `--no-reflectance`    | Flagg    | -              | Deaktiver refleksjonskalibrering                                                        |
-| `--ppk`               | Flagg    | Deaktivert       | Bruk PPK-korreksjoner fra .daq lyssensordata                                      |
+| `--ppk`               | Flagg    | Deaktivert       | Bruk PPK-korreksjoner fra .daq-lyssensordata                                      |
 | `--format`            | Valg  | TIFF (16-bit)  | Utdataformat: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
 | `--min-target-size`   | Heltall | Auto           | Minimum målstørrelse i piksler for kalibreringspaneldeteksjon                          |
 | `--target-clustering` | Heltall | Auto           | Terskel for målklynging (0-100)                                                    |
@@ -297,7 +297,7 @@ chloros-cli language ja
 
 ### `set-project-folder` - Angi standard prosjektmappe
 
-Endre standardplasseringen for prosjektmappen (deles med GUI).
+Endre standardplasseringen for prosjektmappen (delt med GUI).
 
 **Syntaks:**
 
@@ -355,7 +355,7 @@ Disse alternativene gjelder for alle kommandoer:
 
 | Alternativ          | Type    | Standard       | Beskrivelse                                      |
 | --------------- | ------- | ------------- | ------------------------------------------------ |
-| `--backend-exe` | Sti    | Automatisk oppdaget | Sti til kjørbar backend                       |
+| `--backend-exe` | Sti    | Automatisk oppdaget | Sti til kjørbar backend-fil                       |
 | `--port`        | Heltall | 5000          | Backend API portnummer                          |
 | `--restart`     | Flagg    | -             | Tving omstart av backend (avslutter eksisterende prosesser) |
 | `--version`     | Flagg    | -             | Vis versjonsinformasjon og avslutt                |
@@ -403,7 +403,7 @@ CLI bruker **Høy kvalitet (raskere)** som standard og anbefalt debayer-algoritm
 
 ### Vignettkorreksjon
 
-**Hva den gjør:** Korrigerer lysfall ved bildets kanter (mørkere hjørner som er vanlige i kamerabilder).
+**Hva det gjør:** Korrigerer lysfall ved bildekantene (mørkere hjørner som er vanlige i kamerabilder).
 
 * **Aktivert som standard** – De fleste brukere bør holde denne funksjonen aktivert
 * Bruk `--no-vignette` for å deaktivere
@@ -604,7 +604,7 @@ Typisk behandlingstid for 100 bilder (12 MP hver):
 | **Parallell modus** | 10–15 min | i5/Ryzen 5, 8 GB RAM, HDD (opptil 8 arbeidere)   |
 
 {% hint style=&quot;info&quot; %}
-**Ytelsestips**: Behandlingstiden varierer avhengig av antall bilder, oppløsning og datamaskinens spesifikasjoner.
+**Tips for ytelse**: Behandlingstiden varierer avhengig av antall bilder, oppløsning og datamaskinens spesifikasjoner.
 {% endhint %}
 
 ***
@@ -651,8 +651,8 @@ Backend failed to start within 30 seconds
 
 **Løsninger:**
 
-1. Kontroller om backend allerede kjører (lukk den først)
-2. Kontroller at Windows brannmur ikke blokkerer
+1. Sjekk om backend allerede kjører (lukk den først)
+2. Sjekk at Windows brannmur ikke blokkerer
 3. Prøv en annen port:
 
 ```powershell
@@ -765,7 +765,7 @@ Abonner på: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pri
 
 ### Spørsmål: Hvor lagres behandlede bilder?
 
-**Svar:** Som standard lagres behandlede bilder i **samme mappe som inndata** i undermapper for kameramodeller (f.eks. `Survey3N_RGN/`).
+**Svar:** Som standard lagres behandlede bilder i **samme mappe som input** i undermapper for kameramodeller (f.eks. `Survey3N_RGN/`).
 
 Bruk alternativet `-o` for å angi en annen utdatamappe:
 
@@ -777,11 +777,11 @@ chloros-cli process "C:\Input" -o "D:\Output"
 
 ### Spørsmål: Kan jeg behandle flere mapper samtidig?
 
-**Svar:** Ikke direkte med én kommando, men du kan bruke skript for å behandle mapper sekvensielt. Se avsnittet [Automatisering og skripting](CLI.md#automation--scripting).
+**A:** Ikke direkte med én kommando, men du kan bruke skripting til å behandle mapper sekvensielt. Se avsnittet [Automatisering og skripting](CLI.md#automation--scripting).
 
 ***
 
-### Spørsmål: Hvordan lagrer jeg CLI-utdata i en loggfil?
+### Q: Hvordan lagrer jeg CLI-utdata i en loggfil?
 
 **PowerShell:**
 
@@ -895,7 +895,7 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 ### Eksempel 4: PPK-korrigert behandling
 
-Bruk PPK-korrigeringer med reflektans:
+Bruk PPK-korrigeringer med refleksjonsgrad:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^

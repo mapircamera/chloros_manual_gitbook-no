@@ -33,7 +33,7 @@ Nei. Chloros forutsetter at inndataene ikke er endret. Ikke endre filnavnene.
 
 <details>
 
-<summary>Kan jeg stille inn MAPIR Survey3-kameraene mine på automatisk eksponering og behandle bildene i Chloros?</summary>
+<summary>Kan jeg stille inn MAPIR Survey3-kameraene mine til automatisk eksponering og behandle bildene i Chloros?</summary>
 
 Nei. Survey3-bildedatasett må ha fast/låst eksponering, så ingen automatisk lukkerhastighet eller automatisk ISO. Alle bilder fra samme kameramodell må ha identisk lukkerhastighet og ISO (eksponering).
 
@@ -51,7 +51,7 @@ Nei. Bare individuelle MAPIR-kamerabilder støttes, ikke sammenføyde bilder som
 
 <summary>Hvordan kan jeg øke hastigheten på måldeteksjonstrinnet i Chloros?</summary>
 
-Ved å forhåndsvelge målbildene i høyre kolonne i filbrowser-tabellen, vil Chloros bare lete etter kalibreringsmål i disse bildene, noe som gjør behandlingen mye raskere.
+Ved å forhåndsvelge målbildene i høyre kolonne i filbrowser-tabellen, vil Chloros bare lete etter kalibreringsmål i disse bildene, noe som øker behandlingshastigheten betydelig.
 
 </details>
 
@@ -67,6 +67,6 @@ Hvis du planlegger å laste opp til vår online behandlingsplattform [MAPIR Clou
 
 <summary>Vil MAPIR noen gang støtte X-funksjonen? Jeg skulle virkelig ønske at MAPIR tilbød X.</summary>
 
-Vi er alltid interessert i å motta tilbakemeldinger på produktene våre. Hvis du oppdager et problem med produktene våre, eller har et forslag til hvordan vi kan forbedre produktene våre, kan du [KONTAKTE OSS](https://www.mapir.camera/community/contact) for å dele dine tanker. Det meste av vår FoU er basert på å lytte til kundenes største behov.
+Vi er alltid interessert i å motta tilbakemeldinger på produktene våre. Hvis du finner et problem med produktene våre, eller har et forslag til hvordan vi kan forbedre produktene våre, kan du [KONTAKTE OSS](https://www.mapir.camera/community/contact) for å dele dine tanker. Det meste av vår FoU er styrt av å lytte til kundenes største behov.
 
 </details>

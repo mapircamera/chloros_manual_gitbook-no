@@ -109,8 +109,8 @@ Få tilgang til avanserte funksjoner med et Chloros+-abonnement:
 
 * Prøv Chloros (nettleser) versjonen
 * Kontroller at Windows 10/11 (64-bit) er installert
-* Oppdater grafikkdrivere
-* Sjekk Windows Hendelseslogg for feildetaljer
+* Oppdater grafikkdriverne
+* Sjekk Windows Hendelseslogg for feilinformasjon
 * Kontakt support med feillogger
 
 **Problemer med lisensaktivering:**

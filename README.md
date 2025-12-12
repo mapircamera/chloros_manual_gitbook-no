@@ -4,9 +4,7 @@ metaLinks: {}
 
 # Komme i gang
 
-<div data-full-width="false"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>
-
-Chloros er et program fra [MAPIR](https://www.mapir.camera) for behandling av bilder og andre sensordata.
+<div data-full-width="false"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>Chloros er et program fra [MAPIR](https://www.mapir.camera) for behandling av bilder og andre sensordata.
 
 ***
 
@@ -34,7 +32,7 @@ Programmatisk Python-grensesnitt for automatisering og tilpassede arbeidsflyter.
 
 Selv om Chloros er gratis å bruke for de fleste oppgaver, kan det hende du ønsker mer. Da kan en betalt lisens for Chloros+ være til nytte for deg. Med en Chloros+-lisens kan du låse opp nye funksjoner som:
 
-* **Multitrådet behandling**: øker hastigheten på bildebehandlingen for større prosjekter betydelig ved å behandle bilder samtidig gjennom rørledningen.
+* **Multitrådet behandling**: øker hastigheten på bildebehandlingen for større prosjekter ved å behandle bilder samtidig gjennom rørledningen.
 * **GPU (CUDA)-akselerasjon**: dra nytte av dagens høyere GPU-minnealternativer for å øke hastigheten på bildebehandlingsrørledningen ytterligere. Vi anbefaler 4 GB eller mer VRAM for best resultat.
 * **Chloros+** [**CLI**](CLI.md) **Tilgang**: kjør Chloros+ fra kommandolinjen for å automatisere og integrere i din egen programvare.
 * **Chloros+** [**API**](api-python-sdk.md) **Tilgang:** kjør Chloros+ fra Python for programmatisk kontroll, slik at du får sømløs integrering med forskningsprosessene, dataanalysearbeidsflytene og tilpassede applikasjonene dine.

@@ -2,14 +2,14 @@
 
 **Chloros Python SDK** gir programmatisk tilgang til Chloros bildebehandlingsmotor, som muliggjør automatisering, tilpassede arbeidsflyter og sømløs integrering med dine Python applikasjoner og forskningspipelines.
 
-### Viktige funksjoner
+### Nøkkelegenskaper
 
 * 🐍 **Native Python** - Ren, Pythonic API for bildebehandling
 * 🔧 **Full API-tilgang** - Full kontroll over Chloros-behandling
 * 🚀 **Automatisering** - Bygg tilpassede arbeidsflyter for batchbehandling
 * 🔗 **Integrasjon** - Integrer Chloros i eksisterende Python-applikasjoner
 * 📊 **Klar for forskning** - Perfekt for vitenskapelige analyseprosesser
-* ⚡ **Parallellbehandling** - Skaleres til CPU-kjernene dine (Chloros+)
+* ⚡ **Parallell behandling** - Skaleres til CPU-kjernene dine (Chloros+)
 
 ### Krav
 
@@ -23,7 +23,7 @@
 | **Internett**         | Kreves for lisensaktivering                                     |
 
 {% hint style=&quot;warning&quot; %}
-**Lisenskrav**: Python SDK krever et betalt Chloros+ abonnement for API-tilgang. Standard (gratis) abonnementer har ikke tilgang til API/SDK. Besøk [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) for å oppgradere.
+**Lisenskrav**: Python SDK krever et betalt Chloros+ abonnement for API tilgang. Standard (gratis) abonnementer har ikke tilgang til API/SDK. Besøk [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) for å oppgradere.
 {% endhint %}
 
 ## Hurtigstart
@@ -152,11 +152,11 @@ print(f"Backend running: {status['running']}")
 
 ***
 
-## API-referanse
+## API Referanse
 
 ### ChlorosLocal-klasse
 
-Hovedklasse for lokal Chloros-bildebehandling.
+Hovedklasse for lokal Chloros bildebehandling.
 
 #### Konstruktør
 
@@ -236,7 +236,7 @@ Importer bilder fra en mappe.
 | `folder_path` | str/Path | Ja      | Sti til mappe med bilder         |
 | `recursive`   | bool     | Nei       | Søk i undermapper (standard: False) |
 
-**Returnerer:** `dict` - Importer resultater med antall filer
+**Returnerer:** `dict` – Importer resultater med antall filer
 
 **Eksempel:**
 
@@ -262,13 +262,13 @@ Konfigurer behandlingsinnstillinger.
 | `vignette_correction`     | bool | `True`                  | Aktiver vignettkorreksjon      |
 | `reflectance_calibration` | bool | `True`                  | Aktiver refleksjonskalibrering  |
 | `indices`                 | liste | `None`                  | Vegetasjonsindekser som skal beregnes |
-| `export_format`           | str  | &quot;TIFF (16-bit)&quot;         | Utdataformat                   |
+| `export_format`           | str  | «TIFF (16-bit)»         | Utdataformat                   |
 | `ppk`                     | bool | `False`                 | Aktiver PPK-korreksjoner          |
 | `custom_settings`         | dict | `None`                  | Avanserte tilpassede innstillinger        |
 
 **Eksportformater:**
 
-* `"TIFF (16-bit)"` – Anbefales for GIS/fotogrammetri
+* `"TIFF (16-bit)"` – Anbefalt for GIS/fotogrammetri
 * `"TIFF (32-bit, Percent)"` – Vitenskapelig analyse
 * `"PNG (8-bit)"` – Visuell inspeksjon
 * `"JPG (8-bit)"` – Komprimert utdata
@@ -310,7 +310,7 @@ Behandle prosjektbildene.
 | ------------------- | -------- | ------------ | ----------------------------------------- |
 | `mode`              | str      | `"parallel"` | Behandlingsmodus: «parallel» eller «serial»   |
 | `wait`              | bool     | `True`       | Vent på fullføring                       |
-| `progress_callback` | callable | `None`       | Tilbakemeldingsfunksjon for fremdrift (progress, msg) |
+| `progress_callback` | callable | `None`       | Tilbakemeldingsfunksjon for fremdrift (fremdrift, msg) |
 | `poll_interval`     | float    | `2.0`        | Pollingintervall for fremdrift (sekunder)   |
 
 **Returnerer:** `dict` - Behandlingsresultater
@@ -343,7 +343,7 @@ chloros.process(wait=False)
 
 #### `get_config()`
 
-Henter gjeldende prosjektkonfigurasjon.
+Hent gjeldende prosjektkonfigurasjon.
 
 **Returnerer:** `dict` – Gjeldende prosjektkonfigurasjon
 
@@ -397,8 +397,8 @@ Enkel praktisk funksjon for å behandle en mappe.
 | `folder_path`             | str/Path | Påkrevd        | Sti til mappe med bilder     |
 | `project_name`            | str      | Autogenerert  | Prosjektnavn                   |
 | `camera`                  | str      | `None`          | Kameramall                |
-| `indices`                 | liste     | `["NDVI"]`      | Indekser som skal beregnes           |
-| `vignette_correction`     | bool     | `True`          | Aktiver vignettkorrigering     |
+| `indices`                 | list     | `["NDVI"]`      | Indekser for beregning           |
+| `vignette_correction`     | bool     | `True`          | Aktiver vignettkorreksjon     |
 | `reflectance_calibration` | bool     | `True`          | Aktiver refleksjonskalibrering |
 | `export_format`           | str      | &quot;TIFF (16-bit)&quot; | Utdataformat                  |
 | `mode`                    | str      | `"parallel"`    | Behandlingsmodus                |
@@ -435,9 +435,9 @@ results = process_folder(
 
 ***
 
-## Støtte for kontekstbehandling
+## Støtte for kontekstbehandler
 
-SDK støtter kontekstbehandling for automatisk opprydding:
+SDK støtter kontekstbehandlere for automatisk opprydding:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -861,7 +861,7 @@ while True:
 print("Processing complete!")
 ```
 
-### Minnebehandling
+### Minnehåndtering
 
 For store datasett, behandle i batcher:
 
@@ -969,7 +969,7 @@ chloros = ChlorosLocal(timeout=120)  # 2 minutes
 
 2. Behandle mindre batcher
 3. Kontroller tilgjengelig diskplass
-4. Overvåk systemressurser
+4. Overvåk systemressursene
 
 ***
 
@@ -1119,7 +1119,7 @@ chloros.process(progress_callback=notebook_progress)
 
 ***
 
-## Vanlige spørsmål
+## FAQ
 
 ### Spørsmål: Krever SDK internettforbindelse?
 
@@ -1157,7 +1157,7 @@ chloros.process(progress_callback=notebook_progress)
 * Sluttbrukere må ha aktive Chloros+-lisenser.
 * Kommersiell distribusjon krever OEM-lisensiering.
 
-Kontakt info@mapir.camera for spørsmål om OEM.
+Kontakt info@mapir.camera for OEM-henvendelser.
 
 ***
 
@@ -1171,7 +1171,7 @@ pip install --upgrade chloros-sdk
 
 ### Spørsmål: Hvor lagres behandlede bilder?
 
-Som standard i prosjektbanen:
+Som standard i prosjektstien:
 
 ```
 Project_Path/
@@ -1183,7 +1183,7 @@ Project_Path/
 
 ### Spørsmål: Kan jeg behandle bilder fra Python-skript som kjører etter tidsplan?
 
-**Svar:** Ja! Bruk Windows Task Scheduler med Python-skript:
+**Svar:** Ja! Bruk Windows Oppgaveplanlegger med Python-skript:
 
 ```python
 # scheduled_processing.py
@@ -1193,7 +1193,7 @@ from chloros_sdk import process_folder
 results = process_folder("C:\\Flights\\Today")
 ```
 
-Planlegg via Task Scheduler for å kjøre daglig.
+Planlegg via Oppgaveplanlegger for å kjøre daglig.
 
 ***
 
