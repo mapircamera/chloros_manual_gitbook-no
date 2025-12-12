@@ -14,7 +14,9 @@ Fra hovedmenyen kan du starte et nytt prosjekt, åpne et eksisterende prosjekt e
 
 Når den er aktivert, starter startknappen for bildebehandling bildebehandlingsprosessen.
 
-### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Fremdriftslinje <img src=".gitbook/assets/image (5).png" alt="" data-size="line">I den gratis Chloros-modusen, som behandler alle filer sekvensielt, viser fremdriftslinjen to trinn: Målregistrering og behandling.
+### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Fremdriftslinje <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
+
+I den gratis Chloros-modusen, som behandler alle filer sekvensielt, viser fremdriftslinjen to trinn: Målregistrering og behandling.
 
 I den betalte Chloros+-lisensmodusen, som behandler alle filer samtidig, viser fremdriftslinjen fire trinn: Registrering, analyse, kalibrering, eksport. Hvis du holder musepekeren over fremdriftslinjen i Chloros+, vises det utvidede panelet med fire fremdriftslinjer, slik at du kan følge med. Hvis du klikker på den øverste fremdriftslinjen, fryses nedtrekkspanelet, og hvis du klikker igjen, frigjøres det.
 
