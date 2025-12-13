@@ -1,13 +1,12 @@
 ---
-description: Lab-measured panels used to calibrate captured data in post processing
+description: Lab-measured panels used to calibrate captured data in post-processing
 metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/calibration-targets
 ---
-
 # Kalibreringsmål
 
-MAPIR tilbyr ulike kalibreringsmål for å dekke en rekke bruksområder. Den kompakte T4-R50 nedenfor inneholder 4 paneler som er målt for lysrefleksjon fra 250 til 2500 nm.
+MAPIR tilbyr ulike kalibreringsmål for en rekke bruksområder. Den kompakte T4-R50 nedenfor inneholder 4 paneler som er målt for lysrefleksjon fra 250 til 2500 nm.
 
 <figure><img src=".gitbook/assets/t4-r50_2.jpg" alt=""><figcaption><p>MAPIR T4-R50</p></figcaption></figure>
 
@@ -21,6 +20,6 @@ Når du ser på refleksjonsgrafen, kan du se at verdiene er bølgelengde (x-akse
 
 Dette betyr at for hvert bilde du tar med kameraene våre, kan du bruke et bilde av refleksjonsmålene våre, for eksempel [T4-R50](https://www.mapir.camera/collections/calibration-targets/products/diffuse-reflectance-standard-calibration-target-package-t3-r50) eller [T4-R125](https://www.mapir.camera/collections/multispectral-reflectance-reference-calibration-targets/products/diffuse-reflectance-standard-calibration-target-package-t4-r125) for å kalibrere bildene for refleksjon. Når kalibreringen er fullført, tilsvarer hver piksel i bildet en prosentandel av refleksjonen.
 
-Hvis du eksporterer de kalibrerte bildene i Chloros som vanlig JPG eller TIFF, beregnes refleksjonsprosenten ved å dele pikselverdien med bitdybden til bildeformatet. For JPG deler du med 255, og for TIFF deler du med 65 535. Du kan også velge PERCENT-formatutdata i Chloros, og da vil hver piksel variere fra en prosentverdi på 0,0 til 1,0 (0 % til 100 % refleksjonsgrad). Bare husk at noen bildeprogrammer ikke kan akseptere prosentbilder (flytende komma), og at de er store i størrelse når det gjelder lagring.
+Hvis du eksporterer de kalibrerte bildene i Chloros som vanlig JPG eller TIFF, beregnes refleksjonsprosenten ved å dele pikselverdien med bitdybden til bildeformatet. For JPG deles det med 255, og for TIFF deles det med 65 535. Du kan også velge PERCENT-formatutdata i Chloros, og da vil hver piksel variere fra en prosentverdi på 0,0 til 1,0 (0 % til 100 % refleksjonsgrad). Bare husk at noen bildeprogrammer ikke kan akseptere prosentbilder (flytende komma), og at de er store i størrelse når det gjelder lagring.
 
 <div><figure><img src=".gitbook/assets/t3-125.jpg" alt=""><figcaption><p>T4-R125</p></figcaption></figure> <figure><img src=".gitbook/assets/t3-125_2.jpg" alt=""><figcaption><p>T4-R125</p></figcaption></figure> <figure><img src=".gitbook/assets/t3-125_closed.jpg" alt=""><figcaption><p>T4-R125</p></figcaption></figure></div>

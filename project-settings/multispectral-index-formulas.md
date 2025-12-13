@@ -1,16 +1,15 @@
 ---
-description: This page lists some multispectral indices that Chloros uses
+description: This page lists some multispectral indices that Chloros uses.
 metaLinks:
   alternates:
     - >-
       https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/multispectral-index-formulas
 ---
-
 # Multispektrale indeksformler
 
 Indeksformlene nedenfor bruker en kombinasjon av Survey3-filterets gjennomsnittlige transmisjonsområder:
 
-<table><thead><tr><th align="center">Survey3 Filterfarge</th><th width="196.199951171875" align="center">Survey3 Filternavn</th><th width="159.800048828125" align="center">Transmisjonsområde (FWHM)</th><th align="center">Gjennomsnittlig transmisjon</th></tr></thead><tbody><tr><td align="center">Blue</td><td align="center">NGB - Blue</td><td align="center">468-483 nm</td><td align="center">475 nm</td></tr><tr><td align="center">Cyan</td><td align="center">OCN- Cyan</td><td align="center">476-512 nm</td><td align="center">494 nm</td></tr><tr><td align="center">Green</td><td align="center">RGN | NGB - Green</td><td align="center">543-558 nm</td><td align="center">547 nm</td></tr><tr><td align="center">Orange</td><td align="center">OCN - Orange</td><td align="center">598-640 nm</td><td align="center">619 nm</td></tr><tr><td align="center">Red</td><td align="center">RGN - Red</td><td align="center">653-668 nm</td><td align="center">661 nm</td></tr><tr><td align="center">RedEdge</td><td align="center">Re - RedEdge</td><td align="center">712-735 nm</td><td align="center">724 nm</td></tr><tr><td align="center">NIR1</td><td align="center">OCN - NIR1</td><td align="center">798-848 nm</td><td align="center">823 nm</td></tr><tr><td align="center">NIR2</td><td align="center">RGN | NGB | NIR - NIR2</td><td align="center">835-865 nm</td><td align="center">850 nm</td></tr></tbody></table>
+<table><thead><tr><th align="center">Survey3-filterfarge</th><th width="196.199951171875" align="center">Survey3-filternavn</th><th width="159.800048828125" align="center">Transmisjonsområde (FWHM)</th><th align="center">Gjennomsnittlig transmisjon</th></tr></thead><tbody><tr><td align="center">Blue</td><td align="center">NGB - Blue</td><td align="center">468-483 nm</td><td align="center">475 nm</td></tr><tr><td align="center">Cyan</td><td align="center">OCN- Cyan</td><td align="center">476-512 nm</td><td align="center">494 nm</td></tr><tr><td align="center">Green</td><td align="center">RGN | NGB - Green</td><td align="center">543-558 nm</td><td align="center">547 nm</td></tr><tr><td align="center">Orange</td><td align="center">OCN - Orange</td><td align="center">598-640 nm</td><td align="center">619 nm</td></tr><tr><td align="center">Red</td><td align="center">RGN - Red</td><td align="center">653-668 nm</td><td align="center">661 nm</td></tr><tr><td align="center">RedEdge</td><td align="center">Re - RedEdge</td><td align="center">712-735 nm</td><td align="center">724 nm</td></tr><tr><td align="center">NIR1</td><td align="center">OCN - NIR1</td><td align="center">798-848 nm</td><td align="center">823 nm</td></tr><tr><td align="center">NIR2</td><td align="center">RGN | NGB | NIR - NIR2</td><td align="center">835-865 nm</td><td align="center">850 nm</td></tr></tbody></table>
 
 Når disse formlene brukes, kan navnet ende på «\_1» eller «\_2», som tilsvarer hvilket NIR-filter, enten NIR1 eller NIR2, som ble brukt.
 
@@ -18,7 +17,7 @@ Når disse formlene brukes, kan navnet ende på «\_1» eller «\_2», som tilsv
 
 ## EVI – Forbedret vegetasjonsindeks
 
-Denne indeksen ble opprinnelig utviklet for bruk med MODIS-data som en forbedring av NDVI ved å optimalisere vegetasjonssignalet i områder med høy bladarealindeks (LAI). Den er mest nyttig i områder med høy LAI hvor NDVI kan bli mettet. Den bruker det blå refleksjonsområdet til å korrigere for bakgrunnssignaler fra jorda og redusere atmosfæriske påvirkninger, inkludert aerosolspredning.
+Denne indeksen ble opprinnelig utviklet for bruk med MODIS-data som en forbedring av NDVI ved å optimalisere vegetasjonssignalet i områder med høy bladarealindeks (LAI). Den er mest nyttig i regioner med høy LAI hvor NDVI kan bli mettet. Den bruker det blå refleksjonsområdet til å korrigere for bakgrunnssignaler fra jorda og redusere atmosfæriske påvirkninger, inkludert aerosolspredning.
 
 $$
 EVI = 2.5 *  {(NIR - Red) \over (NIR + 6 * Red - 7.5 * Blue + 1)}
@@ -26,7 +25,7 @@ $$
 
 EVI-verdiene bør ligge mellom 0 og 1 for vegetasjonspiksler. Lyse elementer som skyer og hvite bygninger, sammen med mørke elementer som vann, kan føre til unormale pikselverdier i et EVI-bilde. Før du oppretter et EVI-bilde, bør du maskere ut skyer og lyse elementer fra refleksjonsbildet, og eventuelt sette terskelverdien for pikselverdiene fra 0 til 1.
 
-_Referanse: Huete, A., et al. «Oversikt over den radiometriske og biofysiske ytelsen til MODIS-vegetasjonsindeksene.» Remote Sensing of Environment 83 (2002):195–213._
+_Referanse: Huete, A., et al. «Overview of the Radiometric and Biophysical Performance of the MODIS Vegetation Indices.» Remote Sensing of Environment 83 (2002):195–213._
 
 ***
 
@@ -84,7 +83,7 @@ $$
 GARI = {NIR - [Green - \gamma(Blue - Red)] \over NIR + [Green - \gamma(Blue - Red)]   }
 $$
 
-Gammakonstanten er en vektingsfunksjon som avhenger av aerosolforholdene i atmosfæren. ENVI bruker en verdi på 1,7, som er den anbefalte verdien fra Gitelson, Kaufman og Merzylak (1996, side 296).
+Gamma-konstanten er en vektingsfunksjon som avhenger av aerosolforholdene i atmosfæren. ENVI bruker en verdi på 1,7, som er den anbefalte verdien fra Gitelson, Kaufman og Merzylak (1996, side 296).
 
 _Referanse: Gitelson, A., Y. Kaufman og M. Merzylak. «Use of a Green Channel in Remote Sensing of Global Vegetation from EOS-MODIS.» Remote Sensing of Environment 58 (1996): 289-298._
 
@@ -106,7 +105,7 @@ _Referanse: Gitelson, A., Y. Gritz og M. Merzlyak. «Relationships Between Leaf 
 
 ## GLI - Green Bladindeks
 
-Denne indeksen ble opprinnelig utviklet for bruk med et digitalt RGB-kamera for å måle hveteavling, hvor de digitale tallene for rødt, grønt og blått (DN) varierer fra 0 til 255.
+Denne indeksen ble opprinnelig utviklet for bruk med et digitalt RGB-kamera for å måle hveteavling, hvor de digitale tallene (DN) for rødt, grønt og blått varierer fra 0 til 255.
 
 $$
 GLI = {(Green - Red) + (Green - Blue)  \over (2 * Green) + Red + Blue }
@@ -144,13 +143,13 @@ _Referanse: Sripada, R., et al. «Determining In-Season Nitrogen Requirements fo
 
 ## GRVI - Green Ratio Vegetation Index
 
-Denne indeksen er følsom for fotosyntesehastigheten i skogkronene, da grønn og rød refleksjon påvirkes sterkt av endringer i bladpigmentene.
+Denne indeksen er følsom for fotosyntesehastigheten i skogkronene, da grønn og rød refleksjonsgrad påvirkes sterkt av endringer i bladpigmentene.
 
 $$
 GRVI = {NIR \over Green }
 $$
 
-_Referanse: Sripada, R., et al. «Luftfoto i infrarødt for å bestemme nitrogenbehovet i mais tidlig i sesongen.» Agronomy Journal 98 (2006): 968-977._
+_Referanse: Sripada, R., et al. «Luftfoto med infrarødt lys for å bestemme nitrogenbehovet i mais tidlig i sesongen.» Agronomy Journal 98 (2006): 968-977._
 
 ***
 
@@ -180,7 +179,7 @@ $$
 EVI = 2.5 *  {(NIR - Red) \over (NIR + 6 * Red - 7.5 * Blue + 1)}
 $$
 
-Høye LAI-verdier varierer vanligvis fra omtrent 0 til 3,5. Men når scenen inneholder skyer og andre lyse elementer som gir mettede piksler, kan LAI-verdiene overstige 3,5. Ideelt sett bør du maskere ut skyer og lyse elementer fra scenen før du lager et LAI-bilde.
+Høye LAI-verdier varierer vanligvis fra omtrent 0 til 3,5. Men når scenen inneholder skyer og andre lyse elementer som gir mettede piksler, kan LAI-verdiene overstige 3,5. Ideelt sett bør du maskere ut skyer og lyse elementer fra scenen før du oppretter et LAI-bilde.
 
 _Referanse: Boegh, E., H. Soegaard, N. Broge, C. Hasager, N. Jensen, K. Schelde og A. Thomsen. «Airborne Multi-spectral Data for Quantifying Leaf Area Index, Nitrogen Concentration and Photosynthetic Efficiency in Agriculture.» Remote Sensing of Environment 81, nr. 2-3 (2002): 179-193._
 
@@ -200,7 +199,7 @@ _Referanse: Datt, B. «Fjernmåling av vanninnholdet i eukalyptusblader.» Journ
 
 ## MNLI – Modifisert ikke-lineær indeks
 
-Denne indeksen er en forbedring av den ikke-lineære indeksen (NLI) som inkluderer den jordjusterte vegetasjonsindeksen (SAVI) for å ta hensyn til jordbakgrunnen. ENVI bruker en justeringsfaktor for bakgrunn i trekronene (_L_) på 0,5.
+Denne indeksen er en forbedring av den ikke-lineære indeksen (NLI) som inkluderer den jordjusterte vegetasjonsindeksen (SAVI) for å ta hensyn til jordbakgrunnen. ENVI bruker en justeringsfaktor for bakgrunnsdekke (_L_) på 0,5.
 
 $$
 MNLI = {(NIR^{2} - Red) * (1 + L) \over (NIR^{2} + Red + L)  }
@@ -224,7 +223,7 @@ _Referanse: Qi, J., A. Chehbouni, A. Huete, Y. Kerr og S. Sorooshian. «A Modifi
 
 ## NDRE – Normaliserte forskjeller RedEdge
 
-Denne indeksen ligner på NDVI, men sammenligner kontrasten mellom NIR og RedEdge i stedet for Red, som ofte oppdager vegetasjonsstress tidligere.
+Denne indeksen ligner NDVI, men sammenligner kontrasten mellom NIR og RedEdge i stedet for Red, som ofte oppdager vegetasjonsstress tidligere.
 
 $$
 NDRE = {NIR - RedEdge \over NIR + RedEdge  }
@@ -260,7 +259,7 @@ _Referanse: Goel, N. og W. Qin. «Influences of Canopy Architecture on Relations
 
 ## OSAVI – Optimalisert jordjustert vegetasjonsindeks
 
-Denne indeksen er basert på den jordjusterte vegetasjonsindeksen (SAVI). Den bruker en standardverdi på 0,16 for justeringsfaktoren for kronetakets bakgrunn. Rondeaux (1996) fastslo at denne verdien gir større jordvariasjon enn SAVI for lav vegetasjonsdekke, samtidig som den viser økt følsomhet for vegetasjonsdekke på over 50 %. Denne indeksen brukes best i områder med relativt sparsom vegetasjon hvor jorden er synlig gjennom trekronene.
+Denne indeksen er basert på den jordjusterte vegetasjonsindeksen (SAVI). Den bruker en standardverdi på 0,16 for justeringsfaktoren for bakgrunnsbelysning. Rondeaux (1996) fastslo at denne verdien gir større jordvariasjon enn SAVI for lav vegetasjonsdekke, samtidig som den viser økt følsomhet for vegetasjonsdekke på over 50 %. Denne indeksen brukes best i områder med relativt sparsom vegetasjon hvor jorden er synlig gjennom vegetasjonsdekket.
 
 $$
 OSAVI = {(NIR - Red) \over (NIR + Red + 0.16)  }
@@ -270,7 +269,7 @@ _Referanse: Rondeaux, G., M. Steven og F. Baret. «Optimization of Soil-Adjusted
 
 ***
 
-## RDVI – Renormalisert differansevegetasjonsindeks
+## RDVI – Renormalized Difference Vegetation Index
 
 Denne indeksen bruker forskjellen mellom nær-infrarøde og røde bølgelengder, sammen med NDVI, for å fremheve sunn vegetasjon. Den er ufølsom for effekten av jord og solens geometri.
 
@@ -284,7 +283,7 @@ _Referanse: Roujean, J., og F. Breon. «Estimering av PAR absorbert av vegetasjo
 
 ## SAVI – Jordjustert vegetasjonsindeks
 
-Denne indeksen ligner på NDVI, men den undertrykker effekten av jordpiksler. Den bruker en justeringsfaktor for bakgrunnsdekke, _L_, som er en funksjon av vegetasjonstetthet og ofte krever forhåndskunnskap om vegetasjonsmengder. Huete (1988) foreslår en optimal verdi på _L_=0,5 for å ta hensyn til førsteordens variasjoner i jordbakgrunnen. Denne indeksen brukes best i områder med relativt sparsom vegetasjon hvor jorda er synlig gjennom bladverket.
+Denne indeksen ligner på NDVI, men den undertrykker effekten av jordpiksler. Den bruker en justeringsfaktor for bakgrunnsdekke, _L_, som er en funksjon av vegetasjonstetthet og ofte krever forhåndskunnskap om vegetasjonsmengder. Huete (1988) foreslår en optimal verdi på _L_=0,5 for å ta hensyn til førsteordens variasjoner i jordbakgrunnen. Denne indeksen brukes best i områder med relativt sparsom vegetasjon hvor jorden er synlig gjennom kronetaket.
 
 $$
 SAVI = {1.5 * (NIR- Red) \over (NIR + Red + 0.5)  }
@@ -294,9 +293,9 @@ _Referanse: Huete, A. «A Soil-Adjusted Vegetation Index (SAVI).» Remote Sensin
 
 ***
 
-## TDVI – Transformed Difference Vegetation Index (transformert differansevegetasjonsindeks)
+## TDVI – Transformed Difference Vegetation Index
 
-Denne indeksen er nyttig for overvåking av vegetasjonsdekke i urbane miljøer. Den blir ikke mettet som NDVI og SAVI.
+Denne indeksen er nyttig for å overvåke vegetasjonsdekket i urbane miljøer. Den blir ikke mettet som NDVI og SAVI.
 
 $$
 TDVI = 1.5 * {(NIR- Red) \over \sqrt{NIR^{2} + Red + 0.5}  }
