@@ -1,5 +1,5 @@
 ---
-description: Laboratoriemålte paneler som brukes til å kalibrere innfangede data i etterbehandlingen
+description: Lab-measured panels used to calibrate captured data in post-processing
 metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/calibration-targets
@@ -20,6 +20,6 @@ Når du ser på refleksjonsgrafen, kan du se at verdiene er bølgelengde (x-akse
 
 Dette betyr at for hvert bilde du tar med kameraene våre, kan du bruke et bilde av refleksjonsmålene våre, for eksempel [T4-R50](https://www.mapir.camera/collections/calibration-targets/products/diffuse-reflectance-standard-calibration-target-package-t3-r50) eller [T4-R125](https://www.mapir.camera/collections/multispectral-reflectance-reference-calibration-targets/products/diffuse-reflectance-standard-calibration-target-package-t4-r125) for å kalibrere bildene for refleksjon. Når kalibreringen er fullført, tilsvarer hver piksel i bildet en prosentandel av refleksjonen.
 
-Hvis du eksporterer de kalibrerte bildene i Chloros som vanlig JPG eller TIFF, beregnes refleksjonsprosenten ved å dele pikselverdien med bitdybden til bildeformatet. For JPG deles det med 255, og for TIFF deles det med 65 535. Du kan også velge PERCENT-formatutdata i Chloros, og da vil hver piksel variere fra en prosentverdi på 0,0 til 1,0 (0 % til 100 % refleksjonsgrad). Bare husk at noen bildeprogrammer ikke kan akseptere prosentbilder (flytende komma), og at de er store i størrelse når det gjelder lagring.
+Hvis du eksporterer de kalibrerte bildene i Chloros som vanlig JPG eller TIFF, beregnes refleksjonsprosenten ved å dele pikselverdien med bitdybden til bildeformatet. For JPG deles det med 255, og for TIFF deles det med 65 535. Du kan også velge PERCENT-formatutdata i Chloros, og da vil hver piksel ha en prosentverdi mellom 0,0 og 1,0 (0 % til 100 % refleksjonsgrad). Vær oppmerksom på at noen bildeprogrammer ikke kan akseptere prosentbilder (flytende desimaler), og at de er store i størrelse når det gjelder lagring.
 
 <div><figure><img src=".gitbook/assets/t3-125.jpg" alt=""><figcaption><p>T4-R125</p></figcaption></figure> <figure><img src=".gitbook/assets/t3-125_2.jpg" alt=""><figcaption><p>T4-R125</p></figcaption></figure> <figure><img src=".gitbook/assets/t3-125_closed.jpg" alt=""><figcaption><p>T4-R125</p></figcaption></figure></div>

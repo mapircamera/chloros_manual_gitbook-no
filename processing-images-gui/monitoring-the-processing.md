@@ -1,6 +1,6 @@
 # Overvåking av behandlingen
 
-Når behandlingen er startet, tilbyr Chloros flere måter å overvåke fremdriften, sjekke for problemer og forstå hva som skjer med datasettet ditt. Denne siden forklarer hvordan du kan spore behandlingen og tolke informasjonen som Chloros gir.
+Når behandlingen har startet, tilbyr Chloros flere måter å overvåke fremdriften, sjekke for problemer og forstå hva som skjer med datasettet ditt. Denne siden forklarer hvordan du kan spore behandlingen og tolke informasjonen som Chloros gir.
 
 ## Oversikt over fremdriftslinje
 
@@ -36,7 +36,7 @@ For brukere med Chloros+-lisens:
 
 * **Hold musepekeren over** fremdriftslinjen for å se utvidet 4-trinns panel
 * **Klikk** på fremdriftslinjen for å fryse/feste det utvidede panelet
-* **Klikk igjen** for å frigjøre og skjule automatisk når musen fjernes
+* **Klikk igjen** for å frigjøre og skjule automatisk når musen forlater
 * Hvert trinn viser individuell fremdrift (0-100 %)
 
 ***
@@ -47,7 +47,7 @@ For brukere med Chloros+-lisens:
 
 **Hva skjer:**
 
-* Chloros skanner bilder merket med mål-avkrysningsruten
+* Chloros skanner bilder merket med mål-avkrysningsboksen
 * Datasynsalgoritmer identifiserer de 4 kalibreringspanelene
 * Refleksjonsverdier hentet fra hvert panel
 * Mål-tidsstempler registrert for riktig kalibreringsplanlegging
@@ -66,7 +66,7 @@ For brukere med Chloros+-lisens:
 **Hva du bør se etter:**
 
 * Bør fullføres raskt hvis målene er riktig merket
-* Hvis det tar for lang tid, kan det være at målene ikke er merket
+* Hvis det tar for lang tid, er det mulig at målene ikke er merket
 * Sjekk feilsøkingsloggen for meldinger om «Mål funnet»
 
 ### Trinn 2: Analyse
@@ -74,8 +74,8 @@ For brukere med Chloros+-lisens:
 **Hva skjer:**
 
 * Leser EXIF-metadata for bilder (tidsstempler, eksponeringsinnstillinger)
-* Bestemmer kalibreringsstrategi basert på målets tidsstempler
-* Organiserer bildebehandlingskøen
+* Bestemmer kalibreringsstrategi basert på tidsstempler for mål
+* Organiserer kø for bildebehandling
 * Forbereder parallelle behandlingsarbeidere (kun Chloros+)
 
 **Varighet:** 5–30 sekunder
@@ -90,17 +90,17 @@ For brukere med Chloros+-lisens:
 * Bør gå jevnt uten pauser
 * Advarsler om manglende metadata vises i feilsøkingsloggen
 
-### Trinn 3: Kalibrering
+### Fase 3: Kalibrering
 
 **Hva skjer:**
 
 * **Debayering**: Konvertering av RAW Bayer-mønster til 3 kanaler
-* **Vignettkorrigering**: Fjerner mørkere kanter på objektivet
+* **Vignettkorrigering**: Fjerner mørkningen i kantene av linsen
 * **Refleksjonskalibrering**: Normaliserer med målverdier
 * **Indeksberegning**: Beregner multispektrale indekser
 * Behandler hvert bilde gjennom hele prosessen
 
-**Varighet:** Størstedelen av total behandlingstid (60–80 %)
+**Varighet:** Størstedelen av den totale behandlingstiden (60–80 %)
 
 **Fremdriftsindikator:**
 
@@ -140,7 +140,7 @@ For brukere med Chloros+-lisens:
 **Hva du bør være oppmerksom på:**
 
 * Advarsler om diskplass
-* Feil ved skriving av filer
+* Filskrivefeil
 * Fullføring av alle konfigurerte utdata
 
 ***
@@ -201,7 +201,7 @@ Kritiske problemer som kan føre til at behandlingen mislykkes:
 | «Behandler bilde X av Y»        | Oppdatering av gjeldende fremdrift                | Ingen – normalt                                         |
 | «Ingen mål funnet»               | Ingen kalibreringsmål oppdaget        | Merk målbilder eller deaktiver refleksjonskalibrering |
 | «Utilstrekkelig diskplass»        | Ikke nok lagringsplass for utdata          | Frigjør diskplass                                    |
-| «Hopper over ødelagt fil»        | Bildfilen er skadet                  | Kopier filen på nytt fra SD-kortet                             |
+| «Hopper over ødelagt fil»        | Bildefilen er skadet                  | Kopier filen på nytt fra SD-kortet                             |
 | «PPK-data brukt»               | GPS-korreksjoner fra .daq-fil brukt | Ingen – normalt                                         |
 
 ### Kopiere loggdata
@@ -266,7 +266,7 @@ Når GPU-akselerasjon er aktivert:
 * Oppgavebehandling → Ytelse → GPU
 * GPU-Z eller lignende overvåkingsverktøy
 
-### Disk-I/O
+### Disk I/O
 
 **Hva du kan forvente:**
 
@@ -286,7 +286,7 @@ Når GPU-akselerasjon er aktivert:
 
 ### Advarselstegn
 
-**Fremdriften stopper opp (ingen endring i 5+ minutter):**
+**Fremdriften stopper opp (ingen endring i mer enn 5 minutter):**
 
 * Sjekk feilsøkingsloggen for feil
 * Kontroller at det er ledig diskplass
@@ -336,7 +336,7 @@ Stopp behandlingen hvis du ser:
 
 **Løsninger:**
 
-1. Hvis du nettopp har startet og er i deteksjonsfasen: Avbryt, merk mål, start på nytt
+1. Hvis du nettopp har startet og er i detekteringsfasen: Avbryt, merk mål, start på nytt
 2. For fremtiden: Bruk SSD, reduser indekser, oppgrader maskinvare
 3. Vurder CLI for batchbehandling av store datasett
 
@@ -356,20 +356,20 @@ Stopp behandlingen hvis du ser:
 1. Kopier bildene på nytt fra SD-kortet for å sikre integriteten
 2. Test SD-kortet for feil
 3. Fjern korrupte filer fra prosjektet
-4. Fortsett å behandle de gjenværende bildene
+4. Fortsett behandlingen av de gjenværende bildene
 
 ### Systemet blir overopphetet/bremset
 
 **Løsninger:**
 
-1. Sørg for tilstrekkelig ventilasjon
-2. Rengjør støv fra datamaskinens ventilasjonsåpninger
-3. Reduser behandlingsbelastningen (bruk Free-modus i stedet for Chloros+)
-4. Behandle på kjøligere tider av døgnet
+1. Sørg for tilstrekkelig ventilasjon.
+2. Rengjør støv fra datamaskinens ventilasjonsåpninger.
+3. Reduser behandlingsbelastningen (bruk Free-modus i stedet for Chloros+).
+4. Behandle på kjøligere tidspunkter av døgnet.
 
 ***
 
-## Meldingen «Behandlingen er fullført»
+## Meldingen «Behandling fullført»
 
 Når behandlingen er fullført:
 
@@ -385,7 +385,7 @@ Når behandlingen er fullført:
 Når behandlingen er fullført:
 
 1. **Gjennomgå resultatene** – Se [Fullføre behandlingen](finishing-the-processing.md)
-2. **Kontroller utdata-mappen** – Kontroller at alle filer er eksportert riktig
+2. **Kontroller utdatamappen** – Kontroller at alle filene er eksportert riktig
 3. **Gjennomgå feilsøkingsloggen** – Kontroller om det er advarsler eller feil
 4. **Forhåndsvis behandlede bilder** – Bruk Image Viewer eller ekstern programvare
 

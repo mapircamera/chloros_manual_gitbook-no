@@ -44,4 +44,4 @@ Gå gjennom loggen for feilsøkingsutskrifter når det oppstår problemer. Kopie
 
 #### <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> [Brukerinnlogging](chloros+-login.md)
 
-Sidefeltet for brukerinnlogging lar deg logge inn på Chloros+-kontoen din for å låse opp avanserte funksjoner. Du kan også se den gjeldende versjonen av applikasjonen, samt justere språket for teksten som vises i Chloros GUI og CLI.
+Sidepanelet for brukerinnlogging lar deg logge inn på Chloros+-kontoen din for å låse opp avanserte funksjoner. Du kan også se den gjeldende versjonen av applikasjonen, samt justere språket for teksten som vises i Chloros GUI og CLI.

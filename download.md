@@ -3,7 +3,6 @@ metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/download
 ---
-
 # Last ned
 
 Last ned den nyeste versjonen av Chloros for Windows for å komme i gang med multispektral bildebehandling.
@@ -109,9 +108,9 @@ Få tilgang til avanserte funksjoner med et Chloros+-abonnement:
 
 * Prøv Chloros (nettleser) versjonen
 * Kontroller at Windows 10/11 (64-bit) er installert
-* Oppdater grafikkdriverne
-* Sjekk Windows Hendelseslogg for feilinformasjon
-* Kontakt support med feillogger
+* Oppdater grafikkdrivere
+* Sjekk Windows Hendelseslogg for feildetaljer
+* Kontakt support med feilloggene
 
 **Problemer med lisensaktivering:**
 
@@ -166,3 +165,5 @@ Uautorisert bruk, distribusjon eller modifisering er forbudt.
 **Gratis versjon**: Tilgjengelig for personlig og kommersiell bruk med funksjonsbegrensninger.
 
 **Chloros+**: Abonnementsbasert lisens for avanserte funksjoner og kommersiell bruk.
+
+<figure><img src=".gitbook/assets/t3-125_2.jpg" alt=""><figcaption></figcaption></figure>

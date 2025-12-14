@@ -58,7 +58,7 @@ Se [Image Viewer](../image-viewer-gui/opening-an-image-full-screen.md) for detal
 
 ***
 
-## Gjennomgang av feilsøkingsloggen
+## Gjennomgå feilsøkingsloggen
 
 ### Se etter advarsler eller feil
 
@@ -109,7 +109,7 @@ For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-ku
 
 1. Kontroller at vignettkorrigering er aktivert i prosjektinnstillingene.
 2. Kontroller at kameramodellen er riktig oppdaget.
-3. Kontakt MAPIR-kundestøtte hvis vignettering vedvarer.
+3. Kontakt MAPIR-kundestøtte hvis vignetteringen vedvarer.
 
 ### Problem: Feil farger eller verdier
 
@@ -193,7 +193,7 @@ For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-ku
 * ✅ **Behandlede resultater** – Oppbevar kalibrerte bilder og indekser
 * ✅ **Prosjektfil** – Inneholder alle innstillinger for ombehandling om nødvendig
 * ✅ **Feilsøkingslogg** – Dokumenterer behandlingsdetaljer
-* ✅ **Kalibreringsmålbilder** – For verifisering og ny behandling
+* ✅ **Kalibreringsmålbilder** – For verifisering og ombehandling
 
 **Anbefalinger for lagring:**
 
@@ -203,7 +203,7 @@ For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-ku
 
 ***
 
-## Neste behandlingskjøringer
+## Neste behandlingskjøring
 
 ### Gjenbruk av prosjektinnstillinger
 
@@ -271,15 +271,15 @@ Hvis du støter på problemer:
 
 ## Oppsummering: Fullfør arbeidsflyten
 
-Du har nå fullført hele arbeidsflyten for Chloros-behandlingen:
+Du har nå fullført hele arbeidsflyten for Chloros-behandling:
 
 1. ✅ **Opprettet prosjekt** – Se [Prosjekter](../projects.md)
 2. ✅ **Lagt til filer** – Se [Legge til filer](adding-files-to-a-project.md)
 3. ✅ **Justert innstillinger** – Se [Justere prosjektinnstillinger](adjusting-project-settings.md)
 4. ✅ **Merkede mål** – Se [Velge målbilder](choosing-target-images.md)
-5. ✅ **Startet behandling** – Se [Starte behandlingen](starting-the-processing.md)
-6. ✅ **Overvåket fremgang** - Se [Overvåke behandlingen](monitoring-the-processing.md)
-7. ✅ **Gjennomgått resultater** - Denne siden
+5. ✅ **Startet behandling** - Se [Starte behandlingen](starting-the-processing.md)
+6. ✅ **Overvåket fremdrift** - Se [Overvåke behandlingen](monitoring-the-processing.md)
+7. ✅ **Gjennomgått resultater** – Denne siden
 
 **Dine kalibrerte, refleksjonskorrigerte multispektrale bilder er klare for analyse!**
 
@@ -290,7 +290,7 @@ Du har nå fullført hele arbeidsflyten for Chloros-behandlingen:
 ### Avanserte funksjoner
 
 * [**Bildeselger**](../image-viewer-gui/opening-an-image-full-screen.md) – Interaktiv visualisering og analyse
-* [**Indeks/LUT Sandbox**](../image-viewer-gui/index-lut-sandbox.md) – Tilpasset indeks testing
+* [**Indeks/LUT-sandkasse**](../image-viewer-gui/index-lut-sandbox.md) – Tilpasset indekstesting
 * [**Multispektrale indeksformler**](../project-settings/multispectral-index-formulas.md) – Komplett indeksreferanse
 
 ### Automatisering og integrering

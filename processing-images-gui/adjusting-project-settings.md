@@ -4,7 +4,7 @@ Før du behandler bildene dine, er det viktig å konfigurere prosjektinnstilling
 
 ## Tilgang til prosjektinnstillinger
 
-1. Åpne prosjektet i Chloros
+1. Åpne prosjektet ditt i Chloros
 2. Klikk på **Prosjektinnstillinger** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> i venstre sidefelt
 3. Panelet Prosjektinnstillinger viser alle konfigurasjonsalternativer
 
@@ -21,7 +21,7 @@ Før du behandler bildene dine, er det viktig å konfigurere prosjektinnstilling
 For typiske MAPIR Survey3 kameraarbeidsflyter fungerer standardinnstillingene godt:
 
 * ✅ **Vignettkorreksjon**: Aktivert
-* ✅ **Refleksjonskalibrering**: Aktivert (krever bilder av MAPIR-mål)
+* ✅ **Refleksjonskalibrering**: Aktivert (krever bilder av MAPIR mål)
 * ✅ **Debayer-metode**: Høy kvalitet (raskere)
 * ✅ **Eksportformat**: TIFF (16-bit)
 
@@ -100,8 +100,8 @@ Kontrollerer utdatafilformat og kvalitet.
 
 * **TIFF (16-bit)**: Anbefales for GIS og vitenskapelig analyse (0-65 535-området)
 * **TIFF (32-bit, prosent)**: Flytende refleksjonsverdier (0,0-1,0-området)
-* **PNG (8-bit)**: Tapsfri komprimering for visualisering (område 0–255)
-* **JPG (8-bit)**: Minste filer, tapsrik komprimering (område 0–255)
+* **PNG (8-bit)**: Tapsfri komprimering for visualisering (0–255)
+* **JPG (8-bit)**: Minste filer, tapsrik komprimering (0–255)
 
 ***
 
@@ -118,18 +118,18 @@ Opprett gjenbrukbare maler for konsistente arbeidsflyter:
 
 **Fordeler:**
 
-* Bruk identiske innstillinger på flere prosjekter
-* Del konfigurasjoner med teammedlemmer
-* Oppretthold konsistens for gjentatte undersøkelser
+* Bruk identiske innstillinger på flere prosjekter.
+* Del konfigurasjoner med teammedlemmer.
+* Oppretthold konsistens for gjentatte undersøkelser.
 
 ### Last inn mal på nytt prosjekt
 
 Når du oppretter et nytt prosjekt:
 
-1. Velg **«Nytt prosjekt»** fra hovedmenyen
-2. Velg alternativet **«Last inn fra mal»**
-3. Velg den lagrede malen
-4. Alle innstillinger blir automatisk brukt
+1. Velg **«Nytt prosjekt»** fra hovedmenyen.
+2. Velg alternativet **«Last inn fra mal»**.
+3. Velg den lagrede malen.
+4. Alle innstillinger blir automatisk brukt.
 
 ### Arbeidskatalog
 
@@ -193,8 +193,8 @@ Når du behandler bilder fra flere MAPIR-kameraer i ett prosjekt:
 For gjentatte undersøkelser av samme område over tid:
 
 1. Lag en mal med standardinnstillingene dine
-2. Bruk konsistent kalibreringsmåloppsett for hver økt
-3. Behandle hver dato som et eget prosjekt
+2. Bruk konsistent kalibreringsmåloppsett hver økt
+3. Behandle hver dato som et separat prosjekt
 4. Bruk identiske innstillinger for sammenlignbare resultater
 5. Eksporter i samme format for tidsanalyse
 

@@ -36,8 +36,8 @@ Se gjennom de importerte bildene i filbrowseren og identifiser hvilke bilder som
 
 **Vanlige scenarier:**
 
-* **Mål før opptak**: Opptatt før sesjonen startet
-* **Mål etter opptak**: Opptatt etter at sesjonen var fullført
+* **Mål før opptak**: Opptatt før sesjonen starter
+* **Mål etter opptak**: Opptatt etter at sesjonen er fullført
 * **Mål i feltet**: Mål plassert innenfor opptaksområdet
 * **Flere mål**: 2–3 målbilder per sesjon (anbefalt)
 
@@ -45,14 +45,14 @@ Se gjennom de importerte bildene i filbrowseren og identifiser hvilke bilder som
 
 For hvert bilde som inneholder et kalibreringsmål:
 
-1. Finn bildet i filbrowser-tabellen.
+1. Finn bildet i filbrowsertabellen.
 2. Finn kolonnen **Mål** (kolonnen helt til høyre).
 3. Klikk på avmerkingsboksen i målkolonnen for det bildet.
 4. Gjenta for alle bilder som inneholder mål.
 
-### Trinn 3: Kontroller valget ditt
+### Trinn 3: Bekreft valget ditt
 
-Før du fortsetter, må du dobbeltsjekke følgende:
+Før du behandler, må du dobbeltsjekke:
 
 * [ ] Alle bilder med kalibreringsmål er merket av
 * [ ] Ingen bilder uten mål er merket av ved en feiltakelse
@@ -68,7 +68,7 @@ Før du fortsetter, må du dobbeltsjekke følgende:
 
 * Ta målbilder umiddelbart før og under opptakssesjonen
 * Under de samme lysforholdene som DAQ-lyssensoren
-* Ideelt sett bør du ta målbilder så ofte som mulig for å oppnå best mulig resultat. Ellers vil lyssensordataene brukes til å justere kalibreringen over tid.
+* Ideelt sett bør du ta målbilder så ofte som mulig for å få best mulig resultat. Ellers vil lyssensordataene brukes til å justere kalibreringen over tid.
 
 **Kameraposisjon:**
 
@@ -111,7 +111,7 @@ Hvis du bruker to MAPIR-kameraer samtidig (f.eks. Survey3W RGN + Survey3N OCN):
 3. Merk målbildene for **begge kameratypene** i filbrowseren.
 4. Chloros vil bruke passende mål for kalibrering av hvert kamera.
 
-### Kolonne for kameramodell
+### Kolonnen Kameramodell
 
 Kolonnen **Kameramodell** hjelper deg med å identifisere hvilke bilder som kommer fra hvilket kamera:
 
@@ -157,7 +157,7 @@ Hvis Chloros ikke oppdager målene dine riktig, kan du justere disse innstilling
 
 **Løsninger:**
 
-1. Kontroller at kolonnen Mål er merket for riktige bilder
+1. Kontroller at kolonnen Mål er merket av for riktige bilder
 2. Gjennomgå kvaliteten på målbildene i forhåndsvisningen
 3. Ta opp målene på nytt hvis kvaliteten er dårlig
 4. Juster innstillingene for måldeteksjon om nødvendig
@@ -205,7 +205,7 @@ Selv om det ikke anbefales for vitenskapelig arbeid, kan du behandle uten mål:
 4. Utdataene vil ikke bli kalibrert for absolutt refleksjonsevne
 
 {% hint style=&quot;warning&quot; %}
-**Anbefales ikke**: Uten refleksjonskalibrering representerer pikselverdiene bare relativ lysstyrke, ikke vitenskapelige refleksjonsmålinger. Bruk kalibreringsmål for nøyaktige, repeterbare resultater.
+**Ikke anbefalt**: Uten refleksjonskalibrering representerer pikselverdiene bare relativ lysstyrke, ikke vitenskapelige refleksjonsmålinger. Bruk kalibreringsmål for nøyaktige, repeterbare resultater.
 {% endhint %}
 
 ***
@@ -214,7 +214,7 @@ Selv om det ikke anbefales for vitenskapelig arbeid, kan du behandle uten mål:
 
 Når du har merket målbildene dine:
 
-1. **Gjennomgå innstillingene dine** – Se [Justere prosjektinnstillinger](adjusting-project-settings.md)
+1. **Gå gjennom innstillingene dine** – Se [Justere prosjektinnstillinger](adjusting-project-settings.md)
 2. **Start behandlingen** – Se [Starte behandlingen](starting-the-processing.md)
 3. **Overvåk fremdriften** – Se [Overvåke behandlingen](monitoring-the-processing.md)
 

@@ -3,7 +3,6 @@ metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/output-image-formats
 ---
-
 # Utdataformat for bilder
 
 ### TIFF (16-bit)
@@ -20,5 +19,5 @@ metaLinks:
 
 ### **PNG (8-bit)**
 
-8-bit (piksel digitaltall 0 - 255) PNG (.png) formatutdata. Tapsfri komprimering egnet for visning og visualisering på nettet.
+8-bit (piksel digitalt tall 0 - 255) PNG (.png) formatutdata. Tapsfri komprimering egnet for visning og visualisering på nettet.
 

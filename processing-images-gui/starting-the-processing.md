@@ -66,7 +66,7 @@ Chloros fungerer i to forskjellige behandlingsmoduser, avhengig av lisensen din:
 * Mye tregere enn Chloros+ parallellmodus
 * Egnet for små til mellomstore datasett (&lt; 200 bilder)
 
-### Chloros+ modus (parallellbehandling)
+### Chloros+ modus (parallell behandling)
 
 **Krever Chloros+ lisens**
 
@@ -80,9 +80,9 @@ Chloros fungerer i to forskjellige behandlingsmoduser, avhengig av lisensen din:
 **Fremdriftslinjen viser 4 trinn:**
 
 1. **Deteksjon** – Finne kalibreringsmål
-2. **Analyse** – Undersøke bildemetadata og forberede pipeline
-3. **Kalibrerer** – Bruker korreksjoner og kalibreringer
-4. **Eksporterer** – Lagrer behandlede bilder og indekser
+2. **Analyse** – Undersøke bildemetadata og forberede rørledning
+3. **Kalibrering** – Bruk av korreksjoner og kalibreringer
+4. **Eksport** – Lagring av behandlede bilder og indekser
 
 **Interaksjon med fremdriftslinjen:**
 
@@ -121,7 +121,7 @@ Chloros fungerer i to forskjellige behandlingsmoduser, avhengig av lisensen din:
 
 * Konverterer RAW-Bayer-mønsterdata til fullstendige RGB-bilder
 * Bruker demosaicing-algoritme av høy kvalitet
-* Bevarer maksimal bildekvalitet og detaljer
+* Bevarer maksimal bildekvalitet og detaljrikdom
 
 **Varighet:** Varierer avhengig av antall bilder og CPU-hastighet
 
@@ -129,9 +129,9 @@ Chloros fungerer i to forskjellige behandlingsmoduser, avhengig av lisensen din:
 
 **Hva Chloros gjør:**
 
-* **Vignettkorreksjon**: Fjerner mørkningen av linsen i kantene
+* **Vignettkorrigering**: Fjerner mørkningen av linsen i kantene
 * **Refleksjonskalibrering**: Normaliserer ved hjelp av målrefleksjonsverdier
-* Bruker korreksjoner på tvers av alle bånd/kanaler
+* Bruker korrigeringer på tvers av alle bånd/kanaler
 * Bruker passende kalibreringsmål for hvert bilde basert på tidsstempel
 
 **Varighet:** Størstedelen av behandlingstiden
@@ -155,15 +155,15 @@ Chloros fungerer i to forskjellige behandlingsmoduser, avhengig av lisensen din:
 * Skriver filer til undermapper for kameramodeller
 * Bevarer originale filnavn med suffikser
 
-**Varighet:** Varierer avhengig av eksportformat og filstørrelse
+**Varighet:** Varierer etter eksportformat og filstørrelse
 
 ***
 
 ## Behandlingsatferd
 
-### Automatisk behandlingspipeline
+### Automatisk behandlingsprosess
 
-Når den er startet, kjører hele pipelinen automatisk:
+Når prosessen er startet, kjører hele prosessen automatisk:
 
 * Ingen brukerinteraksjon nødvendig
 * Alle konfigurerte trinn utføres i rekkefølge
@@ -195,7 +195,7 @@ Når den er startet, kjører hele pipelinen automatisk:
 * Når behandlingen er startet, kan den ikke pauses.
 * Du kan avbryte behandlingen, men fremdriften går tapt.
 * Delvise resultater lagres ikke.
-* Du må starte på nytt fra begynnelsen hvis behandlingen avbrytes.
+* Du må starte på nytt fra begynnelsen hvis du avbryter.
 
 **Planleggingstips:** For svært store prosjekter bør du vurdere å behandle i batcher eller bruke CLI for bedre kontroll.
 
@@ -239,7 +239,7 @@ Hvis du trenger å stoppe behandlingen:
 * Gjennomgå og løse eventuelle problemer
 * Juster innstillingene etter behov
 * Start behandlingen på nytt fra begynnelsen
-* For å få den beste opplevelsen, lukk Chloros helt og start på nytt
+* For å få en optimal opplevelse, lukk Chloros helt og start på nytt
 
 {% hint style=&quot;warning&quot; %}
 **Ingen delvise resultater**: Avbrytelse forkaster all fremgang. Chloros lagrer ikke delvis behandlede bilder.
@@ -260,7 +260,7 @@ Den faktiske behandlingstiden varierer sterkt avhengig av:
 * Antall indekser som skal beregnes
 * Eksportformatets kompleksitet
 
-### Grove estimater (Chloros+, 12 MP bilder, moderne CPU)
+### Grove estimater (Chloros+, 12 MP-bilder, moderne CPU)
 
 | Antall bilder | Gratis modus | Chloros+ (CPU) | Chloros+ (GPU) |
 | ----------- | --------- | -------------- | -------------- |
@@ -278,21 +278,21 @@ Den faktiske behandlingstiden varierer sterkt avhengig av:
 
 ## Vanlige problemer ved oppstart
 
-### Startknappen deaktivert (grå)
+### Startknappen er deaktivert (grå)
 
 **Mulige årsaker:**
 
 * Ingen bilder importert
-* Backend ikke fullstendig startet
+* Backend er ikke fullstendig startet
 * Forrige behandling kjører fortsatt
-* Prosjektet ikke fullstendig lastet inn
+* Prosjektet er ikke fullstendig lastet inn
 
 **Løsninger:**
 
 1. Vent til backend er fullstendig initialisert (sjekk hovedmenyikonet)
 2. Kontroller at bildene er importert i filbrowseren
 3. Start Chloros på nytt hvis knappen fortsatt er deaktivert
-4. Sjekk feilsøkingsloggen for feilmeldinger
+4. Sjekk feillogg for feilmeldinger
 
 ### Behandlingen starter, men mislykkes umiddelbart
 
@@ -331,24 +331,24 @@ Den faktiske behandlingstiden varierer sterkt avhengig av:
 
 ### Før du starter
 
-1. **Test først med et lite delsett** – Behandle 10–20 bilder for å kontrollere innstillingene.
-2. **Kontroller tilgjengelig diskplass** – Sørg for at du har 2–3 ganger så mye ledig plass som datasettets størrelse.
-3. **Lukk unødvendige programmer** – Frigjør systemressurser.
-4. **Kontroller målbildene** – Forhåndsvis merkede mål for å sikre kvaliteten.
+1. **Test med et lite delsett først** – Behandle 10–20 bilder for å kontrollere innstillingene
+2. **Kontroller tilgjengelig diskplass** – Sørg for at det er 2–3 ganger så mye ledig plass som datasettets størrelse
+3. **Lukk unødvendige programmer** – Frigjør systemressurser
+4. **Kontroller målbildene** – Forhåndsvis merkede mål for å sikre kvaliteten
 5. **Lagre prosjektet** – Prosjektet lagres automatisk, men det er lurt å lagre manuelt
 
 ### Under behandlingen
 
 1. **Unngå at systemet går i dvale** – Deaktiver strømsparingsmodus
 2. **Hold Chloros i forgrunnen** – Eller i det minste synlig i oppgavelinjen
-3. **Følg med på fremdriften av og til** – Sjekk om det er advarsler eller feil
+3. **Overvåk fremdriften av og til** – Sjekk om det er advarsler eller feil
 4. **Ikke last inn andre tunge applikasjoner** – Spesielt med Chloros+ parallellmodus
 
 ### Chloros+ GPU-akselerasjon
 
 Hvis du bruker NVIDIA GPU-akselerasjon:
 
-1. Oppdater NVIDIA-drivere til den nyeste versjonen
+1. Oppdater NVIDIA-drivere til nyeste versjon
 2. Sørg for at GPU har 4 GB+ VRAM
 3. Lukk GPU-intensive programmer (spill, videoredigering)
 4. Overvåk GPU-temperaturen (sørg for tilstrekkelig kjøling)
