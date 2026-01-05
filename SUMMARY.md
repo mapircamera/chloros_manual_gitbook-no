@@ -3,8 +3,8 @@
 * [Komme i gang](README.md)
 * [GUI: Navigering](navigation.md)
 * [GUI: Prosjekter](projects.md)
-* [CLI : Kommandolinje](CLI.md)
-* [API : Python SDK](api-python-sdk.md)
+* [CLI: Kommandolinje](CLI.md)
+* [API: Python SDK](api-python-sdk.md)
 * [Støttede kameraer](supported-cameras.md)
 * [Utgangsbildformater](output-image-formats.md)
 * [Chloros+ Pålogging](chloros+-login.md)
@@ -13,9 +13,9 @@
 * [Nedlasting](download.md)
 * [FAQ](faq.md)
 
-## Behandling av bilder (GUI)
+## Behandle bilder (GUI)
 
-* [Justering av prosjektinnstillinger](processing-images-gui/adjusting-project-settings.md)
+* [Justere prosjektinnstillinger](processing-images-gui/adjusting-project-settings.md)
 * [Legge til filer i et prosjekt](processing-images-gui/adding-files-to-a-project.md)
 * [Velge målbilder](processing-images-gui/choosing-target-images.md)
 * [Starte behandlingen](processing-images-gui/starting-the-processing.md)
@@ -29,6 +29,8 @@
 
 ## BILDEVISER (GUI)
 
-* [Åpne et bilde i fullskjerm](image-viewer-gui/opening-an-image-full-screen.md)
+* [Bildegitter](image-viewer-gui/image-grid.md)
+* [Åpne et bilde i fullskjermmodus](image-viewer-gui/opening-an-image-full-screen.md)
 * [Bildelag](image-viewer-gui/image-layers.md)
 * [Indeks/LUT-sandkasse](image-viewer-gui/index-lut-sandbox.md)
+* [Kartmarkører](image-viewer-gui/map-markers.md)

@@ -26,12 +26,12 @@ Før du klikker på Start-knappen, må du kontrollere at alt er klart:
 Start-/avspillingsknappen finnes i den øverste overskriftslinjen i Chloros:
 
 * Plassering: Øverst i midten av vinduet
-* Ikon: **Avspillings-/startknapp** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">
+* Ikon: **Avspillings-/startknapp** <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line">
 * Status: Knappen er aktivert (lys) når den er klar til behandling
 
 ### Klikk for å starte
 
-1. Klikk på **Spill av/Start-knappen** øverst i overskriften
+1. Klikk på **Spill av/Start-knappen** i den øverste overskriften
 2. Behandlingen starter umiddelbart
 3. Knappen blir deaktivert (grå) under behandlingen
 4. Fremdriftslinjen oppdateres og viser behandlingsstatus
@@ -58,15 +58,13 @@ Chloros fungerer i to forskjellige behandlingsmoduser, avhengig av lisensen din:
 
 **Fremdriftslinjen viser to trinn:**
 
-1. **Måldeteksjon** – Skanner etter kalibreringsmål
-2. **Behandling** – Bruker kalibrering og eksporterer bilder
-
-**Behandlingstid:**
+1.**Måldeteksjon** – Skanner etter kalibreringsmål
+2. **Behandling** – Bruker kalibrering og eksporterer bilder**Behandlingstid:**
 
 * Mye tregere enn Chloros+ parallellmodus
 * Egnet for små til mellomstore datasett (&lt; 200 bilder)
 
-### Chloros+ modus (parallell behandling)
+### Chloros+ modus (parallellbehandling)
 
 **Krever Chloros+ lisens**
 
@@ -79,18 +77,12 @@ Chloros fungerer i to forskjellige behandlingsmoduser, avhengig av lisensen din:
 
 **Fremdriftslinjen viser 4 trinn:**
 
-1. **Deteksjon** – Finne kalibreringsmål
-2. **Analyse** – Undersøke bildemetadata og forberede rørledning
+1.**Deteksjon** – Finne kalibreringsmål
+2. **Analyse** – Undersøke bildemetadata og forberede pipeline
 3. **Kalibrering** – Bruk av korreksjoner og kalibreringer
-4. **Eksport** – Lagring av behandlede bilder og indekser
-
-**Interaksjon med fremdriftslinjen:**
-
-* **Hold musen** over linjen for å se et detaljert nedtrekkspanel med 4 trinn
+4. **Eksport** – Lagring av behandlede bilder og indekser**Interaksjon med fremdriftslinjen:*** **Hold musen** over linjen for å se et detaljert nedtrekkspanel med 4 trinn
 * **Klikk** på fremdriftslinjen for å fryse nedtrekkspanelet på plass
-* **Klikk igjen** for å frigjøre og skjule panelet
-
-**Behandlingstid:**
+* **Klikk igjen** for å frigjøre og skjule panelet**Behandlingstid:**
 
 * Betydelig raskere enn gratis modus
 * Skaleres med antall CPU-kjerner
@@ -127,11 +119,9 @@ Chloros fungerer i to forskjellige behandlingsmoduser, avhengig av lisensen din:
 
 ### Trinn 3: Kalibrering
 
-**Hva Chloros gjør:**
-
-* **Vignettkorrigering**: Fjerner mørkningen av linsen i kantene
+**Hva Chloros gjør:*** **Vignettkorreksjon**: Fjerner mørkningen av linsen i kantene
 * **Refleksjonskalibrering**: Normaliserer ved hjelp av målrefleksjonsverdier
-* Bruker korrigeringer på tvers av alle bånd/kanaler
+* Bruker korreksjoner på tvers av alle bånd/kanaler
 * Bruker passende kalibreringsmål for hvert bilde basert på tidsstempel
 
 **Varighet:** Størstedelen av behandlingstiden
@@ -155,9 +145,7 @@ Chloros fungerer i to forskjellige behandlingsmoduser, avhengig av lisensen din:
 * Skriver filer til undermapper for kameramodeller
 * Bevarer originale filnavn med suffikser
 
-**Varighet:** Varierer etter eksportformat og filstørrelse
-
-***
+**Varighet:** Varierer avhengig av eksportformat og filstørrelse***
 
 ## Behandlingsatferd
 
@@ -185,7 +173,7 @@ Når prosessen er startet, kjører hele prosessen automatisk:
 * Unngå å starte andre CPU-intensive oppgaver
 
 {% hint style=&quot;warning&quot; %}
-**Ytelsestips**: For best mulig ytelse av Chloros+, lukk andre programmer og la Chloros bruke alle systemressursene.
+**Ytelsestips**: For best mulig ytelse av Chloros+, lukk andre applikasjoner og la Chloros bruke alle systemressursene.
 {% endhint %}
 
 ### Behandlingen kan ikke pauses
@@ -197,9 +185,7 @@ Når prosessen er startet, kjører hele prosessen automatisk:
 * Delvise resultater lagres ikke.
 * Du må starte på nytt fra begynnelsen hvis du avbryter.
 
-**Planleggingstips:** For svært store prosjekter bør du vurdere å behandle i batcher eller bruke CLI for bedre kontroll.
-
-***
+**Planleggingstips:** For svært store prosjekter bør du vurdere å behandle i batcher eller bruke CLI for bedre kontroll.***
 
 ## Overvåke behandlingen
 
@@ -223,7 +209,7 @@ Hvis du trenger å stoppe behandlingen:
 1. Finn **Stopp/Avbryt-knappen** (erstatter Start-knappen under behandlingen)
 2. Klikk på Stopp-knappen
 3. Behandlingen stoppes umiddelbart
-4. Delvise resultater blir forkastet
+4. Delvise resultater forkastes
 
 ### Når du bør avbryte
 
@@ -254,7 +240,7 @@ Den faktiske behandlingstiden varierer sterkt avhengig av:
 * Antall bilder
 * Bildeoppløsning
 * RAW vs JPG-inndataformat
-* Behandlingsmodus (Gratis vs Chloros+)
+* Behandlingsmodus (Free vs Chloros+)
 * CPU-hastighet og antall kjerner
 * GPU-tilgjengelighet (kun Chloros+)
 * Antall indekser som skal beregnes
@@ -292,7 +278,7 @@ Den faktiske behandlingstiden varierer sterkt avhengig av:
 1. Vent til backend er fullstendig initialisert (sjekk hovedmenyikonet)
 2. Kontroller at bildene er importert i filbrowseren
 3. Start Chloros på nytt hvis knappen fortsatt er deaktivert
-4. Sjekk feillogg for feilmeldinger
+4. Sjekk feilsøkingsloggen for feilmeldinger
 
 ### Behandlingen starter, men mislykkes umiddelbart
 
@@ -332,23 +318,23 @@ Den faktiske behandlingstiden varierer sterkt avhengig av:
 ### Før du starter
 
 1. **Test med et lite delsett først** – Behandle 10–20 bilder for å kontrollere innstillingene
-2. **Kontroller tilgjengelig diskplass** – Sørg for at det er 2–3 ganger så mye ledig plass som datasettets størrelse
+2. **Kontroller tilgjengelig diskplass** – Sørg for at du har 2–3 ganger så mye ledig plass som datasettets størrelse
 3. **Lukk unødvendige programmer** – Frigjør systemressurser
 4. **Kontroller målbildene** – Forhåndsvis merkede mål for å sikre kvaliteten
-5. **Lagre prosjektet** – Prosjektet lagres automatisk, men det er lurt å lagre manuelt
+5. **Lagre prosjektet** – Prosjektet lagres automatisk, men det er lurt å lagre manuelt.
 
 ### Under behandlingen
 
-1. **Unngå at systemet går i dvale** – Deaktiver strømsparingsmodus
-2. **Hold Chloros i forgrunnen** – Eller i det minste synlig i oppgavelinjen
-3. **Overvåk fremdriften av og til** – Sjekk om det er advarsler eller feil
+1. **Unngå at systemet går i dvale** – Deaktiver strømsparingsmodus.
+2. **Hold Chloros i forgrunnen** – Eller i det minste synlig i oppgavelinjen.
+3. **Overvåk fremdriften av og til** – Sjekk om det er advarsler eller feil.
 4. **Ikke last inn andre tunge applikasjoner** – Spesielt med Chloros+ parallellmodus
 
 ### Chloros+ GPU-akselerasjon
 
 Hvis du bruker NVIDIA GPU-akselerasjon:
 
-1. Oppdater NVIDIA-drivere til nyeste versjon
+1. Oppdater NVIDIA-drivere til den nyeste versjonen
 2. Sørg for at GPU har 4 GB+ VRAM
 3. Lukk GPU-intensive programmer (spill, videoredigering)
 4. Overvåk GPU-temperaturen (sørg for tilstrekkelig kjøling)

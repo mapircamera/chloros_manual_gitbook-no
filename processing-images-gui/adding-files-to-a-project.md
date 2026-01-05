@@ -22,44 +22,37 @@ Det er to hovedmåter å legge til bilder i prosjektet ditt på:
 
 Bruk dette alternativet for å importere enkeltstående bildefiler eller et lite utvalg av filer.
 
-1. Klikk på **«Legg til filer»**-knappen øverst i filbrowserpanelet.
-2. Naviger til mappen som inneholder bildene dine.
-3. Velg en eller flere bildefiler (hold **Ctrl** nede for å velge flere filer).
-4. Klikk på **«Åpne»** for å importere de valgte filene.
+1. Klikk på **&quot;Legg til filer&quot;** <img src="../.gitbook/assets/image.png" alt="" data-size="line"> øverst i filbrowserpanelet
+2. Naviger til mappen som inneholder bildene dine
+3. Velg en eller flere bildefiler (hold **Ctrl** nede for å velge flere filer)
+4. Klikk på **«Åpne»** for å importere de valgte filene
 
 ### Metode 2: Legg til mappe
 
 Bruk dette alternativet for å importere alle bildene fra en mappe samtidig.
 
-1. Klikk på **«Legg til mappe»**-knappen øverst i filbrowserpanelet.
+1. Klikk på **«Legg til mappe»** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> øverst i filbrowserpanelet.
 2. Naviger til og velg mappen som inneholder bildene fra opptakssesjonen.
-3. Klikk på **«Velg mappe»** for å importere alle støttede bilder fra den mappen.
-
-***
+3. Klikk på **«Velg mappe»** for å importere alle støttede bilder fra den mappen.***
 
 ## Forstå filbrowser-tabellen
 
 Når bildene er importert, vises de i en tabell med følgende kolonner:
 
-### Miniatyrbilde
-
-* Liten forhåndsvisning av hvert bilde.
-* Klikk på miniatyrbildet for å se hele bildet i hovedforhåndsvisningsområdet.
-
 ### Filnavn
 
-* Opprinnelig filnavn fra kameraet.
-* Opprettholder kameraets navngivningskonvensjon (f.eks. IMG\_0001.RAW).
+* Opprinnelig filnavn fra kameraet
+* Opprettholder kameraets navngivningskonvensjon (f.eks. IMG\_0001.RAW)
 
 ### Tidsstempel
 
-* Dato og klokkeslett da bildet ble tatt.
-* Hentet fra bildets EXIF-metadata.
-* Brukes til PPK-synkronisering og kalibreringsmålregistrering
+* Dato og klokkeslett da bildet ble tatt
+* Hentet fra bildets EXIF-metadata
+* Brukes til PPK-synkronisering og kalibreringsmåldeteksjon
 
 ### Kameramodell
 
-* Automatisk registrert kamera- og filterkonfigurasjon
+* Automatisk oppdaget kamera- og filterkonfigurasjon
 * Eksempler: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
 * Brukes til å anvende riktige behandlingsprofiler
 
@@ -71,32 +64,30 @@ Når bildene er importert, vises de i en tabell med følgende kolonner:
 
 ***
 
-## Administrere filer i prosjektet
+## Administrere filer i prosjektet ditt
 
 ### Fjerne filer
 
-Slik fjerner du uønskede bilder fra prosjektet:
+Slik fjerner du uønskede bilder fra prosjektet ditt:
 
 1. Velg ett eller flere bilder i tabellen Filbrowser
-2. Klikk på knappen **«Fjern valgt»**
+2. Klikk på **&quot;Fjern valgt&quot;** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> -knappen
 3. Bekreft fjerningen (filene slettes ikke fra disken, bare fjernes fra prosjektet)
 
 ### Sortering og filtrering
 
-* **Sorter etter kolonne**: Klikk på en kolonneoverskrift for å sortere bildene
-* **Sorter etter tidsstempel**: Nyttig for å organisere kronologiske opptaksekvenser
-* **Kamerafiltermodell**: Grupper bilder etter kameratype hvis du bruker flere kameraer
+* **Sorter etter kolonne**: Klikk på en kolonneoverskrift for å sortere bilder
+* **Sorter etter tidsstempel**: Nyttig for å organisere kronologiske opptaksserier
+* **Kamera modellfilter**: Grupper bilder etter kameratype hvis du bruker flere kameraer***
 
-***
-
-## Forhåndsvisning av bilder
+## Bildegalleri
 
 ### Vise hele bildet
 
 Klikk på et hvilket som helst miniatyrbilde i filbrowseren for å vise det i hovedforhåndsvisningsområdet:
 
 1. Bildet vises i forhåndsvisningspanelet i midten
-2. Bruk zoomkontrollene for å se på bildedetaljer
+2. Bruk zoomkontrollene til å inspisere bildedetaljer
 3. Naviger mellom bildene ved hjelp av piltastene
 
 ### Rask navigering
@@ -104,17 +95,15 @@ Klikk på et hvilket som helst miniatyrbilde i filbrowseren for å vise det i ho
 * **Forrige bilde**: Klikk på venstre pil eller trykk på ←-tasten
 * **Neste bilde**: Klikk på høyre pil eller trykk på →-tasten
 * **Zoom inn/ut**: Bruk mushjulet eller zoomknappene
-* **Panorering**: Klikk og dra på bildet når du har zoomet inn
-
-***
+* **Panorering**: Klikk og dra på bildet når du har zoomet inn***
 
 ## Håndtering av dupliserte filer
 
 Chloros oppdager og ignorerer automatisk dupliserte filer:
 
-* Filer med identiske filnavn hoppes over
-* Forhindrer utilsiktet dobbel behandling
-* Advarselsmelding vises når duplikater oppdages
+* Filer med identiske filnavn hoppes over.
+* Forhindrer utilsiktet dobbel behandling.
+* Advarselsmelding vises når duplikater oppdages.
 
 {% hint style=&quot;warning&quot; %}
 **Viktig**: Ikke endre navn på eller modifiser originale bildefiler før import. Chloros er avhengig av originale filnavn og metadata for riktig behandling.
@@ -131,9 +120,7 @@ Hvis prosjektet ditt inneholder bilder fra flere MAPIR-kameraer:
 3. Filbrowseren viser kameramodellen i kolonnen Kameramodell
 4. Behandlingen bruker riktige innstillinger for hver kameratype
 
-**Eksempel på scenario**: Survey3W RGN + Survey3N OCN oppsett med to kameraer
-
-***
+**Eksempel på scenario**: Survey3W RGN + Survey3N OCN oppsett med to kameraer***
 
 ## Beste praksis
 
@@ -154,7 +141,7 @@ Hvis prosjektet ditt inneholder bilder fra flere MAPIR-kameraer:
 * Inkluder alltid 1–2 kalibreringsmålbilder per økt.
 * Ta bilder av målene før og etter fotograferingsøkten.
 * Plasser målene i samme lysforhold som fotograferingsområdet.
-* Merk målbildene ved å merke av for Mål for å øke behandlingshastigheten.
+* Merk målbildene ved å merke av for Target (Mål) for å øke behandlingshastigheten.
 
 ***
 
@@ -187,9 +174,7 @@ Hvis prosjektet ditt inneholder bilder fra flere MAPIR-kameraer:
 * Kameraets klokke er ikke riktig innstilt
 * EXIF-data fjernet av ekstern programvare
 
-**Løsning**: Kontroller at kameraets tidsinnstillinger var riktige under opptaket
-
-***
+**Løsning**: Kontroller at kameraets tidsinnstillinger var riktige under opptaket***
 
 ## Neste trinn
 

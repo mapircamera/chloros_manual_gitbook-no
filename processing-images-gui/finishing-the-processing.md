@@ -9,16 +9,15 @@ Når behandlingen er fullført, vil du se flere indikatorer:
 * ✅ **Fremdriftslinje**: Når 100 % fullført
 * ✅ **Feilsøkingslogg**: Viser meldingen «Behandling fullført»
 * ✅ **Startknapp**: Blir aktivert igjen (klar for neste behandlingskjøring)
-* ✅ **Utdatafiler**: Alle behandlede bilder lagres i undermappen for kameramodellen
+* ✅ **Utdatafiler**: Alle behandlede bilder lagres i undermappen for kameramodellen***
 
-***
-
-## Finne de behandlede bildene dine
+## Finne de behandlede bildene
 
 ### Åpne utdatamappen
 
-1. Klikk på **Hovedmeny** <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> (øverst til venstre)
+1. Klikk på **Hovedmeny** <img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt="" data-size="line"> (øverst til venstre)
 2. Velg **«Åpne prosjektmappe»**
+
 3. Filutforskeren åpnes i prosjektkatalogen
 4. Finn prosjektet ditt etter navn
 
@@ -37,9 +36,7 @@ Når behandlingen er fullført, vil du se flere indikatorer:
 
 ### Forhåndsvisning i eksterne bildevisere
 
-**Anbefalte visere:**
-
-* **QGIS** – Gratis GIS-programvare (best for georeferert multispektral analyse)
+**Anbefalte visere:*** **QGIS** – Gratis GIS-programvare (best for georeferert multispektral analyse)
 * **IrfanView** – Rask, lettvekts bildeviser (støtter TIFF)
 * **Adobe Photoshop** – Profesjonell redigering (støtter TIFF)
 * **GIMP** – Gratis alternativ til Photoshop
@@ -58,13 +55,13 @@ Se [Image Viewer](../image-viewer-gui/opening-an-image-full-screen.md) for detal
 
 ***
 
-## Gjennomgå feilsøkingsloggen
+## Gjennomgang av feilsøkingsloggen
 
 ### Se etter advarsler eller feil
 
 1. Åpne **Feilsøkingslogg** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> -fanen
 2. Bla gjennom meldingene
-3. Se etter gule advarsler eller røde feilmeldinger
+3. Se etter gule advarsler eller røde feil
 4. Gjennomgå eventuelle problemer som er notert
 5. Kontakt MAPIR-kundestøtte for hjelp
 
@@ -72,7 +69,7 @@ Se [Image Viewer](../image-viewer-gui/opening-an-image-full-screen.md) for detal
 
 For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-kundestøtte:
 
-1. Klikk på **«Kopier»** eller **«Last ned»**-knappen
+1. Klikk på **«Kopier»**eller**«Last ned»**-knappen
 2. Lagre som tekstfil i prosjektmappen
 3. Legg ved prosjektdokumentasjonen
 4. Send til MAPIR-kundestøtte hvis det oppstår problemer
@@ -129,14 +126,10 @@ For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-ku
 
 ### Problem: NDVI-verdiene virker feil.
 
-**Forventede NDVI-områder:**
-
-* **Vann, steiner, jord**: -0,1 til 0,2
+**Forventede NDVI-områder:*** **Vann, steiner, jord**: -0,1 til 0,2
 * **Sparsom/usunn vegetasjon**: 0,2 til 0,4
 * **Moderat vegetasjon**: 0,4 til 0,6
-* **Sunn, tett vegetasjon**: 0,6 til 0,9
-
-**Hvis verdiene ligger utenfor disse områdene:**
+* **Sunn, tett vegetasjon**: 0,6 til 0,9**Hvis verdiene ligger utenfor disse områdene:**
 
 1. Kontroller at refleksjonskalibrering ble brukt.
 2. Kontroller at lyssensorloggen ble inkludert.
@@ -152,7 +145,7 @@ For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-ku
 
 **Anbefalt arbeidsflyt:**
 
-1. **Importer kalibrerte refleksjonsbilder** til fotogrammetriprogramvare:
+1.**Importer kalibrerte refleksjonsbilder** til fotogrammetriprogramvare:
    * Pix4Dmapper
    * Agisoft Metashape
    * DroneDeploy
@@ -166,8 +159,9 @@ For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-ku
 
 **Anbefalt arbeidsflyt:**
 
-1. **Last inn i QGIS, ArcGIS eller lignende**
-2. **Bruk 16-biters TIFF** refleksjonsbilder for multibåndanalyse
+1.**Last inn i QGIS, ArcGIS eller lignende**
+
+2.**Bruk 16-biters TIFF** refleksjonsbilder for multibåndanalyse
 3. **Bruk indeksbilder** (NDVI, NDRE) som bruksklare vegetasjonslag
 4. **Rasterkalkulator**: Kombiner bånd for tilpasset analyse
 5. **Eksporter**: Lag klassifiseringskart, endringsdeteksjon, vegetasjonshelsekart
@@ -176,32 +170,22 @@ For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-ku
 
 **Anbefalt arbeidsflyt:**
 
-1. **Bruk indeksbilder med LUT-farger** for visuelle rapporter
+1.**Bruk indeksbilder med LUT-farger** for visuelle rapporter
 2. **Ekstraher statistikk**: Gjennomsnittlig NDVI per felt/tomt
 3. **Tidsserier**: Sammenlign indekser på tvers av flere økter
-4. **Generer rapporter**: Inkluder kart, statistikk og visualiseringer
-
-***
+4. **Generer rapporter**: Inkluder kart, statistikk og visualiseringer***
 
 ## Arkivering og sikkerhetskopiering
 
 ### Anbefalt sikkerhetskopieringsstrategi
 
-**Hva du bør lagre:**
-
-* ✅ **Originale RAW/JPG-bilder** – Arkiver på separat stasjon/sky
+**Hva du bør lagre:*** ✅ **Originale RAW/JPG-bilder** – Arkiver på separat stasjon/sky
 * ✅ **Behandlede resultater** – Oppbevar kalibrerte bilder og indekser
 * ✅ **Prosjektfil** – Inneholder alle innstillinger for ombehandling om nødvendig
 * ✅ **Feilsøkingslogg** – Dokumenterer behandlingsdetaljer
-* ✅ **Kalibreringsmålbilder** – For verifisering og ombehandling
-
-**Anbefalinger for lagring:**
-
-* **Umiddelbar sikkerhetskopiering**: Ekstern harddisk
+* ✅ **Kalibreringsmålbilder** – For verifisering og ombehandling**Anbefalinger for lagring:*** **Umiddelbar sikkerhetskopiering**: Ekstern harddisk
 * **Langtidsarkiv**: Skylagring (Google Drive, Dropbox osv.)
-* **Kritiske data**: Oppbevar 2–3 kopier på forskjellige steder
-
-***
+* **Kritiske data**: Oppbevar 2–3 kopier på forskjellige steder***
 
 ## Neste behandlingskjøring
 
@@ -212,15 +196,14 @@ Hvis du skal behandle lignende datasett i fremtiden:
 1. **Lagre prosjektmal** (hvis ikke allerede gjort)
 2. **Opprett nytt prosjekt** ved hjelp av lagret mal
 3. **Importer nye bilder**
-4. **Behandle** med identiske innstillinger for konsistens
+
+4.**Behandle**med identiske innstillinger for konsistens
 
 ### Batchbehandling av flere økter
 
-For flere økter/datasett:
+For flere økter/datasett:**Alternativ 1: GUI – flere prosjekter**
 
-**Alternativ 1: GUI – flere prosjekter**
-
-* Opprett separate prosjekter for hver sesjon
+* Opprett separate prosjekter for hver økt
 * Bruk konsistente malinnstillinger
 * Behandle én om gangen
 
@@ -265,13 +248,11 @@ Hvis du støter på problemer:
 * 📧 **E-post**: info@mapir.camera (inkluder feilsøkingslogg)
 * 🌐 **Support**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **FAQ**: [Ofte stilte spørsmål](../faq.md)
-* 📖 **Dokumentasjon**: [Chloros-håndbok](../)
-
-***
+* 📖 **Dokumentasjon**: [Chloros-håndbok](../)***
 
 ## Oppsummering: Fullfør arbeidsflyten
 
-Du har nå fullført hele arbeidsflyten for Chloros-behandling:
+Du har nå fullført hele arbeidsflyten for Chloros-behandlingen:
 
 1. ✅ **Opprettet prosjekt** – Se [Prosjekter](../projects.md)
 2. ✅ **Lagt til filer** – Se [Legge til filer](adding-files-to-a-project.md)
@@ -279,9 +260,7 @@ Du har nå fullført hele arbeidsflyten for Chloros-behandling:
 4. ✅ **Merkede mål** – Se [Velge målbilder](choosing-target-images.md)
 5. ✅ **Startet behandling** - Se [Starte behandlingen](starting-the-processing.md)
 6. ✅ **Overvåket fremdrift** - Se [Overvåke behandlingen](monitoring-the-processing.md)
-7. ✅ **Gjennomgått resultater** – Denne siden
-
-**Dine kalibrerte, refleksjonskorrigerte multispektrale bilder er klare for analyse!**
+7. ✅ **Gjennomgått resultater** – Denne siden**Dine kalibrerte, refleksjonskorrigerte multispektrale bilder er klare for analyse!**
 
 ***
 

@@ -6,9 +6,7 @@ Bruker <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> sidebar
 
 Når du er logget inn, vises kontoopplysningene dine:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
-
-## CLI Innlogging
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>## CLI-pålogging
 
 Logg inn med Chloros+-påloggingsinformasjonen din for å aktivere CLI-behandling.
 
@@ -17,6 +15,10 @@ Logg inn med Chloros+-påloggingsinformasjonen din for å aktivere CLI-behandlin
 ```bash
 chloros-cli login <email> <password>
 ```
+
+{% hint style=&quot;info&quot; %}
+**SDK-brukere**: Python SDK tilbyr også en programmatisk `logout()`-metode for å slette lagrede påloggingsopplysninger. Se [Python SDK dokumentasjonen](api-python-sdk.md#logout) for detaljer.
+{% endhint %}
 
 **Eksempel:**
 
@@ -30,9 +32,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 **Utdata:**
 
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
-
-### Planens utløpsdato
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>### Planens utløpsdato
 
 Planens utløpsdato i GUI viser når lisensen din blir ugyldig. For gjentakende månedlige abonnementer er utløpsdatoen ved slutten av måneden. For årlige abonnementer er det ett år etter at du startet abonnementet. Lisenskontrollen krever en månedlig internettforbindelse for å verifisere, med en 30 dagers frist.
 

@@ -1,12 +1,12 @@
 # CLI : Kommandolinje
 
-<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>**Chloros CLI** gir kraftig kommandolinjetilgang til Chloros bildebehandlingsmotor, som muliggjør automatisering, skripting og headless-drift for bildebehandlingsarbeidsflytene dine.
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>**Chloros CLI** gir kraftig kommandolinjetilgang til Chloros bildebehandlingsmotor, noe som muliggjør automatisering, skripting og headless-drift for bildebehandlingsarbeidsflytene dine.
 
 ### Viktige funksjoner
 
 * 🚀 **Automatisering** – Skriptbasert batchbehandling av flere datasett
 * 🔗 **Integrasjon** – Integrer i eksisterende arbeidsflyter og rørledninger
-* 💻 **Headless-drift** – Kjør uten GUI
+* 💻 **Headless drift** – Kjør uten GUI
 * 🌍 **Fler språk** – Støtte for 38 språk
 * ⚡ **Parallell behandling** – Skaleres dynamisk til CPU-en din (opptil 16 parallelle arbeidere)
 
@@ -31,6 +31,7 @@
 CLI er automatisk inkludert i Chloros-installasjonsprogrammet:
 
 1. Last ned og kjør **Chloros Installer.exe**
+
 2. Fullfør installasjonsveiviseren
 3. CLI installert til: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
 
@@ -96,13 +97,13 @@ chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 | Alternativ                | Type    | Standard        | Beskrivelse                                                                            |
 | --------------------- | ------- | -------------- | -------------------------------------------------------------------------------------- |
 | `<input-folder>`      | Sti    | _Påkrevd_     | Mappe som inneholder RAW/JPG multispektrale bilder                                         |
-| `-o, --output`        | Sti    | Samme som inngang  | Utgangsmappe for behandlede bilder                                                     |
+| `-o, --output`        | Sti    | Samme som inngang  | Utdatamappe for behandlede bilder                                                     |
 | `-n, --project-name`  | Streng  | Autogenerert | Tilpasset prosjektnavn                                                                    |
 | `--vignette`          | Flagg    | Aktivert        | Aktiver vignettkorreksjon                                                             |
 | `--no-vignette`       | Flagg    | -              | Deaktiver vignettkorreksjon                                                            |
 | `--reflectance`       | Flagg    | Aktivert        | Aktiver refleksjonskalibrering                                                         |
 | `--no-reflectance`    | Flagg    | -              | Deaktiver refleksjonskalibrering                                                        |
-| `--ppk`               | Flagg    | Deaktivert       | Bruk PPK-korreksjoner fra .daq-lyssensordata                                      |
+| `--ppk`               | Flagg    | Deaktivert       | Bruk PPK-korrigeringer fra .daq lyssensordata                                      |
 | `--format`            | Valg  | TIFF (16-bit)  | Utdataformat: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
 | `--min-target-size`   | Heltall | Auto           | Minimum målstørrelse i piksler for kalibreringspaneldeteksjon                          |
 | `--target-clustering` | Heltall | Auto           | Terskel for målklynging (0-100)                                                    |
@@ -133,9 +134,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 **Spesialtegn**: Bruk enkelt anførselstegn rundt passord som inneholder tegn som `$`, `!` eller mellomrom.
 {% endhint %}
 
-**Utdata:**
-
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
+**Utdata:**<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
 
 ### `logout` - Slett påloggingsinformasjon
 
@@ -160,9 +159,13 @@ chloros-cli logout
 ℹ Credentials cleared from cache
 ```
 
+{% hint style=&quot;info&quot; %}
+**SDK-brukere**: Python SDK tilbyr også en programmatisk `logout()`-metode for å slette påloggingsinformasjon i Python-skript. Se [Python SDK-dokumentasjonen](api-python-sdk.md#logout) for detaljer.
+{% endhint %}
+
 ***
 
-### `status` - Sjekk lisensstatus
+### `status` – Sjekk lisensstatus
 
 Vis gjeldende lisens- og autentiseringsstatus.
 
@@ -209,13 +212,11 @@ chloros-cli export-status
 chloros-cli export-status
 ```
 
-**Bruksområde:** Kall denne kommandoen mens behandlingen pågår for å sjekke eksportfremdriften.
-
-***
+**Bruksområde:** Kall denne kommandoen mens behandlingen pågår for å sjekke eksportfremdriften.***
 
 ### `language` – Administrer grensesnittspråk
 
-Vis eller endre grensesnittspråket CLI.
+Vis eller endre grensesnittspråket for CLI.
 
 **Syntaks:**
 
@@ -250,7 +251,7 @@ chloros-cli language ja
 
 | Kode    | Språk              | Opprinnelig navn      |
 | ------- | --------------------- | ---------------- |
-| `en`    | Engelsk               | English          |
+| `en`    | Engelsk               | Engelsk          |
 | `es`    | Spansk               | Español          |
 | `pt`    | Portugisisk            | Português        |
 | `fr`    | Fransk                | Français         |
@@ -259,7 +260,7 @@ chloros-cli language ja
 | `ja`    | Japansk              | 日本語              |
 | `ko`    | Koreansk                | 한국어              |
 | `zh`    | Kinesisk (forenklet)  | 简体中文             |
-| `zh-TW` | Kinesisk (tradisjonell) | 繁體中文             |
+| `zh-TW` | Kinesisk (Tradisjonell) | 繁體中文             |
 | `ru`    | Russisk               | Русский          |
 | `nl`    | Nederlandsk                 | Nederlands       |
 | `ar`    | Arabisk                | العربية          |
@@ -280,9 +281,9 @@ chloros-cli language ja
 | `uk`    | Ukrainsk             | Українська       |
 | `pt-BR` | Brasiliansk portugisisk  | Português Brasileiro |
 | `zh-HK` | Kantonesisk             | 粵語             |
-| `ms`    | Malayisk                 | Bahasa Melayu    |
-| `sk`    | Slovakisk                | Slovenčina       |
-| `bg`    | Bulgarsk             | Български        |
+| `ms`    | Malay                 | Bahasa Melayu    |
+| `sk`    | Slovak                | Slovenčina       |
+| `bg`    | Bulgarian             | Български        |
 | `hr`    | Kroatisk              | Hrvatski         |
 | `lt`    | Litauisk            | Lietuvių         |
 | `lv`    | Lettisk               | Latviešu         |
@@ -337,7 +338,7 @@ chloros-cli get-project-folder
 
 ***
 
-### `reset-project-folder` – Tilbakestill til standard
+### `reset-project-folder` - Tilbakestill til standard
 
 Tilbakestill prosjektmappen til standardplasseringen.
 
@@ -355,7 +356,7 @@ Disse alternativene gjelder for alle kommandoer:
 
 | Alternativ          | Type    | Standard       | Beskrivelse                                      |
 | --------------- | ------- | ------------- | ------------------------------------------------ |
-| `--backend-exe` | Sti    | Automatisk oppdaget | Sti til kjørbar backend-fil                       |
+| `--backend-exe` | Sti    | Automatisk oppdaget | Sti til kjørbar backend                       |
 | `--port`        | Heltall | 5000          | Backend API portnummer                          |
 | `--restart`     | Flagg    | -             | Tving omstart av backend (avslutter eksisterende prosesser) |
 | `--version`     | Flagg    | -             | Vis versjonsinformasjon og avslutt                |
@@ -373,15 +374,11 @@ chloros-cli --port 5001 process "C:\Datasets\Survey_001"
 
 ### Parallell behandling
 
-Chloros+ CLI **skalerer automatisk** parallell behandling for å tilpasse seg datamaskinens kapasitet:
-
-**Slik fungerer det:**
+Chloros+ CLI **skalerer automatisk**parallell behandling for å tilpasse seg datamaskinens kapasitet:**Slik fungerer det:**
 
 * Oppdager CPU-kjernene og RAM-minnet
 * Tildeler arbeidere: **2× CPU-kjerner** (bruker hyperthreading)
-* **Maksimum: 16 parallelle arbeidere** (for stabilitet)
-
-**Systemnivåer:**
+* **Maksimum: 16 parallelle arbeidere** (for stabilitet)**Systemnivåer:**
 
 | Systemtype   | CPU        | RAM      | Arbeidere  | Ytelse     |
 | ------------- | ---------- | -------- | -------- | --------------- |
@@ -403,13 +400,13 @@ CLI bruker **Høy kvalitet (raskere)** som standard og anbefalt debayer-algoritm
 
 ### Vignettkorreksjon
 
-**Hva det gjør:** Korrigerer lysfall ved bildekantene (mørkere hjørner som er vanlige i kamerabilder).
+**Hva den gjør:** Korrigerer lysfall ved bildekantene (mørkere hjørner som er vanlige i kamerabilder).
 
 * **Aktivert som standard** – De fleste brukere bør holde denne funksjonen aktivert
 * Bruk `--no-vignette` for å deaktivere
 
 {% hint style=&quot;success&quot; %}
-**Anbefaling**: Aktiver alltid vignettkorreksjon for å sikre jevn lysstyrke i hele bildet.
+**Anbefaling**: Aktiver alltid vignettkorrigering for å sikre jevn lysstyrke i hele bildet.
 {% endhint %}
 
 ### Refleksjonskalibrering
@@ -584,6 +581,7 @@ if __name__ == '__main__':
 ### Eksempel på utdatastruktur
 
 ```
+
 MyProject/
 ├── project.json                             # Project metadata
 ├── 2025_0203_193056_008.JPG                # Original JPG
@@ -641,11 +639,10 @@ dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
 
 ***
 
-### Backend kunne ikke startes
-
-**Feil:**
+### Backend kunne ikke startes**Feil:**
 
 ```
+
 Backend failed to start within 30 seconds
 ```
 
@@ -667,11 +664,10 @@ chloros-cli --restart process "C:\Datasets\Field_A"
 
 ***
 
-### Lisens-/autentiseringsproblemer
-
-**Feil:**
+### Lisens-/autentiseringsproblemer**Feil:**
 
 ```
+
 Chloros+ license required for CLI access
 ```
 
@@ -694,11 +690,10 @@ chloros-cli status
 
 ***
 
-### Ingen bilder funnet
-
-**Feil:**
+### Ingen bilder funnet**Feil:**
 
 ```
+
 No images found in the specified folder
 ```
 
@@ -711,21 +706,18 @@ No images found in the specified folder
 
 ***
 
-### Behandlingen stopper eller henger seg opp
-
-**Løsninger:**
+### Behandlingen stopper eller henger seg opp**Løsninger:**
 
 1. Kontroller ledig diskplass (sørg for at det er nok til utdata)
 2. Lukk andre programmer for å frigjøre minne
-3. Reduser antall bilder (behandle i grupper)
+3. Reduser antall bilder (behandle i batcher)
 
 ***
 
-### Porten er allerede i bruk
-
-**Feil:**
+### Porten er allerede i bruk**Feil:**
 
 ```
+
 Port 5000 is already in use
 ```
 
@@ -743,7 +735,7 @@ chloros-cli --port 5001 process "C:\Datasets\Field_A"
 
 ### Spørsmål: Trenger jeg en lisens for CLI?
 
-**Svar:** Ja! CLI krever en betalt **Chloros+ lisens**.
+**Svar:**Ja! CLI krever en betalt**Chloros+ lisens**.
 
 * ❌ Standard (gratis) plan: CLI deaktivert
 * ✅ Chloros+ (betalte) planer: CLI fullt aktivert
@@ -752,9 +744,7 @@ Abonner på: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pri
 
 ***
 
-### Spørsmål: Kan jeg bruke CLI på en server uten GUI?
-
-**Svar:** Ja! CLI kjører helt uten skjerm. Krav:
+### Spørsmål: Kan jeg bruke CLI på en server uten GUI?**Svar:** Ja! CLI kjører helt uten skjerm. Krav:
 
 * Windows Server 2016 eller nyere
 * Visual C++ Redistributable installert
@@ -763,9 +753,7 @@ Abonner på: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pri
 
 ***
 
-### Spørsmål: Hvor lagres behandlede bilder?
-
-**Svar:** Som standard lagres behandlede bilder i **samme mappe som input** i undermapper for kameramodeller (f.eks. `Survey3N_RGN/`).
+### Spørsmål: Hvor lagres behandlede bilder?**Svar:**Som standard lagres behandlede bilder i**samme mappe som input** i undermapper for kameramodeller (f.eks. `Survey3N_RGN/`).
 
 Bruk alternativet `-o` for å angi en annen utdatamappe:
 
@@ -775,15 +763,9 @@ chloros-cli process "C:\Input" -o "D:\Output"
 
 ***
 
-### Spørsmål: Kan jeg behandle flere mapper samtidig?
+### Spørsmål: Kan jeg behandle flere mapper samtidig?**A:** Ikke direkte med én kommando, men du kan bruke skript for å behandle mapper sekvensielt. Se avsnittet [Automatisering og skripting](CLI.md#automation--scripting).***
 
-**A:** Ikke direkte med én kommando, men du kan bruke skripting til å behandle mapper sekvensielt. Se avsnittet [Automatisering og skripting](CLI.md#automation--scripting).
-
-***
-
-### Q: Hvordan lagrer jeg CLI-utdata i en loggfil?
-
-**PowerShell:**
+### Q: Hvordan lagrer jeg CLI-utdata i en loggfil?**PowerShell:**
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" | Tee-Object -FilePath "processing.log"
@@ -797,9 +779,7 @@ chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
 
 ***
 
-### Spørsmål: Hva skjer hvis jeg trykker Ctrl+C under behandlingen?
-
-**Svar:** CLI vil:
+### Spørsmål: Hva skjer hvis jeg trykker Ctrl+C under behandlingen?**Svar:** CLI vil:
 
 1. Stoppe behandlingen på en ordentlig måte
 2. Slå av backenden
@@ -809,15 +789,9 @@ Delvis behandlede bilder kan forbli i utdatamappen.
 
 ***
 
-### Spørsmål: Kan jeg automatisere CLI-behandlingen?
+### Spørsmål: Kan jeg automatisere CLI-behandlingen?**Svar:** Absolutt! CLI er designet for automatisering. Se [Automatisering og skripting](CLI.md#automation--scripting) for eksempler på PowerShell, Batch og Python.***
 
-**Svar:** Absolutt! CLI er designet for automatisering. Se [Automatisering og skripting](CLI.md#automation--scripting) for eksempler på PowerShell, Batch og Python.
-
-***
-
-### Spørsmål: Hvordan sjekker jeg CLI-versjonen?
-
-**Svar:**
+### Spørsmål: Hvordan sjekker jeg CLI-versjonen?**Svar:**
 
 ```powershell
 chloros-cli --version
@@ -826,6 +800,7 @@ chloros-cli --version
 **Utdata:**
 
 ```
+
 Chloros CLI 1.0.2
 ```
 
@@ -851,9 +826,7 @@ chloros-cli language --help
 
 * **E-post**: info@mapir.camera
 * **Nettsted**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* **Priser**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
-
-***
+* **Priser**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)***
 
 ## Komplette eksempler
 

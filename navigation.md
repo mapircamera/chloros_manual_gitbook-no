@@ -1,24 +1,22 @@
 # GUI: Navigering
 
-Når du starter Chloros og Chloros (nettleser) for første gang, starter backenden. Når den er klar, vises hovedmenyikonet øverst til venstre. <img src=".gitbook/assets/image (1).png" alt="" data-size="line"> .
+Når du starter Chloros og Chloros (nettleser) for første gang, starter backenden. Når den er klar, vises hovedmenyikonet øverst til venstre. <img src=".gitbook/assets/image (1) (1) (1).png" alt="" data-size="line"> .
 
 <figure><img src=".gitbook/assets/header.JPG" alt=""><figcaption></figcaption></figure>
 
-Fra venstre til høyre inneholder toppteksten:
+Fra venstre til høyre inneholder toppmenyen:
 
-### <img src=".gitbook/assets/image (1) (1).png" alt="" data-size="line"> Hovedmeny
+### <img src=".gitbook/assets/image (1) (1) (1) (1).png" alt="" data-size="line"> Hovedmeny
 
 Fra hovedmenyen kan du starte et nytt prosjekt, åpne et eksisterende prosjekt eller åpne prosjektmappen.
 
-### <img src=".gitbook/assets/image (2).png" alt="" data-size="line"> Spill av/Start-knapp
+### <img src=".gitbook/assets/image (2) (1).png" alt="" data-size="line"> Spill av/Start-knapp
 
-Når den er aktivert, starter startknappen for behandling bildebehandlingsprosessen.
+Når den er aktivert, starter startbehandlingsknappen bildebehandlingsprosessen.
 
-### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Fremdriftslinje <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
+### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Fremdriftslinje <img src=".gitbook/assets/image (5).png" alt="" data-size="line">I den gratis Chloros-modusen, som behandler alle filer sekvensielt, viser fremdriftslinjen to trinn: Målregistrering og behandling.
 
-I den gratis Chloros-modusen, som behandler alle filer sekvensielt, viser fremdriftslinjen to trinn: Målregistrering og behandling.
-
-I den betalte Chloros+-lisensmodusen, som behandler alle filer samtidig, viser fremdriftslinjen fire trinn: Registrering, analyse, kalibrering, eksport. Hvis du holder musepekeren over fremdriftslinjen i Chloros+, vises det utvidede panelet med fire fremdriftslinjer, slik at du kan følge med. Hvis du klikker på den øverste fremdriftslinjen, fryses nedtrekkspanelet, og hvis du klikker igjen, frigjøres det.
+I den betalte Chloros+-lisensmodusen, som behandler alle filer samtidig, viser fremdriftslinjen fire trinn: Registrering, analyse, kalibrering, eksport. Hvis du holder musepekeren over fremdriftslinjen i Chloros+, vises det utvidede panelet med 4 fremdriftslinjer, slik at du kan følge med. Hvis du klikker på den øverste fremdriftslinjen, fryses nedtrekkspanelet, og hvis du klikker igjen, frigjøres det.
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 
@@ -32,11 +30,15 @@ Fanen Prosjektinnstillinger lar deg justere globale prosjektinnstillinger og pro
 
 #### <img src=".gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> Filbrowser
 
-Legg til filer/mapper og fjern filer fra prosjektet. Dupliserte filer ignoreres. Merk av i målkolonnen for et hvilket som helst målbilde, så vil behandlingen bare se på merkede bilder for mål, noe som vil øke behandlingstiden betydelig.
+Legg til filer/mapper og fjern filer fra prosjektet. Dupliserte filer ignoreres. Merk av i målkolonnen for et hvilket som helst målbilde, så vil behandlingen bare se på merkede bilder som mål, noe som vil øke behandlingstiden betydelig. Bruk bryteren Image/Metadata (Bilde/Metadata) for å veksle mellom å vise miniatyrbildegitteret for det valgte bildet og en detaljert metadatatabell.
 
-#### <img src=".gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> [Bildeselger](image-viewer-gui/opening-an-image-full-screen.md)
+#### <img src=".gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> [Bildeviser](image-viewer-gui/opening-an-image-full-screen.md)
 
-Når du klikker på et bilde i hovedbildeselgeren, åpnes det i full skjerm i fanen Bildeselger.
+Når du klikker på et bilde i hovedbildeviseren, åpnes det i full skjerm i fanen Bildeviser.
+
+#### <img src=".gitbook/assets/image (7).png" alt="" data-size="line"> [Kart](image-viewer-gui/map-markers.md)
+
+Vis bildene dine på et interaktivt 2D-kart basert på GPS-koordinatene deres. Støtter Google Maps og ESRI-fliseleverandører, og velger automatisk den beste tjenesten for din plassering. Hold musepekeren over markørene for å se forhåndsvisninger av miniatyrbilder.
 
 #### <img src=".gitbook/assets/icon_log.JPG" alt="" data-size="line"> Feilsøkingslogg
 
