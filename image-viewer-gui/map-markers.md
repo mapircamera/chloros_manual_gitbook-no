@@ -88,7 +88,7 @@ Kartfanen støtter to fliseleverandører for bakgrunnskartbildene:
 
 Du kan velge kartlagstype (fra venstre til høyre):
 
- <img src="../.gitbook/assets/image (23).png" alt="" data-size="original">### Terreng
+ <img src="../.gitbook/assets/image (23).png" alt="" data-size="line">### Terreng
 
 Viser høydeprofiler og kartfliser med detaljer (veier osv.)
 

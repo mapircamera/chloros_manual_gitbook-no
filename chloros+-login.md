@@ -6,7 +6,7 @@ Bruker <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> sidebar
 
 Når du er logget inn, vises kontoopplysningene dine:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>## CLI-pålogging
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" data-size="line"><figcaption></figcaption></figure>## CLI-pålogging
 
 Logg inn med Chloros+-påloggingsinformasjonen din for å aktivere CLI-behandling.
 
