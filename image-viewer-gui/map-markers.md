@@ -2,6 +2,8 @@
 
 Fanen Kart viser bildene dine på et interaktivt 2D-kart basert på GPS-koordinatene deres. Dette gir en geografisk oversikt over opptakssesjonen din og hjelper deg med å visualisere den romlige dekningen. Det er også nyttig når du først importerer bildene dine, for å raskt fjerne bilder du ikke trenger å behandle.
 
+<figure><img src="../.gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
+
 ## Åpne fanen Kart
 
 1. Åpne eller opprett et prosjekt i Chloros.
@@ -9,15 +11,15 @@ Fanen Kart viser bildene dine på et interaktivt 2D-kart basert på GPS-koordina
 3. Klikk på fanen **Kart** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> i venstre sidefelt.
 4. Kartet viser markører på GPS-posisjonen til hvert bilde.
 
-{% hint style=&quot;info&quot; %}
-**GPS påkrevd**: Bare bilder med innebygde GPS-koordinater i EXIF-metadataene vil vises på kartet. Sørg for at kameraet har GPS aktivert under opptak.
+{% hint style="info" %}
+**GPS påkrevd**: Bare bilder med innebygde GPS-koordinater i EXIF-metadataene vises på kartet. Sørg for at kameraet har GPS aktivert under opptak.
 {% endhint %}
 
 ***
 
 ## Justere bilder fra kartfanen
 
-Fanen **Kart**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> har samme funksjoner for å legge til  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  og fjern  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  filknappene som [**Filbrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Den viser også den samme prosjektfiltabellen, men med andre kolonneoverskrifter:
+Fanen **Kart** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> har de samme funksjonene for å legge til  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  og fjern  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  filknapper som [**Filbrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Den viser også den samme prosjektfiltabellen, men med andre kolonneoverskrifter:
 
 ### Filnavn
 
@@ -36,8 +38,8 @@ Fanen **Kart**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line
 
 * Bildets høyde
 
-{% hint style=&quot;info&quot; %}
-Ved å klikke på kolonneoverskriftene i tabellen sorteres også raddataene.
+{% hint style="info" %}
+Ved å klikke på kolonneoverskriftene i tabellen sorteres også raddataene
 {% endhint %}
 
 ***
@@ -48,26 +50,26 @@ Hvert bilde med GPS-data vises med en markør på kartet:
 
 ### Markørvisning
 
-* Markørene angir de nøyaktige GPS-koordinatene der hvert bilde ble tatt.
-* Markører kan grupperes når du zoomer ut.
-* Zoom inn for å se de enkelte bildenes plasseringer.
+* Markører angir de nøyaktige GPS-koordinatene der hvert bilde ble tatt.
+* Markører kan grupperes sammen når du zoomer ut.
+* Zoom inn for å se individuelle bildeplasseringer.
 
-{% hint style=&quot;success&quot; %}
-SUPER-ZOOM: Når du når det maksimale zoomnivået fra kartfliseleverandøren, forstørres flisen ved ytterligere zoom, slik at du kan se markører som ligger tett sammen.
+{% hint style="success" %}
+SUPERZOOM: Når du når det maksimale zoomnivået fra kartfliseleverandøren, forstørres flisen ved ytterligere zoom, slik at du kan se markører som ligger tett sammen.
 {% endhint %}
 
 ### Forhåndsvisning ved å holde musepekeren over
 
-* **Hold musen** over en markør for å se en miniatyrforhåndsvisning av det bildet.
+* **Hold musepekeren** over en markør for å se en miniatyrforhåndsvisning av det bildet.
 * Dette gjør det mulig å identifisere bildet raskt uten å forlate kartvisningen.
-* Nyttig for å finne bestemte bilder i en stor opptakssesjon.
+* Nyttig for å finne bestemte bilder i en stor bildesamling.
 
 ***
 
-## Kartfliseleverandører
+## Kartflisleverandører
 
-{% hint style=&quot;success&quot; %}
-**Automatisk valg**: Chloros velger automatisk den fliseleverandøren som gir det beste zoomnivået for din nåværende kartposisjon. Du kan manuelt bytte mellom leverandører hvis du ønsker det.
+{% hint style="success" %}
+**Automatisk valg**: Chloros velger automatisk den fliseleverandøren som gir det beste zoomnivået for din nåværende kartposisjon. Du kan bytte mellom leverandører manuelt hvis du ønsker det.
 {% endhint %}
 
 Kartfanen støtter to fliseleverandører for bakgrunnskartbildene:
@@ -110,12 +112,14 @@ Viser satellittkartfliser med tilleggsdetaljer (veier osv.)
 
 ### Zoomkontroller
 
-* **Zoom inn/ut**: Bruk musens rullehjul eller zoomknappene
-* **Fullskjerm**: Vis kartet i fullskjerm
+* **Zoom inn/ut**: Bruk musens rullehjul eller zoomknappene.
+* **Fullskjerm**: Vis kartet i fullskjerm.
 
 ### Panoreringkontroller
 
-* **Panorering**: Klikk og dra for å bevege deg rundt på kartet***
+* **Panorering**: Klikk og dra for å bevege deg rundt på kartet.
+
+***
 
 ## Bruksområder
 
@@ -133,9 +137,9 @@ Viser satellittkartfliser med tilleggsdetaljer (veier osv.)
 
 ### Kvalitetskontroll
 
-* Identifiser raskt bilder som er tatt på uventede steder.
-* Kontroller GPS-nøyaktigheten i hele datasettet.
-* Kryssreferer bildesteder med feltnotater.
+* Identifiser raskt bilder som er tatt på uventede steder
+* Kontroller GPS-nøyaktigheten i hele datasettet
+* Kryssreferer bildeplasseringer med feltnotater
 
 ***
 
@@ -145,9 +149,9 @@ Viser satellittkartfliser med tilleggsdetaljer (veier osv.)
 
 **Mulige årsaker:**
 
-* Bildene inneholder ikke GPS-metadata.
-* GPS var deaktivert på kameraet under opptaket.
-* EXIF-data ble fjernet av ekstern programvare.
+* Bildene inneholder ikke GPS-metadata
+* GPS var deaktivert på kameraet under opptaket
+* EXIF-data ble fjernet av ekstern programvare
 
 **Løsning**: Kontroller at GPS er aktivert på kameraet og importer originalfilene på nytt
 

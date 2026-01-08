@@ -23,13 +23,13 @@ Når et bilde er lastet inn i forhåndsvisningsområdet:
 
 ***
 
-## Oversikt over grensesnittet til Bildeselger
+## Oversikt over grensesnittet til bildeselgeren
 
 ### Hovedvisningsområdet
 
 Den største delen av skjermen viser bildet ditt:
 
-* **Full oppløsning**: Bilder vises i opprinnelig oppløsning
+* **Full oppløsning**: Bilder vises i originaloppløsning
 * **Zoombar**: Bruk kontrollene eller mushjulet til å zoome
 * **Panorerbar**: Klikk og dra for å flytte rundt når du har zoomet
 * **Bildeforhold opprettholdes**: Bildene skaleres proporsjonalt
@@ -64,26 +64,20 @@ Juster forstørrelsen for å se på bildedetaljer:
 * Trykk på **−** (minus)-tasten
 * Rull mushjulet **ned**
 
-**Tilpass til skjerm:**
-
-* Klikk på **↔** (Tilpass)-knappen
-* Trykk på **0** (null)-tasten
-* Dobbeltklikk på bildet
-
 #### Panorering når du zoomer
 
 Når du zoomer utover skjermstørrelsen:
 
 1. Flytt musepekeren over bildet
-2. Klikk og **hold venstre museknapp nede**
+2. Klikk og **hold nede venstre museknapp**
 3. **Dra** for å flytte bildet rundt
-4. Slipp for å stoppe panorering
+4. Slipp for å stoppe panoreringen
 
 **Alternativ**: Bruk piltastene for å panorere i små trinn
 
 ***
 
-## Inspeksjon av pikselverdi
+## Inspeksjon av pikselverdier
 
 ### Visning av pikselverdier ved markøren
 
@@ -100,24 +94,26 @@ Når du beveger musepekeren over bildet, vises pikselverdiene i sanntid:
 
 ## Bildetyper du kan vise
 
-### Originalbilder (før behandling)
+### JPG
 
-**RAW + JPG-bilder fra kamera:**
+**JPG-bilder fra kamera:**
 
-* Viser RAW-data som forhåndsvisning
+* Viser JPG-data som forhåndsvisning
 * Viser originale, ukorrigerte verdier
 * Nyttig for å sjekke bildekvaliteten før behandling
 
-### Kalibrerte refleksjonsbilder
+### RAW (original)
+
+### RAW (reflektans)
 
 **Etter behandling:**
 
-* Vignettkorrigert
+* Vignett korrigert
 * Refleksjonskalibrert
 * Multibånd TIFF (Red, Green, NIR, etc.)
 * Vitenskapelige data klare for analyse
 
-### Indeksbilder
+### RAW (Indeks)
 
 **NDVI, NDRE, GNDVI, etc. (\_NDVI.tif-filer):**
 
@@ -133,7 +129,7 @@ Når du beveger musepekeren over bildet, vises pikselverdiene i sanntid:
 Bruk multispektrale indekser og farge-Look-Up-tabeller:
 
 1. Finn **Index/LUT Sandbox** i **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidefeltet
-2. Velg vegetasjonsindeks (NDVI, NDRE, etc.)
+2. Velg vegetasjonsindeks (NDVI, NDRE osv.)
 3. Velg multispektral formel, eller lag din egen tilpassede formel (kun Chloros+)
 4. Bruk fargeluttgradient for visualisering
 5. Juster verdier og terskler
@@ -155,23 +151,11 @@ Se [Indeks/LUT Sandbox](index-lut-sandbox.md) for detaljerte instruksjoner.
 
 * **+** eller **=**: Zoom inn
 * **−**: Zoom ut
-* **0** (null): Tilpass til skjermen
 * **Mushjul**: Zoom inn/ut
-
-### Visningskontroller
-
-* **P**: Veksle mellom pikselprosentmodus
-* **L**: Veksle mellom lagpaneler
-* **Esc**: Lukk fullskjerm eller gå tilbake til filbrowseren
-
-### Annet
-
-* **Ctrl+S**: Lagre gjeldende bilde
-* **F**: Fullskjermmodus (hvis tilgjengelig)
 
 ***
 
-### Kontrollere indeksberegninger
+### Bekrefte indeksberegninger
 
 Kontroller at indeksene er beregnet riktig:
 
@@ -198,9 +182,9 @@ Kontroller at indeksene er beregnet riktig:
 
 **Løsninger:**
 
-1. Prøv å åpne i ekstern visningsprogram for å kontrollere filens integritet
+1. Prøv å åpne i ekstern visningsprogram for å verifisere filintegriteten
 2. Kontroller at filformatet samsvarer med forventet type
-3. Lukk andre programmer for å frigjøre minne
+3. Lukk andre applikasjoner for å frigjøre minne
 4. Prøv et mindre/annet bilde
 
 ### Svart eller hvitt bilde
@@ -213,7 +197,7 @@ Kontroller at indeksene er beregnet riktig:
 
 **Løsninger:**
 
-1. Kontroller pikselverdiene – hvis alle er svært lave eller svært høye, juster visningsområdet.
+1. Kontroller pikselverdiene – hvis alle er veldig lave eller veldig høye, juster visningsområdet.
 2. Prøv å åpne i QGIS eller lignende med automatisk justering av området.
 3. Kontroller feilsøkingsloggen fra behandlingen for feil.
 
@@ -221,14 +205,14 @@ Kontroller at indeksene er beregnet riktig:
 
 **Mulige årsaker:**
 
-* Visning av feil bilde (original vs. behandlet)
+* Viser feil bilde (original vs. behandlet)
 * Kalibreringen ble ikke brukt riktig
-* Lyssensordata ble ikke inkludert i inndata
+* Lyssensordata ble ikke inkludert i inndataene
 * Prosentmodus ble slått feil
 
 **Løsninger:**
 
-1. Kontroller at du viser behandlet utdata (sjekk filnavnsuffikset)
+1. Kontroller at du ser på behandlet utdata (sjekk filnavnet)
 2. Sjekk statusen til prosentmodusknappen
 3. Sammenlign med bilder fra samme datasett som du vet er gode
 

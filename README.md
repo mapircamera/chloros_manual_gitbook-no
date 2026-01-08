@@ -3,9 +3,7 @@ metaLinks: {}
 ---
 # Komme i gang
 
-<div data-full-width="false"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>
-
-Chloros er et program fra [MAPIR](https://www.mapir.camera) for behandling av bilder og andre sensordata.
+<div data-full-width="false"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>Chloros er et program fra [MAPIR](https://www.mapir.camera) for behandling av bilder og andre sensordata.
 
 ***
 
@@ -25,7 +23,7 @@ Kommandolinjebatchbehandling. Perfekt for automatisering, skripting og avanserte
 
 ## [Chloros API: Python SDK](api-python-sdk.md)
 
-Programmatisk Python-grensesnitt for automatisering og tilpassede arbeidsflyter. Perfekt for forskningspipelines, integrering med eksisterende Python-applikasjoner og utvikling av tilpassede verktøy. _API krever en Chloros+-lisens for tilgang._
+Programmatisk Python-grensesnitt for automatisering og tilpassede arbeidsflyter. Perfekt for forskningsrørledninger, integrering med eksisterende Python-applikasjoner og utvikling av tilpassede verktøy. _API krever en Chloros+-lisens for å få tilgang._
 
 ***
 
@@ -43,5 +41,13 @@ Selv om Chloros er gratis å bruke for de fleste oppgaver, kan det hende du øns
 <p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary" data-icon="envira">Chloros+ Priser og registrering</a></p>
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_grid_mode.gif" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_grid_meta.gif" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
