@@ -19,7 +19,7 @@ Fanen Kart viser bildene dine på et interaktivt 2D-kart basert på GPS-koordina
 
 ## Justere bilder fra kartfanen
 
-Fanen **Kart** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> har de samme funksjonene for å legge til  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  og fjern  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  filknapper som [**Filbrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Den viser også den samme prosjektfiltabellen, men med andre kolonneoverskrifter:
+Fanen **Kart**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> har de samme funksjonene for å legge til  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  og fjern  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  filknappene som [**Filbrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Den viser også den samme prosjektfiltabellen, men med andre kolonneoverskrifter:
 
 ### Filnavn
 
@@ -51,11 +51,11 @@ Hvert bilde med GPS-data vises med en markør på kartet:
 ### Markørvisning
 
 * Markører angir de nøyaktige GPS-koordinatene der hvert bilde ble tatt.
-* Markører kan grupperes sammen når du zoomer ut.
+* Grupperte markører kan samles når du zoomer ut.
 * Zoom inn for å se individuelle bildeplasseringer.
 
 {% hint style="success" %}
-SUPERZOOM: Når du når det maksimale zoomnivået fra kartfliseleverandøren, forstørres flisen ved ytterligere zoom, slik at du kan se markører som ligger tett sammen.
+SUPERZOOM: Når du når det maksimale zoomnivået fra kartfliseleverandøren, forstørres flisen ved videre zoom, slik at du kan se markører som ligger tett sammen.
 {% endhint %}
 
 ### Forhåndsvisning ved å holde musepekeren over
@@ -66,7 +66,7 @@ SUPERZOOM: Når du når det maksimale zoomnivået fra kartfliseleverandøren, fo
 
 ***
 
-## Kartflisleverandører
+## Kartfliseleverandører
 
 {% hint style="success" %}
 **Automatisk valg**: Chloros velger automatisk den fliseleverandøren som gir det beste zoomnivået for din nåværende kartposisjon. Du kan bytte mellom leverandører manuelt hvis du ønsker det.
@@ -90,7 +90,7 @@ Kartfanen støtter to fliseleverandører for bakgrunnskartbildene:
 
 Du kan velge kartlagstype (fra venstre til høyre):
 
- <img src="../.gitbook/assets/image (23).png" alt="" data-size="line">### Terreng
+ <img src="../.gitbook/assets/image (23).png" alt="" data-size="original">### Terreng
 
 Viser høydeprofiler og kartfliser med detaljer (veier osv.)
 
@@ -117,9 +117,7 @@ Viser satellittkartfliser med tilleggsdetaljer (veier osv.)
 
 ### Panoreringkontroller
 
-* **Panorering**: Klikk og dra for å bevege deg rundt på kartet.
-
-***
+* **Panorering**: Klikk og dra for å bevege deg rundt på kartet.***
 
 ## Bruksområder
 
@@ -127,7 +125,7 @@ Viser satellittkartfliser med tilleggsdetaljer (veier osv.)
 
 * Se dekningsområdet for droneopptakssesjoner
 * Identifiser hull i bildedekningen
-* Kontroller gjennomføringen av flyruten
+* Verifiser gjennomføringen av flyruten
 
 ### Gjennomgang av bakkeundersøkelse
 
@@ -137,9 +135,9 @@ Viser satellittkartfliser med tilleggsdetaljer (veier osv.)
 
 ### Kvalitetskontroll
 
-* Identifiser raskt bilder som er tatt på uventede steder
-* Kontroller GPS-nøyaktigheten i hele datasettet
-* Kryssreferer bildeplasseringer med feltnotater
+* Identifiser raskt bilder som er tatt på uventede steder.
+* Kontroller GPS-nøyaktigheten i hele datasettet.
+* Kryssreferer bildesteder med feltnotater.
 
 ***
 
@@ -149,9 +147,9 @@ Viser satellittkartfliser med tilleggsdetaljer (veier osv.)
 
 **Mulige årsaker:**
 
-* Bildene inneholder ikke GPS-metadata
-* GPS var deaktivert på kameraet under opptaket
-* EXIF-data ble fjernet av ekstern programvare
+* Bildene inneholder ikke GPS-metadata.
+* GPS var deaktivert på kameraet under opptaket.
+* EXIF-data ble fjernet av ekstern programvare.
 
 **Løsning**: Kontroller at GPS er aktivert på kameraet og importer originalfilene på nytt
 

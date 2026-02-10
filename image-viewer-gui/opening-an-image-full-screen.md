@@ -1,6 +1,6 @@
 # Åpne et bilde i fullskjermmodus
 
-Chloros Image Viewer har et dedikert fullskjermgrensesnitt for visning, analyse og bearbeiding av multispektrale bilder. Uansett om du viser originale bilder eller bearbeidede resultater, tilbyr Image Viewer kraftige verktøy for inspeksjon og analyse.
+Chloros Image Viewer har et dedikert fullskjermgrensesnitt for visning, analyse og manipulering av multispektrale bilder. Uansett om du viser originale bilder eller bearbeidede resultater, tilbyr Image Viewer kraftige verktøy for inspeksjon og analyse.
 
 ## Åpne Image Viewer
 
@@ -23,18 +23,16 @@ Når et bilde er lastet inn i forhåndsvisningsområdet:
 
 ***
 
-## Oversikt over grensesnittet til bildeselgeren
+## Oversikt over grensesnittet til Bildeselger
 
-### Hovedvisningsområdet
+### Hovedvisningsområde
 
 Den største delen av skjermen viser bildet ditt:
 
-* **Full oppløsning**: Bilder vises i originaloppløsning
+* **Full oppløsning**: Bilder vises i opprinnelig oppløsning
 * **Zoombar**: Bruk kontrollene eller mushjulet til å zoome
 * **Panorerbar**: Klikk og dra for å flytte rundt når du har zoomet
-* **Bildeforhold opprettholdes**: Bildene skaleres proporsjonalt
-
-***
+* **Bildeforhold opprettholdes**: Bildene skaleres proporsjonalt***
 
 ## Visningsalternativer
 
@@ -44,23 +42,19 @@ Den største delen av skjermen viser bildet ditt:
 
 Naviger gjennom bildesettet ditt ved hjelp av hurtigtaster eller knapper:
 
-* **Neste bilde**: Klikk på →-knappen eller trykk på **→** (høyre pil)-tasten
-* **Forrige bilde**: Klikk på ←-knappen eller trykk på **←** (venstre pil)-tasten
+* **Neste bilde**: Klikk på →-knappen eller trykk på**→**-tasten (høyre pil)
+* **Forrige bilde**: Klikk på ←-knappen eller trykk på**←**-tasten (venstre pil)
 * **Gå til et bestemt bilde**: Gå tilbake til filbrowseren og klikk på ønsket miniatyrbilde
 
 #### Zoomkontroller
 
 Juster forstørrelsen for å se på bildedetaljer:
 
-**Zoom inn:**
-
-* Klikk på **+** (pluss)-knappen
-* Trykk på **+** eller **=**-tasten
+**Zoom inn:*** Klikk på **+** (pluss)-knappen
+* Trykk på **+**eller**=**-tasten
 * Rull mushjulet **opp**
 
-**Zoom ut:**
-
-* Klikk på **−** (minus)-knappen
+**Zoom ut:*** Klikk på **−** (minus)-knappen
 * Trykk på **−** (minus)-tasten
 * Rull mushjulet **ned**
 
@@ -69,26 +63,18 @@ Juster forstørrelsen for å se på bildedetaljer:
 Når du zoomer utover skjermstørrelsen:
 
 1. Flytt musepekeren over bildet
-2. Klikk og **hold nede venstre museknapp**
-3. **Dra** for å flytte bildet rundt
+2. Klikk og **hold venstre museknapp nede**
+
+3.**Dra** for å flytte bildet rundt
 4. Slipp for å stoppe panoreringen
 
-**Alternativ**: Bruk piltastene for å panorere i små trinn
-
-***
+**Alternativ**: Bruk piltastene for å panorere i små trinn***
 
 ## Inspeksjon av pikselverdier
 
 ### Visning av pikselverdier ved markøren
 
-Når du beveger musepekeren over bildet, vises pikselverdiene i sanntid:
-
-**Plassering av verdivisning:**
-
-* **Flytende tall og rød linje i indeks LUT-gradientlegenden på høyre side**
-* **Når du zoomer inn ytterligere, vises flytende verdi nær markøren og uthevet piksel**
-* Viser verdier for piksel **under markøren eller uthevet**
-* Oppdateres når du beveger musen
+Når du beveger musepekeren over bildet, vises pikselverdiene i sanntid:**Plassering av verdivisning:*** **Flytende tall og rød linje i indeks LUT-gradientlegenden på høyre side*** **Når du zoomer inn ytterligere, vises flytende verdi nær markøren og uthevet piksel*** Viser verdier for piksel **under markøren eller uthevet*** Oppdateres når du beveger musen
 
 ***
 
@@ -128,9 +114,9 @@ Når du beveger musepekeren over bildet, vises pikselverdiene i sanntid:
 
 Bruk multispektrale indekser og farge-Look-Up-tabeller:
 
-1. Finn **Index/LUT Sandbox** i **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidefeltet
-2. Velg vegetasjonsindeks (NDVI, NDRE osv.)
-3. Velg multispektral formel, eller lag din egen tilpassede formel (kun Chloros+)
+1. Finn **Index/LUT Sandbox**i**Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidefeltet
+2. Velg vegetasjonsindeks (NDVI, NDRE, etc.)
+3. Velg multispektral formel, eller lag din egen tilpassede (kun Chloros+)
 4. Bruk fargeluttgradient for visualisering
 5. Juster verdier og terskler
 
@@ -149,13 +135,11 @@ Se [Indeks/LUT Sandbox](index-lut-sandbox.md) for detaljerte instruksjoner.
 
 ### Zoom
 
-* **+** eller **=**: Zoom inn
+* **+**eller**=**: Zoom inn
 * **−**: Zoom ut
-* **Mushjul**: Zoom inn/ut
+* **Mushjul**: Zoom inn/ut***
 
-***
-
-### Bekrefte indeksberegninger
+### Verifisere indeksberegninger
 
 Kontroller at indeksene er beregnet riktig:
 
@@ -166,9 +150,7 @@ Kontroller at indeksene er beregnet riktig:
    * **GNDVI**: Ligner på NDVI, men klorofyllfølsom
 3. Kontroller ikke-vegetasjon:
    * **Jord**: Nær 0 eller svakt negativt
-   * **Vann**: Negative verdier (-0,5 til 0)
-
-***
+   * **Vann**: Negative verdier (-0,5 til 0)***
 
 ## Feilsøking av visningsproblemer
 
@@ -182,7 +164,7 @@ Kontroller at indeksene er beregnet riktig:
 
 **Løsninger:**
 
-1. Prøv å åpne i ekstern visningsprogram for å verifisere filintegriteten
+1. Prøv å åpne i ekstern visningsprogram for å verifisere filens integritet
 2. Kontroller at filformatet samsvarer med forventet type
 3. Lukk andre applikasjoner for å frigjøre minne
 4. Prøv et mindre/annet bilde
@@ -207,12 +189,12 @@ Kontroller at indeksene er beregnet riktig:
 
 * Viser feil bilde (original vs. behandlet)
 * Kalibreringen ble ikke brukt riktig
-* Lyssensordata ble ikke inkludert i inndataene
+* Lyssensordata ble ikke inkludert i inndata
 * Prosentmodus ble slått feil
 
 **Løsninger:**
 
-1. Kontroller at du ser på behandlet utdata (sjekk filnavnet)
+1. Kontroller at du viser behandlet utdata (sjekk filnavnetillegget)
 2. Sjekk statusen til prosentmodusknappen
 3. Sammenlign med bilder fra samme datasett som du vet er gode
 
@@ -220,7 +202,7 @@ Kontroller at indeksene er beregnet riktig:
 
 ## Neste trinn
 
-Nå som du kan vise bilder i fullskjerm:
+Nå som du kan vise bilder i full skjerm:
 
 * [**Bildelag**](image-layers.md) – Lær om multibåndvisualisering
 * [**Indeks/LUT-sandkasse**](index-lut-sandbox.md) – Bruk tilpassede indekser og fargekartlegging

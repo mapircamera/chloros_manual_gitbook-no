@@ -31,11 +31,9 @@ Bruk dette alternativet for å importere enkeltstående bildefiler eller et lite
 
 Bruk dette alternativet for å importere alle bildene fra en mappe samtidig.
 
-1. Klikk på **&quot;Legg til mappe&quot;** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> øverst i filbrowserpanelet.
+1. Klikk på **«Legg til mappe»** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> øverst i filbrowserpanelet.
 2. Naviger til og velg mappen som inneholder bildene fra opptakssesjonen.
-3. Klikk på **«Velg mappe»** for å importere alle støttede bilder fra den mappen.
-
-***
+3. Klikk på **«Velg mappe»** for å importere alle støttede bilder fra den mappen.***
 
 ## Forstå filbrowser-tabellen
 
@@ -49,14 +47,14 @@ Når bildene er importert, vises de i en tabell med følgende kolonner:
 ### Tidsstempel
 
 * Dato og klokkeslett da bildet ble tatt
-* Hentet fra EXIF-metadata i bildet
+* Hentet fra EXIF-metadata for bildet
 * Brukes til PPK-synkronisering og kalibreringsmåldeteksjon
 
 ### Kameramodell
 
 * Automatisk oppdaget kamera- og filterkonfigurasjon
 * Eksempler: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
-* Brukes til å bruke riktige behandlingsprofiler
+* Brukes til å anvende riktige behandlingsprofiler
 
 ### Målkolonne (avkryssingsboks)
 
@@ -86,13 +84,11 @@ Slik fjerner du uønskede bilder fra prosjektet ditt:
 
 * **Sorter etter kolonne**: Klikk på en kolonneoverskrift for å sortere bildene.
 * **Sorter etter tidsstempel**: Nyttig for å organisere kronologiske bildesekvenser.
-* **Kamerafiltermodell**: Grupper bilder etter kameratype hvis du bruker flere kameraer.
-
-***
+* **Kamerafilter**: Grupper bildene etter kameratype hvis du bruker flere kameraer.***
 
 ## Forhåndsvisning av bilder
 
-### Visning av hele bildet
+### Vise hele bildet
 
 Klikk på en miniatyrbilde i filbrowseren for å vise det i hovedforhåndsvisningsområdet:
 
@@ -100,25 +96,23 @@ Klikk på en miniatyrbilde i filbrowseren for å vise det i hovedforhåndsvisnin
 2. Bruk zoomkontrollene til å se på bildedetaljer
 3. Naviger mellom bildene ved hjelp av piltastene
 
-### Hurtignavigering
+### Rask navigering
 
 * **Forrige bilde**: Klikk på venstre pil eller trykk på ←-tasten
 * **Neste bilde**: Klikk på høyre pil eller trykk på →-tasten
 * **Zoom inn/ut**: Bruk mushjulet eller zoomknappene
-* **Panorer**: Klikk og dra på bildet når du har zoomet inn
-
-***
+* **Panorer**: Klikk og dra på bildet når du har zoomet inn***
 
 ## Håndtering av dupliserte filer
 
 Chloros oppdager og ignorerer automatisk dupliserte filer:
 
 * Filer med identiske filnavn hoppes over
-* Forhindrer utilsiktet dobbeltbehandling
+* Forhindrer utilsiktet dobbel behandling
 * Advarselsmelding vises når duplikater oppdages
 
 {% hint style="warning" %}
-**Viktig**: Ikke gi originale bildefiler nytt navn eller endre dem før du importerer dem. Chloros er avhengig av originale filnavn og metadata for riktig behandling.
+**Viktig**: Ikke endre navn på eller modifiser originale bildefiler før import. Chloros er avhengig av originale filnavn og metadata for riktig behandling.
 {% endhint %}
 
 ***
@@ -132,9 +126,7 @@ Hvis prosjektet ditt inneholder bilder fra flere MAPIR-kameraer:
 3. Filbrowseren viser kameramodellen i kolonnen Kameramodell
 4. Behandlingen bruker riktige innstillinger for hver kameratype
 
-**Eksempel på scenario**: Survey3W RGN + Survey3N OCN dobbeltkameraoppsett
-
-***
+**Eksempel på scenario**: Survey3W RGN + Survey3N OCN oppsett med to kameraer***
 
 ## Beste praksis
 
@@ -169,7 +161,7 @@ Hvis prosjektet ditt inneholder bilder fra flere MAPIR-kameraer:
 * Bildene er fra kameraer som ikke er MAPIR (se [Støttede kameraer](../supported-cameras.md))
 * Filkorrupsjon eller ufullstendig overføring fra SD-kort
 
-**Løsning**: Kontroller filformatet og kameraets modellkompatibilitet
+**Løsning**: Kontroller filformatet og kameraets kompatibilitet
 
 ### Kameramodell oppdages ikke
 
@@ -188,15 +180,13 @@ Hvis prosjektet ditt inneholder bilder fra flere MAPIR-kameraer:
 * Kameraets klokke er ikke riktig innstilt
 * EXIF-data fjernet av ekstern programvare
 
-**Løsning**: Kontroller at kameraets tidsinnstillinger var riktige under opptaket
-
-***
+**Løsning**: Kontroller at kameraets tidsinnstillinger var riktige under opptaket***
 
 ## Neste trinn
 
 Når filene er importert:
 
-1. **Gå gjennom fillisten** – Kontroller at alle bildene er lastet inn riktig
+1. **Gjennomgå fillisten** – Kontroller at alle bildene er lastet inn riktig
 2. **Kontroller kameramodeller** – Kontroller at kameraet er riktig gjenkjent
 3. **Merk målbilder** – Se [Velge målbilder](choosing-target-images.md)
 4. **Juster innstillinger** – Konfigurer behandlingsalternativer i [Prosjektinnstillinger](adjusting-project-settings.md)

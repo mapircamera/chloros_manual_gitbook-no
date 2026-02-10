@@ -4,11 +4,11 @@ Før du behandler bildene dine, er det viktig å konfigurere prosjektinnstilling
 
 ## Tilgang til prosjektinnstillinger
 
-1. Åpne prosjektet ditt i Chloros
+1. Åpne prosjektet i Chloros
 2. Klikk på **Prosjektinnstillinger** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> i venstre sidefelt
 3. Panelet Prosjektinnstillinger viser alle konfigurasjonsalternativer
 
-{% hint style=&quot;info&quot; %}
+{% hint style="info" %}
 **Innstillingene lagres automatisk** sammen med prosjektet. Når du åpner et prosjekt på nytt, gjenopprettes alle innstillingene.
 {% endhint %}
 
@@ -20,9 +20,9 @@ Før du behandler bildene dine, er det viktig å konfigurere prosjektinnstilling
 
 For typiske MAPIR Survey3 kameraarbeidsflyter fungerer standardinnstillingene godt:
 
-* ✅ **Vignettkorreksjon**: Aktivert
-* ✅ **Refleksjonskalibrering**: Aktivert (krever bilder av MAPIR mål)
-* ✅ **Debayer-metode**: Høy kvalitet (raskere)
+* ✅ **Vignettkorrigering**: Aktivert
+* ✅ **Refleksjonskalibrering**: Aktivert (krever bilder av MAPIR-mål)
+* ✅ **Debayer-metode**: Standard (rask, middels kvalitet)
 * ✅ **Eksportformat**: TIFF (16-bit)
 
 Bare importer bildene dine og start behandlingen med disse standardinnstillingene.
@@ -31,39 +31,41 @@ Bare importer bildene dine og start behandlingen med disse standardinnstillingen
 
 ## Oversikt over prosjektinnstillinger
 
-Panelet Prosjektinnstillinger er organisert i flere kategorier. Nedenfor finner du en oversikt over hver seksjon. For fullstendig dokumentasjon, se [Prosjektinnstillinger](../project-settings/project-settings.md).
+Panelet for prosjektinnstillinger er organisert i flere kategorier. Nedenfor finner du en oversikt over hver seksjon. For fullstendig dokumentasjon, se [Prosjektinnstillinger](../project-settings/project-settings.md).
 
 ### Målregistrering
 
 Kontrollerer hvordan Chloros identifiserer kalibreringsmål i bildene dine.
 
-**Viktige innstillinger:**
+**Viktige innstillinger:*** **Minimum kalibreringsprøveområde**: Størrelsestærskel for måldeteksjon (standard: 25 piksler)
+* **Minimum målklynging**: Likhetstærskel for gruppering av målregioner (standard: 60)**Når du bør justere:**
 
-* **Minimum kalibreringsprøveområde**: Størrelsestærskel for måldeteksjon (standard: 25 piksler)
-* **Minimum målklynging**: Likhetstærskel for gruppering av målregioner (standard: 60)
-
-**Når du bør justere:**
-
-* Øk prøveområdet hvis du får falske deteksjoner.
-* Reduser hvis målene ikke blir oppdaget.
-* Juster klynging hvis målene blir delt inn i flere deteksjoner.
+* Øk prøveområdet hvis du får falske deteksjoner
+* Reduser hvis mål ikke blir detektert
+* Juster gruppering hvis mål blir delt inn i flere deteksjoner
 
 ### Behandling
 
 Hovedalternativer for bildebehandling og kalibrering.
 
-**Viktige innstillinger:**
-
-* **Vignettkorreksjon**: Kompenserer for mørkere kanter på objektivet ✅ Anbefalt
+**Viktige innstillinger:*** **Vignettkorreksjon**: Kompenserer for mørkere kanter på objektivet ✅ Anbefalt
 * **Refleksjonskalibrering**: Normaliserer verdier ved hjelp av kalibreringsmål ✅ Anbefalt
 * **Debayer-metode**: Algoritme for konvertering av RAW til 3-kanals multispektral
-* **Minimum rekalibreringsintervall**: Tid mellom bruk av kalibreringsmål (0 = bruk alle)
-
-**Avanserte innstillinger:**
-
-* **Lyssensorens tidssoneforskyvning**: For PPK-tidssynkronisering (standard: 0)
+* **Minimum rekalibreringsintervall**: Tid mellom bruk av kalibreringsmål (0 = bruk alle)**Avanserte innstillinger:*** **Lyssensorens tidssoneforskyvning**: For PPK-tidssynkronisering (standard: 0)
 * **Bruk PPK-korreksjoner**: Bruker GPS/eksponeringspinndata fra .daq-filer
 * **Eksponeringspinne 1/2**: Tilordner kameraer til eksponeringspinner for oppsett med to kameraer
+
+### Debayer-metode
+
+Vi tilbyr for øyeblikket to debayering-metoder i Chloros:
+
+#### Standard (rask, middels kvalitet)
+
+Standard debayer behandler raskt, men viser debayering-fargestøy, noe som resulterer i mindre nøyaktige og mer støyende bilder.
+
+#### Teksturbevisst (langsom, høyeste kvalitet) \[Chloros+ kun]
+
+Teksturbevisst bruker en høy kvalitet kantbevisst debayer kombinert med en AI/ML støyreduksjonsmodell som fjerner nesten all debayering-støy. Teksturbevisst-modellen krever GPU-minne (VRAM) for å kjøre. Vi anbefaler å bruke den når du har &gt;4 GB VRAM tilgjengelig for raskere behandling.
 
 ### Indeks (multispektrale indekser)
 
@@ -71,20 +73,16 @@ Konfigurer hvilke vegetasjonsindekser som skal beregnes og eksporteres.
 
 **Slik legger du til indekser:**
 
-1. Klikk på **«Legg til indeks»**-knappen
-2. Velg en indeks fra rullegardinmenyen (NDVI, NDRE, GNDVI osv.)
+1. Klikk på**&quot;Legg til indeks&quot;**-knappen
+2. Velg en indeks fra rullegardinmenyen (NDVI, NDRE, GNDVI, osv.)
 3. Konfigurer visualiseringsinnstillinger (LUT-farger, verdier)
 4. Legg til flere indekser etter behov
 
-**Populære indekser:**
-
-* **NDVI**: Generell vegetasjonshelse (vanligst)
+**Populære indekser:*** **NDVI**: Generell vegetasjonshelse (vanligst)
 * **NDRE**: Tidlig stressdeteksjon med RedEdge
 * **GNDVI**: Klorofyllkonsentrasjonsfølsom
 * **OSAVI**: Fungerer godt med synlig jord
-* **EVI**: Regioner med høy bladarealindeks (LAI)
-
-**Tilpassede formler (kun Chloros+):**
+* **EVI**: Regioner med høy bladarealindeks (LAI)**Tilpassede formler (kun Chloros+):**
 
 * Lag tilpassede multispektrale indeksformler
 * Bruk båndmatematikk med alle bildekanaler
@@ -96,14 +94,10 @@ For alle tilgjengelige indekser og formler, se [Multispektrale indeksformler](..
 
 Kontrollerer utdatafilformat og kvalitet.
 
-**Tilgjengelige formater:**
-
-* **TIFF (16-bit)**: Anbefales for GIS og vitenskapelig analyse (0-65 535-området)
+**Tilgjengelige formater:*** **TIFF (16-bit)**: Anbefales for GIS og vitenskapelig analyse (0-65 535-området)
 * **TIFF (32-bit, prosent)**: Flytende refleksjonsverdier (0,0-1,0-området)
-* **PNG (8-bit)**: Tapsfri komprimering for visualisering (0–255)
-* **JPG (8-bit)**: Minste filer, tapsrik komprimering (0–255)
-
-***
+* **PNG (8-bit)**: Tapsfri komprimering for visualisering (område 0–255)
+* **JPG (8-bit)**: Minste filer, tapsfri komprimering (område 0–255)***
 
 ## Lagre og laste inn innstillinger
 
@@ -111,27 +105,28 @@ Kontrollerer utdatafilformat og kvalitet.
 
 Opprett gjenbrukbare maler for konsistente arbeidsflyter:
 
-1. Konfigurer alle ønskede innstillinger i panelet Prosjektinnstillinger.
-2. Bla til delen **«Lagre prosjektmal»** nederst.
-3. Skriv inn et beskrivende navn på malen (f.eks. «Survey3N\_RGN\_Agriculture»).
-4. Klikk på lagringsikonet.
+1. Konfigurer alle ønskede innstillinger i panelet Prosjektinnstillinger
+2. Bla til delen **«Lagre prosjektmal»** nederst
+3. Skriv inn et beskrivende navn på malen (f.eks. «Survey3N\_RGN\_Agriculture»)
+4. Klikk på lagringsikonet
 
 **Fordeler:**
 
-* Bruk identiske innstillinger på flere prosjekter.
-* Del konfigurasjoner med teammedlemmer.
-* Oppretthold konsistens for gjentatte undersøkelser.
+* Bruk identiske innstillinger på flere prosjekter
+* Del konfigurasjoner med teammedlemmer
+* Oppretthold konsistens for gjentatte undersøkelser
 
 ### Last inn mal på nytt prosjekt
 
 Når du oppretter et nytt prosjekt:
 
-1. Velg **«Nytt prosjekt»** fra hovedmenyen.
-2. Velg alternativet **«Last inn fra mal»**.
-3. Velg den lagrede malen.
-4. Alle innstillinger blir automatisk brukt.
+1. Velg **«Nytt prosjekt»** fra hovedmenyen
+2. Velg alternativet **«Last inn fra mal»**
 
-### Arbeidskatalog
+3. Velg den lagrede malen
+4. Alle innstillinger blir automatisk brukt
+
+### Arbeidsmappe
 
 Innstillingen **«Lagre prosjektmappe»** angir hvor nye prosjekter opprettes som standard:
 
@@ -144,7 +139,7 @@ Innstillingen **«Lagre prosjektmappe»** angir hvor nye prosjekter opprettes so
 
 ***
 
-## PPK (Post-Processed Kinematic) oppsett
+## PPK-oppsett (Post-Processed Kinematic)
 
 Hvis du bruker MAPIR DAQ-opptakere med GPS for presis geolokalisering:
 
@@ -156,21 +151,18 @@ Hvis du bruker MAPIR DAQ-opptakere med GPS for presis geolokalisering:
 
 ### Konfigurasjonstrinn
 
-1. Plasser .daq-loggfilen i prosjektmappen din.
-2. I prosjektinnstillingene aktiverer du avmerkingsboksen **«Bruk PPK-korreksjoner»**.
-3. Angi **«Lyssensorens tidssoneforskjell»** om nødvendig (standard: 0 for UTC).
+1. Plasser .daq-loggfilen i prosjektmappen
+2. I prosjektinnstillingene aktiverer du avmerkingsboksen **«Bruk PPK-korreksjoner»**
+
+3. Angi**«Light sensor timezone offset»** om nødvendig (standard: 0 for UTC)
 4. Tilordne kameraer til eksponeringspinner:
-   * **Enkelt kamera**: Tildeles automatisk til pin 1
-   * **To kameraer**: Tildel hvert kamera manuelt til riktig pin
+   * **Enkelt kamera**: Tilordnes automatisk til pin 1
+   * **Doble kameraer**: Tilordne hvert kamera manuelt til riktig pin**Tilordning av eksponeringspinner:*** **Eksponeringspinne 1**: Velg kameramodell fra rullegardinmenyen
+* **Eksponeringspinne 2**: Velg andre kamera eller «Ikke bruk»
+* Samme kamera kan ikke tilordnes begge pinnene
 
-**Tildeling av eksponeringspinner:**
-
-* **Eksponeringspin 1**: Velg kameramodell fra rullegardinmenyen
-* **Eksponeringspin 2**: Velg andre kamera eller «Ikke bruk»
-* Samme kamera kan ikke tildeles begge pinnene
-
-{% hint style=&quot;warning&quot; %}
-**Viktig**: Eksponeringspinner må tilordnes riktig til sine respektive kameraer. Feil tilordning vil resultere i feil geolokaliseringsdata.
+{% hint style="warning" %}
+**Viktig**: Eksponeringspinner må tilordnes riktig til sine respektive kameraer. Feil tilordning vil føre til feil geolokaliseringsdata.
 {% endhint %}
 
 ***
@@ -193,8 +185,8 @@ Når du behandler bilder fra flere MAPIR-kameraer i ett prosjekt:
 For gjentatte undersøkelser av samme område over tid:
 
 1. Lag en mal med standardinnstillingene dine
-2. Bruk konsistent kalibreringsmåloppsett hver økt
-3. Behandle hver dato som et separat prosjekt
+2. Bruk konsistent kalibreringsmåloppsett for hver økt
+3. Behandle hver dato som et eget prosjekt
 4. Bruk identiske innstillinger for sammenlignbare resultater
 5. Eksporter i samme format for tidsanalyse
 
@@ -211,7 +203,7 @@ For prosjekter med mange bilder (500+):
 
 ## Kontrollere innstillingene
 
-Før du starter behandlingen, må du gå gjennom disse viktige innstillingene:
+Før du starter behandlingen, må du kontrollere disse viktige innstillingene:
 
 * [ ] Kameramodell riktig oppdaget i filbrowseren
 * [ ] Vignettkorreksjon aktivert
