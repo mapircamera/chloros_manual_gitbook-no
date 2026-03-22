@@ -1,6 +1,6 @@
-# Velge målbilder
+# Valg av målbilder
 
-Å merke hvilke bilder som inneholder kalibreringsmål er et viktig trinn som øker hastigheten på Chloros-behandlingsprosessen betydelig. Ved å forhåndsvelge målbilder eliminerer du behovet for at Chloros skal skanne hvert bilde i datasettet ditt for kalibreringsmål.
+Å merke hvilke bilder som inneholder kalibreringsmål er et avgjørende trinn som gir en betydelig hastighetsøkning i Chloros-behandlingsprosessen. Ved å forhåndsvelge målbilder unngår du at Chloros må skanne hvert enkelt bilde i datasettet ditt for å finne kalibreringsmål.
 
 ## Hvorfor merke målbilder?
 
@@ -9,21 +9,21 @@
 Uten å merke målbilder må Chloros:
 
 * Skanne hvert eneste bilde i prosjektet ditt
-* Kjøre måldeteksjonsalgoritmer på hvert bilde
+* Kjøre algoritmer for måldeteksjon på hvert bilde
 * Sjekke hundrevis eller tusenvis av bilder unødvendig
 
 **Resultat**: Behandlingen kan ta betydelig lengre tid, spesielt for store datasett.
 
 ### Med merkede målbilder
 
-Når du merker av for bestemte bilder i kolonnen Mål:
+Når du merker av i Mål-kolonnen for bestemte bilder:
 
-* Chloros skanner bare de merkede bildene for mål
-* Målregistreringen fullføres mye raskere
+* Skanner Chloros kun de merkede bildene for mål
+* Målgjenkjenningen fullføres mye raskere
 * Den totale behandlingstiden reduseres betydelig
 
-{% hint style=&quot;success&quot; %}
-**Hastighetsforbedring**: Å merke 2-3 målbilder i et datasett med 500 bilder kan redusere måldeteksjonstiden fra over 30 minutter til under 1 minutt.
+{% hint style="success" %}
+**Hastighetsforbedring**: Å merke 2–3 målbilder i et datasett på 500 bilder kan redusere målgjenkjennings-tiden fra over 30 minutter til under 1 minutt.
 {% endhint %}
 
 ***
@@ -32,27 +32,25 @@ Når du merker av for bestemte bilder i kolonnen Mål:
 
 ### Trinn 1: Identifiser målbildene dine
 
-Se gjennom de importerte bildene i filbrowseren og identifiser hvilke bilder som inneholder kalibreringsmål.
+Gå gjennom de importerte bildene i filbrowseren og identifiser hvilke bilder som inneholder kalibreringsmål.
 
-**Vanlige scenarier:**
-
-* **Mål før opptak**: Opptatt før sesjonen starter
-* **Mål etter opptak**: Opptatt etter at sesjonen er fullført
+**Vanlige scenarier:*** **Mål før opptak**: Opptatt før du starter økten
+* **Mål etter opptak**: Opptatt etter at økten er fullført
 * **Mål i feltet**: Mål plassert innenfor opptaksområdet
-* **Flere mål**: 2–3 målbilder per sesjon (anbefalt)
+* **Flere mål**: 2–3 målbilder per økt (anbefalt)
 
-### Trinn 2: Kontroller målkolonnen
+### Trinn 2: Sjekk målkolonnen
 
 For hvert bilde som inneholder et kalibreringsmål:
 
-1. Finn bildet i filbrowsertabellen.
-2. Finn kolonnen **Mål** (kolonnen helt til høyre).
-3. Klikk på avmerkingsboksen i målkolonnen for det bildet.
-4. Gjenta for alle bilder som inneholder mål.
+1. Finn bildet i tabellen i filbrowseren
+2. Finn **Mål**-kolonnen (kolonnen helt til høyre)
+3. Klikk på avmerkingsboksen i Mål-kolonnen for det bildet
+4. Gjenta for alle bilder som inneholder mål
 
 ### Trinn 3: Bekreft valget ditt
 
-Før du behandler, må du dobbeltsjekke:
+Før behandling, dobbeltsjekk:
 
 * [ ] Alle bilder med kalibreringsmål er merket av
 * [ ] Ingen bilder uten mål er merket av ved en feiltakelse
@@ -62,54 +60,52 @@ Før du behandler, må du dobbeltsjekke:
 
 ## Beste praksis for målbilder
 
-### Retningslinjer for målopptak
+### Retningslinjer for opptak av målbilder
 
 **Tidspunkt:**
 
-* Ta målbilder umiddelbart før og under opptakssesjonen
+* Ta målbilder umiddelbart før og gjennom hele opptakssesjonen
 * Under de samme lysforholdene som DAQ-lyssensoren
-* Ideelt sett bør du ta målbilder så ofte som mulig for å få best mulig resultat. Ellers vil lyssensordataene brukes til å justere kalibreringen over tid.
+* Ideelt sett bør du ta bilder av målene så ofte som mulig for å oppnå de beste resultatene. Ellers vil lyssensordataene brukes til å justere kalibreringen over tid.
 
 **Kameraposisjon:**
 
 * Hold kameraet over målet slik at det er sentrert og fyller rundt 40–60 % av bildets sentrum.
-* Hold kameraet parallelt/nadir med måloverflaten
+* Hold kameraet parallelt med/rett under målets overflate
 
 **Belysning:**
 
 * Samme omgivelsesbelysning som DAQ-lyssensoren
-* Unngå skygger på målflatene
-* Ikke blokker lyskilden med kroppen, kjøretøyet eller vegetasjonen
+* Unngå skygger på måloverflatene
+* Ikke blokker lyskilden med kroppen, kjøretøyet eller vegetasjon
 * Overskyet vær gir de mest konsistente resultatene
 
-**Målbetingelser:**
+**Målforhold:**
 
 * Hold målpanelene rene og tørre
-* Alle 4 panelene skal være tydelig synlige og uten hindringer
+* Alle 4 panelene skal være tydelig synlige og uhindret
 * Målene skal være vinkelrette/nadir i forhold til lyskilden hvis mulig
 
 ### Hvor mange målbilder?
 
-**Minimum:** 1 målbilde per økt. **Anbefalt:** 3–5 målbilder per økt.
+**Minimum:**1 målbilde per økt.**Anbefalt:** 3–5 målbilder per økt.**Anbefalt fremgangsmåte:**
 
-**Beste praksis:**
-
-* Ta 3–5 bilder kort tid etter at lyssensoren begynner å ta opp.
-* Roter kameraet mellom opptakene for å få best mulig resultat.
-* Valgfritt: Ta bilder med jevne mellomrom midt i økten hvis lysforholdene endrer seg kontinuerlig.
+* Ta 3–5 bilder kort tid etter at lyssensoren har startet opptaket
+* Roter kameraet mellom opptakene for å oppnå best mulig resultat
+* Valgfritt: med jevne mellomrom midt i økten hvis lysforholdene endrer seg kontinuerlig
 
 ***
 
-## Arbeide med flere kameraer
+## Arbeid med flere kameraer
 
 ### Oppsett med to kameraer
 
 Hvis du bruker to MAPIR-kameraer samtidig (f.eks. Survey3W RGN + Survey3N OCN):
 
-1. Ta bilder av målet med **begge kameraene** samtidig.
-2. Bruk **samme fysiske mål** for begge kameraene.
-3. Merk målbildene for **begge kameratypene** i filbrowseren.
-4. Chloros vil bruke passende mål for kalibrering av hvert kamera.
+1. Ta bilder av målet med **begge kameraene** samtidig
+2. Bruk **samme fysiske mål** for begge kameraene
+3. Merk målbildene for **begge kameratypene** i filbrowseren
+4. Chloros vil bruke passende mål for kalibrering av hvert kamera
 
 ### Kolonnen Kameramodell
 
@@ -128,21 +124,11 @@ Bruk denne kolonnen til å kontrollere at du har merket mål for hver kameratype
 
 ### Justere deteksjonsfølsomhet
 
-Hvis Chloros ikke oppdager målene dine riktig, kan du justere disse innstillingene i [Prosjektinnstillinger](adjusting-project-settings.md):
-
-**Minimum kalibreringsprøveområde:**
-
-* **Standard**: 25 piksler
-* **Øk** hvis du får falske deteksjoner på små gjenstander
-* **Reduser** hvis målene ikke blir detektert
-
-**Minimum målklynging:**
-
-* **Standard**: 60
+Hvis Chloros ikke oppdager målene dine riktig, kan du justere disse innstillingene i [Prosjektinnstillinger](adjusting-project-settings.md):**Minimumsområde for kalibreringsprøve:*** **Standard**: 25 piksler
+* **Øk** hvis du får falske deteksjoner på små artefakter
+* **Reduser** hvis målene ikke blir oppdaget**Minimum målgruppering:*** **Standard**: 60
 * **Øk** hvis målene blir delt opp i flere deteksjoner
-* **Reduser** hvis mål med fargevariasjoner ikke blir fullstendig oppdaget
-
-***
+* **Reduser** hvis mål med fargevariasjoner ikke blir fullstendig oppdaget***
 
 ## Vanlige problemer med målbilder
 
@@ -151,61 +137,61 @@ Hvis Chloros ikke oppdager målene dine riktig, kan du justere disse innstilling
 **Mulige årsaker:**
 
 * Målbilder ikke merket i filbrowseren
-* Målet er for lite i rammen (&lt; 30 % av bildet)
+* Målet er for lite i bildet (&lt; 30 % av bildet)
 * Dårlig belysning (skygger, gjenskinn)
 * Innstillingene for måldeteksjon er for strenge
 
 **Løsninger:**
 
-1. Kontroller at kolonnen Mål er merket av for riktige bilder
+1. Kontroller at kolonnen «Mål» er merket for riktige bilder
 2. Gjennomgå kvaliteten på målbildene i forhåndsvisningen
-3. Ta opp målene på nytt hvis kvaliteten er dårlig
+3. Ta nye bilder av målene hvis kvaliteten er dårlig
 4. Juster innstillingene for måldeteksjon om nødvendig
 
-### Problem: Falske måldeteksjoner
+### Problem: Feilaktige måldeteksjoner
 
 **Mulige årsaker:**
 
-* Hvite bygninger, kjøretøy eller bakkeoverflater forveksles med mål
+* Hvite bygninger, kjøretøy eller bakgrunnsdekke som forveksles med mål
 * Lyse flekker i vegetasjonen
 * Deteksjonsfølsomheten er for lav
 
 **Løsninger:**
 
-1. Merk bare faktiske målbilder for å begrense deteksjonsområdet
-2. Øk minimumsområdet for kalibreringsprøven
-3. Øk minimumsverdien for målklynging
-4. Sørg for at målbildene bare viser målet (minimalt med bakgrunnsstøy)
+1. Merk kun faktiske målbilder for å begrense deteksjonsområdet
+2. Øk minimumsarealet for kalibreringsprøven
+3. Øk minimumsverdien for målgruppering
+4. Sørg for at målbildene kun viser målet (minimalt med forstyrrende elementer i bakgrunnen)
 
 ***
 
 ## Sjekkliste for verifisering
 
-Før du starter behandlingen, må du verifisere valg av målbilder:
+Før du starter behandlingen, må du verifisere utvalget av målbilder:
 
 * [ ] Minst 1 målbilde merket per økt
-* [ ] Avmerkingsboksene i målkolonnen er merket for alle målbilder
+* [ ] Avkryssingsrutene i målkolonnen er merket av for alle målbilder
 * [ ] Målbilder tatt innenfor samme tidsramme som undersøkelsen
 * [ ] Målene er tydelig synlige i forhåndsvisningen når du klikker på dem
-* [ ] Alle 4 kalibreringspanelene er synlige i hvert målbilde
+* [ ] Alle 4 kalibreringspaneler er synlige i hvert målbilde
 * [ ] Ingen skygger eller hindringer på målene
-* [ ] For dobbeltkamera: Mål merket for begge kameratyper
+* [ ] For dobbeltkamera: Mål merket for begge kameratypene
 
 ***
 
-## Målfri behandling
+## Behandling uten mål
 
 ### Behandling uten kalibreringsmål
 
 Selv om det ikke anbefales for vitenskapelig arbeid, kan du behandle uten mål:
 
 1. La alle avmerkingsboksene i målkolonnen være umerkede
-2. **Deaktiver** «Refleksjonskalibrering» i prosjektinnstillingene
+2. **Deaktiver** «Reflektanskalibrering» i prosjektinnstillingene
 3. Vignettkorreksjon vil fortsatt bli brukt
-4. Utdataene vil ikke bli kalibrert for absolutt refleksjonsevne
+4. Utdata vil ikke bli kalibrert for absolutt reflektans
 
-{% hint style=&quot;warning&quot; %}
-**Ikke anbefalt**: Uten refleksjonskalibrering representerer pikselverdiene bare relativ lysstyrke, ikke vitenskapelige refleksjonsmålinger. Bruk kalibreringsmål for nøyaktige, repeterbare resultater.
+{% hint style="warning" %}
+**Ikke anbefalt**: Uten reflektanskalibrering representerer pikselverdiene kun relativ lysstyrke, ikke vitenskapelige reflektansmålinger. Bruk kalibreringsmål for nøyaktige, repeterbare resultater.
 {% endhint %}
 
 ***
@@ -214,7 +200,7 @@ Selv om det ikke anbefales for vitenskapelig arbeid, kan du behandle uten mål:
 
 Når du har merket målbildene dine:
 
-1. **Gå gjennom innstillingene dine** – Se [Justere prosjektinnstillinger](adjusting-project-settings.md)
+1. **Gjennomgå innstillingene dine** – Se [Justere prosjektinnstillinger](adjusting-project-settings.md)
 2. **Start behandlingen** – Se [Starte behandlingen](starting-the-processing.md)
 3. **Overvåk fremdriften** – Se [Overvåke behandlingen](monitoring-the-processing.md)
 

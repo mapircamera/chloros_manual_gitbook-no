@@ -1,15 +1,15 @@
 # Fullføre behandlingen
 
-Når Chloros har fullført behandlingen, er det på tide å gjennomgå resultatene, kontrollere utskriftskvaliteten og forberede de behandlede bildene for bruk i arbeidsflyten. Denne siden veileder deg gjennom de siste trinnene og neste handlinger.
+Når Chloros har fullført behandlingen, er det på tide å gjennomgå resultatene, kontrollere utskriftskvaliteten og gjøre de behandlede bildene klare til bruk i arbeidsflyten din. Denne siden veileder deg gjennom de siste trinnene og de neste handlingene.
 
-## Indikasjon på at behandlingen er fullført
+## Indikasjon på fullført behandling
 
 Når behandlingen er fullført, vil du se flere indikatorer:
 
 * ✅ **Fremdriftslinje**: Når 100 % fullført
-* ✅ **Feilsøkingslogg**: Viser meldingen «Behandling fullført»
-* ✅ **Startknapp**: Blir aktivert igjen (klar for neste behandlingskjøring)
-* ✅ **Utdatafiler**: Alle behandlede bilder lagres i undermappen for kameramodellen***
+* ✅ **Feilsøkingslogg**: Viser meldingen «Behandlingen er fullført»
+* ✅ **Startknapp**: Blir aktivert igjen (klar for neste behandlingsomgang)
+* ✅ **Utdatafiler**: Alle behandlede bilder er lagret i undermappen for kameramodellen***
 
 ## Finne de behandlede bildene
 
@@ -19,7 +19,7 @@ Når behandlingen er fullført, vil du se flere indikatorer:
 2. Velg **«Åpne prosjektmappe»**
 
 3. Filutforskeren åpnes i prosjektkatalogen
-4. Finn prosjektet ditt etter navn
+4. Finn prosjektet ditt ved å søke etter navnet
 
 ***
 
@@ -37,7 +37,7 @@ Når behandlingen er fullført, vil du se flere indikatorer:
 ### Forhåndsvisning i eksterne bildevisere
 
 **Anbefalte visere:*** **QGIS** – Gratis GIS-programvare (best for georeferert multispektral analyse)
-* **IrfanView** – Rask, lettvekts bildeviser (støtter TIFF)
+* **IrfanView** – Rask, lett bildeviser (støtter TIFF)
 * **Adobe Photoshop** – Profesjonell redigering (støtter TIFF)
 * **GIMP** – Gratis alternativ til Photoshop
 * **Windows Photos** – Grunnleggende visning (støtter kanskje ikke 16-biters TIFF)
@@ -46,10 +46,10 @@ Når behandlingen er fullført, vil du se flere indikatorer:
 
 Bruk Chloross innebygde Image Viewer for avansert visualisering:
 
-1. Klikk på et miniatyrbilde i filbrowseren.
-2. Bildet åpnes i hovedforhåndsvisningsområdet.
-3. Klikk på **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> -fanen i venstre sidefelt.
-4. Bruk [Index/LUT Sandbox](../image-viewer-gui/index-lut-sandbox.md) for interaktiv analyse.
+1. Klikk på et miniatyrbilde i filbrowseren
+2. Bildet åpnes i hovedforhåndsvisningsområdet
+3. Klikk på **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> i venstre sidefelt
+4. Bruk [Index/LUT Sandbox](../image-viewer-gui/index-lut-sandbox.md) for interaktiv analyse
 
 Se [Image Viewer](../image-viewer-gui/opening-an-image-full-screen.md) for detaljerte instruksjoner.
 
@@ -59,20 +59,20 @@ Se [Image Viewer](../image-viewer-gui/opening-an-image-full-screen.md) for detal
 
 ### Se etter advarsler eller feil
 
-1. Åpne **Feilsøkingslogg** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> -fanen
+1. Åpne **Feilsøkingslogg** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> fanen
 2. Bla gjennom meldingene
 3. Se etter gule advarsler eller røde feil
 4. Gjennomgå eventuelle problemer som er notert
-5. Kontakt MAPIR-kundestøtte for hjelp
+5. Kontakt MAPIR-support for hjelp
 
 ### Lagre loggen
 
-For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-kundestøtte:
+For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-support:
 
-1. Klikk på **«Kopier»**eller**«Last ned»**-knappen
+1. Klikk på **&quot;Kopier&quot;**- eller**&quot;Last ned&quot;**-knappen
 2. Lagre som tekstfil i prosjektmappen
-3. Legg ved prosjektdokumentasjonen
-4. Send til MAPIR-kundestøtte hvis det oppstår problemer
+3. Legg den ved prosjektdokumentasjonen
+4. Send den til MAPIR-kundestøtte hvis det oppstår problemer
 
 ***
 
@@ -83,75 +83,75 @@ For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-ku
 **Mulige årsaker:**
 
 * Filene oppfylte ikke behandlingskriteriene
-* Kun målbilder (ekskludert fra eksport)
-* Diskplassen ble full under eksporten
-* Filkorrupsjon under behandlingen
+* Bilder kun for mål (ekskludert fra eksport)
+* Diskplassen tok slutt under eksport
+* Filkorrupsjon under behandling
 
 **Løsninger:**
 
-1. Sjekk feilsøkingsloggen for hopp/feilmeldinger
+1. Sjekk feillogg for hopp/feilmeldinger
 2. Kontroller at det var tilstrekkelig med diskplass
-3. Tell filene: Skal stemme overens med (opprinnelig antall – målantall) × (indekser + 1)
-4. Importer og behandle manglende filer på nytt
+3. Tell filer: Bør stemme overens med (opprinnelig antall – antall mål) × (indekser + 1)
+4. Importer og behandle eventuelle manglende filer på nytt
 
 ### Problem: Mørke eller lyse kanter (vignettering fortsatt synlig)
 
 **Mulige årsaker:**
 
-* Vignettkorreksjon deaktivert
-* Kamera/objektiv ikke i Chloros-profildatabasen
-* Ekstrem vignettering utover korreksjonskapasiteten
+* Vignettkorrigering deaktivert
+* Kamera/objektiv finnes ikke i Chloros-profildatabasen
+* Ekstrem vignettering utenfor korrigeringskapasiteten
 
 **Løsninger:**
 
-1. Kontroller at vignettkorrigering er aktivert i prosjektinnstillingene.
-2. Kontroller at kameramodellen er riktig oppdaget.
-3. Kontakt MAPIR-kundestøtte hvis vignetteringen vedvarer.
+1. Kontroller at vignettkorrigering var aktivert i prosjektinnstillingene
+2. Kontroller at kameramodellen er riktig gjenkjent
+3. Kontakt MAPIR-support hvis vignetteringen vedvarer
 
 ### Problem: Feil farger eller verdier
 
 **Mulige årsaker:**
 
-* Ingen kalibreringsmål oppdaget.
-* Feil kalibreringsmålmodell valgt.
-* Refleksjonskalibrering deaktivert.
-* Målbilder av dårlig kvalitet.
+* Ingen kalibreringsmål gjenkjent
+* Feil kalibreringsmålmodell valgt
+* Refleksjonskalibrering deaktivert
+* Målbilder av dårlig kvalitet
 
 **Løsninger:**
 
-1. Kontroller at refleksjonskalibrering er aktivert.
-2. Kontroller meldingene «Mål funnet» i feilsøkingsloggen.
-3. Kontroller kvaliteten på målbildene.
-4. Behandle på nytt med riktige mål merket.
+1. Kontroller at reflektanskalibrering var aktivert
+2. Sjekk «Mål funnet»-meldinger i feilsøkingsloggen
+3. Gjennomgå kvaliteten på målbildene
+4. Behandle på nytt med riktige mål markert
 
-### Problem: NDVI-verdiene virker feil.
+### Problem: NDVI-verdiene virker feil
 
 **Forventede NDVI-områder:*** **Vann, steiner, jord**: -0,1 til 0,2
 * **Sparsom/usunn vegetasjon**: 0,2 til 0,4
 * **Moderat vegetasjon**: 0,4 til 0,6
 * **Sunn, tett vegetasjon**: 0,6 til 0,9**Hvis verdiene ligger utenfor disse områdene:**
 
-1. Kontroller at refleksjonskalibrering ble brukt.
-2. Kontroller at lyssensorloggen ble inkludert.
-3. Kontroller at kalibreringsmålene ble oppdaget.
-4. Kontroller at riktig kameramodell ble oppdaget.
-5. Gjennomgå tidspunktet og forholdene for målbildet.
+1. Kontroller at reflektanskalibrering ble brukt
+2. Kontroller at lyssensorloggen ble inkludert
+3. Sjekk at kalibreringsmålene ble oppdaget
+4. Sørg for at riktig kameramodell ble oppdaget
+5. Gjennomgå tidspunkt og forhold for opptak av målbildet
 
 ***
 
-## Bruke de behandlede bildene
+## Bruk av de behandlede bildene
 
-### For fotogrammetri/ortomosaikkoppretting
+### For fotogrammetri / oppretting av ortomosaikk
 
 **Anbefalt arbeidsflyt:**
 
-1.**Importer kalibrerte refleksjonsbilder** til fotogrammetriprogramvare:
+1.**Importer kalibrerte reflektansbilder** til fotogrammetriprogramvare:
    * Pix4Dmapper
    * Agisoft Metashape
    * DroneDeploy
    * WebODM
 2. **Behold EXIF-metadata**: Sørg for at GPS-data bevares for geotagging
-3. **Kalibrerte arbeidsflyter**: Bruk refleksjonsbilder for vitenskapelig nøyaktighet
+3. **Kalibrerte arbeidsflyter**: Bruk reflektansbilder for vitenskapelig nøyaktighet
 4. **Behandle indeksmosaikker**: Lag NDVI ortomosaikker fra individuelle indeksbilder
 5. **Eksporter georefererte GeoTIFF**: For bruk i GIS-applikasjoner
 
@@ -161,17 +161,17 @@ For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-ku
 
 1.**Last inn i QGIS, ArcGIS eller lignende**
 
-2.**Bruk 16-biters TIFF** refleksjonsbilder for multibåndanalyse
-3. **Bruk indeksbilder** (NDVI, NDRE) som bruksklare vegetasjonslag
+2.**Bruk 16-biters TIFF** refleksjonsbilder for multibåndsanalyse
+3. **Bruk indeksbilder** (NDVI, NDRE) som ferdige vegetasjonslag
 4. **Rasterkalkulator**: Kombiner bånd for tilpasset analyse
-5. **Eksporter**: Lag klassifiseringskart, endringsdeteksjon, vegetasjonshelsekart
+5. **Eksporter**: Lag klassifiseringskart, endringsdeteksjon, kart over vegetasjonens helse
 
-### For direkte analyse/rapportering
+### For direkte analyse / rapportering
 
 **Anbefalt arbeidsflyt:**
 
 1.**Bruk indeksbilder med LUT-farger** for visuelle rapporter
-2. **Ekstraher statistikk**: Gjennomsnittlig NDVI per felt/tomt
+2. **Hent ut statistikk**: Gjennomsnittlig NDVI per felt/tomt
 3. **Tidsserier**: Sammenlign indekser på tvers av flere økter
 4. **Generer rapporter**: Inkluder kart, statistikk og visualiseringer***
 
@@ -179,33 +179,33 @@ For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-ku
 
 ### Anbefalt sikkerhetskopieringsstrategi
 
-**Hva du bør lagre:*** ✅ **Originale RAW/JPG-bilder** – Arkiver på separat stasjon/sky
-* ✅ **Behandlede resultater** – Oppbevar kalibrerte bilder og indekser
-* ✅ **Prosjektfil** – Inneholder alle innstillinger for ombehandling om nødvendig
-* ✅ **Feilsøkingslogg** – Dokumenterer behandlingsdetaljer
-* ✅ **Kalibreringsmålbilder** – For verifisering og ombehandling**Anbefalinger for lagring:*** **Umiddelbar sikkerhetskopiering**: Ekstern harddisk
+**Hva du bør lagre:*** ✅ **Originale RAW/JPG-bilder** – Arkiver på separat stasjon/i skyen
+* ✅ **Bearbeidede resultater** – Behold kalibrerte bilder og indekser
+* ✅ **Prosjektfil** – Inneholder alle innstillinger for ombearbeiding om nødvendig
+* ✅ **Feilsøkingslogg** – Dokumenterer detaljer om behandlingen
+* ✅ **Kalibreringsmålbilder** – For verifisering og ombearbeiding**Anbefalinger for lagring:*** **Umiddelbar sikkerhetskopi**: Ekstern harddisk
 * **Langtidsarkiv**: Skylagring (Google Drive, Dropbox osv.)
 * **Kritiske data**: Oppbevar 2–3 kopier på forskjellige steder***
 
-## Neste behandlingskjøring
+## Neste behandlingsrunder
 
 ### Gjenbruk av prosjektinnstillinger
 
 Hvis du skal behandle lignende datasett i fremtiden:
 
 1. **Lagre prosjektmal** (hvis ikke allerede gjort)
-2. **Opprett nytt prosjekt** ved hjelp av lagret mal
+2. **Opprett nytt prosjekt** ved hjelp av den lagrede malen
 3. **Importer nye bilder**
 
 4.**Behandle**med identiske innstillinger for konsistens
 
 ### Batchbehandling av flere økter
 
-For flere økter/datasett:**Alternativ 1: GUI – flere prosjekter**
+For flere økter/datasett:**Alternativ 1: GUI – Flere prosjekter**
 
-* Opprett separate prosjekter for hver økt
+* Opprett et eget prosjekt for hver økt
 * Bruk konsistente malinnstillinger
-* Behandle én om gangen
+* Behandle ett om gangen
 
 **Alternativ 2: Chloros CLI (kun Chloros+)**
 
@@ -221,38 +221,38 @@ For flere økter/datasett:**Alternativ 1: GUI – flere prosjekter**
 
 ***
 
-## Feilsøking etter behandling
+## Feilsøking etterbehandling
 
-### Behandle på nytt med andre innstillinger
+### Ny behandling med andre innstillinger
 
 Hvis resultatene ikke er tilfredsstillende:
 
 1. Behold originalbildene (slett dem aldri)
-2. Åpne samme prosjekt i Chloros
-3. Juster innstillingene i panelet Prosjektinnstillinger
-4. Behandle på nytt – resultatene vil overskrive tidligere resultater
+2. Åpne det samme prosjektet i Chloros
+3. Juster innstillingene i prosjektinnstillingspanelet
+4. Behandle på nytt – utdataene vil overskrive tidligere resultater
 
 ### Behandling av delmengde av bilder
 
-For å behandle bare bestemte bilder på nytt:
+For å behandle kun bestemte bilder på nytt:
 
-1. Opprett nytt prosjekt
-2. Importer bare bildene som må behandles på nytt
+1. Opprett et nytt prosjekt
+2. Importer kun bildene som trenger ny behandling
 3. Bruk samme innstillingsmal
-4. Behandle mindre datasett
+4. Behandle et mindre datasett
 
 ### Få hjelp
 
 Hvis du støter på problemer:
 
-* 📧 **E-post**: info@mapir.camera (inkluder feilsøkingslogg)
+* 📧 **E-post**: info@mapir.camera (inkluder feillogg)
 * 🌐 **Support**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **FAQ**: [Ofte stilte spørsmål](../faq.md)
 * 📖 **Dokumentasjon**: [Chloros-håndbok](../)***
 
-## Oppsummering: Fullfør arbeidsflyten
+## Oppsummering: Fullført arbeidsflyt
 
-Du har nå fullført hele arbeidsflyten for Chloros-behandlingen:
+Du har nå fullført hele Chloros-behandlingsarbeidsflyten:
 
 1. ✅ **Opprettet prosjekt** – Se [Prosjekter](../projects.md)
 2. ✅ **Lagt til filer** – Se [Legge til filer](adding-files-to-a-project.md)
@@ -260,7 +260,7 @@ Du har nå fullført hele arbeidsflyten for Chloros-behandlingen:
 4. ✅ **Merkede mål** – Se [Velge målbilder](choosing-target-images.md)
 5. ✅ **Startet behandling** - Se [Starte behandlingen](starting-the-processing.md)
 6. ✅ **Overvåket fremdrift** - Se [Overvåke behandlingen](monitoring-the-processing.md)
-7. ✅ **Gjennomgått resultater** – Denne siden**Dine kalibrerte, refleksjonskorrigerte multispektrale bilder er klare for analyse!**
+7. ✅ **Gjennomgått resultater** - Denne siden**Dine kalibrerte, refleksjonskorrigerte multispektrale bilder er klare for analyse!**
 
 ***
 
@@ -268,18 +268,18 @@ Du har nå fullført hele arbeidsflyten for Chloros-behandlingen:
 
 ### Avanserte funksjoner
 
-* [**Bildeselger**](../image-viewer-gui/opening-an-image-full-screen.md) – Interaktiv visualisering og analyse
+* [**Bildeviser**](../image-viewer-gui/opening-an-image-full-screen.md) - Interaktiv visualisering og analyse
 * [**Indeks/LUT-sandkasse**](../image-viewer-gui/index-lut-sandbox.md) – Tilpasset indekstesting
 * [**Multispektrale indeksformler**](../project-settings/multispectral-index-formulas.md) – Komplett indeksreferanse
 
-### Automatisering og integrering
+### Automatisering og integrasjon
 
-* [**CLI-dokumentasjon**](../CLI.md) – Kommandolinjebasert batchbehandling
+* [**CLI-dokumentasjon**](../CLI.md) – Batchbehandling fra kommandolinjen
 * [**Python SDK**](../api-python-sdk.md) – Programmatisk automatisering
 * [**Chloros+ Funksjoner**](../#chloros) – Avanserte behandlingsfunksjoner
 
-### Støtte og læring
+### Støtte og opplæring
 
 * [**FAQ**](../faq.md) – Svar på vanlige spørsmål
-* [**Kalibreringsmål**](../calibration-targets.md) – Forstå refleksjonskalibrering
+* [**Kalibreringsmål**](../calibration-targets.md) – Forståelse av reflektanskalibrering
 * [**Støttede kameraer**](../supported-cameras.md) – Kompatibel maskinvare

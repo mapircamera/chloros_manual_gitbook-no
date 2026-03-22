@@ -1,6 +1,6 @@
-# Åpne et bilde i fullskjermmodus
+# Åpne et bilde i fullskjerm
 
-Chloros Image Viewer har et dedikert fullskjermgrensesnitt for visning, analyse og manipulering av multispektrale bilder. Uansett om du viser originale bilder eller bearbeidede resultater, tilbyr Image Viewer kraftige verktøy for inspeksjon og analyse.
+Chloros Image Viewer har et eget grensesnitt i fullskjerm for visning, analyse og redigering av multispektrale bilder. Uansett om du ser på originalbilder eller bearbeidede resultater, tilbyr Image Viewer kraftige verktøy for inspeksjon og analyse.
 
 ## Åpne Image Viewer
 
@@ -8,22 +8,22 @@ Chloros Image Viewer har et dedikert fullskjermgrensesnitt for visning, analyse 
 
 Den vanligste måten å åpne et bilde i Image Viewer på:
 
-1. Forsikre deg om at du er i fanen **File Browser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Klikk på et hvilket som helst **miniatyrbilde** i bildegitteret
+1. Sørg for at du er i **filbrowser**-fanen <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
+2. Klikk på et hvilket som helst **miniatyrbilde** i bildeoversikten
 3. Bildet åpnes i **hovedforhåndsvisningsområdet** (midt på skjermen)
-4. Bildet er nå lastet inn og klart for visning i fullskjermmodus
+4. Bildet er nå lastet inn og klart for visning i fullskjerm
 
 ### Åpne fanen Image Viewer
 
 Når et bilde er lastet inn i forhåndsvisningsområdet:
 
 1. Klikk på **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> i venstre sidefelt
-2. Fanen Bildeselger åpnes og viser det valgte bildet i fullskjermmodus
+2. Fanen Bildevisning åpnes, og viser det valgte bildet i fullskjerm
 3. Avanserte visnings- og analyseverktøy blir tilgjengelige i venstre sidefelt
 
 ***
 
-## Oversikt over grensesnittet til Bildeselger
+## Oversikt over grensesnittet til Bildevisning
 
 ### Hovedvisningsområde
 
@@ -31,8 +31,8 @@ Den største delen av skjermen viser bildet ditt:
 
 * **Full oppløsning**: Bilder vises i opprinnelig oppløsning
 * **Zoombar**: Bruk kontrollene eller mushjulet til å zoome
-* **Panorerbar**: Klikk og dra for å flytte rundt når du har zoomet
-* **Bildeforhold opprettholdes**: Bildene skaleres proporsjonalt***
+* **Panorerbar**: Klikk og dra for å bevege deg rundt når du har zoomet
+* **Bildeforholdet opprettholdes**: Bildene skaleres proporsjonalt***
 
 ## Visningsalternativer
 
@@ -48,22 +48,22 @@ Naviger gjennom bildesettet ditt ved hjelp av hurtigtaster eller knapper:
 
 #### Zoomkontroller
 
-Juster forstørrelsen for å se på bildedetaljer:
+Juster forstørrelsen for å se bildedetaljer:
 
 **Zoom inn:*** Klikk på **+** (pluss)-knappen
-* Trykk på **+**eller**=**-tasten
+* Trykk på **+**- eller**=**-tasten
 * Rull mushjulet **opp**
 
 **Zoom ut:*** Klikk på **−** (minus)-knappen
 * Trykk på **−** (minus)-tasten
 * Rull mushjulet **ned**
 
-#### Panorering når du zoomer
+#### Panorering når du har zoomet inn
 
-Når du zoomer utover skjermstørrelsen:
+Når du har zoomet inn utover skjermstørrelsen:
 
 1. Flytt musepekeren over bildet
-2. Klikk og **hold venstre museknapp nede**
+2. Klikk og **hold nede venstre museknapp**
 
 3.**Dra** for å flytte bildet rundt
 4. Slipp for å stoppe panoreringen
@@ -74,7 +74,7 @@ Når du zoomer utover skjermstørrelsen:
 
 ### Visning av pikselverdier ved markøren
 
-Når du beveger musepekeren over bildet, vises pikselverdiene i sanntid:**Plassering av verdivisning:*** **Flytende tall og rød linje i indeks LUT-gradientlegenden på høyre side*** **Når du zoomer inn ytterligere, vises flytende verdi nær markøren og uthevet piksel*** Viser verdier for piksel **under markøren eller uthevet*** Oppdateres når du beveger musen
+Når du beveger musepekeren over bildet, vises pikselverdiene i sanntid:**Plassering av verdivisning:*** **Flytende tall og rød linje i indeks-LUT-gradientlegenden på høyre side*** **Når du zoomer inn ytterligere, vises en flytende verdi nær markøren og den uthevede pikselen*** Viser verdier for piksel **under markøren eller den uthevede*** Oppdateres når du beveger musen
 
 ***
 
@@ -88,56 +88,56 @@ Når du beveger musepekeren over bildet, vises pikselverdiene i sanntid:**Plasse
 * Viser originale, ukorrigerte verdier
 * Nyttig for å sjekke bildekvaliteten før behandling
 
-### RAW (original)
+### RAW (Original)
 
-### RAW (reflektans)
+### RAW (Refleksjon)
 
 **Etter behandling:**
 
-* Vignett korrigert
+* Vignettkorrigert
 * Refleksjonskalibrert
-* Multibånd TIFF (Red, Green, NIR, etc.)
+* Multibånd TIFF (Red, Green, NIR, osv.)
 * Vitenskapelige data klare for analyse
 
 ### RAW (Indeks)
 
-**NDVI, NDRE, GNDVI, etc. (\_NDVI.tif-filer):**
+**NDVI, NDRE, GNDVI, osv. (\_NDVI.tif-filer):**
 
 * Enkeltbånds gråtonebilder
-* Pikselverdier representerer indeksberegningsresultater
-* Område vanligvis -1 til +1 for normaliserte indekser
+* Pikselverdier representerer resultater av indeksberegninger
+* Området er vanligvis -1 til +1 for normaliserte indekser
 * Kan bruke farge-LUT-er for visualisering
 
 ***
 
-## Indeks- og LUT-applikasjon
+## Indeks- og LUT-anvendelse
 
-Bruk multispektrale indekser og farge-Look-Up-tabeller:
+Bruk multispektrale indekser og farge-Look-Up Tables:
 
 1. Finn **Index/LUT Sandbox**i**Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidefeltet
 2. Velg vegetasjonsindeks (NDVI, NDRE, etc.)
 3. Velg multispektral formel, eller lag din egen tilpassede (kun Chloros+)
-4. Bruk fargeluttgradient for visualisering
+4. Bruk farge-LUT-gradient for visualisering
 5. Juster verdier og terskler
 
-Se [Indeks/LUT Sandbox](index-lut-sandbox.md) for detaljerte instruksjoner.
+Se [Index/LUT Sandbox](index-lut-sandbox.md) for detaljerte instruksjoner.
 
 ***
 
-## Tastatursnarveier
+## Hurtigtaster
 
 ### Navigering
 
 * **→** (høyre pil): Neste bilde
 * **←** (venstre pil): Forrige bilde
-* **Hjem**: Første bilde i listen
+* **Home**: Første bilde i listen
 * **End**: Siste bilde i listen
 
 ### Zoom
 
 * **+**eller**=**: Zoom inn
 * **−**: Zoom ut
-* **Mushjul**: Zoom inn/ut***
+* **Museknapp**: Zoom inn/ut***
 
 ### Verifisere indeksberegninger
 
@@ -147,9 +147,9 @@ Kontroller at indeksene er beregnet riktig:
 2. Kontroller vegetasjonsområdene:
    * **NDVI**: Bør vise 0,4–0,9 for sunne planter
    * **NDRE**: Høyere verdier for kraftig vekst
-   * **GNDVI**: Ligner på NDVI, men klorofyllfølsom
+   * **GNDVI**: Ligner på NDVI, men er klorofyllfølsom
 3. Kontroller ikke-vegetasjon:
-   * **Jord**: Nær 0 eller svakt negativt
+   * **Jord**: Nær 0 eller svakt negativ
    * **Vann**: Negative verdier (-0,5 til 0)***
 
 ## Feilsøking av visningsproblemer
@@ -158,14 +158,14 @@ Kontroller at indeksene er beregnet riktig:
 
 **Mulige årsaker:**
 
-* Filen ble ødelagt under behandlingen
+* Filen er ødelagt under behandlingen
 * Filformatet støttes ikke
-* Utilstrekkelig minne for store bilder
+* Ikke nok minne for store bilder
 
 **Løsninger:**
 
-1. Prøv å åpne i ekstern visningsprogram for å verifisere filens integritet
-2. Kontroller at filformatet samsvarer med forventet type
+1. Prøv å åpne i en ekstern visningsprogram for å verifisere filens integritet
+2. Sjekk at filformatet samsvarer med forventet type
 3. Lukk andre applikasjoner for å frigjøre minne
 4. Prøv et mindre/annet bilde
 
@@ -173,15 +173,15 @@ Kontroller at indeksene er beregnet riktig:
 
 **Mulige årsaker:**
 
-* Verdier utenfor skjermens kapasitet
+* Verdier utenfor visningskapasiteten
 * 32-biters flytende bilde med uvanlige verdier
 * Feil i indeksberegningen
 
 **Løsninger:**
 
-1. Kontroller pikselverdiene – hvis alle er veldig lave eller veldig høye, juster visningsområdet.
-2. Prøv å åpne i QGIS eller lignende med automatisk justering av området.
-3. Kontroller feilsøkingsloggen fra behandlingen for feil.
+1. Sjekk pikselverdiene – hvis alle er svært lave eller svært høye, juster visningsområdet
+2. Prøv å åpne i QGIS eller lignende med automatisk justering av området
+3. Sjekk feillogg fra behandlingen for feil
 
 ### Pikselverdiene virker feil
 
@@ -189,22 +189,22 @@ Kontroller at indeksene er beregnet riktig:
 
 * Viser feil bilde (original vs. behandlet)
 * Kalibreringen ble ikke brukt riktig
-* Lyssensordata ble ikke inkludert i inndata
-* Prosentmodus ble slått feil
+* Lyssensordata ble ikke inkludert i inndataene
+* Prosentmodus ble slått på feil
 
 **Løsninger:**
 
-1. Kontroller at du viser behandlet utdata (sjekk filnavnetillegget)
-2. Sjekk statusen til prosentmodusknappen
-3. Sammenlign med bilder fra samme datasett som du vet er gode
+1. Kontroller at du ser på det bearbeidede resultatet (sjekk filnavnets suffiks)
+2. Sjekk statusen på prosentmodus-knappen
+3. Sammenlign med bilder du vet er gode fra samme datasett
 
 ***
 
 ## Neste trinn
 
-Nå som du kan vise bilder i full skjerm:
+Nå som du kan vise bilder i fullskjerm:
 
-* [**Bildelag**](image-layers.md) – Lær om multibåndvisualisering
+* [**Bildelag**](image-layers.md) – Lær om multibåndsvisualisering
 * [**Indeks/LUT-sandkasse**](index-lut-sandbox.md) – Bruk tilpassede indekser og fargekartlegging
 * [**Multispektrale indeksformler**](../project-settings/multispectral-index-formulas.md) – Forstå tilgjengelige indekser
 
