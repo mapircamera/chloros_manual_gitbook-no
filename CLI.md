@@ -1,1205 +1,345 @@
 # CLI : Kommandolinje
 
-<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>**Chloros CLI** gir kraftig kommandolinjetilgang til bildebehandlingsmotoren Chloros, noe som muliggjør automatisering, skripting og headless drift for bildebehandlingsarbeidsflytene dine.
+> **Fullstendig referanse:**[CLI Reference](reference/cli-reference.md) dokumenterer**alle flagg for alle underkommandoer** og er optimalisert for AI-assistenter — lim inn URL i assistenten din og be om en fungerende kommando: `https://mapir.gitbook.io/chloros/reference/cli-reference`
+>
+> **Tips for AI-verktøy:** Enhver side i denne håndboken er tilgjengelig som ren Markdown ved å legge til `.md` til URL (f.eks. `https://mapir.gitbook.io/chloros/reference/cli-reference.md`), og `https://mapir.gitbook.io/chloros/llms.txt` indekserer hele håndboken for bruk i store språkmodeller (LLM).
 
-### Viktige funksjoner
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
+<!-- SCREENSHOT-UPDATE: banner shows CLI 1.1.0; reshoot the CLI welcome/banner output on the 1.2.0 build so the version line reads "Chloros CLI 1.2.0" -->
 
-* 🚀 **Automatisering** – Skriptbasert batchbehandling av flere datasett
-* 🔗 **Integrasjon** – Integrer i eksisterende arbeidsflyter og rørledninger
-* 💻 **Headless-drift** – Kjør uten GUI
-* 🌍 **Flerspråklig** – Støtte for 38 språk
-* ⚡ **Parallellbehandling** – [Dynamisk beregnings tilpasning](processing-architecture/dynamic-compute-adaptation.md) optimaliserer automatisk for maskinvaren din
 
-### Krav
+## Hva er «CLI
+»?
 
-| Krav          | Detaljer                                                             |
-| -------------------- | ------------------------------------------------------------------- |
-| **Operativsystem** | Windows 10/11 (64-bit), Linux x86_64 (amd64), Linux arm64 (NVIDIA Jetson JetPack 6) |
-| **Lisens**          | Chloros+ ([betalt abonnement kreves](https://cloud.mapir.camera/pricing)) |
-| **Minne**           | Minst 8 GB RAM (16 GB anbefales)                                  |
-| **Internett**         | Kreves for lisensaktivering                                     |
-| **Diskplass**       | Varierer etter prosjektstørrelse                                              |
+`chloros-cli` er kommandolinjegrensesnittet til den samme prosesseringsmotoren som skrivebordsappen «Chloros
+» bruker. Det er en «thin»HTTP
+-klient over «Chloros
+»-backenden (en lokal server på `127.0.0.1:5000`) — de fleste kommandoer starter backenden automatisk, så et enkelt `chloros-cli process …`-kall er alt et skript trenger.
 
-{% hint style="warning" %}
-**Lisenskrav**: CLI krever et betalt Chloros+-abonnement. Standardabonnementer (gratis) har ikke tilgang til CLI. Gå til [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) for å oppgradere.
-{% endhint %}
-
-## Hurtigstart
-
-### Installasjon
-
-#### Windows
-
-CLI er automatisk inkludert i Chloros-installasjonsprogrammet:
-
-1. Last ned og kjør **Chloros Installer.exe**
-
-2. Fullfør installasjonsveiviseren
-3. CLI installert til: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
-
-{% hint style="success" %}
-Installasjonsprogrammet legger automatisk til `chloros-cli` i systemets PATH. Start terminalen på nytt etter installasjonen.
-{% endhint %}
-
-#### Linux
-
-Installer `.deb`-pakken for din arkitektur:
+Den kjører på **Windows
+10/11 (x64)**og**Linux
+(x86_64, og NVIDIA Jetson arm64 på JetPack 6)**, i hvilken som helst terminal, uten behov for grafisk brukergrensesnitt. Kontroller installasjonen med:
 
 ```bash
-# Linux amd64
+chloros-cli --version    # prints "Chloros CLI 1.2.0"
+```
+
+Kommandofamiliene, i korthet:
+
+* **Behandling og konto** — `process`, `login`, `logout`, `status`, `export-status`, `language` (38 språk — se [Støttede språk](supported-languages.md)), `set-project-folder` / `get-project-folder` / `reset-project-folder`, `selftest`, `update` (kunLinux
+/Jetson)
+* **Live-maskinvare** — `lattice` (LATTICE-kamerakontroll, over 45 underkommandoer), `daq pool-*` (DAQ-lyssensorer), `time-sync` (PTP)
+* **Automatisering** — `project` (kjør et lagretChloros
+-prosjekt uten skjerm, inkludert YAML-opptaksoppskrifter)
+
+Globale alternativer det er verdt å kjenne til: `--port N` (backend-port, standard `5000`), `-v/--verbose`, `--restart` (tving omstart av backend), `--backend-exe PATH`. Se [CLI
+-referansen](reference/cli-reference.md) for fullstendig liste.
+
+***
+
+## Installasjon
+
+CLI
+**følger med iChloros
+-installasjonsprogrammet** på alle plattformer — det finnes ingen separat nedlasting avCLI
+. Hent installasjonsprogrammet fra [Nedlastingssiden](download.md).
+
+###Windows
+
+
+Installasjonsprogrammet plassererCLI
+i:
+
+```
+
+C:\Program Files\Chloros\cli\chloros-cli.exe
+```
+
+og legger den mappen til systemet ditt `PATH` — **åpne en ny terminal**etter installasjonen, slik at den oppdaterte `PATH` blir hentet. Installasjonsprogrammet plasserer også startskript (`Chloros_CLI.bat` / `Chloros_CLI.ps1`) i installasjonsroten, samt en**Chloros
+CLI
+** snarvei i Start-menyen, som hver åpner en terminal med `chloros-cli` klar til bruk.
+
+###Linux
+
+
+Installer `.deb` for din arkitektur:
+
+```bash
+# Linux x86_64
 sudo dpkg -i chloros-amd64.deb
 
-# Linux arm64 (NVIDIA Jetson, JetPack 6)
+# NVIDIA Jetson (arm64, JetPack 6)
 sudo dpkg -i chloros-arm64-jp6.deb
 ```
 
-For detaljert informasjon om oppsett av Linux, se [Linux Installasjon](linux/linux-installation.md).
+Dette installerer `chloros-cli` til `/usr/bin/chloros-cli` (allerede på `PATH`) og backenden til `/usr/lib/chloros/chloros-backend`, sammen med Arena-SDK
+-runtime som kreves for LATTICE-kameraer. Se [Linux
+Installasjon](linux/linux-installation.md) for detaljer.
 
-### Første gangs oppsett
+### Bekreft
 
-Før du bruker CLI, må du aktivere Chloros+-lisensen din:
+```bash
+chloros-cli --version    # "Chloros CLI 1.2.0"
+chloros-cli selftest     # 7-step diagnostic: backend, API, GPU/CUDA, denoiser models
+chloros-cli status       # license tier + logged-in user
+```
 
-**Windows:**
+***
 
-```powershell
-# Login with your Chloros+ account
-chloros-cli login user@example.com 'your_password'
+## Innlogging og lisensiering
 
-# Check license status
+CLI
+(ogPython
+SDK
+) krever et **betaltChloros
++ abonnement**— alle betalte nivåer har dette; gratisnivået har det ikke. Begrensningen håndheves**på serversiden** av backenden, ikke avCLI
+-programmet: et anrop fra en utlogget bruker avvises med feilkoden `401 AUTH_REQUIRED`, og et innlogget anrop på gratisabonnementet med feilkoden `403 PLAN_UPGRADE_REQUIRED`, uansett om det kommer fra `chloros-cli`,SDK
+eller en egenutvikletHTTP
+-klient. Oppgrader på [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing).
+
+Logg inn **én gang per maskin**:
+
+```bash
+chloros-cli login user@example.com 'YourPassword'
 chloros-cli status
-
-# Process your first project
-chloros-cli process "C:\Images\Dataset001"
 ```
 
-**Linux:**
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+<!-- SCREENSHOT-UPDATE: login success output predates 1.2.0; reshoot `chloros-cli login` followed by `chloros-cli status` on the 1.2.0 build showing the license tier line -->
 
-```bash
-# Login with your Chloros+ account
-chloros-cli login user@example.com 'your_password'
-
-# Check license status
-chloros-cli status
-
-# Process your first project
-chloros-cli process ~/images/dataset001
-```
-
-### Grunnleggende bruk
-
-Behandle en mappe med standardinnstillinger:
-
-**Windows:**
-
-```powershell
-chloros-cli process "C:\Images\Dataset001"
-```
-
-**Linux:**
-
-```bash
-chloros-cli process ~/images/dataset001
-```
-
-***
-
-## Kommandoreferanse
-
-### Generell syntaks
-
-```
-chloros-cli [global-options] <command> [command-options]
-```
-
-***
-
-## Kommandoer
-
-### `process` - Behandle bilder
-
-Behandle bilder i en mappe med kalibrering.
-
-**Syntaks:**
-
-```bash
-chloros-cli process <input-folder> [options]
-```
-
-**Eksempler:**
-
-```bash
-# Windows
-chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
-
-# Linux
-chloros-cli process ~/datasets/survey_001 --vignette --reflectance
-```
-
-#### Kommandoalternativer
-
-| Alternativ                | Type    | Standard        | Beskrivelse                                                                            |
-| --------------------- | ------- | -------------- | -------------------------------------------------------------------------------------- |
-| `<input-folder>`      | Bane    | _Påkrevd_     | Mappe som inneholder RAW/JPG-multispektrale bilder                                         |
-| `-o, --output`        | Bane    | Samme som inndata  | Utdatamappe for behandlede bilder                                                     |
-| `-n, --project-name`  | Streng  | Autogenerert | Egendefinert prosjektnavn                                                                    |
-| `--vignette`          | Flagg    | Aktivert        | Aktiver vignettkorrigering                                                             |
-| `--no-vignette`       | Flagg    | -              | Deaktiver vignettkorrigering                                                            |
-| `--reflectance`       | Flagg    | Aktivert        | Aktiver refleksjonskalibrering                                                         |
-| `--no-reflectance`    | Flagg    | -              | Deaktiver refleksjonskalibrering                                                        |
-| `--ppk`               | Flagg    | Deaktivert       | Bruk PPK-korreksjoner fra .daq-lyssensordata                                      |
-| `--format`            | Valg  | TIFF (16-bit)  | Utdataformat: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
-| `--min-target-size`   | Heltall | Auto           | Minste målstørrelse i piksler for deteksjon av kalibreringspanel                          |
-| `--target-clustering` | Heltall | Auto           | Terskel for målgruppering (0–100)                                                    |
-| `--debayer`           | Valg  | `standard`     | Debayer-metode: `standard` eller `texture-aware` (kun Chloros+)                          |
-| `--target`, `--targets` | Flagg  | Deaktivert       | Søk kun etter kalibreringsmål i en «target»- eller «targets»-undermappe (fremskynder behandlingen) |
-| `--indices`           | Liste    | Ingen           | Vegetasjonsindekser som skal beregnes (f.eks. `--indices NDVI NDRE GNDVI`)                    |
-| `--exposure-pin-1`    | Streng  | Ingen           | Lås eksponering for kameramodell (Pin 1)                                                 |
-| `--exposure-pin-2`    | Streng  | Ingen           | Lås eksponering for kameramodell (Pin 2)                                                 |
-| `--recal-interval`    | Heltall | Auto           | Rekalibreringsintervall i sekunder                                                      |
-| `--timezone-offset`   | Heltall | 0              | Tidssoneforskjell i timer                                                               |
-
-***
-
-### `login` - Autentiser konto
-
-Logg inn med dine Chloros+-påloggingsopplysninger for å aktivere CLI-behandling.
-
-**Syntaks:**
-
-```bash
-chloros-cli login <email> <password>
-```
-
-**Eksempel:**
-
-```bash
-chloros-cli login user@example.com 'MyP@ssw0rd123'
-```
 
 {% hint style="warning" %}
-**Spesialtegn**: Bruk enkle anførselstegn rundt passord som inneholder tegn som `$`, `!` eller mellomrom.
+**Passord med spesialtegn**(`$`, `!`, spaces): wrap the password in**single quotes**, as shown above. In PowerShell double quotes, `$$` blir forvrengt av skallet (CLI
+oppdager dette ved en 401-feil og prøver på nytt automatisk, men enkelt anførselstegn unngår problemet helt).
 {% endhint %}
 
-**Utdata:**<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
+Økten lagres i `~/.chloros/user_session.json` og fortsetter å fungere offline i abonnementets nådeperiode (30 dager for månedsabonnementer, frem til utløpet for årsabonnementer). `chloros-cli status` fungerer selv uten et betalt abonnement, så årsaken til avslaget er alltid synlig.
 
-### `logout` - Slett påloggingsinformasjon
+{% hint style="danger" %}
+**Skal du planlegge headless-arbeid? Logg inn først.**En kommando for oppretting av backend (`process`, `status`, `export-status`, …) som kjøres uten**bufret økt**, mislykkes ikke umiddelbart — den går over til en interaktiv `Email:` / `Password:`-prompt på stdin. En uovervåket cron-jobb eller et CI-trinn vil derfor**henstå i ventemodus på inndata**. Kjør `chloros-cli login EMAIL 'PASSWORD'` én gang på maskinen før du planlegger noe.
+{% endhint %}
 
-Slett lagret påloggingsinformasjon og logg ut av kontoen din.
+***
 
-**Syntaks:**
+## Din første behandlingskjøring
+
+Pek `process` mot en mappe med opptak — den oppdager automatiskSurvey3
+(`.raw` + `.jpg`), LATTICE (`.tif`/`.tiff`), `.dng` eller en blanding:
 
 ```bash
-chloros-cli logout
+chloros-cli process "C:\Images\flight_001"          # Windows
+chloros-cli process ~/images/flight_001              # Linux
 ```
 
-**Eksempel:**
+Fremdriftsstrømmer vises live per rørledningstråd (detektering, analyse, behandling, eksport), og en vellykket kjøring avsluttes med en rapport om hvor mange bildeprodukter den har skrevet (`Image products written: N`).
 
-```bash
-chloros-cli logout
+
+
+<!-- SCREENSHOT-NEEDED: terminal capture of a `chloros-cli process` run on a LATTICE captures folder completing successfully — per-thread progress lines visible and the final "Image products written: N" summary line -->
+### Hvor utdataene havner
+
+`process` skriver til en **prosjektmappe**, ikke til inndatamappen din:
+
+* Uten `-o`: prosjektet opprettes under standard prosjektmappen din (delt med GUI; administrer den med `get-project-folder` / `set-project-folder`, alternativt `~/Chloros Projects`), og navngis med `-n/--project-name` eller et tidsstempel (`YYYYMMDD_HHMMSS`) når det utelates.
+* Med `-o PATH`: den mappen **er** prosjektmappen. Hvis den allerede inneholder en `project.json`, opprettes en søskenfil med suffikset `_1`/`_2`… i stedet for å overskrive den eksisterende.
+
+Inne i prosjektet er produktene gruppert **etter kamera, deretter etter filformat**:
+
+```
+<project>/
+├── project.json
+├── calibration_data.json
+└── LATT-M3M-L41-F550/                  # one folder per camera model+lens+filter
+    ├── tiff16/
+    │   ├── Reflectance_Calibrated_Images/
+    │   ├── Debayered_Images/
+    │   ├── Preview_Images/
+    │   └── NDVI_Index_Images/           # one folder per requested index
+    └── tiff32/
+        └── Radiance_Images/             # float32 radiance always lands here
 ```
 
-**Utdata:**
-
-```
-✓ Logout successful
-ℹ Credentials cleared from cache
-```
+Kameramappen er `LATT-<sensor>-<lens>-F<filter>` for LATTICE (samsvarer med opptakets EXIF `Model`) og `<model>_<filter>` (f.eks. `Survey3N_RGN`) forSurvey3
+. Formatmappen følger `--format`: `tiff16`, `tiff8`, `png8`, `jpg8` eller `tiff32` for `TIFF (32-bit, Percent)`.
 
 {% hint style="info" %}
-**SDK-brukere**: Python SDK tilbyr også en programmatisk `logout()`-metode for å slette påloggingsinformasjon i Python-skript. Se [Python SDK dokumentasjonen](api-python-sdk.md#logout) for detaljer.
+**Hvert eksportert produkt beholder navnet på KILDE-filen.**En radiance-eksport av `capture_..._raw.tif` heter fortsatt `capture_..._raw.tif` — den ligger bare i mappen `tiff32/Radiance_Images/`.**Mappen identifiserer produktet, ikke filnavnet**, så bruk glob for katalogen, ikke for et `*radiance*`-suffiks.
 {% endhint %}
 
-***
+### Alternativene du faktisk vil bruke
 
-### `status` - Sjekk lisensstatus
+| Flagg | Standard | Hva det gjør |
+| --- | --- | --- |
+| `-o, --output PATH` | standard prosjektmappe | Plassering av prosjektmappen (se ovenfor). |
+| `-n, --project-name NAME` | tidsstempel | Prosjektnavn. |
+| `--format FMT` | `TIFF (16-bit)` | En av `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)`. |
+| `--indices NAME [NAME ...]` | ingen | Vegetasjonsindekser som skal eksporteres (se [Vegetasjonsindekser](#vegetation-indices)). |
+| `--debayer {standard,texture-aware}` | `standard` | `texture-aware` = nevral debayer, tregere, høyeste kvalitet (Chloros
++, NVIDIA GPU). |
+| `--vignette / --no-vignette` | på | Vignettkorrigering. |
+| `--reflectance / --no-reflectance` | på | Reflektanskalibrering; for LATTICE er dette også bryteren for reflektansproduktet. |
+| `--input-level {auto,raw,debayered,processed}` | `auto` | Tving inngangspunktet til behandlingskjeden for LATTICE TIFF-filer. |
 
-Vis gjeldende lisens- og autentiseringsstatus.
-
-**Syntaks:**
-
-```bash
-chloros-cli status
-```
-
-**Eksempel:**
-
-```bash
-chloros-cli status
-```
-
-**Utdata:**
-
-```
-╔══════════════════════════════════════╗
-║     LICENSE & ACCOUNT INFORMATION    ║
-╚══════════════════════════════════════╝
-
-📧 Email: user@example.com
-📋 Plan: Chloros+ Professional
-🔓 API/CLI Access: Enabled
-✓ Status: Active
-```
+For alt annet — justering av måldeteksjon, PPK, eksponeringspinner, flagg for matrisejustering — se [`process`-delen avCLI
+-referansen](reference/cli-reference.md).
 
 ***
 
-### `export-status` – Sjekk eksportfremdrift
+## Velge hva som skal eksporteres (LATTICE-produkter)
 
-Overvåk eksportfremdriften for tråd 4 under eller etter behandlingen.
+LATTICE-behandlingen fordelers til **alle aktuelle produkter i én omgang**. Fire brytere per produkt er alle**slått på som standard**; bruk skjemaet `--no-` for å slå av én:
 
-**Syntaks:**
+| Bryter | Produkt |
+| --- | --- |
+| `--debayered` | Lineær demosaik → `Debayered_Images/` |
+| `--preview` | Vis forhåndsvisning (hvitbalanse + gamma; falskfargestrekning for multispektralt) → `Preview_Images/` |
+| `--radiance` | float32 strålingsintensitet, W/m²/sr/nm → `Radiance_Images/` (alltid `tiff32/`) |
+| `--reflectance` | uint16 refleksjonsgrad, Pix4D-klar → `Reflectance_Calibrated_Images/` |
 
-```bash
-chloros-cli export-status
-```
-
-**Eksempel:**
-
-```bash
-chloros-cli export-status
-```
-
-**Bruksområde:** Kall denne kommandoen mens behandlingen pågår for å sjekke eksportfremdriften.***
-
-### `language` – Administrer grensesnittspråk
-
-Vis eller endre grensesnittspråket for CLI.
-
-**Syntaks:**
+RGB
+Hovedkameraer sender kun ut debayert + forhåndsvisning — radianse/reflektans per bånd er ikke relevant for en bredbåndssensor, så disse bryterne har ingen effekt for dem.Survey3
+`.raw` ignorerer bryterne og følger standardbanen for reflektans/mål.
 
 ```bash
-# Show current language
-chloros-cli language
-
-# List all available languages
-chloros-cli language --list
-
-# Set a specific language
-chloros-cli language <language-code>
+# Radiance only — no DAQ downwelling needed
+chloros-cli process ~/captures/lattice_flight --no-debayered --no-preview --no-reflectance
 ```
 
-**Eksempler:**
-
-```bash
-# View current language
-chloros-cli language
-
-# List all 38 supported languages
-chloros-cli language --list
-
-# Change to Spanish
-chloros-cli language es
-
-# Change to Japanese
-chloros-cli language ja
-```
-
-#### Støttede språk (38 totalt)
-
-| Kode    | Språk              | Navn på originalspråket      |
-| ------- | --------------------- | ---------------- |
-| `en`    | Engelsk               | English          |
-| `es`    | Spansk               | Español          |
-| `pt`    | Portugisisk            | Português        |
-| `fr`    | Fransk                | Français         |
-| `de`    | Tysk                | Deutsch          |
-| `it`    | Italiensk               | Italiano         |
-| `ja`    | Japansk              | 日本語              |
-| `ko`    | Koreansk                | 한국어              |
-| `zh`    | Kinesisk (forenklet)  | 简体中文             |
-| `zh-TW` | Kinesisk (tradisjonell) | 繁體中文             |
-| `ru`    | Russisk               | Русский          |
-| `nl`    | Nederlandsk                | Nederlands       |
-| `ar`    | Arabisk                | العربية          |
-| `pl`    | Polsk                | Polski           |
-| `tr`    | Tyrkisk               | Türkçe           |
-| `hi`    | Hindi                 | हिंदी            |
-| `id`    | Indonesisk            | Bahasa Indonesia |
-| `vi`    | Vietnamesisk            | Tiếng Việt       |
-| `th`    | Thai                  | ไทย              |
-| `sv`    | Svensk               | Svenska          |
-| `da`    | Dansk                | Dansk            |
-| `no`    | Norsk             | Norsk            |
-| `fi`    | Finsk               | Suomi            |
-| `el`    | Gresk                 | Ελληνικά         |
-| `cs`    | Tsjekkisk                | Čeština          |
-| `hu`    | Ungarsk             | Magyar           |
-| `ro`    | Rumensk              | Română           |
-| `uk`    | Ukrainsk             | Українська       |
-| `pt-BR` | Brasiliansk portugisisk  | Português Brasileiro |
-| `zh-HK` | Kantonesisk             | 粵語             |
-| `ms`    | Malay                 | Bahasa Melayu    |
-| `sk`    | Slovakisk                | Slovenčina       |
-| `bg`    | Bulgarsk             | Български        |
-| `hr`    | Kroatisk              | Hrvatski         |
-| `lt`    | Litauisk            | Lietuvių         |
-| `lv`    | Lettisk               | Latviešu         |
-| `et`    | Estisk              | Eesti            |
-| `sl`    | Slovensk             | Slovenščina      |
-
-{% hint style="success" %}
-**Automatisk lagring**: Språkinnstillingen din lagres i `~/.chloros/cli_language.json` og beholdes gjennom alle økter.
-{% endhint %}
-
-***
-
-### `set-project-folder` - Angi standard prosjektmappe
-
-Endre plasseringen til standard prosjektmappen (delt med GUI på Windows).
-
-**Syntaks:**
-
-```bash
-chloros-cli set-project-folder <folder-path>
-```
-
-**Eksempler:**
-
-```bash
-# Windows
-chloros-cli set-project-folder "C:\Projects\2025"
-
-# Linux
-chloros-cli set-project-folder ~/projects/2025
-```
-
-***
-
-### `get-project-folder` - Vis prosjektmappe
-
-Vis gjeldende standardprosjektmappe.
-
-**Syntaks:**
-
-```bash
-chloros-cli get-project-folder
-```
-
-**Eksempel:**
-
-```bash
-chloros-cli get-project-folder
-```
-
-**Utdata:**
-
-```
-
-# Windows
-ℹ Current project folder: C:\Projects\2025
-
-# Linux
-ℹ Current project folder: /home/user/.local/share/chloros/projects
-```
-
-***
-
-### `reset-project-folder` - Tilbakestill til standard
-
-Tilbakestill prosjektmappen til standardplasseringen.
-
-**Syntaks:**
-
-```bash
-chloros-cli reset-project-folder
-```
-
-***
-
-### `selftest` - Kjør systemdiagnostikk
-
-Kjør 7 diagnostiske kontroller for å verifisere systemkonfigurasjonen.
-
-**Syntaks:**
-
-```bash
-chloros-cli selftest
-```
-
-**Utførte diagnostiske tester:**
-
-1. Versjonssjekk
-2. Porttilgjengelighet (5000)
-3. Oppstart av backend
-4. API tilkoblingstest
-5. Systeminformasjon og GPU-deteksjon
-6. Verifisering av støyreduksjonsmodeller
-7. Sjekk av CUDA-tilgjengelighet
+**`--reflectance-source {auto,target,daq}`** (standard `auto`) velger refleksjonsreferansen: `auto` lager et QA-godkjent [kalibreringsmål](calibration-targets.md) i bildet som absolutt referanse og faller tilbake til DAQ-lyssensorens nedstrålingsdelingsverdi (ρ = π·L/E) når det ikke er noe mål til stede; `target` er streng (ingen DAQ-erstatning); `daq` er autoritativ for DAQ. Målinger av mål per enhet kan leveres med `--target-reflectance-dir`.
 
 {% hint style="info" %}
-**Nyttig for feilsøking**: Kjør `selftest` etter installasjon for å verifisere at systemet er konfigurert riktig, spesielt på Linux/Jetson hvor GPU- og CUDA-oppsettet kan trenge verifisering.
+**Avlesning av refleksjonspiksler:**DN-verdien som betyr ρ = 1,0 er**per kilde** — LATTICE-filer merker `Chloros:PixelScale=32768` i XMP;Survey3
+-filer bruker 65535 (og har ingen `Chloros:*`-tagger). Les taggen og del med den i stedet for å anta en konstant. Detaljer og det ene bevisste unntakstilfellet uten skala finnes i [CLI
+-referansen](reference/cli-reference.md).
+{% endhint %}
+
+**Behandlingen starter alltid fra `raw`.** Avledede produkter (eksport av debayered/radiance/reflectance) føres aldri tilbake gjennom behandlingskjeden – å importere dem på nytt og behandle dem ville føre til at kalibreringsberegningene ble brukt to ganger, såChloros
+hopper over dem og opplyser om dette. `--input-level` er den bevisste nødutgangen når du virkelig trenger å tvinge frem et startpunkt.
+
+***
+
+## Når en kjøring mislykkes
+
+Fra og med versjon 1.2.0 mislykkes `process` med et tydelig feilmelding i stedet for å «lykkes» uten å vise noe:
+
+* En kjøring som **ba om produkter, men ikke skrev noen**— kun `project.json` og `calibration_data.json` — skriver ut `Processing finished but wrote no image products.` og**avsluttes med en verdi ulik null**, slik at skript kan oppdage det. De vanligste årsakene: inndatamappen ble ikke gjenkjent som en opptak (sjekk oppsettet og `--input-level`), eller alle forespurte produkter var uanvendelige for de aktuelle kameraene (f.eks. å be om radianse/reflektans fra kameraer som kun brukerRGB
+).
+* En **bevisst kjøring kun med metadata** (alle produkter slått av, ingen `--indices`) regnes fortsatt som vellykket — et tomt bilde som utdata er det riktige resultatet i dette tilfellet.
+* Kjør på nytt med `--verbose` og sjekk backend-loggen for linjer med `[LATTICE-EXPORT]` / `[EXPORT-CHECK]`, som forklarer utelatelser per kamera.
+
+Avslutningskoder: `0` suksess · `1` generisk feil · `2` argumentfeil · `130` avbrutt av Ctrl+C.
+
+***
+
+## Vegetasjonsindekser
+
+Kjør `--indices` med ett eller flere forhåndsinnstilte navn; hver indeks havner i sin egen `<INDEX>_Index_Images/`-mappe:
+
+```bash
+chloros-cli process ~/images/flight_001 --indices NDVI NDRE GNDVI
+```
+
+De 22 forhåndsinnstilte navnene som `process --indices` godtar:
+
+`NDVI` `GNDVI` `NDRE` `OSAVI` `SAVI` `MSAVI2` `EVI` `MSR` `TDVI` `LAI` `GCI` `GRVI` `GSAVI` `GOSAVI` `NLI` `MNLI` `RDVI` `WDRVI` `CVI` `ENDVI` `GLI` `VARI`
+
+{% hint style="warning" %}
+**Det finnes tre indekslister — ikke bland dem sammen.**Rullemenyen «Prosjektinnstillinger» i brukergrensesnittet inneholder 27 formler (legger til `FCI1`, `FCI2`, `GARI`, `GEMI`, `LCI` — disse fem gjelder kun i GUI og er**ikke** gyldige for `--indices`). Live-/offline-kommandoen `lattice index --preset` bruker sin egen separate liste med 22 forhåndsinnstillinger. Formler og båndberegninger er dokumentert i [Formler for multispektrale indekser](project-settings/multispectral-index-formulas.md).
 {% endhint %}
 
 ***
 
-### `update` – Sjekk etter oppdateringer (kun Linux)
+## DAQ-lyssensorer: En rask innføring
 
-Sjekk etter og installer CLI-oppdateringer på Linux-systemer.
-
-**Syntaks:**
+`daq pool-*`-familien styrerMAPIR
+DAQ-spektralsensorer (DAQ-U via USB, DAQ-M via BLE, DAQ-E via Ethernet) gjennom backendens permanente pool — GUI,CLI
+ogSDK
+deler alle ett live-håndtak. **`pool-*` er den støttede DAQ-banen i den medfølgendeCLI
+**; andre `daq`-underkommandoer du kanskje ser referert til, er enMAPIR
+-intern kilde-eksklusiv overflate og avsluttes med en eksplisitt feilmelding som henviser deg til `pool-*`.
 
 ```bash
-# Check for updates without installing
-chloros-cli update --check
+# 1. Open a pooled session (pick the line matching your sensor)
+chloros-cli daq pool-connect                              # smart-detect
+chloros-cli daq pool-connect --port COM3                  # DAQ-U on a specific COM port
+chloros-cli daq pool-connect --mac AA:BB:CC:DD:EE:FF      # DAQ-M by BLE MAC
+chloros-cli daq pool-connect --eth-host daq-e-xxx.local   # DAQ-E by hostname (reliable)
 
-# Check for and install updates
-chloros-cli update
+# 2. List pooled sensors and their ids
+#    (DAQ-U ids look like 'CB-7C-A8-2E-5F'; DAQ-E ids like 'daq-e-def330')
+chloros-cli daq pool-list
+
+# 3. Read the latest calibrated spectrum (W/m²/nm)
+chloros-cli daq pool-latest --sensor-id CB-7C-A8-2E-5F
+
+# 4. Record a calibrated .daq file for 60 s
+chloros-cli daq pool-record --sensor-id CB-7C-A8-2E-5F --duration 60 \
+  -o ~/Documents/spectra --device-name "field-A"
+
+# 5. Release
+chloros-cli daq pool-disconnect --sensor-id CB-7C-A8-2E-5F
 ```
 
-| Alternativ    | Beskrivelse                        |
-| --------- | ---------------------------------- |
-| `--check` | Bare søk etter oppdateringer, ikke installer |
+`pool-record` uten `--duration` kjører til `pool-record --stop`; standard utdatakatalog er `~/Documents/DAQ Live View/` **på backend-maskinen**. Cap-korreksjonsprofilen velges ved tilkobling (`--cap-id`, standard for backend `sunshine_cosine`) og kan byttes i sanntid med `pool-set-cap` — cap-profiler og sensorens kalibrerte område er omtalt i DAQ-kapitlene i denne håndboken.
 
-{% hint style="info" %}
-Denne kommandoen er kun tilgjengelig på Linux. På Windows leveres oppdateringer via installasjonsprogrammet.
+{% hint style="warning" %}
+**DAQ-E på en vert med flere nettverkskort:** Den første automatiske oppdagelsen av `pool-connect --eth` etter oppstart kan mislykkes selv med en sensor i god stand. `--eth-host <ip-or-hostname>` er den pålitelige varianten – bruk denne når oppdagelsen gir ingen resultater.
 {% endhint %}
 
 ***
 
-## Globale alternativer
+## LATTICE-kameraer, PTP og prosjektautomatisering
 
-Disse alternativene gjelder for alle kommandoer:
-
-| Alternativ            | Type    | Standard       | Beskrivelse                                      |
-| ----------------- | ------- | ------------- | ------------------------------------------------ |
-| `--backend-exe`   | Sti    | Oppdages automatisk | Sti til kjørbar backend-fil                       |
-| `--port`          | Heltall | 5000          | Portnummer for backend API                          |
-| `--restart`       | Flagg    | -             | Tving omstart av backend (avslutter eksisterende prosesser) |
-| `--version`       | Flagg    | -             | Vis versjonsinformasjon og avslutt                |
-| `--help`          | Flagg    | -             | Vis hjelpeinformasjon og avslutt                   |
-
-{% hint style="info" %}
-**Automatisk gjenkjenning av backend**: Banen `--backend-exe` gjenkjennes automatisk per plattform:
-* **Windows**: `C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe`
-* **Linux (.deb)**: `/usr/lib/chloros/chloros-backend`
-* **Linux (manuell)**: `/opt/mapir/chloros/backend/chloros-backend`
-{% endhint %}
-
-**Eksempel med globale alternativer:**
-
-**Windows:**
-
-```powershell
-chloros-cli --port 5001 process "C:\Datasets\Survey_001"
-```
-
-**Linux:**
+`lattice`-familien (over 45 underkommandoer) dekker LATTICE-kameradrift fra start til slutt: oppdagelse, enkeltopptak, vedvarende synkroniserte matriser med GUI-ens «smart-prep»-tilkoblingsflyt, live forhåndsvisning i nettleser, justering, indeksberegninger og diagnostikk av verts-NIC. Et eksempel:
 
 ```bash
-chloros-cli --port 5001 process ~/datasets/survey_001
+chloros-cli lattice info                                          # discover cameras
+chloros-cli lattice capture -o output/                            # one frame, all export types
+chloros-cli lattice array-connect --serials SN1,SN2,SN3,SN4       # persistent synced array
+chloros-cli lattice array-capture --processing reflectance -o out/
 ```
+
+I tillegg: `chloros-cli time-sync` rapporterer om PTP-grandmasteren som «Chloros
+»-verten kjører (LATTICE-kameraer og DAQ-E-sensorer fungerer som slaver for denne for tidsstempler på tvers av enheter), og `chloros-cli project` åpner et lagret «Chloros
+»-prosjekt og styrer kameraene, matrisene og sensorene uten skjerm – inkludert skriptbaserte YAML-opptaksoppskrifter.
+
+Disse tre familiene (`lattice`, `project`, `daq pool-*`) er også de eneste som støtter `CHLOROS_BACKEND_URL` for å styre et **eksternt** backend; kjerne-kommandoene retter seg alltid mot den lokale maskinen.
+
+Fullstendige gjennomganger finnes i LATTICE-kapitlene i denne håndboken; alle flagg er oppført i [CLI
+-referansen](reference/cli-reference.md).
 
 ***
 
-## Veiledning for behandlingsinnstillinger
-
-### Parallellbehandling og dynamisk beregnings tilpasning
-
-Chloros 1.1.0 inkluderer [Dynamisk beregnings tilpasning](processing-architecture/dynamic-compute-adaptation.md) — behandlingsmotoren **oppdager automatisk maskinvaren din** og velger den optimale strategien:
-
-| Plattform | Strategi | Arbeidere | Rørledning | Merknader |
-| --- | --- | --- | --- | --- |
-| **Jetson Nano 8 GB** | `GPU_SINGLE` | 1 | `tiled_gpu` | Minneeffektiv, serialisert |
-| **Jetson Orin NX 16 GB** | `GPU_PARALLEL` | 3 | `fused_gpu` | Samtidig GPU-behandling |
-| **Stasjonær PC med 8 GB GPU** | `GPU_SINGLE` | 3 | `tiled_gpu` | God stasjonær ytelse |
-| **Stasjonær PC med 12 GB+ GPU** | `GPU_PARALLEL` | 3–4 | `fused_gpu` | Optimal stasjonær ytelse |
-| **System kun med CPU** | `CPU_PARALLEL` | kjerner - 1 | `cpu_fallback` | Ingen GPU nødvendig |
-
-{% hint style="success" %}
-**Ingen manuell konfigurasjon nødvendig!** Chloros oppdager automatisk CPU, GPU, RAM og (på Jetson) termiske sensorer, og konfigurerer deretter den optimale prosesseringspipeline automatisk.
-{% endhint %}
-
-### Debayer-metoder
-
-| Metode | CLI-flagg | Kvalitet | Hastighet | Lisens |
-| --- | --- | --- | --- | --- |
-| **Standard (rask, middels kvalitet)** | `--debayer standard` | God | Rask | Gratis / Chloros+ |
-| **Teksturbevisst (Langsom, høyeste kvalitet)** | `--debayer texture-aware` | Høyeste | Langsom | Kun Chloros+ |
-
-Standardmetoden for debayering er **Standard**. Metoden**Teksturbevisst** bruker en AI/ML-støyreduksjonsmodell for å oppnå utdata av høyeste kvalitet, men krever en Chloros+-lisens og en NVIDIA-GPU.
-
-```bash
-# Use Texture Aware debayer (Chloros+ only)
-chloros-cli process ~/datasets/field_a --debayer texture-aware
-```
-
-### Vignettkorrigering
-
-**Hva det gjør:** Korrigerer lysfall ved bildekantene (mørkere hjørner som ofte forekommer i kamerabilder).
-
-* **Aktivert som standard** – De fleste brukere bør holde dette aktivert
-* Bruk `--no-vignette` for å deaktivere
-
-{% hint style="success" %}
-**Anbefaling**: Aktiver alltid vignettkorreksjon for å sikre jevn lysstyrke over hele bildet.
-{% endhint %}
-
-### Refleksjonskalibrering
-
-Konverterer rå sensorverdier til standardiserte refleksjonsprosentandeler ved hjelp av kalibreringspaneler.
-
-* **Aktivert som standard** – Avgjørende for vegetasjonsanalyse
-* Krever kalibreringsmålpaneler i bildene
-* Bruk `--no-reflectance` for å deaktivere
-
-{% hint style="info" %}
-**Krav**: Sørg for at kalibreringspanelene er riktig eksponert og synlige i bildene dine for nøyaktig reflektanskonvertering.
-{% endhint %}
-
-### PPK-korreksjoner
-
-**Hva det gjør:** Bruker etterbehandlede kinematiske korreksjoner ved hjelp av DAQ-A-SD-loggdata for forbedret GPS-nøyaktighet.
-
-* **Deaktivert som standard**
-* Bruk `--ppk` for å aktivere
-* Krever .daq-filer i prosjektmappen fra MAPIR DAQ-A-SD-lyssensor.
-
-### Utdataformater
-
-<table><thead><tr><th width="197">Format</th><th width="130.20001220703125">Bittdybde</th><th width="116.5999755859375">Filstørrelse</th><th>Best egnet for</th></tr></thead><tbody><tr><td><strong>TIFF (16-bit)</strong> ⭐</td><td>16-biters heltall</td><td>Stor</td><td>GIS-analyse, fotogrammetri (anbefalt)</td></tr><tr><td><strong>TIFF (32-bit, prosent)</strong></td><td>32-biters flytende</td><td>Svært stor</td><td>Vitenskapelig analyse, forskning</td></tr><tr><td><strong>PNG (8-bit)</strong></td><td>8-biters heltall</td><td>Middels</td><td>Visuell inspeksjon, deling på nettet</td></tr><tr><td><strong>JPG (8-bit)</strong></td><td>8-biters heltall</td><td>Liten</td><td>Hurtig forhåndsvisning, komprimert utdata</td></tr></tbody></table>***
-
-## Automatisering og skripting
-
-### PowerShell-batchbehandling (Windows)
-
-Behandle flere datasettmapper automatisk på Windows:
-
-```powershell
-# process_all_datasets.ps1
-
-$datasets = Get-ChildItem "C:\Datasets\2025" -Directory
-
-foreach ($dataset in $datasets) {
-    Write-Host "Processing $($dataset.Name)..." -ForegroundColor Cyan
-    
-    chloros-cli process $dataset.FullName `
-        --vignette `
-        --reflectance
-    
-    if ($LASTEXITCODE -eq 0) {
-        Write-Host "✓ $($dataset.Name) complete" -ForegroundColor Green
-    } else {
-        Write-Host "✗ $($dataset.Name) failed" -ForegroundColor Red
-    }
-}
-
-Write-Host "All datasets processed!" -ForegroundColor Green
-```
-
-### Windows Batch-skript (Windows)
-
-Enkel sløyfe for batchbehandling på Windows:
-
-```batch
-@echo off
-echo Starting batch processing...
-
-for /d %%i in (C:\Datasets\2025\*) do (
-    echo.
-    echo ========================================
-    echo Processing: %%i
-    echo ========================================
-    chloros-cli process "%%i"
-    
-    if %ERRORLEVEL% EQU 0 (
-        echo SUCCESS: %%i processed
-    ) else (
-        echo ERROR: %%i failed
-    )
-)
-
-echo.
-echo All datasets processed!
-pause
-```
-
-### Bash-batchbehandling (Linux)
-
-Behandle flere datasettmapper på Linux:
-
-```bash
-#!/bin/bash
-# process_all_datasets.sh
-
-for dataset in ~/datasets/2026/*/; do
-    name=$(basename "$dataset")
-    echo "Processing $name..."
-
-    chloros-cli process "$dataset" \
-        --vignette \
-        --reflectance
-
-    if [ $? -eq 0 ]; then
-        echo "✓ $name complete"
-    else
-        echo "✗ $name failed"
-    fi
-done
-
-echo "All datasets processed!"
-```
-
-### Python automatiseringsskript (plattformuavhengig)
-
-Avansert automatisering med feilhåndtering (fungerer på Windows og Linux):
-
-```python
-import subprocess
-import os
-import sys
-from pathlib import Path
-from datetime import datetime
-
-def process_dataset(input_folder):
-    """Process a folder using Chloros CLI"""
-    cmd = ['chloros-cli', 'process', str(input_folder)]
-    
-    # Execute command
-    result = subprocess.run(
-        cmd, 
-        capture_output=True, 
-        text=True,
-        encoding='utf-8'
-    )
-    
-    return result.returncode == 0, result.stdout, result.stderr
-
-def main():
-    """Process all datasets in a directory"""
-    # Adjust path for your platform
-    # Windows: Path('C:/Datasets/2025')
-    # Linux:   Path.home() / 'datasets' / '2025'
-    datasets_dir = Path('C:/Datasets/2025')
-    log_file = Path('processing_log.txt')
-    
-    successful = []
-    failed = []
-    
-    # Start processing
-    print(f"Starting batch processing: {datetime.now()}")
-    print(f"Scanning: {datasets_dir}")
-    print("=" * 60)
-    
-    for dataset_folder in sorted(datasets_dir.iterdir()):
-        if not dataset_folder.is_dir():
-            continue
-        
-        print(f"\nProcessing: {dataset_folder.name}")
-        
-        success, stdout, stderr = process_dataset(dataset_folder)
-        
-        if success:
-            print(f"✓ {dataset_folder.name} - SUCCESS")
-            successful.append(dataset_folder.name)
-        else:
-            print(f"✗ {dataset_folder.name} - FAILED")
-            failed.append(dataset_folder.name)
-            
-            # Log error details
-            with open(log_file, 'a', encoding='utf-8') as f:
-                f.write(f"\n=== {dataset_folder.name} - {datetime.now()} ===\n")
-                f.write(f"STDOUT:\n{stdout}\n")
-                f.write(f"STDERR:\n{stderr}\n")
-    
-    # Print summary
-    print("\n" + "=" * 60)
-    print(f"SUMMARY - Completed: {datetime.now()}")
-    print(f"  Successful: {len(successful)}")
-    print(f"  Failed: {len(failed)}")
-    
-    if failed:
-        print(f"\nFailed folders:")
-        for folder in failed:
-            print(f"  - {folder}")
-        print(f"\nCheck {log_file} for error details")
-        sys.exit(1)
-    else:
-        print("\nAll datasets processed successfully!")
-        sys.exit(0)
-
-if __name__ == '__main__':
-    main()
-```
-
-***
-
-## Behandlingsarbeidsflyt
-
-### Standard arbeidsflyt
-
-1. **Inndata**: Mappe som inneholder RAW/JPG-bildepar
-2. **Oppdagelse**: CLI skanner automatisk etter støttede bildefiler
-3. **Behandling**: Parallellmodus skaleres etter antall CPU-kjerner (Chloros+)
-4. **Utdata**: Oppretter undermapper for kameramodeller med behandlede bilder
-
-### Eksempel på utdatastruktur
-
-```
-
-MyProject/
-├── project.json                             # Project metadata
-├── 2025_0203_193056_008.JPG                # Original JPG
-├── 2025_0203_193055_007.RAW                # Original RAW
-└── Survey3N_RGN/                           # Processed outputs ✓
-    ├── 2025_0203_193056_008_Reflectance.tif   # Calibrated reflectance
-    ├── 2025_0203_193056_008_Target.tif        # Target detection
-    └── ...
-```
-
-### Estimert behandlingstid
-
-Typisk behandlingstid for 100 bilder (12 MP hver):
-
-| Plattform | Modus | Estimert tid | Merknader |
-| --- | --- | --- | --- |
-| **Stasjonær PC med 12 GB+ GPU** | `GPU_PARALLEL` | 5–10 min | Raskeste alternativ |
-| **Stasjonær PC med 8 GB GPU** | `GPU_SINGLE` | 10–15 min | God ytelse |
-| **Jetson Orin 16 GB** | `GPU_PARALLEL` | 15–25 min | Edge-beregning |
-| **Jetson Nano 8 GB** | `GPU_SINGLE` | 30–60 min | Begrenset minne |
-| **Kun CPU** | `CPU_PARALLEL` | 20–40 min | Ingen GPU nødvendig |
-
-{% hint style="info" %}
-**Ytelsestips**: Behandlingstiden varierer avhengig av antall bilder, oppløsning, debayer-metode og maskinvare. Texture Aware-debayer tar betydelig lengre tid enn Standard. Se [Dynamic Compute Adaptation](processing-architecture/dynamic-compute-adaptation.md) for detaljer.
-{% endhint %}
-
-***
-
-## Feilsøking
-
-### CLI ikke funnet
-
-**Windows-feil:**
-
-```
-'chloros-cli' is not recognized as an internal or external command
-```
-
-**Windows Løsninger:**
-
-1. Kontroller installasjonsstedet:
-
-```powershell
-dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
-```
-
-2. Bruk full sti hvis ikke i PATH:
-
-```powershell
-"C:\Program Files\Chloros\resources\cli\chloros-cli.exe" process "C:\Datasets\Field_A"
-```
-
-3. Legg til i PATH manuelt:
-   * Åpne Systemegenskaper → Miljøvariabler
-   * Rediger PATH-variabelen
-   * Legg til: `C:\Program Files\Chloros\resources\cli`
-   * Start terminalen på nytt
-
-**Linux Feil:**
-
-```
-chloros-cli: command not found
-```
-
-**Linux Løsninger:**
-
-1. Kontroller installasjonen:
-
-```bash
-which chloros-cli
-dpkg -L chloros-amd64  # or chloros-arm64-jp6
-```
-
-2. Last inn skallet på nytt:
-
-```bash
-source ~/.bashrc
-```
-
-3. Kontroller tillatelser:
-
-```bash
-sudo chmod +x /usr/bin/chloros-cli
-```
-
-***
-
-### Backend kunne ikke startes**Feil:**
-
-```
-
-Backend failed to start within 30 seconds
-```
-
-**Løsninger:**
-
-1. Sjekk om backend allerede kjører (lukk den først)
-2. Sjekk at brannmuren ikke blokkerer (Windows) eller sjekk porttilgjengelighet (Linux: `lsof -i :5000`)
-3. Prøv en annen port:
-
-```bash
-# Windows
-chloros-cli --port 5001 process "C:\Datasets\Field_A"
-
-# Linux
-chloros-cli --port 5001 process ~/datasets/field_a
-```
-
-4. Tving omstart av backend:
-
-```bash
-# Windows
-chloros-cli --restart process "C:\Datasets\Field_A"
-
-# Linux
-chloros-cli --restart process ~/datasets/field_a
-```
-
-5. På Linux, sjekk om backend-kjørbar fil finnes:
-
-```bash
-ls -la /usr/lib/chloros/chloros-backend
-```
-
-***
-
-### Lisens-/autentiseringsproblemer**Feil:**
-
-```
-
-Chloros+ license required for CLI access
-```
-
-**Løsninger:**
-
-1. Kontroller at du har et aktivt Chloros+-abonnement
-2. Logg inn med påloggingsinformasjonen din:
-
-```bash
-chloros-cli login user@example.com 'password'
-```
-
-3. Sjekk lisensstatus:
-
-```bash
-chloros-cli status
-```
-
-4. Kontakt support: info@mapir.camera
-
-***
-
-### Ingen bilder funnet**Feil:**
-
-```
-
-No images found in the specified folder
-```
-
-**Løsninger:**
-
-1. Kontroller at mappen inneholder støttede formater (.RAW, .TIF, .JPG)
-2. Kontroller at mappestien er riktig (bruk anførselstegn for stier med mellomrom)
-3. Sørg for at du har lesetillatelse for mappen
-4. Kontroller at filtypene er riktige
-
-***
-
-### Behandlingen stopper opp eller henger seg opp**Løsninger:**
-
-1. Sjekk tilgjengelig diskplass (sørg for at det er nok til utdata)
-2. Lukk andre programmer for å frigjøre minne
-3. Reduser antall bilder (behandle i batcher)
-
-***
-
-### Porten er allerede i bruk**Feil:**
-
-```
-
-Port 5000 is already in use
-```
-
-**Løsninger:**
-
-**Windows:**
-
-```powershell
-chloros-cli --port 5001 process "C:\Datasets\Field_A"
-```
-
-**Linux:**
-
-```bash
-# Find what's using port 5000
-lsof -i :5000
-
-# Use a different port
-chloros-cli --port 5001 process ~/datasets/field_a
-```
-
-***
-
-## FAQ
-
-### Spørsmål: Trenger jeg en lisens for CLI?
-
-**Svar:**Ja! CLI krever en betalt**Chloros+-lisens**.
-
-* ❌ Standard (gratis) abonnement: CLI deaktivert
-* ✅ Chloros+ (betalt) abonnement: CLI fullt aktivert
-
-Abonner på: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
-
-***
-
-### Spørsmål: Kan jeg bruke CLI på en server uten GUI?**Svar:** Ja! CLI kjører helt uten grafisk grensesnitt. Dette er den primære brukssituasjonen på Linux.**Windows-server:**
-* Windows Server 2016 eller nyere
-* Visual C++ Redistributable installert
-
-**Linux-server:**
-* Ubuntu 20.04+ / Debian 11+ (amd64) eller JetPack 6 (arm64)
-* Installer via `.deb`-pakken
-
-**Begge plattformene:**
-* Minst 8 GB RAM (16 GB anbefalt)
-* Engangsaktivering av lisens: `chloros-cli login user@example.com 'password'`
-
-***
-
-### Spørsmål: Hvor lagres de behandlede bildene?**Svar:**Som standard lagres behandlede bilder i**samme mappe som inndata** i undermapper for kameramodeller (f.eks. `Survey3N_RGN/`).
-
-Bruk alternativet `-o` for å angi en annen utdatamappe:
-
-```bash
-# Windows
-chloros-cli process "C:\Input" -o "D:\Output"
-
-# Linux
-chloros-cli process ~/input -o ~/output
-```
-
-***
-
-### Spørsmål: Kan jeg behandle flere mapper samtidig?**A:** Ikke direkte med én kommando, men du kan bruke skripting for å behandle mapper sekvensielt. Se avsnittet [Automatisering og skripting](CLI.md#automation--scripting).***
-
-### Spørsmål: Hvordan lagrer jeg CLI-utdata i en loggfil?**PowerShell:**
-
-```powershell
-chloros-cli process "C:\Datasets\Field_A" | Tee-Object -FilePath "processing.log"
-```
-
-**Batch:**
-
-```batch
-chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
-```
-
-**Linux Bash:**
-
-```bash
-chloros-cli process ~/datasets/field_a 2>&1 | tee processing.log
-```
-
-***
-
-### Spørsmål: Hva skjer hvis jeg trykker Ctrl+C under behandlingen?**Svar:** CLI vil:
-
-1. Avslutte behandlingen på en ordnet måte
-2. Slå av backend-systemet
-3. Avslutte med kode 130
-
-Delvis behandlede bilder kan forbli i utdatamappen.
-
-***
-
-### Spørsmål: Kan jeg automatisere CLI-behandlingen?**Svar:** Absolutt! CLI er designet for automatisering. Se [Automatisering og skripting](CLI.md#automation--scripting) for eksempler på PowerShell (Windows), Batch (Windows), Bash (Linux) og Python (plattformuavhengig).***
-
-### Spørsmål: Hvordan sjekker jeg CLI-versjonen?**Svar:**
-
-```bash
-chloros-cli --version
-```
-
-**Utdata:**
-
-```
-
-Chloros CLI 1.1.0
-```
+## Feilsøking: Topp 5
+
+| Symptom | Løsning |
+| --- | --- |
+| `Login required`, eller en planlagt jobb henger seg opp ved en `Email:`-prompt | Kjør `chloros-cli login EMAIL 'PASSWORD'` én gang på denne maskinen — kommandoer uten en bufret økt kjører interaktivt i stedet for å mislykkes umiddelbart. |
+| `backend unreachable` | Start skrivebordsappen «Chloros
+», eller kjør backend-binærfilen direkte (`chloros-backend`). Hvis du retter `lattice`/`project`/`daq pool-*` mot en ekstern backend, må du sjekke `CHLOROS_BACKEND_URL`. |
+| Array-tilkobling blokkert: `FRAMES WILL DROP` / `Reduce ROI to enable` | Mottaksringen på verts-NIC-kortet er tilbakestilt til standardinnstillingene — den vanligste årsaken til at et system som tidligere fungerte, nå nekter å koble seg til, vanligvis etter en oppdatering av NIC-driveren. Kjør `chloros-cli lattice network --fix` fra en **terminal med utvidede rettigheter** (eller sett `ReceiveBufferLen=256`, `PendingReceives=64`); se referansens *Host NIC Setup &amp; Tuning*. |
+| `daq`-underkommandoen avsluttes: «krever den fullstendige DAQ-pakken…» | Forventet på ferdigpakkede versjoner — den kompilerteCLI
+leverer kun `daq pool-*`-familien, som dekker tilkobling, strømming, opptak og valg av datagrenser. Bruk `pool-*` (eller `chloros_sdk.connect_daq_sensor()` fraPython
+). |
+| Jetson viser en advarsel om swap før store mapper | Legg til filbasert swap —CLI
+viser de nøyaktige `fallocate`/`swapon`-kommandoene som skal kjøres. |
 
 ***
 
 ## Hjelp
 
-### Hjelp på kommandolinjen
-
-Vis hjelpeinformasjon direkte i CLI:
-
 ```bash
-# General help
-chloros-cli --help
-
-# Command-specific help
-chloros-cli process --help
-chloros-cli login --help
-chloros-cli language --help
+chloros-cli --help              # top-level help
+chloros-cli process --help      # per-command help
+chloros-cli lattice --help
+chloros-cli daq --help          # lists the pool-* subcommands
 ```
 
-### Supportkanaler
-
-* **E-post**: info@mapir.camera
-* **Nettsted**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* **Priser**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)***
-
-## Fullstendige eksempler
-
-### Eksempel 1: Grunnleggende behandling
-
-Behandling med standardinnstillinger (vignett, reflektans):
-
-**Windows:**
-
-```powershell
-chloros-cli process "C:\Datasets\Field_A_2025_01_15"
-```
-
-**Linux:**
-
-```bash
-chloros-cli process ~/datasets/field_a_2025_01_15
-```
-
-***
-
-### Eksempel 2: Vitenskapelig utdata av høy kvalitet
-
-32-biters flytende TIFF:
-
-**Windows:**
-
-```powershell
-chloros-cli process "C:\Datasets\Field_A" ^
-  --format "TIFF (32-bit, Percent)" ^
-  --vignette ^
-  --reflectance
-```
-
-**Linux:**
-
-```bash
-chloros-cli process ~/datasets/field_a \
-  --format "TIFF (32-bit, Percent)" \
-  --vignette \
-  --reflectance
-```
-
-***
-
-### Eksempel 3: Rask forhåndsvisning
-
-8-bit PNG uten kalibrering for rask gjennomgang:
-
-**Windows:**
-
-```powershell
-chloros-cli process "C:\Datasets\Field_A" ^
-  --format "PNG (8-bit)" ^
-  --no-vignette ^
-  --no-reflectance
-```
-
-**Linux:**
-
-```bash
-chloros-cli process ~/datasets/field_a \
-  --format "PNG (8-bit)" \
-  --no-vignette \
-  --no-reflectance
-```
-
-***
-
-### Eksempel 4: PPK-korrigert behandling
-
-Bruk PPK-korreksjoner med reflektans:
-
-**Windows:**
-
-```powershell
-chloros-cli process "C:\Datasets\Field_A" ^
-  --ppk ^
-  --reflectance
-```
-
-**Linux:**
-
-```bash
-chloros-cli process ~/datasets/field_a \
-  --ppk \
-  --reflectance
-```
-
-***
-
-### Eksempel 5: Tilpasset utdataplassering
-
-Behandle til en annen plassering med spesifikt format:
-
-**Windows:**
-
-```powershell
-chloros-cli process "C:\Input\Raw_Images" ^
-  -o "D:\Output\Processed" ^
-  --format "TIFF (16-bit)"
-```
-
-**Linux:**
-
-```bash
-chloros-cli process ~/input/raw_images \
-  -o ~/output/processed \
-  --format "TIFF (16-bit)"
-```
-
-***
-
-### Eksempel 6: Autentiseringsflyt
-
-Fullført autentiseringsflyt (samme på alle plattformer):
-
-```bash
-# Step 1: Login
-chloros-cli login user@example.com 'MyP@ssw0rd'
-
-# Step 2: Verify status
-chloros-cli status
-
-# Step 3: Process images
-# Windows: chloros-cli process "C:\Datasets\Field_A"
-# Linux:   chloros-cli process ~/datasets/field_a
-chloros-cli process ~/datasets/field_a
-
-# Step 4: Logout (optional, when switching accounts)
-chloros-cli logout
-```
-
-***
-
-### Eksempel 7: Bruk av flere språk
-
-Endre grensesnittspråk (samme på alle plattformer):
-
-```bash
-# List available languages
-chloros-cli language --list
-
-# Change to Spanish
-chloros-cli language es
-
-# Process with Spanish interface
-# Windows: chloros-cli process "C:\Vuelos\Campo_A"
-# Linux:   chloros-cli process ~/vuelos/campo_a
-chloros-cli process ~/vuelos/campo_a
-
-# Change back to English
-chloros-cli language en
-```
+* **Alle flagg, alle underkommandoer:** [CLI
+Referanse](reference/cli-reference.md)
+* **Tilsvarende iPython
+:** [Python
+SDK
+](api-python-sdk.md) og [SDK
+Referanse](reference/sdk-reference.md)
+* **Støtte:** info@mapir.camera · [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)

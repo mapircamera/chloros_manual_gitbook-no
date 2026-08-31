@@ -1,10 +1,11 @@
 # Innholdsfortegnelse
 
 * [Kom i gang](README.md)
-* [GUI: Navigering](navigation.md)
+* [Bruk av Chloros med AI-assistenter](ai-assistants.md)
+* [GUI: Navigasjon](navigation.md)
 * [GUI: Prosjekter](projects.md)
-* [CLI : Kommandolinje](CLI.md)
-* [API : Python SDK](api-python-sdk.md)
+* [CLI: Kommandolinje](CLI.md)
+* [API: PythonSDK](api-python-sdk.md)
 * [Støttede kameraer](supported-cameras.md)
 * [Utgangsbildformater](output-image-formats.md)
 * [Chloros+ Innlogging](chloros+-login.md)
@@ -35,13 +36,37 @@
 * [Indeks/LUT-sandkasse](image-viewer-gui/index-lut-sandbox.md)
 * [Kartmarkører](image-viewer-gui/map-markers.md)
 
-## Linux og Edge Computing
+## LATTICE-kameraer
 
-* [Linux Oversikt](linux/linux-overview.md)
-* [Linux Installasjon](linux/linux-installation.md)
+* [LATTICE-kameraer](lattice/README.md)
+* [Koble til kameraer](lattice/connecting.md)
+* [Kamerainnstillinger](lattice/camera-settings.md)
+* [Opptakinnstillinger og -moduser](lattice/capture.md)
+* [Flerkameraoppsett](lattice/arrays.md)
+* [Monokameraer og vegetasjonsindekser](lattice/mono-indices.md)
+
+## DAQ-lyssensorer
+
+* [DAQ-lyssensorer](daq/README.md)
+* [Fanen «DAQ» i «Chloros»](daq/gui.md)
+* [Hurtigstart for CLI (pool-\*)](daq/cli-quick-start.md)
+* [Cap-profiler og kalibrert område](daq/caps-and-range.md)
+* [Opptak og .daq-formatet](daq/recording.md)
+* [DAQ-E-nettverk og tidssynkronisering](daq/ethernet-ptp.md)
+* [Arbeidsflyter for reflektans](daq/reflectance.md)
+
+## «Linux» og edge-databehandling
+
+* [Oversikt over Linux](linux/linux-overview.md)
+* [Installasjon av Linux](linux/linux-installation.md)
 * [NVIDIA Jetson-veiledning](linux/nvidia-jetson-guide.md)
 
 ## Behandlingsarkitektur
 
 * [Dynamisk beregnings tilpasning](processing-architecture/dynamic-compute-adaptation.md)
 * [Behandlingsrørledning](processing-architecture/processing-pipeline.md)
+
+## Referanse (CLI &amp; SDK)
+
+* [Chloros CLI Referanse](reference/cli-reference.md)
+* [Chloros Python SDK Referanse](reference/sdk-reference.md)
