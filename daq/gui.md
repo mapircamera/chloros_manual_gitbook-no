@@ -43,9 +43,7 @@ Hver tilkoblet sensor får en rad (pluss én rad per «Ambient+Object»-gruppe).
 | Transportmerke | `DAQ-U` / `DAQ-M` / `DAQ-E`, eller et grønt `REF`-merke for en Ambient+Object-refleksjonsgruppe. |
 | Enhetsnavn | Standardinnstillingen er sensorens serienummer (dens faste identitet for kalibrering, `.daq`-filnavn og importmatching); egendefinerte navn beholdes per prosjekt. |
 | **Kalibrert**-pille (grønn) | Vises når sensorens fabrikkalibreringspakke er lastet inn, dvs. at spektrene er ekte W/m²/nm. |
-| **Oppdatering tilgjengelig**-ikon (gult, kun DAQ-E) | Den kjørende fastvaren er eldre enn bildet som følger med denne Chloros
-
--versjonen. Under en oppdatering viser den fremdriften i sanntid (`Flashing… N%`, `Restarting sensor…`, deretter `Updated X → Y` eller `Failed`). |
+| **Oppdatering tilgjengelig**-ikon (gult, kun DAQ-E) | Den kjørende fastvaren er eldre enn bildet som følger med denne Chloros-versjonen. Under en oppdatering viser den fremdriften i sanntid (`Flashing… N%`, `Restarting sensor…`, deretter `Updated X → Y` eller `Failed`). |
 | Øye | Slår synligheten til denne sensoren på diagrammet av og på. |
 | Tannhjul | Åpner modalen for innstillinger per sensor (nedenfor). |
 | ✕ (rød) | Kobler fra sensoren, eller fjerner en «Ambient+Object»-gruppe. |
@@ -82,15 +80,9 @@ I tom tilstand står det «Ingen sensorer tilkoblet».
 * **Vertsnavn / IP** — enhetens gjeldende adresse.
 * **Firmware**— gjeldende firmwareversjon, pluss en handlingscelle: en**Oppdater til \<version\>
 
-**-knapp vises når denne Chloros
-
--versjonen inneholder et nyere DAQ-E-firmwarebilde. Oppdateringen overføres via nettverket på omtrent 30 sekunder; sensoren starter på nytt og kobler seg til igjen automatisk, og en avbrutt overføring lar den gjeldende firmwaren forbli intakt. Fremdriften vises i sanntid (`Flashing… N%` → `Restarting sensor…` → `Updated X → Y`), og cellen viser `Up to date` når den er oppdatert.
-* **PTP-synkronisering** — den aktuelle PTP-tilstanden (faller tilbake til `unknown`). DAQ-E-firmware v1.2.0+ deltar i IEEE 1588 PTPv2 som en ren slaveklokke; Chloros
-
--vertens backend er PTP-grandmaster, og alle DAQ-E- og LATTICE-kameraer på LAN-nettverket er slaver til denne i domene 0, noe som holder tidsstemplene innenfor omtrent 1 ms.
-* **Nettverk**— adressen enheten kjører på og hvordan den fikk den (DHCP, link-local eller statisk), samt en lagret innstilling som gjelder etter en omstart.**Endre…**åpner et skjema:**Automatisk (DHCP)**eller**Statisk IP**med en IP-adresse, en nettverksmaske og en valgfri gateway.**Bruk og start på nytt** lagrer innstillingene, starter sensoren på nytt og kobler den til igjen. En statisk adresse utenfor denne datamaskinens nettverk avvises, fordi Chloros
-
-ikke kunne nå sensoren etter omstarten; det vises da en boks for å tillate det likevel, for en datamaskin som skal omadresseres eller rutes til det nettverket. **Strøm ved oppstart**angir om sensoren skal begynne å strømme så snart den slås på, før noen programvare kobler seg til.**Restart sensor** starter sensoren på nytt og kobler den til igjen med de gjeldende innstillingene. En omstart avslås mens sensoren registrerer data. Nytt i 1.3.0.
+**-knapp vises når denne Chloros-versjonen inneholder et nyere DAQ-E-firmwarebilde. Oppdateringen overføres via nettverket på omtrent 30 sekunder; sensoren starter på nytt og kobler seg til igjen automatisk, og en avbrutt overføring lar den gjeldende firmwaren forbli intakt. Fremdriften vises i sanntid (`Flashing… N%` → `Restarting sensor…` → `Updated X → Y`), og cellen viser `Up to date` når den er oppdatert.
+* **PTP-synkronisering** — den aktuelle PTP-tilstanden (faller tilbake til `unknown`). DAQ-E-firmware v1.2.0+ deltar i IEEE 1588 PTPv2 som en ren slaveklokke; Chloros-vertens backend er PTP-grandmaster, og alle DAQ-E- og LATTICE-kameraer på LAN-nettverket er slaver til denne i domene 0, noe som holder tidsstemplene innenfor omtrent 1 ms.
+* **Nettverk**— adressen enheten kjører på og hvordan den fikk den (DHCP, link-local eller statisk), samt en lagret innstilling som gjelder etter en omstart.**Endre…**åpner et skjema:**Automatisk (DHCP)**eller**Statisk IP**med en IP-adresse, en nettverksmaske og en valgfri gateway.**Bruk og start på nytt** lagrer innstillingene, starter sensoren på nytt og kobler den til igjen. En statisk adresse utenfor denne datamaskinens nettverk avvises, fordi Chloros ikke kunne nå sensoren etter omstarten; det vises da en boks for å tillate det likevel, for en datamaskin som skal omadresseres eller rutes til det nettverket. **Strøm ved oppstart**angir om sensoren skal begynne å strømme så snart den slås på, før noen programvare kobler seg til.**Restart sensor** starter sensoren på nytt og kobler den til igjen med de gjeldende innstillingene. En omstart avslås mens sensoren registrerer data. Nytt i 1.3.0.
 
 For en Ambient+Object-gruppe viser tannhjul-modalen kun gruppens kildesensorer, enhetsnavn og graflinjefarge.
 
@@ -100,9 +92,7 @@ For en Ambient+Object-gruppe viser tannhjul-modalen kun gruppens kildesensorer, 
 
 ### Valg av deksel
 
-Nedtrekksmenyen **Deksel** forteller Chloros
-
-hvilket fysisk deksel som er montert over sensorens diffusor, og bruker dekselets fabrikkmålte korreksjonsprofil på hvert spektrum. Valgene avhenger av modellen:
+Nedtrekksmenyen **Deksel** forteller Chloros hvilket fysisk deksel som er montert over sensorens diffusor, og bruker dekselets fabrikkmålte korreksjonsprofil på hvert spektrum. Valgene avhenger av modellen:
 
 | Modell | Dekselvalg |
 | --- | --- |
@@ -110,9 +100,7 @@ hvilket fysisk deksel som er montert over sensorens diffusor, og bruker dekselet
 | DAQ-M | Ingen (bar sensor), Sunshine (kosinuskorrektor) |
 | DAQ-E | Ingen (bar sensor), FOV 15°, FOV 45°, FOV 90°, Sunshine (kosinuskorrektor) |
 
-**Standardinnstillingen for alle modeller er «Sunshine» (kosinuskorrektor)** — MAPIR
-
-leverer alle DAQ-enheter med «Sunshine»-hetten montert, og dette er standardkonfigurasjonen for utendørs bruk: et 180° halvkuleformet synsfelt med kosinusfeil ≤ ±4 % ut til 60° og ≤ ±4,5 % ut til 70° (anbefales ikke under ~15° solhøyde), med innebygd demping (~12×). Valget ditt lagres i prosjektet.
+**Standardinnstillingen for alle modeller er «Sunshine» (kosinuskorrektor)** — MAPIR leverer alle DAQ-enheter med «Sunshine»-hetten montert, og dette er standardkonfigurasjonen for utendørs bruk: et 180° halvkuleformet synsfelt med kosinusfeil ≤ ±4 % ut til 60° og ≤ ±4,5 % ut til 70° (anbefales ikke under ~15° solhøyde), med innebygd demping (~12×). Valget ditt lagres i prosjektet.
 
 {% hint style="warning" %}
 **Valget av hette må samsvare med den fysiske hetten.**Verken sensoren eller programvaren kan oppdage hvilken hette som er montert. Valget styrer både den løpende korreksjonen og stempelet som skrives inn i hver `.daq`-fil — med Sunshine-hettenes ~12× demping, vil et udeklarert dekselbytte føre til feilkorrigering av spektra med omtrent den samme faktoren. (Å fjerne og montere det samme dekselet på nytt gir en avvik på ca. 1,5 %.) Velg**Ingen (bar sensor)** kun når dekselet er fysisk fjernet; på en DAQ-E bruker «None» fortsatt en fabrikkgeometriprofil for den innfelte glassdiffusoren – det er ikke en «no-op» – og en DAQ-E uten deksel er en benkkonfigurasjon, ikke en støttet feltkonfigurasjon.
@@ -148,13 +136,7 @@ En fast topplinje inneholder en **bryter for visning av liste ⇄ rutenett**og e
 Under diagrammet i listevisning, oppdateres hvert 500. millisekund:
 
 * **Alle modeller**: Lysfargeprøve (sRGB fra CIE XYZ), Mettet (Ja/Nei), CIE 1931 X/Y/Z, Kromatisitet x/y, CIE u′/v′, CCT (K), CRI (Ra), dominerende bølgelengde (nm), toppbølgelengde (nm), eksitasjonsrenhet, Duv, CIE L\*/a\*/b\* og Munsell H/V/C.
-* **Kun kalibrerte sensorer**(hvilken som helst av DAQ-U / DAQ-M / DAQ-E så snart fabrikkalibreringspakken er lastet inn – det grønne**Kalibrert**-merket på sensorrekken er kjennetegnet): Total effekt (W/m²), fotopisk lux (lx), skotopisk lux (lx), S/P-forhold, PPFD samt PPFD Red
-
-/Green
-
-/Blue
-
-(µmol/m²/s) og de opiske strålingsintensitetene – S-kone, melanopisk, rhodopisk, M-kone, L-kone (alle W/m²).
+* **Kun kalibrerte sensorer**(hvilken som helst av DAQ-U / DAQ-M / DAQ-E så snart fabrikkalibreringspakken er lastet inn – det grønne**Kalibrert**-merket på sensorrekken er kjennetegnet): Total effekt (W/m²), fotopisk lux (lx), skotopisk lux (lx), S/P-forhold, PPFD samt PPFD Red /Green /Blue (µmol/m²/s) og de opiske strålingsintensitetene – S-kone, melanopisk, rhodopisk, M-kone, L-kone (alle W/m²).
 
 <!-- SCREENSHOT-NEEDED: list view live data table for a DAQ-E showing both the colorimetric rows and the power-calibrated rows (Total Power, Photopic/Scotopic Lux, PPFD, opic irradiances) -->
 
@@ -167,9 +149,7 @@ To tilkoblede sensorer kan kombineres til en sanntidsvisning av reflektans — u
 1. I rutenettvisningen klikker du på **+**på en diagramrute og velger**Kombiner omgivelser + objekt**.
 2. Velg en **Omgivelseslyskilde**-sensor og en**Objektskanner**-sensor (to forskjellige sensorer), og klikk deretter**Opprett**.
 
-Chloros
-
-beregner R(λ) = objekt(λ) / omgivelse(λ) per bølgelengde fra de to sanntidsstrømmene (0 der omgivelse ≤ 0). Gruppens etikett følger sensorenes kalibreringsklasse:
+Chloros beregner R(λ) = objekt(λ) / omgivelse(λ) per bølgelengde fra de to sanntidsstrømmene (0 der omgivelse ≤ 0). Gruppens etikett følger sensorenes kalibreringsklasse:
 
 * Begge sensorene er kalibrert (pakke lastet inn) → **«Tilsynelatende reflektans»**.
 * En av sensorene er ikke kalibrert → **«Relativ reflektans»**.
@@ -184,34 +164,10 @@ Gruppen vises som en grønn `REF`-rad i sidefeltet og i sitt eget diagram (regnb
 
 ### Tabell over vegetasjonsindeks
 
-I listevisningen ligger en tabell over vegetasjonsindeks under diagrammet til en reflektansgruppe, beregnet ut fra sanntidsreflektansen ved båndsentrene **blå 450 / grønn 550 / rød 670 / NIR
+I listevisningen ligger en tabell over vegetasjonsindeks under diagrammet til en reflektansgruppe, beregnet ut fra sanntidsreflektansen ved båndsentrene **blå 450 / grønn 550 / rød 670 / NIR 800 nm** (verdier med 4 desimaler, `---` når ikke beregning er mulig; hold musepekeren over et indeksnavn for å se det fulle navnet):
 
-800 nm** (verdier med 4 desimaler, `---` når ikke beregning er mulig; hold musepekeren over et indeksnavn for å se det fulle navnet):
-
-* **Vises alltid** (skalainvariant, uansett sensorkombinasjon): NDVI
-
-, GNDVI
-
-, ENDVI, WDRVI
-
-, GRVI
-
-, CVI
-
-, GCI
-
-, MSR.
-* **Kun når begge sensorene er effektkalibrert** (begge pakkene lastet inn): EVI
-
-, SAVI
-
-, OSAVI
-
-, GSAVI, GOSAVI, MSAVI2, RDVI, TDVI, LAI
-
-, NLI, MNLI, FCI, GEMI
-
-.
+* **Vises alltid** (skalainvariant, uansett sensorkombinasjon): NDVI, GNDVI, ENDVI, WDRVI, GRVI, CVI, GCI, MSR.
+* **Kun når begge sensorene er effektkalibrert** (begge pakkene lastet inn): EVI, SAVI, OSAVI, GSAVI, GOSAVI, MSAVI2, RDVI, TDVI, LAI, NLI, MNLI, FCI, GEMI.
 
 <!-- SCREENSHOT-NEEDED: an Ambient+Object reflectance group in list view — reflectance chart labeled "Apparent Reflectance" with the vegetation index table below it showing live NDVI etc. -->
 
@@ -235,13 +191,9 @@ For kvantitative strålingsstyrketall må du beregne gjennomsnittet av minst 15 
 ## Oppsett med flere sensorer og prosjektlagring
 
 * Kombiner flere sensorer på ett diagram (delte akser), behold separate diagrammer (automatisk rutenettoppsett), flytt sensorer mellom diagrammer, dra og omorganiser rader/ruter, og skjul enkeltstående sensorer med øye-knappen.
-* Chloros
-
-lagrer følgende per prosjekt: enhetsnavn, grafikkfarger, diagramstørrelse, visningsmodus og hver sensors innstillinger (integrasjonstid, rammeutjevning, AE-tilstand, kapselvalg).
+* Chloros lagrer følgende per prosjekt: enhetsnavn, grafikkfarger, diagramstørrelse, visningsmodus og hver sensors innstillinger (integrasjonstid, rammeutjevning, AE-tilstand, kapselvalg).
 * **Når du åpner et prosjekt på nytt, kobles sensorene automatisk til igjen** via adresse – COM-port for DAQ-U, BLE-enhet for DAQ-M, mDNS-vertsnavn for DAQ-E (løses selv om enhetens IP-adresse har endret seg) – og bruker på nytt hver sensors lagrede cap-profil, rammeutjevning, AE-tilstand og manuell integrasjonstid.***
 
 ## Kameraparring (DLS)
 
-Det er ingenting å parre. I motsetning til DLS-arbeidsflyter for droner som knytter en lyssensor til et kamera på forhånd, samsvarer Chloros
-
-DAQ-data med bildene i etterkant: ved import/behandling blir `.daq`-målingene interpolert til eksponeringstidsstemplet for hvert bilde. Ta opp med en hvilken som helst tilkoblet sensor (`.daq` havner automatisk i prosjektet), og refleksjonsbehandlingen finner de riktige målingene etter tid — se [DAQ-lyssensorer](README.md) for hvordan dataene om nedadgående lysstråling brukes. For **live**LATTICE-opptak velger du i stedet sensoren i rullegardinmenyen**Lyssensor** på fanen Kameraer; hver opptak lagrer da måleverdien den brukte, kun tilordnet kameraene til det aktuelle opptaket (se [Refleksjonsarbeidsflyter](reflectance.md)).</version\>
+Det er ingenting å parre. I motsetning til DLS-arbeidsflyter for droner som knytter en lyssensor til et kamera på forhånd, samsvarer Chloros DAQ-data med bildene i etterkant: ved import/behandling blir `.daq`-målingene interpolert til eksponeringstidsstemplet for hvert bilde. Ta opp med en hvilken som helst tilkoblet sensor (`.daq` havner automatisk i prosjektet), og refleksjonsbehandlingen finner de riktige målingene etter tid — se [DAQ-lyssensorer](README.md) for hvordan dataene om nedadgående lysstråling brukes. For **live**LATTICE-opptak velger du i stedet sensoren i rullegardinmenyen**Lyssensor** på fanen Kameraer; hver opptak lagrer da måleverdien den brukte, kun tilordnet kameraene til det aktuelle opptaket (se [Refleksjonsarbeidsflyter](reflectance.md)).</version\>

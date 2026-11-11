@@ -159,7 +159,7 @@ Hvis Chloros ikke oppdager målene dine riktig, må du justere disse innstilling
 **Mulige årsaker:**
 
 * Målbilder er ikke merket i filutvalget
-* Målet er for lite i bildet (&lt; 30 % av bildet)
+* Målet er for lite i bildet (< 30 % av bildet)
 * Dårlig belysning (skygger, gjenskinn)
 * Innstillingene for måldeteksjon er for strenge
 

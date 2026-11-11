@@ -2,18 +2,16 @@
 
 En DAQ-lyssensor omregner radiometriske bilder til reflektans. Det finnes to forskjellige arbeidsflyter:
 
-1. **Enkelsensor** — én DAQ måler nedadgående strålingsintensitet mens et kamera tar bilder, og Chloros
-e deler kameraets strålingsintensitet med denne referanseverdien.
+1. **Enkelsensor** — én DAQ måler nedadgående strålingsintensitet mens et kamera tar bilder, og Chloros e deler kameraets strålingsintensitet med denne referanseverdien.
 2. **To sensorer** — to DAQ-sensorer, hvor den ene overvåker himmelen og den andre overvåker et objekt, produserer en spektral reflektanskurve i sanntid uten bruk av kamera.
 
 ## Én sensor + kamera (nedadgående referanse)
 
-DAQ-en fungerer som sensoren for nedadgående lys (DLS): kameraet måler oppadgående strålingsintensitet **L**(W/m²/sr/nm), DAQ-enheten måler nedadgående strålingsintensitet**E** (W/m²/nm), og Chloros
-beregner reflektansen per bånd som:
+DAQ-en fungerer som sensoren for nedadgående lys (DLS): kameraet måler oppadgående strålingsintensitet **L**(W/m²/sr/nm), DAQ-enheten måler nedadgående strålingsintensitet**E** (W/m²/nm), og Chloros beregner reflektansen per bånd som:
 
 > ρ = π · L / E
 
-DAQ-målingen er alltid **tidsstemplet i samsvar med eksponeringen** — dette er grunnen til at DAQ-en og kameraene deler en PTP-synkronisert klokke (se [DAQ-E-nettverk og tidssynkronisering](ethernet-ptp.md)). Monter Sunshine-kosinushetten for utendørsarbeid og deklarer den riktig; hetteerklæringen skalerer E direkte (se [Cap Profiles &amp; Calibrated Range](caps-and-range.md)). For kvantitativt arbeid må du huske instrumentets egenskaper: kvantitativ irradians beregnes ut fra et gjennomsnitt av målinger over minst 15 sekunder.
+DAQ-målingen er alltid **tidsstemplet i samsvar med eksponeringen** — dette er grunnen til at DAQ-en og kameraene deler en PTP-synkronisert klokke (se [DAQ-E-nettverk og tidssynkronisering](ethernet-ptp.md)). Monter Sunshine-kosinushetten for utendørsarbeid og deklarer den riktig; hetteerklæringen skalerer E direkte (se [Cap Profiles & Calibrated Range](caps-and-range.md)). For kvantitativt arbeid må du huske instrumentets egenskaper: kvantitativ irradians beregnes ut fra et gjennomsnitt av målinger over minst 15 sekunder.
 
 ### Live-opptak
 
@@ -30,8 +28,7 @@ To oppførsler det er verdt å kjenne til:
 
 ### Behandling av innspilte bilder
 
-For behandling etter flyvningen bør du ta opp en `.daq` under økten og oppbevare den sammen med bildene — behandlingsrørledningen identifiserer automatisk de tidsstemplede nedadrettede strålene og henter eventuelle manglende fabrikkalibreringer fra MAPIR
-s sky ved første bruk. GUI-opptak legges automatisk til det åpne prosjektet når de avsluttes.
+For behandling etter flyvningen bør du ta opp en `.daq` under økten og oppbevare den sammen med bildene — behandlingsrørledningen identifiserer automatisk de tidsstemplede nedadrettede strålene og henter eventuelle manglende fabrikkalibreringer fra MAPIRs sky ved første bruk. GUI-opptak legges automatisk til det åpne prosjektet når de avsluttes.
 
 Reflektansreferansen kan velges ved behandlingstidspunktet – `--reflectance-source` på `chloros-cli process`, eller innstillingen for reflektanskilde i GUI-ens prosjektinnstillinger:
 
@@ -41,21 +38,15 @@ Reflektansreferansen kan velges ved behandlingstidspunktet – `--reflectance-so
 | `daq` | DAQ-autoritativ |
 | `target` | Strengt mål innenfor rammen; ingen DAQ-erstatning |
 
-Se [Kalibreringsmål](../calibration-targets.md) for arbeidsflyter for mål og [LATTICE-kapittelet](../lattice/README.md) samt [CLI
--referansen](../reference/cli-reference.md) for den fullstendige behandlingsprosessen. Når du leser inn eksporterte refleksjonspiksler, bruk den stemplede skalaen (LATTICE: 32768 = ρ 1,0, XMP `Chloros:PixelScale`; Survey3
-: 65535) — se [Utdata-bildeformater](../output-image-formats.md).
+Se [Kalibreringsmål](../calibration-targets.md) for arbeidsflyter for mål og [LATTICE-kapittelet](../lattice/README.md) samt [CLI-referansen](../reference/cli-reference.md) for den fullstendige behandlingsprosessen. Når du leser inn eksporterte refleksjonspiksler, bruk den stemplede skalaen (LATTICE: 32768 = ρ 1,0, XMP `Chloros:PixelScale`; Survey3: 65535) — se [Utdata-bildeformater](../output-image-formats.md).
 
 ### Bånd utenfor DAQ-enhetens kalibrerte område
 
-DAQ-enhetens radiometrisk kalibrerte område er ~374–974 nm. Chloros
--programmet avviser DAQ-basert reflektans for ethvert kameraband hvor mindre enn halvparten av dets spektrale vekt ligger innenfor dette området, og rapporterer utelatelsesårsaken `dls-uncalibrated-band-<nm>`. Blant de leverbare SKU-ene påvirker dette kun F988: Reflektansen til F988 kalibreres ved hjelp av et reflektanspanel i scenen: båndet ligger utenfor det kalibrerte området til DAQ-lyssensoren, så Chloros
-bruker den siste panelopptakelsen og beholder den mellom panelmålingene. Hvis et F988-kamera kun kjører i DAQ-modus, avviser Chloros
-DAQ-basert reflektans for det båndet med hoppårsaken `dls-uncalibrated-band-988` – panelarbeidsflyten er den støttede metoden.
+DAQ-enhetens radiometrisk kalibrerte område er ~374–974 nm. Chloros-programmet avviser DAQ-basert reflektans for ethvert kameraband hvor mindre enn halvparten av dets spektrale vekt ligger innenfor dette området, og rapporterer utelatelsesårsaken `dls-uncalibrated-band-<nm>`. Blant de leverbare SKU-ene påvirker dette kun F988: Reflektansen til F988 kalibreres ved hjelp av et reflektanspanel i scenen: båndet ligger utenfor det kalibrerte området til DAQ-lyssensoren, så Chloros bruker den siste panelopptakelsen og beholder den mellom panelmålingene. Hvis et F988-kamera kun kjører i DAQ-modus, avviser Chloros DAQ-basert reflektans for det båndet med hoppårsaken `dls-uncalibrated-band-988` – panelarbeidsflyten er den støttede metoden.
 
 ## Dobbel sensor (omgivelseslys + objekt)
 
-To DAQ-sensorer — hvilket som helst par, uavhengig av transportform — gir et live refleksjonsspektrum uten kamera: én sensor vender mot himmelen (**Omgivelseslyskilde**), én vender mot motivet (**Objektskanner**), og Chloros
-beregner per bølgelengde:
+To DAQ-sensorer — hvilket som helst par, uavhengig av transportform — gir et live refleksjonsspektrum uten kamera: én sensor vender mot himmelen (**Omgivelseslyskilde**), én vender mot motivet (**Objektskanner**), og Chloros beregner per bølgelengde:
 
 > R(λ) = objekt(λ) / omgivelser(λ)
 
@@ -70,24 +61,11 @@ Når begge sensorene er tilkoblet i fanen «Lyssensorer», åpner du overlegget 
 <!-- SCREENSHOT-NEEDED: A live Apparent Reflectance chart from an Ambient+Object DAQ pair in list view, with the vegetation-index table visible below the chart (NDVI etc. showing live values). -->
 
 
-Under refleksjonsdiagrammet (listevisning) beregner en sanntids **vegetasjonsindekstabell** indekser fra kurven ved hjelp av båndsentre på blå 450 / grønn 550 / rød 670 / NIR
-800 nm. Forholdsbaserte indekser som utligner absolutt skala (NDVI
-, GNDVI
-, ENDVI, WDRVI
-, GRVI
-, CVI
-, GCI
-, MSR) vises alltid; indekser som krever absolutt reflektans (EVI
-, SAVI
-, OSAVI
-, GSAVI, GOSAVI, MSAVI2, RDVI, TDVI, LAI
-, NLI, MNLI, FCI, GEMI
-) vises kun når begge sensorene er strømkalibrerte modeller.
+Under refleksjonsdiagrammet (listevisning) beregner en sanntids **vegetasjonsindekstabell** indekser fra kurven ved hjelp av båndsentre på blå 450 / grønn 550 / rød 670 / NIR 800 nm. Forholdsbaserte indekser som utligner absolutt skala (NDVI, GNDVI, ENDVI, WDRVI, GRVI, CVI, GCI, MSR) vises alltid; indekser som krever absolutt reflektans (EVI, SAVI, OSAVI, GSAVI, GOSAVI, MSAVI2, RDVI, TDVI, LAI, NLI, MNLI, FCI, GEMI) vises kun når begge sensorene er strømkalibrerte modeller.
 
 ### Tilsynelatende vs. relativ — merkingsregelen
 
-Chloros
-merker utdataene fra dobbeltsensoren etter hva sensorparet faktisk kan oppgi:
+Chloros merker utdataene fra dobbeltsensoren etter hva sensorparet faktisk kan oppgi:
 
 | Sensorpar | Merking |
 | --- | --- |
@@ -99,8 +77,4 @@ Alle tre modellene er radiometriske: så snart en sensors fabrikkalibreringspakk
 ### Fra Python
 
 
-Det finnes ingen dedikert funksjon for to sensorer i det samlede SDK
--grensesnittet: åpne to økter med `chloros_sdk.connect_daq_sensor()` og sammenlign spektrene deres med `latest()` selv, ved å bruke samme merkingskonvensjon. (Det finnes også et opptaksverktøy for to sensorer på MAPIR
-s interne direkte-hardware-grensesnitt, oppført i [CLI
--referansen](../reference/cli-reference.md) for fullstendighetens skyld – det er ikke en del av den leverte CLI
--en; GUI-arbeidsflyten ovenfor er den støttede live-veien.)
+Det finnes ingen dedikert funksjon for to sensorer i det samlede SDK-grensesnittet: åpne to økter med `chloros_sdk.connect_daq_sensor()` og sammenlign spektrene deres med `latest()` selv, ved å bruke samme merkingskonvensjon. (Det finnes også et opptaksverktøy for to sensorer på MAPIRs interne direkte-hardware-grensesnitt, oppført i [CLI-referansen](../reference/cli-reference.md) for fullstendighetens skyld – det er ikke en del av den leverte CLI-en; GUI-arbeidsflyten ovenfor er den støttede live-veien.)

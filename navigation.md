@@ -22,19 +22,7 @@ Fra venstre til høyre inneholder toppmenyen:
 * **Koble til lyssensor** — gå til [fanen Lyssensorer](daq/) for å koble til en DAQ-lyssensor. Fungerer uten at et prosjekt er åpent.
 
 {% hint style="info" %}
-**Kun Windows**: Chloros
-
-Desktop GUI er tilgjengelig på Windows
-
-. Linux
-
--brukere bør se dokumentasjonen for [CLI
-
-](CLI.md) og [Python
-
-SDK
-
-](api-python-sdk.md) for headless-behandling.
+**Kun Windows**: Chloros Desktop GUI er tilgjengelig på Windows. Linux-brukere bør se dokumentasjonen for [CLI](CLI.md) og [Python SDK](api-python-sdk.md) for headless-behandling.
 {% endhint %}
 
 ### <img src=".gitbook/assets/image (2) (1) (1).png" alt="" data-size="line">
@@ -49,15 +37,9 @@ Fremdriftslinje <img src=".gitbook/assets/image (5).png" alt="" data-size="line"
 
 
 
-I den gratis Chloros
+I den gratis Chloros-modusen, som behandler alle filer sekvensielt, viser fremdriftslinjen to trinn: Målgjenkjenning og Behandling.
 
--modusen, som behandler alle filer sekvensielt, viser fremdriftslinjen to trinn: Målgjenkjenning og Behandling.
-
-I den lisensierte Chloros
-
-+-modusen, som behandler alle filer samtidig, viser fremdriftslinjen fire trinn: Gjenkjenning, Analyse, Kalibrering, Eksport. Hvis du holder musepekeren over fremdriftslinjen i Chloros
-
-+, vises et utvidet panel med de fire trinnene, slik at du kan følge med. Hvis du klikker på den øverste fremdriftslinjen, fryses utvidelsespanelet; klikker du igjen, frigjøres det.
+I den lisensierte Chloros+-modusen, som behandler alle filer samtidig, viser fremdriftslinjen fire trinn: Gjenkjenning, Analyse, Kalibrering, Eksport. Hvis du holder musepekeren over fremdriftslinjen i Chloros+, vises et utvidet panel med de fire trinnene, slik at du kan følge med. Hvis du klikker på den øverste fremdriftslinjen, fryses utvidelsespanelet; klikker du igjen, frigjøres det.
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 

@@ -62,7 +62,7 @@ Chloros opererer i to forskjellige behandlingsmoduser, avhengig av lisensen din:
 2. **Behandling** – Utfører kalibrering og eksporterer bilder**Behandlingstid:**
 
 * Mye tregere enn Chloros+ parallellmodus
-* Egnet for små til mellomstore datasett (&lt; 200 bilder)
+* Egnet for små til mellomstore datasett (< 200 bilder)
 
 ### Chloros+-modus (parallellbehandling)
 
@@ -305,7 +305,7 @@ Se [CLI-referansen](../reference/cli-reference.md#a-run-that-writes-no-images-fa
 **Løsninger:**
 
 1. Oppbevar prosjekter i en kortere mappe – endre**Arbeidskatalog** i [Prosjektinnstillinger](../project-settings/project-settings.md) og opprett prosjektet på nytt, eller
-2. Slå på lange stier i Windows og start Chloros på nytt: kjør Chloros-installasjonsprogrammet på nytt med **Aktiver lange stier i Windows** merket av (det er merket av som standard), eller bruk gruppepolicy: *Datamaskinkonfigurasjon &gt; Administrative maler &gt; System &gt; Filsystem &gt; Aktiver lange Win32-stier*.
+2. Slå på lange stier i Windows og start Chloros på nytt: kjør Chloros-installasjonsprogrammet på nytt med **Aktiver lange stier i Windows** merket av (det er merket av som standard), eller bruk gruppepolicy: *Datamaskinkonfigurasjon > Administrative maler > System > Filsystem > Aktiver lange Win32-stier*.
 
 ### Advarsel «Ingen mål oppdaget»
 

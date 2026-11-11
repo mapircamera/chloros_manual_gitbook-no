@@ -13,7 +13,7 @@ Chloros 1.3.0 bruker en behandlingsrørledning med fire tråder som fungerer som
 Images In → [Thread 1: Detection] → [Thread 2: Calibration] → [Thread 3: Processing] → [Thread 4: Export] → Files Out
 ```
 
-Hvert bilde går gjennom alle fire trådene i rekkefølge. Med Chloros&#x27; flertrådede behandling opptar flere bilder forskjellige tråder samtidig – mens tråd 3 behandler ett bilde, kan tråd 1 oppdage det neste, tråd 2 kalibrere et annet, og tråd 4 skrive et ferdig bilde til disken.
+Hvert bilde går gjennom alle fire trådene i rekkefølge. Med Chloros' flertrådede behandling opptar flere bilder forskjellige tråder samtidig – mens tråd 3 behandler ett bilde, kan tråd 1 oppdage det neste, tråd 2 kalibrere et annet, og tråd 4 skrive et ferdig bilde til disken.
 
 Fremdriften rapporteres per tråd og strømmes via Server-Sent Events (backenden publiserer dem på `/api/events`). I CLIs live-fremdriftsvisning er de fire trinnene merket **Detektering, Analyse, Behandling, Eksport**.***
 

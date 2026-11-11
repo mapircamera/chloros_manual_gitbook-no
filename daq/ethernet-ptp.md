@@ -1,8 +1,6 @@
 # DAQ-E nettverk og tidssynkronisering
 
-> Det fysiske nettverksoppsettet for sensoren – kabling, PoE, IP-tildeling og enhetens egne nettverksinnstillinger – finnes i **[DAQ-brukerhåndboken](https://mapir.gitbook.io/daq/daq-e/network-setup)**. Denne siden omhandler Chloros
-
--siden: tilkobling, tidssynkronisering og hva du skal gjøre hvis oppdagelsen ikke gir noen resultater.
+> Det fysiske nettverksoppsettet for sensoren – kabling, PoE, IP-tildeling og enhetens egne nettverksinnstillinger – finnes i **[DAQ-brukerhåndboken](https://mapir.gitbook.io/daq/daq-e/network-setup)**. Denne siden omhandler Chloros-siden: tilkobling, tidssynkronisering og hva du skal gjøre hvis oppdagelsen ikke gir noen resultater.
 
 DAQ-E er Ethernet-medlemmet i DAQ-familien: den får strøm via PoE, oppdages via mDNS (tjeneste `_daq-e._tcp`) og kan adresseres med et vertsnavn avledet fra sensor-ID-en — `daq-e-<6 hex>.local`, f.eks. `daq-e-def330.local`. Denne siden omhandler hvordan den overfører data på nettverket og hvordan den deltar i PTP-tidssynkronisering.
 
@@ -13,35 +11,17 @@ DAQ-E er Ethernet-medlemmet i DAQ-familien: den får strøm via PoE, oppdages vi
 | **Multicast** (standard) | UDP `239.10.10.10:5002` | Et hvilket som helst antall enheter på samme LAN mottar den samme strømmen | Hvert datagram er CRC-16/CCITT-valideret |
 | **Raw** | TCP-port `5000` | Nøyaktig én klient (eksklusivt) | Direkte kompatibel med DAQ-U på byte-nivå |
 
-Chloros
-
-bruker multicast som standard, noe som gjør at GUI, CLI
-
-og SDK
-
-alle kan overvåke én sensor samtidig.
+Chloros bruker multicast som standard, noe som gjør at GUI, CLI og SDK alle kan overvåke én sensor samtidig.
 
 ## Nettverkskrav
 
-* **Samme kringkastingsdomene.** Maskinen som kjører Chloros
-
-, må være på samme L2-nettverkssegment som sensoren — mDNS-oppdagelse går ikke gjennom rutere.
-* **Brannmur.** På Windows
-
-legger installasjonsprogrammet til brannmurregelen **Chloros
-
-Backend (UDP-In)**for backenden i hver nettverksprofil, som dekker DAQ-E-data (UDP 5002), mDNS (UDP 5353) og PTP (UDP 319/320), samt en**«Chloros
-
-Backend (TCP-In)»**-regel, begrenset til det lokale subnettet, for tilkoblingen en DAQ-E oppretter tilbake til datamaskinen under en fastvareoppdatering. På Linux
-
-åpner `.deb` UDP-portene i `ufw` eller `firewalld` når den brannmuren er aktiv ved installasjon. En tredjeparts brannmur, eller en som aktiveres senere, må ha de samme portene åpne.
+* **Samme kringkastingsdomene.** Maskinen som kjører Chloros, må være på samme L2-nettverkssegment som sensoren — mDNS-oppdagelse går ikke gjennom rutere.
+* **Brannmur.** På Windows legger installasjonsprogrammet til brannmurregelen **Chloros Backend (UDP-In)**for backenden i hver nettverksprofil, som dekker DAQ-E-data (UDP 5002), mDNS (UDP 5353) og PTP (UDP 319/320), samt en**«Chloros Backend (TCP-In)»**-regel, begrenset til det lokale subnettet, for tilkoblingen en DAQ-E oppretter tilbake til datamaskinen under en fastvareoppdatering. På Linux åpner `.deb` UDP-portene i `ufw` eller `firewalld` når den brannmuren er aktiv ved installasjon. En tredjeparts brannmur, eller en som aktiveres senere, må ha de samme portene åpne.
 * **PoE-strøm, ingen status-LED.** DAQ-E har ingen egen LED — kontroller strømtilførselen via link/PoE-indikatoren på bryteren eller injektorporten, og vent noen sekunder etter oppstart slik at enheten kan starte opp og koble seg til nettverket.
 
 ## Tilkobling
 
-**GUI:** Fanen «Lyssensorer» → «Koble til sensor» → Enhetstype «DAQ-E (Ethernet)». Oppdagelsen kjører kun mens tilkoblingsdialogen er på skjermen (mDNS-søk pluss en ARP-søk på Windows
-
-), og gjentas hvert 15. sekund; «Oppdater»-knappen utfører en ny skanning umiddelbart. Oppdagede sensorer vises i rullegardinmenyen; den første oppdagede sensoren velges automatisk.
+**GUI:** Fanen «Lyssensorer» → «Koble til sensor» → Enhetstype «DAQ-E (Ethernet)». Oppdagelsen kjører kun mens tilkoblingsdialogen er på skjermen (mDNS-søk pluss en ARP-søk på Windows), og gjentas hvert 15. sekund; «Oppdater»-knappen utfører en ny skanning umiddelbart. Oppdagede sensorer vises i rullegardinmenyen; den første oppdagede sensoren velges automatisk.
 
 <!-- SCREENSHOT-NEEDED: DAQ connect dialog with Device Type set to "DAQ-E (Ethernet)" and at least one discovered sensor listed in the Hostname/IP dropdown (e.g. daq-e-xxxxxx.local), Connect button enabled. -->
 
@@ -67,23 +47,9 @@ chloros-cli daq pool-connect --eth-host daq-e-def330.local
 
 ## Enhetsinnstillinger og fastvare
 
-Sensoren lagrer selv sine nettverksinnstillinger: DHCP (fabrikkinnstillingen, som faller tilbake til en 169.254.x.x link-local-adresse når ingen DHCP-server svarer) eller en statisk adresse. Den lagrer også om den starter strømming ved oppstart. Endre disse i GUI-en (sensorens tannhjulsinnstillinger, **Nettverk**:**Endre…**,**Strøm ved oppstart**,**Start sensoren på nytt**; se [Fanen DAQ](gui.md)), eller fra CLI
+Sensoren lagrer selv sine nettverksinnstillinger: DHCP (fabrikkinnstillingen, som faller tilbake til en 169.254.x.x link-local-adresse når ingen DHCP-server svarer) eller en statisk adresse. Den lagrer også om den starter strømming ved oppstart. Endre disse i GUI-en (sensorens tannhjulsinnstillinger, **Nettverk**:**Endre…**,**Strøm ved oppstart**,**Start sensoren på nytt**; se [Fanen DAQ](gui.md)), eller fra CLI og SDK med `pool-set-network`, `pool-set-auto-stream` og `pool-reboot` (`DAQSensorSession.set_network()`, `set_auto_stream()`, `reboot()`; se [CLI-referansen](../reference/cli-reference.md#daq-e-device-settings)). Sensoren starter på nytt for å implementere en nettverksendring, og Chloros kobler den til på nytt. Det må finnes en statisk adresse på nettverket til datamaskinen som kjører Chloros: Chloros avviser en adresse den ikke kunne nå etter omstarten. Sensorens ID og vertsnavnet `daq-e-<id>.local` endres aldri. Nytt i 1.3.0.
 
-og SDK
-
-med `pool-set-network`, `pool-set-auto-stream` og `pool-reboot` (`DAQSensorSession.set_network()`, `set_auto_stream()`, `reboot()`; se [CLI
-
--referansen](../reference/cli-reference.md#daq-e-device-settings)). Sensoren starter på nytt for å implementere en nettverksendring, og Chloros
-
-kobler den til på nytt. Det må finnes en statisk adresse på nettverket til datamaskinen som kjører Chloros
-
-: Chloros
-
-avviser en adresse den ikke kunne nå etter omstarten. Sensorens ID og vertsnavnet `daq-e-<id>.local` endres aldri. Nytt i 1.3.0.
-
-**Firmwareoppdateringer er integrert i brukergrensesnittet.** Når en tilkoblet DAQ-E kjører firmware som er eldre enn den som følger med din Chloros
-
--versjon, vises det en gul **Oppdatering tilgjengelig**-knapp i sensorraden, og innstillingsmodalen med tannhjulet tilbyr en «Oppdater til<version>»-knapp. Oppdateringen overføres via nettverket på omtrent 30 sekunder; sensoren starter på nytt og kobler seg til igjen automatisk, og en avbrutt overføring lar den gjeldende firmware være intakt. Fra CLI eller SDK, og på Linux – som ikke har grafisk brukergrensesnitt – kjører du `chloros-cli daq pool-update-firmware --sensor-id <id>` (`DAQSensorSession.update_firmware()`).
+**Firmwareoppdateringer er integrert i brukergrensesnittet.** Når en tilkoblet DAQ-E kjører firmware som er eldre enn den som følger med din Chloros-versjon, vises det en gul **Oppdatering tilgjengelig**-knapp i sensorraden, og innstillingsmodalen med tannhjulet tilbyr en «Oppdater til<version>»-knapp. Oppdateringen overføres via nettverket på omtrent 30 sekunder; sensoren starter på nytt og kobler seg til igjen automatisk, og en avbrutt overføring lar den gjeldende firmware være intakt. Fra CLI eller SDK, og på Linux – som ikke har grafisk brukergrensesnitt – kjører du `chloros-cli daq pool-update-firmware --sensor-id <id>` (`DAQSensorSession.update_firmware()`).
 
 <!-- SCREENSHOT-NEEDED: DAQ-E per-sensor settings modal showing the DAQ-E-only rows: Hostname/IP, Firmware row with the "Update to <ver>" button (or "Up to date"), and the PTP Sync row with a live state value. -->
 

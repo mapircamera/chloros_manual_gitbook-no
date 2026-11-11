@@ -1,8 +1,6 @@
 # Opptak og .daq-formatet
 
-En `.daq`-fil er Chloros
-
-’ opptaksformat for lyssensorer: en **SQLite-database** med kalibrerte spektralbilder fra én DAQ-sensor. Ta opp en slik fil under en opptakssesjon, så kan reflektansbehandlingsrørledningen senere dividere hvert bilde med den nedadgående strålingsintensiteten som ble målt akkurat i det øyeblikket.
+En `.daq`-fil er Chloros’ opptaksformat for lyssensorer: en **SQLite-database** med kalibrerte spektralbilder fra én DAQ-sensor. Ta opp en slik fil under en opptakssesjon, så kan reflektansbehandlingsrørledningen senere dividere hvert bilde med den nedadgående strålingsintensiteten som ble målt akkurat i det øyeblikket.
 
 ## Hva en .daq-fil inneholder
 
@@ -16,15 +14,11 @@ En `.daq`-fil er Chloros
 
 Formatet er identisk for DAQ-U, DAQ-M, DAQ-E og DAQ-E-S, så nedstrømsbehandlingen bryr seg ikke om hvilken transportenhet som registrerte dataene. En DAQ-E-S-registrering lagrer også enhetens tilt, roll og pitch ved siden av hvert spektrum.
 
-**Opptakene overlever et strømbrudd (1.3.0).**Et live-opptak skrives med en logg og en full disksynkronisering ved hver lagring, så et strømbrudd eller en avbrutt prosess koster omtrent de siste 3 sekundene, ikke hele filen. Et opptak som stoppes midt i skrivingen, kan etterlate en `<name>.daq-journal`-fil ved siden av `.daq`:**behold og kopier de to sammen.** Chloros
-
-ruller journalen tilbake første gang den leser filen. En opptatt disk forsinker filen, men aldri sensorens målinger.
+**Opptakene overlever et strømbrudd (1.3.0).**Et live-opptak skrives med en logg og en full disksynkronisering ved hver lagring, så et strømbrudd eller en avbrutt prosess koster omtrent de siste 3 sekundene, ikke hele filen. Et opptak som stoppes midt i skrivingen, kan etterlate en `<name>.daq-journal`-fil ved siden av `.daq`:**behold og kopier de to sammen.** Chloros ruller journalen tilbake første gang den leser filen. En opptatt disk forsinker filen, men aldri sensorens målinger.
 
 **En DAQ-E som slutter å levere data, kobles til på nytt (1.3.0).** Når strømmen fra en DAQ-E blir stille (strømbrudd på bryteren, brutt forbindelse), kobler backenden den til igjen med de innstillingene den hadde, og en opptak på den fortsetter i samme `.daq`-fil med gapet markert i filen.
 
-Kalibrert opptak krever sensorens fabrikkalibreringspakke. For DAQ-U og DAQ-M henter backenden pakken fra MAPIR
-
-s sky basert på sensor-ID (opptak avslås hvis dette ikke er mulig); DAQ-E-enheter er unntatt fordi de lagrer kalibreringen på selve enheten.
+Kalibrert opptak krever sensorens fabrikkalibreringspakke. For DAQ-U og DAQ-M henter backenden pakken fra MAPIRs sky basert på sensor-ID (opptak avslås hvis dette ikke er mulig); DAQ-E-enheter er unntatt fordi de lagrer kalibreringen på selve enheten.
 
 ## Opptak fra GUI
 
@@ -45,11 +39,7 @@ Filene skrives til `<project>/light_sensor/`, og når en opptak stopper — ente
 
 
 
-CLI
-
-tar opp via backendens sensorpool (backenden må være i gang – disse kommandoene er enkle HTTP
-
--klienter):
+CLI tar opp via backendens sensorpool (backenden må være i gang – disse kommandoene er enkle HTTP-klienter):
 
 ```bash
 # Connect the sensor into the backend pool
@@ -69,40 +59,22 @@ Hent verdien `--sensor-id` fra `chloros-cli daq pool-list`. To standardinnstilli
 | Alternativ | Standard |
 | --- | --- |
 | `--duration` | `0` — ta opp til `pool-record --stop` |
-| `--output` / `-o` | `~/Documents/DAQ Live View/` på **backendens** filsystem, ikke CLI
+| `--output` / `-o` | `~/Documents/DAQ Live View/` på **backendens** filsystem, ikke CLI-ens |
 
--ens |
-
-Skillet mellom utdatakataloger er viktig når CLI
-
--en retter seg mot en backend på en annen maskin: filen havner der backenden kjører. Når backenden befinner seg på samme datamaskin, blir en relativ `-o` (for eksempel `./out` ovenfor) løst i forhold til mappen der du kjørte kommandoen.
+Skillet mellom utdatakataloger er viktig når CLI-en retter seg mot en backend på en annen maskin: filen havner der backenden kjører. Når backenden befinner seg på samme datamaskin, blir en relativ `-o` (for eksempel `./out` ovenfor) løst i forhold til mappen der du kjørte kommandoen.
 
 ## Opptak fra Python
 
-`DAQSensorSession` (returneres av `chloros_sdk.connect_daq_sensor()`) viser det samme samlede opptaket: `record_start(output_dir=None, device_name=None)` returnerer filstien, `record_stop()` returnerer `{path, rows}`. Se [SDK
-
--referansen](../reference/sdk-reference.md) for det fullstendige sesjons-API
-
--et. SDK
-
--ets klasser for direkte maskinvare (kun for installasjoner på stasjonære datamaskiner) skriver opptak til `~/Documents/DAQ/` som standard; for utgitte versjoner er den samlede banen ovenfor den støttede ruten.
+`DAQSensorSession` (returneres av `chloros_sdk.connect_daq_sensor()`) viser det samme samlede opptaket: `record_start(output_dir=None, device_name=None)` returnerer filstien, `record_stop()` returnerer `{path, rows}`. Se [SDK-referansen](../reference/sdk-reference.md) for det fullstendige sesjons-API-et. SDK-ets klasser for direkte maskinvare (kun for installasjoner på stasjonære datamaskiner) skriver opptak til `~/Documents/DAQ/` som standard; for utgitte versjoner er den samlede banen ovenfor den støttede ruten.
 
 ## Bruk av en .daq-fil ved behandling
 
-For å beregne reflektans fra bildene trenger Chloros
-
-nedstrålende irradians som samsvarer med hver eksponering:
+For å beregne reflektans fra bildene trenger Chloros nedstrålende irradians som samsvarer med hver eksponering:
 
 * **Oppbevar `.daq` sammen med bildene.**Ved behandling beregner prosesskjeden automatisk**nedadrettet stråling med samsvarende tidsstempel** fra en innspilt `.daq` (hvilken som helst DAQ-modell) — eller fra en DAQ-M-spesifikk `.csv` — som ligger sammen med bildene. GUI-opptak oppfyller dette automatisk, siden de legges til i prosjektet så snart de stopper.
-* **Kalibrering hentes etter behov.** Hvis en fabrikkalibreringspakke per kamera eller per DAQ ikke allerede er lagret lokalt, henter Chloros
-
-den automatisk fra MAPIR
-
-s sky ved første bruk (krever internett én gang; lagres under `~/.chloros/`).
+* **Kalibrering hentes etter behov.** Hvis en fabrikkalibreringspakke per kamera eller per DAQ ikke allerede er lagret lokalt, henter Chloros den automatisk fra MAPIRs sky ved første bruk (krever internett én gang; lagres under `~/.chloros/`).
 * **Live-opptak skriver sin egen sidecar.** For alle reflektansbilder som er tatt live, lagres den faktisk brukte DAQ-avlesningen som en `.daq`-fil i opptakets `daq/`-mappe, slik at opptaket kan behandles på nytt senere uten den opprinnelige opptaket.
-* **Opptak fra `chloros_scripts`-opptakere (1.3.0).**En `.daq`-fil skrevet av de offentlige [`chloros_scripts`](https://github.com/mapircamera/chloros_scripts)-opptakerne er oppført som DAQ-modellen som produserte den, og dens grenseverdi kan angis i**Prosjektinnstillinger → DAQ-lyssensor**, akkurat som for alle andre opptak. Disse opptakerenhetene skriver ut rå sensortall; Chloros
-
-henter sensorens fabrikkalibrering via seriekoblingen og bruker den.
+* **Opptak fra `chloros_scripts`-opptakere (1.3.0).**En `.daq`-fil skrevet av de offentlige [`chloros_scripts`](https://github.com/mapircamera/chloros_scripts)-opptakerne er oppført som DAQ-modellen som produserte den, og dens grenseverdi kan angis i**Prosjektinnstillinger → DAQ-lyssensor**, akkurat som for alle andre opptak. Disse opptakerenhetene skriver ut rå sensortall; Chloros henter sensorens fabrikkalibrering via seriekoblingen og bruker den.
 * **Hvem målingen tilhører (1.3.0).**Ved siden av hver opptak `.daq` angir en `.daq.cameras.json` navnet på kameraet/kameraene som målingen beskriver, og behandlingen knytter den**kun til bilder fra disse kameraene**. Et frittstående kamera uten egen lyssensor låner derfor ikke lenger avlesningen fra et annet kamera – knytt en sensor til det, eller ta opp en selv. En opptak laget med selve DAQ-en (GUI Record, `daq pool-record`), og ethvert `.daq` uten den filen (inkludert eldre opptak), fungerer fortsatt for alle kameraer.
 
 ## Hente ut strålingsintensiteten igjen
@@ -111,9 +83,7 @@ Når et prosjekt behandles, eksporteres også alle lyssensoropptakene det inneho
 `Light Sensor/`-mappe ved siden av bildeproduktene. Dette krever **ikke** bilder: en
 lyssensoropptak for seg selv er et komplett opptak, og en mappe som kun inneholder `.daq`-
 filer er et gyldig inndata. Et prosjekt som kun inneholder lyssensoropptak, viser en liste over disse og
-behandles både fra appen og CLI
-
-, og de forblir oppført etter kjøringen. Kjøringen
+behandles både fra appen og CLI, og de forblir oppført etter kjøringen. Kjøringen
 rapporterer hvor mange lyssensorprodukter den har skrevet.
 
 | Produkt | Hva det er |
@@ -132,9 +102,7 @@ ingenting er lagret lokalt.
 **DAQ-A** er eldre enn systemet med kalibreringspakker per seriell port og har ingen pakke å
 hente. Dette er ikke en forglemmelse: en DAQ-A kalibreres i felten mot et
 refleksjonsmål, og målbasert kalibrering trenger bare sensorens *relative*
-respons – som er nøyaktig det råtellingsverdiene utgjør. Chloros
-
-kalibrerer med dem i dag.
+respons – som er nøyaktig det råtellingsverdiene utgjør. Chloros kalibrerer med dem i dag.
 
 Så en DAQ-A-opptak kan eksporteres, men under et annet navn:
 
@@ -153,12 +121,8 @@ betydning for reell irradians — total effekt, lux, PPFD — blir stående tomm
 beregnes ut fra tellinger.
 
 Eldre DAQ-A-SD-opptak (skjema v1.01 / v1.02) registrerer kun filens skrivetid, ikke et
-tidsstempel per avlesning. Chloros
-
-vil ikke sammenstille bilder med disse – å knytte et bilde til et
+tidsstempel per avlesning. Chloros vil ikke sammenstille bilder med disse – å knytte et bilde til et
 skrivetidspunkt ville være feil uten at det noensinne ville se feil ut – men eksporten leser dem uten problemer, og
-CSV
-
--filen angir hvilken klokke den er på.
+CSV-filen angir hvilken klokke den er på.
 
 For den fullstendige beskrivelsen av reflektans – én sensor med kamera og to sensorer for omgivelser/objekt – se [Reflektans-arbeidsflyter](reflectance.md).

@@ -66,7 +66,7 @@
 * [Dynamisk beregnings tilpasning](processing-architecture/dynamic-compute-adaptation.md)
 * [Behandlingsrørledning](processing-architecture/processing-pipeline.md)
 
-## Referanse (CLI &amp; SDK)
+## Referanse (CLI & SDK)
 
 * [Chloros CLI Referanse](reference/cli-reference.md)
 * [Chloros Python SDK Referanse](reference/sdk-reference.md)

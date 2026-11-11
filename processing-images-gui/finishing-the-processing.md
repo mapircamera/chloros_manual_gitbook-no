@@ -1,7 +1,6 @@
 # Fullføre behandlingen
 
-Når Chloros
-har fullført behandlingen, er det på tide å gjennomgå resultatene, kontrollere utskriftskvaliteten og gjøre de behandlede bildene klare til bruk i arbeidsflyten din. Denne siden veileder deg gjennom de siste trinnene og de neste handlingene.
+Når Chloros har fullført behandlingen, er det på tide å gjennomgå resultatene, kontrollere utskriftskvaliteten og gjøre de behandlede bildene klare til bruk i arbeidsflyten din. Denne siden veileder deg gjennom de siste trinnene og de neste handlingene.
 
 ## Indikasjon på fullført behandling
 
@@ -13,10 +12,7 @@ Når behandlingen er fullført, vil du se flere indikatorer:
 * ✅ **Utdatafiler**: Alle behandlede bilder er lagret i prosjektets utdatastruktur (nedenfor)
 
 {% hint style="warning" %}
-**En kjøring som ikke skriver ut noen bilder, regnes som en feil.** Hvis du har forespurt bildeprodukter og kjøringen ikke skrev noen, rapporterer Chloros
-dette som en feil — `[RUN-SUMMARY]` i loggnavnet antyder den sannsynlige årsaken (ingenting importert, ingen mål oppdaget, eller alle forespurte produkter hoppet over som uaktuelle). Tilsvarende CLI
--kommando avsluttes med en verdi ulik null. En bevisst kjøring med kun metadata (alle eksportprodukter deaktivert, ingen indekser) regnes fortsatt som vellykket. Se [CLI
--referansen](../reference/cli-reference.md#a-run-that-writes-no-images-fails).
+**En kjøring som ikke skriver ut noen bilder, regnes som en feil.** Hvis du har forespurt bildeprodukter og kjøringen ikke skrev noen, rapporterer Chloros dette som en feil — `[RUN-SUMMARY]` i loggnavnet antyder den sannsynlige årsaken (ingenting importert, ingen mål oppdaget, eller alle forespurte produkter hoppet over som uaktuelle). Tilsvarende CLI-kommando avsluttes med en verdi ulik null. En bevisst kjøring med kun metadata (alle eksportprodukter deaktivert, ingen indekser) regnes fortsatt som vellykket. Se [CLI-referansen](../reference/cli-reference.md#a-run-that-writes-no-images-fails).
 {% endhint %}
 
 ***
@@ -48,10 +44,8 @@ Produktene lagres **under prosjektmappen, gruppert etter kamera og deretter ette
         └── Radiance_Images/             # float32 radiance always lands here
 ```
 
-* **Kameramappe**: `LATT-<sensor>-<lens>-F<filter>` for LATTICE (samsvarer med opptakets EXIF-data: `Model`), `<model>_<filter>` for Survey3
-(f.eks. `Survey3N_RGN`). To kameraer som deler sensor og filter, men har forskjellige objektiver, har separate trær — vignettering, synsfelt og forvrengning varierer.
-* **Formatmappe**: følger innstillingen for eksportformat – `tiff16`, `tiff8`, `png8`, `jpg8`, eller `tiff32` for TIFF
-(32-bit, prosent). Radiance er alltid float32 og havner alltid under `tiff32`.
+* **Kameramappe**: `LATT-<sensor>-<lens>-F<filter>` for LATTICE (samsvarer med opptakets EXIF-data: `Model`), `<model>_<filter>` for Survey3 (f.eks. `Survey3N_RGN`). To kameraer som deler sensor og filter, men har forskjellige objektiver, har separate trær — vignettering, synsfelt og forvrengning varierer.
+* **Formatmappe**: følger innstillingen for eksportformat – `tiff16`, `tiff8`, `png8`, `jpg8`, eller `tiff32` for TIFF (32-bit, prosent). Radiance er alltid float32 og havner alltid under `tiff32`.
 * **Produktmapper**:
   * `Reflectance_Calibrated_Images/` — kalibrert reflektans
   * `Debayered_Images/` — lineær debayering (LATTICE): mørk offset fjernet og demosaicert, uten flatfelt eller unmix, i sensorens opprinnelige orientering
@@ -70,8 +64,7 @@ Produktene lagres **under prosjektmappen, gruppert etter kamera og deretter ette
 
 ### Hvor mange filer skal det være?
 
-Ikke regn etter en formel — antall utdata avhenger av hvilke produkter som var aktivert og hvilke som gjelder for hvert kamera (f.eks. får RGB
--kameraer ingen radianse/refleksjonsgrad). Det offisielle antallet finnes i loggen: den siste linjen `[RUN-SUMMARY]` angir nøyaktig hvor mange filer som ble skrevet, og hjelpelinjer forklarer alt som ble hoppet over.
+Ikke regn etter en formel — antall utdata avhenger av hvilke produkter som var aktivert og hvilke som gjelder for hvert kamera (f.eks. får RGB-kameraer ingen radianse/refleksjonsgrad). Det offisielle antallet finnes i loggen: den siste linjen `[RUN-SUMMARY]` angir nøyaktig hvor mange filer som ble skrevet, og hjelpelinjer forklarer alt som ble hoppet over.
 
 ***
 
@@ -79,32 +72,24 @@ Ikke regn etter en formel — antall utdata avhenger av hvilke produkter som var
 
 ### Rask forhåndsvisning i File Explorer
 
-**Innebygd forhåndsvisning i Windows
-:**
+**Innebygd forhåndsvisning i Windows:**
 
 1. Naviger til en produktmappe (f.eks. `tiff16/Reflectance_Calibrated_Images/`)
 2. Velg en bildefil
-3. Forhåndsvisningen vises i forhåndsvisningsruten i Windows
-Utforsker
+3. Forhåndsvisningen vises i forhåndsvisningsruten i Windows Utforsker
 4. Bruk piltastene til å bla gjennom bildene
 
 ### Forhåndsvisning i eksterne bildevisere
 
 **Anbefalte visere:*** **QGIS** – Gratis GIS-programvare (best egnet for georeferert multispektral analyse)
-* **IrfanView** – Rask, lettvektig bildeviser (støtter TIFF
-)
-* **Adobe Photoshop** – Profesjonell redigering (støtter TIFF
-)
+* **IrfanView** – Rask, lettvektig bildeviser (støtter TIFF)
+* **Adobe Photoshop** – Profesjonell redigering (støtter TIFF)
 * **GIMP** – Gratis alternativ til Photoshop
-* **Windows
--bilder** – Enkel visning (støtter kanskje ikke 16-bits TIFF
-)
+* **Windows-bilder** – Enkel visning (støtter kanskje ikke 16-bits TIFF)
 
-### Forhåndsvisning i Chloros
-’ bildeviser
+### Forhåndsvisning i Chloros’ bildeviser
 
-Bruk Chloros
-’ innebygde bildeviser for avansert visualisering:
+Bruk Chloros’ innebygde bildeviser for avansert visualisering:
 
 1. Klikk på et miniatyrbilde i filutvalget
 2. Bildet åpnes i hovedforhåndsvisningsområdet
@@ -123,9 +108,7 @@ Refleksjonsverdien lagres som et heltall (DN), og **den DN-verdien som tilsvarer
 | Kilde          | ρ = 1,0 er | Hvordan vite det                                        |
 | --------------- | ---------- | -------------------------------------------------- |
 | LATTICE (M3C/M3M) | **32768** (margin opp til ρ 2,0) | XMP-taggen `Chloros:PixelScale=32768` er merket på filen |
-| Survey3
-         | **65535** (avskåret ved ρ 1,0)     | Ingen `Chloros:PixelScale`-tag – fraværet er selve signalet (Survey3
--produkter har andre `Chloros:*`-behandlings-tagger) |
+| Survey3          | **65535** (avskåret ved ρ 1,0)     | Ingen `Chloros:PixelScale`-tag – fraværet er selve signalet (Survey3-produkter har andre `Chloros:*`-behandlings-tagger) |
 
 **Les `Chloros:PixelScale`-taggen og del med den** i stedet for å anta en fast verdi på 65535 — å dele LATTICE-reflektansen med 65535 halverer stille alle verdiene. En reflektansfil fra før versjon 1.3.0 som er skrevet som 8-bit, ble beskåret, ikke omskalert, og har ingen skalatag: eksporter den på nytt i 16-bit eller 32-bit i stedet for å dele den. Se [Utdataformater](../output-image-formats.md) for hele historien.***
 
@@ -153,15 +136,11 @@ av dem ødelegger LATTICE-utdataene), og `ExifImageWidth` / `ExifImageHeight` er
 fordi de beskriver den opprinnelige opptaket — en eksport som har blitt endret i størrelse, ville ellers
 angitt dimensjoner som står i strid med rasteret.
 
-Chloros
-skriver også sine egne `Chloros:*` XMP-tagger som beskriver hva som ble gjort med hvert produkt
+Chloros skriver også sine egne `Chloros:*` XMP-tagger som beskriver hva som ble gjort med hvert produkt
 (for eksempel `Chloros:ProcessingLevel`, `Chloros:CalibrationApplied`,
-`Chloros:VignetteCorrected`). Fra og med versjon 1.3.0 inneholder Survey3
--produkter disse i alle behandlingsmoduser
-, indeksprodukter beskriver selve indeksen (`Chloros:ProcessingLevel=index`,
+`Chloros:VignetteCorrected`). Fra og med versjon 1.3.0 inneholder Survey3-produkter disse i alle behandlingsmoduser, indeksprodukter beskriver selve indeksen (`Chloros:ProcessingLevel=index`,
 formelen og om den ble beregnet ut fra reflektans eller radianse) i stedet for å gjenta
-kildedataenes tagger, og produkter i mapper dypere enn 260 tegn beholder også sine metadata
-. Se [Utdataformater](../output-image-formats.md#index-products).
+kildedataenes tagger, og produkter i mapper dypere enn 260 tegn beholder også sine metadata. Se [Utdataformater](../output-image-formats.md#index-products).
 
 ***
 
@@ -174,22 +153,18 @@ kildedataenes tagger, og produkter i mapper dypere enn 260 tegn beholder også s
 2. Bla gjennom meldingene
 3. Se etter gule advarsler eller røde feil
 4. Les linjene med `[RUN-SUMMARY]` og eventuelle tips
-5. Kontakt MAPIR
--support for hjelp
+5. Kontakt MAPIR-support for hjelp
 
 ### Lagre loggen
 
-For å beholde en oversikt over behandlingen eller for å sende den til MAPIR
--support:
+For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-support:
 
 1. Klikk på **«Kopier»**- eller**«Last ned»**-knappen
 2. Lagre som tekstfil i prosjektmappen
 3. Legg den ved prosjektdokumentasjonen
-4. Send til MAPIR
--support hvis det oppstår problemer
+4. Send til MAPIR-support hvis det oppstår problemer
 
-For å sende et problem direkte til MAPIR
-, bruk feilikonet (**Rapporter en feil**) øverst på fanen «Debug Log» — se [Rapportere en feil fra loggfanen](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
+For å sende et problem direkte til MAPIR, bruk feilikonet (**Rapporter en feil**) øverst på fanen «Debug Log» — se [Rapportere en feil fra loggfanen](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
 
 ## Vanlige utdataproblemer og løsninger
 
@@ -197,8 +172,7 @@ For å sende et problem direkte til MAPIR
 
 **Mulige årsaker:**
 
-* Produktet gjelder ikke for det aktuelle kameraet (f.eks. radianse/reflektans for RGB
--kameraer — dette fremgår av loggen)
+* Produktet gjelder ikke for det aktuelle kameraet (f.eks. radianse/reflektans for RGB-kameraer — dette fremgår av loggen)
 * En nødvendig referanse manglet (f.eks. reflektans uten mål og uten `.daq` nedadgående stråling)
 * Avmerkingsboksen for eksport av produktet var deaktivert i prosjektinnstillingene
 * Det ble tomt for diskplass under eksporten
@@ -215,16 +189,14 @@ For å sende et problem direkte til MAPIR
 **Mulige årsaker:**
 
 * Vignettkorrigering deaktivert
-* Kamera/objektiv finnes ikke i Chloros
--profildatabasen
+* Kamera/objektiv finnes ikke i Chloros-profildatabasen
 * Ekstrem vignettering som overstiger korrigeringskapasiteten
 
 **Løsninger:**
 
 1. Kontroller at vignettkorrigering var aktivert i Prosjektinnstillinger
 2. Kontroller at kameramodellen er riktig gjenkjent
-3. Kontakt MAPIR
--support hvis vignetteringen vedvarer
+3. Kontakt MAPIR-support hvis vignetteringen vedvarer
 
 ### Problem: Feil farger eller verdier
 
@@ -242,11 +214,9 @@ For å sende et problem direkte til MAPIR
 3. Gjennomgå kvaliteten på målbildene
 4. Kjør prosessen på nytt med riktige mål merket
 
-### Problem: NDVI
--verdiene ser ut til å være feil
+### Problem: NDVI-verdiene ser ut til å være feil
 
-**Forventede NDVI
--verdier:*** **Vann, stein, jord**: -0,1 til 0,2
+**Forventede NDVI-verdier:*** **Vann, stein, jord**: -0,1 til 0,2
 * **Sparsom/usunn vegetasjon**: 0,2 til 0,4
 * **Moderat vegetasjon**: 0,4 til 0,6
 * **Sunn, tett vegetasjon**: 0,6 til 0,9**Hvis verdiene ligger utenfor disse områdene:**
@@ -273,8 +243,7 @@ For å sende et problem direkte til MAPIR
    * WebODM
 2. **Behold EXIF-metadata**: Sørg for at GPS-data bevares for geotagging
 3. **Kalibrerte arbeidsflyter**: Bruk reflektansbilder for vitenskapelig nøyaktighet — LATTICE-reflektans inneholder XMP-kalibreringskoder som Pix4D leser
-4. **Behandle indeksmosaikker**: Lag NDVI
--ortomosaikker fra individuelle indeksbilder
+4. **Behandle indeksmosaikker**: Lag NDVI-ortomosaikker fra individuelle indeksbilder
 5. **Eksporter georeferert GeoTIFF**: For bruk i GIS-applikasjoner
 
 ### For GIS-analyse
@@ -283,11 +252,8 @@ For å sende et problem direkte til MAPIR
 
 1.**Last inn i QGIS, ArcGIS eller lignende**
 
-2.**Bruk 16-bits TIFF
-**-refleksjonsbilder for flerbåndsanalyse (del med filens `Chloros:PixelScale`)
-3. **Bruk indeksbilder** (NDVI
-, NDRE
-) som bruksklare vegetasjonslag
+2.**Bruk 16-bits TIFF**-refleksjonsbilder for flerbåndsanalyse (del med filens `Chloros:PixelScale`)
+3. **Bruk indeksbilder** (NDVI, NDRE) som bruksklare vegetasjonslag
 4. **Rasterkalkulator**: Kombiner bånd for tilpasset analyse
 5. **Eksporter**: Lag klassifiseringskart, endringsdeteksjon, kart over vegetasjonens helse
 
@@ -296,8 +262,7 @@ For å sende et problem direkte til MAPIR
 **Anbefalt arbeidsflyt:**
 
 1.**Bruk indeksbilder med LUT-farger** til visuelle rapporter
-2. **Hent ut statistikk**: Gjennomsnittlig NDVI
-per felt/tomt
+2. **Hent ut statistikk**: Gjennomsnittlig NDVI per felt/tomt
 3. **Tidsserier**: Sammenlign indekser på tvers av flere måleomganger
 4. **Generer rapporter**: Inkluder kart, statistikk og visualiseringer***
 
@@ -334,27 +299,17 @@ For flere økter/datasett:**Alternativ 1: GUI – Flere prosjekter**
 * Bruk konsistente malinnstillinger
 * Behandle ett om gangen
 
-**Alternativ 2: Chloros
-CLI
-(kun Chloros
-+)**
+**Alternativ 2: Chloros CLI (kun Chloros+)**
 
 * Automatiser batchbehandling
 * Behandle flere mapper med skript
-* Se [CLI
--dokumentasjon](../CLI.md) og [CLI
--referanse](../reference/cli-reference.md)
+* Se [CLI-dokumentasjon](../CLI.md) og [CLI-referanse](../reference/cli-reference.md)
 
-**Alternativ 3: Python
-SDK
-(kun Chloros
-+)**
+**Alternativ 3: Python SDK (kun Chloros+)**
 
 * Programmatisk kontroll
 * Integrasjon med analysepipelines
-* Se [API
--dokumentasjon](../api-python-sdk.md) og [SDK
--referanse](../reference/sdk-reference.md)
+* Se [API-dokumentasjon](../api-python-sdk.md) og [SDK-referanse](../reference/sdk-reference.md)
 
 ***
 
@@ -385,15 +340,13 @@ Hvis du støter på problemer:
 * 📧 **E-post**: info@mapir.camera (legg ved feillogg)
 * 🌐 **Support**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **FAQ**: [Ofte stilte spørsmål](../faq.md)
-* 📖 **Dokumentasjon**: [Chloros
--håndbok](../)
+* 📖 **Dokumentasjon**: [Chloros-håndbok](../)
 
 ***
 
 ## Oppsummering: Fullstendig arbeidsflyt
 
-Du har nå fullført hele Chloros
--behandlingsarbeidsflyten:
+Du har nå fullført hele Chloros-behandlingsarbeidsflyten:
 
 1. ✅ **Opprettet prosjekt** – Se [Prosjekter](../projects.md)
 2. ✅ **Lagt til filer** – Se [Legge til filer](adding-files-to-a-project.md)
@@ -416,11 +369,8 @@ Du har nå fullført hele Chloros
 ### Automatisering og integrasjon
 
 * [**Dokumentasjon for CLI**](../CLI.md) – Batchbehandling via kommandolinjen
-* [**Python
-SDK
-**](../api-python-sdk.md) – Programmatisk automatisering
-* [**Funksjoner i Chloros
-+**](../#chloros) – Avanserte behandlingsfunksjoner
+* [**Python SDK**](../api-python-sdk.md) – Programmatisk automatisering
+* [**Funksjoner i Chloros+**](../#chloros) – Avanserte behandlingsfunksjoner
 
 ### Støtte og opplæring
 

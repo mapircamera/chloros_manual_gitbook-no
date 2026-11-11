@@ -82,7 +82,7 @@ Hvert bilde med GPS-data får en markør på sine koordinater.
 
 Velg kartlagstype med knappene (fra venstre til høyre):
 
-![](&lt;../.gitbook/assets/image (14).png&gt;)
+![](<../.gitbook/assets/image (14).png>)
 
 | Type                 | Viser                                                                |
 | -------------------- | -------------------------------------------------------------------- |

@@ -6,8 +6,7 @@ metaLinks:
 
 # Last ned
 
-Last ned den nyeste versjonen av Chloros
-for å komme i gang med multispektral bildebehandling.
+Last ned den nyeste versjonen av Chloros for å komme i gang med multispektral bildebehandling.
 
 ### Systemkrav
 
@@ -16,20 +15,15 @@ for å komme i gang med multispektral bildebehandling.
 
 | Krav          | Minimum                                              | Anbefalt                                          |
 | -------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| **Operativsystem** | Windows
-10 (64-bit)                                  | Windows
-11 (64-bit)                                  |
+| **Operativsystem** | Windows 10 (64-bit)                                  | Windows 11 (64-bit)                                  |
 | **Prosessor**        | Intel Core i5 eller tilsvarende                          | Intel Core i7 eller bedre                              |
 | **Minne (RAM)**     | 8 GB                                                  | 16 GB eller mer                                         |
 | **Grafikkort**    | Kompatibelt med DirectX 11                                | NVIDIA-GPU med 4 GB eller mer VRAM                            |
 | **Lagringsplass**          | 6 GB ledig plass                                       | SSD med 10 GB eller mer ledig plass                            |
 | **Skjerm**          | 1920x1080                                            | 2560x1440 eller høyere                                  |
-| **Internett**         | Nødvendig for \[valgfri] aktivering av Chloros
-+-lisens | Nødvendig for \[valgfri] aktivering av Chloros
-+-lisens |
+| **Internett**         | Nødvendig for \[valgfri] aktivering av Chloros+-lisens | Nødvendig for \[valgfri] aktivering av Chloros+-lisens |
 
-#### Linux
-amd64 (x86\_64)
+#### Linux amd64 (x86\_64)
 
 | Krav       | Minimum                    | Anbefalt               |
 | ----------------- | -------------------------- | ------------------------- |
@@ -38,30 +32,19 @@ amd64 (x86\_64)
 | **Minne (RAM)**  | 8 GB                        | 16 GB eller mer              |
 | **Grafikkort** | Ingen (behandles av CPU)      | NVIDIA-GPU med 4 GB+ VRAM |
 | **Lagringsplass**       | 2 GB ledig plass             | SSD med 10 GB+ ledig       |
-| **Python**        | Python
-3.7+ (for SDK
-)      | Python
-3.10+              |
+| **Python**        | Python 3.7+ (for SDK)      | Python 3.10+              |
 
-#### Linux
-arm64 (NVIDIA Jetson)
+#### Linux arm64 (NVIDIA Jetson)
 
 | Krav      | Minimum                      | Anbefalt                     |
 | ---------------- | ---------------------------- | ------------------------------- |
 | **Plattform**     | NVIDIA Jetson med JetPack 6 | Jetson Orin NX 16 GB eller AGX Orin |
 | **Minne (RAM)** | 8 GB (delt GPU/CPU)         | 16 GB+ delt                    |
 | **Lagringsplass**      | 2 GB ledig plass               | NVMe SSD med 10 GB+ ledig        |
-| **Python**       | Python
-3.7+ (for SDK
-)        | Python
-3.10+                    |
+| **Python**       | Python 3.7+ (for SDK)        | Python 3.10+                    |
 
 {% hint style="info" %}
-**GPU-akselerasjon**: Chloros
-+-brukere med NVIDIA-GPU-er kan bruke CUDA-akselerasjon for betydelig raskere behandling. Dette fungerer med NVIDIA-GPU-er for stasjonære datamaskiner på Windows
-og Linux
-amd64, samt på NVIDIA Jetson med JetPack 6. Chloros
-+-brukere får også flertrådet behandling for maksimal hastighet.
+**GPU-akselerasjon**: Chloros+-brukere med NVIDIA-GPU-er kan bruke CUDA-akselerasjon for betydelig raskere behandling. Dette fungerer med NVIDIA-GPU-er for stasjonære datamaskiner på Windows og Linux amd64, samt på NVIDIA Jetson med JetPack 6. Chloros+-brukere får også flertrådet behandling for maksimal hastighet.
 {% endhint %}
 
 ***
@@ -80,12 +63,9 @@ amd64, samt på NVIDIA Jetson med JetPack 6. Chloros
 ### <a href="https://drive.google.com/uc?export=download&#x26;id=1d1OwdcYA4Rf4jkuPi2IBeWT2772_HnyO" class="button primary">Last ned Chloros for Linux arm64 / Jetson (.deb)</a>
 
 
-#### Windows
--installasjonsprogram (GUI + CLI
-+ Backend)
+#### Windows-installasjonsprogram (GUI + CLI + Backend)
 
-* **Filtype**: .exe (Windows
--installasjonsprogram)
+* **Filtype**: .exe (Windows-installasjonsprogram)
 
 **Installasjonsfremgangsmåte:**
 
@@ -94,37 +74,23 @@ amd64, samt på NVIDIA Jetson med JetPack 6. Chloros
 3. Følg instruksjonene i installasjonsveiviseren
 4. Velg installasjonskatalog (standard: `C:\Program Files\Chloros\`)
 5. På siden **Velg tilleggsoppgaver**må du la begge alternativene under**Systeminnstillinger** være merket av (anbefalt – se nedenfor)
-6. Fullfør installasjonen og start Chloros
-eller Chloros
-CLI
-7. Logg inn med din [MAPIR
-Cloud Chloros
-+-konto](https://cloud.mapir.camera/pricing) (eller fortsett med gratisversjonen)
+6. Fullfør installasjonen og start Chloros eller Chloros CLI
+7. Logg inn med din [MAPIR Cloud Chloros+-konto](https://cloud.mapir.camera/pricing) (eller fortsett med gratisversjonen)
 
 **Alternativer for systeminnstillinger** (begge merket av som standard):
 
 | Alternativ, slik det er formulert i installasjonsprogrammet | Hva det gjør | Mulighet for å velge bort stille installasjon |
 | --- | --- | --- |
-| **Aktiver lange stier i Windows** (lar prosjektmapper ligge dypere enn 260 tegn; anbefalt) | Setter Windows
-’ systemomfattende innstilling `LongPathsEnabled` til 1. Windows
-leveres med denne innstillingen deaktivert, og da kan ingen filstier være lengre enn 260 tegn; Chloros
--produkter ligger opptil ca. 130 tegn under prosjektmappen, så når lange stier er deaktivert, avslås en dypere prosjektmappe. Trer i kraft for programmer som startes etter installasjonen. Innstillingen forblir aktiv etter avinstallering, da andre programmer kan være avhengige av den. | `/MERGETASKS="!longpaths"` |
-| **Ekskluder Chloros
--backenden fra Microsoft Defender-skanning** (mye raskere kameraopptak; anbefalt) | Legger til et unntak for Microsoft Defender-prosessen for `chloros-backend.exe` i installasjonsmappen, slik at sanntidsbeskyttelsen ikke skanner hver eneste fil som backenden skriver, uansett hvor den skriver den. Ved høye opptakshastigheter utgjør skanningen omtrent 30 % av opptakshastigheten (77,7 mot 52,7 opptak per sekund ved kontinuerlig opptak med 9 kameraer). Ingen andre programmer ekskluderes, og unntaket fjernes ved avinstallering. Der Defender mangler eller er låst av retningslinjer, mislykkes dette trinnet uten melding, og installasjonen fortsetter. | `/MERGETASKS="!defenderexclusion"` |
+| **Aktiver lange stier i Windows** (lar prosjektmapper ligge dypere enn 260 tegn; anbefalt) | Setter Windows’ systemomfattende innstilling `LongPathsEnabled` til 1. Windows leveres med denne innstillingen deaktivert, og da kan ingen filstier være lengre enn 260 tegn; Chloros-produkter ligger opptil ca. 130 tegn under prosjektmappen, så når lange stier er deaktivert, avslås en dypere prosjektmappe. Trer i kraft for programmer som startes etter installasjonen. Innstillingen forblir aktiv etter avinstallering, da andre programmer kan være avhengige av den. | `/MERGETASKS="!longpaths"` |
+| **Ekskluder Chloros-backenden fra Microsoft Defender-skanning** (mye raskere kameraopptak; anbefalt) | Legger til et unntak for Microsoft Defender-prosessen for `chloros-backend.exe` i installasjonsmappen, slik at sanntidsbeskyttelsen ikke skanner hver eneste fil som backenden skriver, uansett hvor den skriver den. Ved høye opptakshastigheter utgjør skanningen omtrent 30 % av opptakshastigheten (77,7 mot 52,7 opptak per sekund ved kontinuerlig opptak med 9 kameraer). Ingen andre programmer ekskluderes, og unntaket fjernes ved avinstallering. Der Defender mangler eller er låst av retningslinjer, mislykkes dette trinnet uten melding, og installasjonen fortsetter. | `/MERGETASKS="!defenderexclusion"` |
 
 En stille installasjon (`/SILENT` eller `/VERYSILENT`) bruker begge alternativene, med mindre du velger bort det med verdien `/MERGETASKS` som vises.
 
 {% hint style="success" %}
-Installasjonsprogrammet legger til CLI
--mappen (`C:\Program Files\Chloros\cli\`) på systemet ditt `PATH` én gang — ved reinstallering eller oppgradering legges det ikke lenger til en duplikatoppføring, og duplikater som tidligere installasjonsprogrammer har lagt til, fjernes. Åpne en ny terminal etter installasjonen for å bruke `chloros-cli`. Installasjonsprogrammet legger også til to Windows
--brannmurregler for backenden, på hver nettverksprofil: **Chloros
-Backend (UDP-In)**, for kamerastrømmer, PTP, mDNS og DAQ-E-datastrømmen, og**Chloros
-Backend (TCP-In)**, begrenset til det lokale undernettet, for en DAQ-E-firmwareoppdatering, der sensoren kobler seg tilbake til denne datamaskinen for å hente bildet. Begge fjernes ved avinstallering.
+Installasjonsprogrammet legger til CLI-mappen (`C:\Program Files\Chloros\cli\`) på systemet ditt `PATH` én gang — ved reinstallering eller oppgradering legges det ikke lenger til en duplikatoppføring, og duplikater som tidligere installasjonsprogrammer har lagt til, fjernes. Åpne en ny terminal etter installasjonen for å bruke `chloros-cli`. Installasjonsprogrammet legger også til to Windows-brannmurregler for backenden, på hver nettverksprofil: **Chloros Backend (UDP-In)**, for kamerastrømmer, PTP, mDNS og DAQ-E-datastrømmen, og**Chloros Backend (TCP-In)**, begrenset til det lokale undernettet, for en DAQ-E-firmwareoppdatering, der sensoren kobler seg tilbake til denne datamaskinen for å hente bildet. Begge fjernes ved avinstallering.
 {% endhint %}
 
-#### Linux
-amd64 (.deb-pakke — CLI
-+ backend)
+#### Linux amd64 (.deb-pakke — CLI + backend)
 
 * **Filtype**: .deb (Debian/Ubuntu-pakke)
 * **Arkitektur**: x86_64 (amd64)
@@ -134,9 +100,7 @@ sudo apt install ./chloros_1.3.0_amd64.deb
 chloros-cli --version     # Verify installation: "Chloros CLI 1.3.0"
 ```
 
-#### Linux
-arm64 — NVIDIA Jetson (.deb-pakke — CLI
-+ backend)
+#### Linux arm64 — NVIDIA Jetson (.deb-pakke — CLI + backend)
 
 * **Filtype**: .deb (JetPack 6)
 * **Arkitektur**: aarch64 (arm64)
@@ -146,160 +110,84 @@ sudo apt install ./chloros_1.3.0_arm64_jp6.deb
 chloros-cli --version     # Verify installation: "Chloros CLI 1.3.0"
 ```
 
-Bruk det filnavnet du faktisk lastet ned, og behold `./` slik at `apt` installerer den filen i stedet for å lete etter en pakke etter navn. Installer med `apt install`, ikke `dpkg -i`: apt installerer også kravene til Python
--SDK
-, som pakken anbefaler snarere enn krever, og `dpkg -i` hopper over dem. Siden versjon 1.3.0 installeres backend og CLI
-, utpakket, under `/usr/lib/chloros/`, slik at de starter uten å måtte pakke seg ut først.
+Bruk det filnavnet du faktisk lastet ned, og behold `./` slik at `apt` installerer den filen i stedet for å lete etter en pakke etter navn. Installer med `apt install`, ikke `dpkg -i`: apt installerer også kravene til Python-SDK, som pakken anbefaler snarere enn krever, og `dpkg -i` hopper over dem. Siden versjon 1.3.0 installeres backend og CLI, utpakket, under `/usr/lib/chloros/`, slik at de starter uten å måtte pakke seg ut først.
 
 Jetson-pakken bruker JetPack 6s CUDA-versjon av PyTorch, så processing, inkludert Texture Aware-debayeren, kjører på Jetsons GPU. Den bruker CUDA- og cuDNN-bibliotekene som JetPack 6 installerer (`sudo apt install nvidia-jetpack` på et bilde som mangler dem).
 
-Se [Linux
--installasjon](linux/linux-installation.md) for detaljerte konfigurasjonsinstruksjoner og [NVIDIA Jetson-veiledning](linux/nvidia-jetson-guide.md) for Jetson-spesifikk veiledning.
+Se [Linux-installasjon](linux/linux-installation.md) for detaljerte konfigurasjonsinstruksjoner og [NVIDIA Jetson-veiledning](linux/nvidia-jetson-guide.md) for Jetson-spesifikk veiledning.
 
-#### Python
-SDK
-(alle plattformer)
+#### Python SDK (alle plattformer)
 
-Hvert installasjonsprogram inneholder et tilhørende `chloros_sdk`-wheel, slik at SDK
--versjonen alltid samsvarer med den installerte GUI/CLI
-/backend. På Windows
-installerer installasjonsprogrammet det automatisk i systemets Python
-. På Linux
-installerer `.deb` SDK
--en for selve systemet `python3` (i `/usr/lib/python3/dist-packages`), slik at `import chloros_sdk` fungerer umiddelbart etter installasjonen, uten pip og uten nettverk. Kun en virtualenv, som ikke har tilgang til systemets pakker, trenger den medfølgende wheel-filen installert i seg:
+Hvert installasjonsprogram inneholder et tilhørende `chloros_sdk`-wheel, slik at SDK-versjonen alltid samsvarer med den installerte GUI/CLI/backend. På Windows installerer installasjonsprogrammet det automatisk i systemets Python. På Linux installerer `.deb` SDK-en for selve systemet `python3` (i `/usr/lib/python3/dist-packages`), slik at `import chloros_sdk` fungerer umiddelbart etter installasjonen, uten pip og uten nettverk. Kun en virtualenv, som ikke har tilgang til systemets pakker, trenger den medfølgende wheel-filen installert i seg:
 
 ```bash
 pip install /usr/lib/chloros/sdk/chloros_sdk-*.whl
 ```
 
-For verter som kun bruker pip (ingen Chloros
--pakke installert; SDK
-driver da en backend på en annen maskin), finnes SDK
-også på PyPI:
+For verter som kun bruker pip (ingen Chloros-pakke installert; SDK driver da en backend på en annen maskin), finnes SDK også på PyPI:
 
 ```bash
 pip install chloros-sdk
 ```
 
-Se [API
-: Python
-SDK
-](api-python-sdk.md) og [SDK
--referansen](reference/sdk-reference.md) for dokumentasjon.
+Se [API: Python SDK](api-python-sdk.md) og [SDK-referansen](reference/sdk-reference.md) for dokumentasjon.
 
 {% hint style="info" %}
-**Linux
--brukere**: Pakken `.deb` installerer CLI
-, backend og Python
--SDK
-. Det finnes ingen grafisk brukergrensesnitt for Linux
-– all interaksjon skjer via CLI
-eller SDK
-.
+**Linux-brukere**: Pakken `.deb` installerer CLI, backend og Python-SDK. Det finnes ingen grafisk brukergrensesnitt for Linux – all interaksjon skjer via CLI eller SDK.
 {% endhint %}
 
 ***
 
 ## Ytterligere ressurser
 
-### Python
--SDK
+### Python-SDK
 
 
-For utviklere og automatiseringsarbeidsflyter følger Chloros
--Python
--SDK
-med alle installasjonsprogrammene: Windows
--installasjonsprogrammet installerer det i din Python
-, og Linux
--pakken `.deb` installerer det for systemet `python3`. På en maskin uten Chloros
--pakke (en som driver en backend på en annen maskin), installerer du den fra PyPI:
+For utviklere og automatiseringsarbeidsflyter følger Chloros-Python-SDK med alle installasjonsprogrammene: Windows-installasjonsprogrammet installerer det i din Python, og Linux-pakken `.deb` installerer det for systemet `python3`. På en maskin uten Chloros-pakke (en som driver en backend på en annen maskin), installerer du den fra PyPI:
 
 ```bash
 pip install chloros-sdk
 ```
 
-**Dokumentasjon**: [API
-: Python
-SDK
-](api-python-sdk.md)
+**Dokumentasjon**: [API: Python SDK](api-python-sdk.md)
 
-**Krav**: en Chloros
--backend å kjøre (Windows
--installasjonsprogrammet eller Linux
--pakken `.deb` installerer en), og en Chloros
-+-pålogging på et betalt nivå
+**Krav**: en Chloros-backend å kjøre (Windows-installasjonsprogrammet eller Linux-pakken `.deb` installerer en), og en Chloros+-pålogging på et betalt nivå
 
 ***
 
 ## Hva er inkludert
 
-### Windows
--installasjonsprogram
+### Windows-installasjonsprogram
 
-* ✅ **Chloros
-GUI** – Grafisk brukergrensesnitt med full funksjonalitet
-* ✅ **Chloros
-CLI
-** – Kommandolinjegrensesnitt (krever Chloros
-+-lisens)
-* ✅ **Chloros
--backend** – Behandlingsmotor
-* ✅ **Python
-SDK
-** – installeres i Python
-hvis dette finnes (krever Chloros
-+-lisens)
-* ✅ **Kameraprofiler** – forhåndskonfigurerte MAPIR
--kameramaler
+* ✅ **Chloros GUI** – Grafisk brukergrensesnitt med full funksjonalitet
+* ✅ **Chloros CLI** – Kommandolinjegrensesnitt (krever Chloros+-lisens)
+* ✅ **Chloros-backend** – Behandlingsmotor
+* ✅ **Python SDK** – installeres i Python hvis dette finnes (krever Chloros+-lisens)
+* ✅ **Kameraprofiler** – forhåndskonfigurerte MAPIR-kameramaler
 
-### Linux
-.deb-pakke
+### Linux.deb-pakke
 
-* ✅ **Chloros
-CLI
-** – Kommandolinjegrensesnitt (krever Chloros
-+-lisens)
-* ✅ **Chloros
-Backend** – Behandlingsmotor
-* ✅ **Python
-SDK
-** – installert for systemet `python3` (krever Chloros
-+-lisens)
-* ✅ **Kameraprofiler** – Forhåndskonfigurerte MAPIR
--kameramaler
-* ❌ Ingen grafisk brukergrensesnitt — Linux
-er kun «headless» CLI
-/SDK
+* ✅ **Chloros CLI** – Kommandolinjegrensesnitt (krever Chloros+-lisens)
+* ✅ **Chloros Backend** – Behandlingsmotor
+* ✅ **Python SDK** – installert for systemet `python3` (krever Chloros+-lisens)
+* ✅ **Kameraprofiler** – Forhåndskonfigurerte MAPIR-kameramaler
+* ❌ Ingen grafisk brukergrensesnitt — Linux er kun «headless» CLI/SDK
 
 
-### Python
--SDK
-(PyPI, for maskiner uten Chloros
--pakke)
+### Python-SDK (PyPI, for maskiner uten Chloros-pakke)
 
-* ✅ **Chloros
--SDK
-** – Python
--API
-(krever Chloros
-+-lisens)
+* ✅ **Chloros-SDK** – Python-API (krever Chloros+-lisens)
 
 ***
 
-## Oppgrader til Chloros
-+
+## Oppgrader til Chloros+
 
-Få tilgang til avanserte funksjoner med et Chloros
-+-abonnement:
+Få tilgang til avanserte funksjoner med et Chloros+-abonnement:
 
 * 🚀 **Flertrådet behandling** – Behandle bilder parallelt
 * ⚡ **GPU (CUDA)-akselerasjon** - Utnytt kraften i NVIDIA-GPU-er
 * 💻 **Tilgang via CLI** – Automatiser med kommandolinjeverktøy
-* 🐍 **Python
-SDK
-** – Programmatisk API
--tilgang
+* 🐍 **Python SDK** – Programmatisk API-tilgang
 * 📱 **Flere enheter** – Bruk på 2–10+ enheter (avhengig av abonnement)
 * **🐻 Avansert teksturbevisst debayer-metode** – en høykvalitets, kantbevisst debayer kombinert med en AI/ML-støyreduksjonsmodell som fjerner nesten all debayer-støy.
 * 🧮 **Egendefinerte formler** – Lag egendefinerte multispektrale indekser
@@ -316,24 +204,14 @@ SDK
 * Deaktiver antivirusprogrammet midlertidig
 * Sjekk at du oppfyller minimumskravene til systemet
 
-**Programmet starter ikke (Windows
+**Programmet starter ikke (Windows):**
 
-):**
-
-* Kontroller at Windows
-
-10/11 (64-bit) er installert
+* Kontroller at Windows 10/11 (64-bit) er installert
 * Oppdater grafikkdriverne
-* Sjekk Windows
-
-Hendelsesvisning for feildetaljer
+* Sjekk Windows Hendelsesvisning for feildetaljer
 * Kontakt support med feillogger
 
-**CLI
-
-starter ikke (Linux
-
-):**
+**CLI starter ikke (Linux):**
 
 * Kontroller at `.deb`-pakken er riktig installert: `dpkg -l | grep chloros`
 * Sjekk tilgangsrettigheter: `sudo chmod +x /usr/bin/chloros-cli`
@@ -346,9 +224,7 @@ starter ikke (Linux
 * Bekreft påloggingsopplysningene på [https://cloud.mapir.camera](https://cloud.mapir.camera)
 * Sjekk at brannmuren ikke blokkerer Chloros
 
-* Se [Chloros
-
-+ Innlogging](chloros+-login.md) for detaljerte instruksjoner
+* Se [Chloros+ Innlogging](chloros+-login.md) for detaljerte instruksjoner
 
 ### Få støtte
 
@@ -361,21 +237,13 @@ Trenger du hjelp med installasjon eller oppsett?
 
 ## Programvareoppdateringer
 
-Chloros
-
-søker etter oppdateringer, varsler når en ny versjon er tilgjengelig og lenker til denne nedlastingssiden — du oppdaterer ved å kjøre det nye signerte installasjonsprogrammet. Innstillingene, prosjektene og påloggingsopplysningene dine beholdes etter oppdateringer. På Linux
-
-og Jetson søker `chloros-cli update` etter en nyere versjon og tilbyr å laste ned og installere den tilsvarende `.deb` (denne kommandoen er kun tilgjengelig på Linux
-
-).
+Chloros søker etter oppdateringer, varsler når en ny versjon er tilgjengelig og lenker til denne nedlastingssiden — du oppdaterer ved å kjøre det nye signerte installasjonsprogrammet. Innstillingene, prosjektene og påloggingsopplysningene dine beholdes etter oppdateringer. På Linux og Jetson søker `chloros-cli update` etter en nyere versjon og tilbyr å laste ned og installere den tilsvarende `.deb` (denne kommandoen er kun tilgjengelig på Linux).
 
 ***
 
 ## Endringslogg**Versjon 1.3.0 (Siste, 11. november 2026)**— se**Hva er nytt i Chloros
 
-1.3.0** på siden [Kom i gang](./) for den fullstendige listen.**Versjon 1.2.0**— se**Hva er nytt i Chloros
-
-1.2.0** på siden [Kom i gang](./).
+1.3.0** på siden [Kom i gang](./) for den fullstendige listen.**Versjon 1.2.0**— se**Hva er nytt i Chloros 1.2.0** på siden [Kom i gang](./).
 
 <details>
 
@@ -383,16 +251,10 @@ og Jetson søker `chloros-cli update` etter en nyere versjon og tilbyr å laste 
 
 **Utgivelsesdato: 10. februar 2026**
 
-**Nye funksjoner*** **Teksturbevisst debayer-metode \[Kun Chloros
+**Nye funksjoner*** **Teksturbevisst debayer-metode \[Kun Chloros+] -** Teksturbevisst bruker en kantbevisst debayer av høy kvalitet kombinert med en AI/ML-støyreduksjonsmodell som fjerner nesten all debayer-støy.
+* **Støtte for T4P-kalibreringsmål*** **Raskere Chloros+ GPU-behandling, bedre minnestyring**
 
-+] -** Teksturbevisst bruker en kantbevisst debayer av høy kvalitet kombinert med en AI/ML-støyreduksjonsmodell som fjerner nesten all debayer-støy.
-* **Støtte for T4P-kalibreringsmål*** **Raskere Chloros
-
-+ GPU-behandling, bedre minnestyring**
-
-**Feilrettinger*** Helt nytt brukergrensesnitt (GUI), bør nå fungere på alle Windows
-
--datamaskiner.
+**Feilrettinger*** Helt nytt brukergrensesnitt (GUI), bør nå fungere på alle Windows-datamaskiner.
 
 </details>
 

@@ -165,7 +165,7 @@ $$
 
 I GUI og i forhåndsinnstillingslisten for CLI/SDK er symbolformelen `(z/y)*(x/y)`, der x=Red, y=Green, z=NIR (båndene til et RGN-kamera); forhåndsinnstillingen i LATTICE-indeksmotoren er `nir * red / green**2`. Hver overflate beregner den samme indeksen.
 
-_Referanse: Vincini, M., E. Frazzi og P. D&#x27;Alessio. «A Broad-Band Leaf Chlorophyll Vegetation Index at the Canopy Scale.» Precision Agriculture 9 (2008): 303–319._
+_Referanse: Vincini, M., E. Frazzi og P. D'Alessio. «A Broad-Band Leaf Chlorophyll Vegetation Index at the Canopy Scale.» Precision Agriculture 9 (2008): 303–319._
 
 ***
 
@@ -207,7 +207,7 @@ $$
 
 Skogkledde områder vil ha lavere FCI1-verdier på grunn av trærnes lavere reflektans og tilstedeværelsen av skygger i trekronene.
 
-_Referanse: Becker, Sarah J., Craig S.T. Daughtry og Andrew L. Russ. «Robust forest cover indices for multispectral images.» Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505–512._
+_Referanse: Becker, Sarah J., Craig S.T. Daughtry og Andrew L. Russ. «Robust forest cover indices for multispectral images.» Photogrammetric Engineering & Remote Sensing 84.8 (2018): 505–512._
 
 ***
 
@@ -223,7 +223,7 @@ $$
 
 Skogkledde områder vil ha lavere FCI2-verdier på grunn av trærnes lavere reflektans og tilstedeværelsen av skygger i trekronene.
 
-_Referanse: Becker, Sarah J., Craig S.T. Daughtry og Andrew L. Russ. «Robust forest cover indices for multispectral images.» Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505–512._
+_Referanse: Becker, Sarah J., Craig S.T. Daughtry og Andrew L. Russ. «Robust forest cover indices for multispectral images.» Photogrammetric Engineering & Remote Sensing 84.8 (2018): 505–512._
 
 ***
 
@@ -489,7 +489,7 @@ $$
 TDVI = 1.5 * {(NIR- Red) \over \sqrt{NIR^{2} + Red + 0.5}  }
 $$
 
-_Referanse: Bannari, A., H. Asalhi og P. Teillet. «Transformed Difference Vegetation Index (TDVI) for Vegetation Cover Mapping» I Proceedings of the Geoscience and Remote Sensing Symposium, IGARSS &#x27;02, IEEE International, bind 5 (2002)._
+_Referanse: Bannari, A., H. Asalhi og P. Teillet. «Transformed Difference Vegetation Index (TDVI) for Vegetation Cover Mapping» I Proceedings of the Geoscience and Remote Sensing Symposium, IGARSS '02, IEEE International, bind 5 (2002)._
 
 ***
 
