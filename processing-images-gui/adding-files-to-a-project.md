@@ -1,6 +1,6 @@
 # Legge til filer i et prosjekt
 
-Når du har opprettet eller åpnet et prosjekt i Chloros, er neste trinn å legge til multispektrale bilder for å starte behandlingen. Fanen «File Browser» <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> gjør det enkelt å importere bilder og administrere datasettet ditt.
+Når du har opprettet eller åpnet et prosjekt i Chloros, er neste trinn å legge til multispektrale bilder for å starte behandlingen. Fanen «Filbrowser»<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> gjør det enkelt å importere bilder og administrere datasettet ditt.
 
 ## Åpne filbrowseren
 
@@ -13,7 +13,7 @@ Når du har opprettet eller åpnet et prosjekt i Chloros, er neste trinn å legg
 
 * **Survey3W / Survey3N**: RAW+JPG-par og JPG-bilder (RAW+JPG anbefales)
 * **LATTICE**: `.tif` / `.tiff`-opptak — lagret av Chloros-kamerakontroll eller av en LATTICE-hub
-* **Lyssensordata**: `.daq`-opptak (DAQ-U/M/E) og DAQ-M `.csv`-nedstrålingslogger — importert sammen med bilder for å drive reflektanskalibrering
+* **Lyssensordata**: `.daq`-opptak (DAQ-U/M/E) og DAQ-M `.csv`-nedstrålingslogger — importert sammen med bilder for å utføre reflektanskalibrering
 {% endhint %}
 
 ***
@@ -26,7 +26,7 @@ Det finnes to hovedmåter å legge til bilder i prosjektet ditt på:
 
 Bruk dette alternativet til å importere enkeltstående bildefiler eller et lite utvalg av filer.
 
-1. Klikk på **«Legg til filer»**-<img src="../.gitbook/assets/image (3).png" alt="" data-size="line">knappen øverst i Filbrowser-panelet
+1. Klikk på **«Legg til filer»**-knappen <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> øverst i filbrowseren
 2. Naviger til mappen som inneholder bildene dine
 3. Velg én eller flere bildefiler (hold nede **Ctrl** for å velge flere filer)
 4. Klikk på **«Åpne»** for å importere de valgte filene
@@ -35,19 +35,19 @@ Bruk dette alternativet til å importere enkeltstående bildefiler eller et lite
 
 Bruk dette alternativet for å importere alle bildene fra en mappe på en gang. Du kan velge **flere mapper** i én dialogboks.
 
-1. Klikk på **«Legg til mappe»**-<img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line">-knappen øverst i Filbrowser-panelet
+1. Klikk på **«Legg til mappe»**-knappen <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> øverst i filbrowseren
 2. Naviger til og velg mappen(e) som inneholder bildene fra opptakssesjonen din
 3. Klikk på **«Velg mappe»** for å importere alle støttede bilder
 
 {% hint style="info" %}
-**Filer som ikke lastes inn, rapporteres.** Hvis en mappe inneholder filer som Chloros gjenkjenner, men ikke kan laste inn, får du en advarsel – bildene forsvinner ikke usynlig fra rutenettet.
+**Filer som ikke lastes inn, rapporteres.** Hvis en mappe inneholder filer som Chlorosgjenkjenner, men ikke kan laste inn, får du en advarsel – bildene forsvinner ikke uten videre fra rutenettet.
 {% endhint %}
 
 ***
 
 ## Importere LATTICE-opptaksmapper
 
-LATTICE-opptak lagres med **én undermappe per eksportnivå** – for eksempel `raw/`, `debayered/`, `radiance/`, `reflectance/`, `preview/` – med den tilhørende nedstrømningsfilen `.daq` i roten:
+LATTICE-opptak lagres med **én undermappe per eksportnivå** – for eksempel `raw/`, `debayered/`, `radiance/`, `reflectance/`, `preview/` – med den tilhørende `.daq`-nedstrømningsfilen i roten:
 
 ```
 output/
@@ -57,11 +57,14 @@ output/
 └── *.daq          the downwelling reading matched to the capture
 ```
 
-**Velg «Legg til mappe» i roten til opptakene** (`output/` ovenfor). Når den valgte mappen ikke inneholder bilder selv, men har undermapper, går Chloros automatisk ned i dem — undermappene på det aktuelle nivået og rotmappen `.daq` hentes alle på én gang.**Slik importeres opptak:*** Hvert opptak importeres som et **enkelt bilde**, gruppert etter opptak (ikke én oppføring per nivå). De andre nivåene i det samme opptaket vises som visningsmoduser for det ene bildet.
-* **Behandlingen starter alltid fra råbildet.** De andre nivåene kan vises, men bare `raw` føres gjennom behandlingsprosessen — å behandle et allerede behandlet produkt på nytt ville føre til at korreksjonene ble brukt to ganger, så Chloros avvises. En reimportert eksport kan aldri ta en opptakets råbildeplass.
-* En opptaksmappe som er lagret **uten** råbildeimport, vises normalt, men behandlingen hopper over den og oppgir dette i loggen. (Flagget CLI `--input-level` kan tvinge frem et inngangspunkt i dette tilfellet — se [CLI-referansen](../reference/cli-reference.md#what-a-captures-folder-looks-like).)**LATTICE-hub-økter** importeres på samme måte: pek på «Add Folder» i sesjonsmappen som er kopiert fra hubben (den inneholder `raw/` samt `previews/`), sammen med eventuelle DAQ-M `.csv`-logger. Hvis kalibreringen av kameraet eller DAQ-enheten ikke er lagret i hurtigbufferen på maskinen din ennå, henter Chloros den automatisk ved hjelp av serienummeret ved import (krever internettilgang én gang).***
+**Velg «Legg til mappe» i rotmappen for opptakene** (`output/` ovenfor). Når den valgte mappen ikke inneholder bilder i seg selv, men har undermapper, går Chloros automatisk ned i dem — undermappene på det aktuelle nivået og rotmappen `.daq` hentes alle på én gang.**Slik importeres opptak:*** Hvert opptak importeres som et **enkelt bilde**, gruppert etter opptak (ikke én oppføring per nivå). De andre nivåene i det samme opptaket vises som visningsmoduser for det ene bildet.
+* **Behandlingen starter alltid fra råbildet.** De andre nivåene kan vises, men kun `raw` blir noensinne sendt gjennom behandlingsprosessen — å behandle et allerede behandlet produkt på nytt ville føre til at korreksjonene ble brukt to ganger, så Chloros avviser dette. En reimportert eksport kan aldri ta en opptakss råfilplass.
+* En opptaksmappe som er lagret **uten** råfiler, importeres og vises normalt, men behandlingen hopper over den og oppgir dette i loggen. (CLI-flagget `--input-level` kan tvinge frem et inngangspunkt for dette tilfellet – se [CLI-referansen](../reference/cli-reference.md#what-a-captures-folder-looks-like).)
+* Fra og med versjon 1.3.0 kan en opptakmappe også inneholde en `clamp_masks/`-mappe (masker per piksel for strålings- og refleksjonsnivåer — se [Utdataformater for bilder](../output-image-formats.md#clamp-masks)). Masker er ikke bilder av scenen, og Chloros hopper over dem ved import uansett hvor de befinner seg.
 
-## Forståelse av filbrowsertabellen
+**LATTICE-hub-økter** importeres på samme måte: velg «Legg til mappe» og pek på sesjonsmappen som er kopiert fra hubben (den inneholder `raw/` samt `previews/`), sammen med eventuelle DAQ-M `.csv`-logger for nedadgående stråling. Hvis kalibreringen av kameraet eller DAQ-enheten ikke er lagret i hurtigbufferen på maskinen din ennå, henter Chloros den automatisk ved hjelp av serienummeret ved import (krever internettilgang én gang).***
+
+## Forstå filbrowsertabellen
 
 Når bildene er importert, vises de i en tabell med følgende kolonner:
 
@@ -79,19 +82,19 @@ Når bildene er importert, vises de i en tabell med følgende kolonner:
 ### Kameramodell
 
 * Automatisk gjenkjent kamera- og filterkonfigurasjon
-* Eksempler på Survey3: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
-* LATTICE-eksempler: LATT-M3M-L41-F550, LATT-M3C-L87-FRGN
+* Eksempler fra Survey3: Survey3W_RGN, Survey3N_OCN, Survey3W_RGB
+* Eksempler fra LATTICE: LATT-M3M-L41-F550, LATT-M3C-L87-FRGN
 * Brukes til å anvende riktige behandlingsprofiler
 
 ### Målkolonne (avkryssingsrute)
 
-* Merk av i denne boksen for bilder som inneholder kalibreringsmål
+* Merk av i denne ruten for bilder som inneholder kalibreringsmål
 * Når minst ett bilde er merket av, **skannes kun de merkede bildene** for mål
 * Se [Velge målbilder](choosing-target-images.md) for detaljer
 
 ### Vise bildemetadata
 
-Når du klikker på veksleknappen øverst til høyre over tabellen, vises metadataene for det valgte bildet i bilderutenettet.
+Når du klikker på veksleknappen øverst til høyre over tabellen, vises metadataene for det valgte bildet i bildeområdet.
 
 <figure><img src="../.gitbook/assets/chloros_grid_meta.gif" alt=""><figcaption></figcaption></figure>
 
@@ -99,34 +102,34 @@ Når du klikker på veksleknappen øverst til høyre over tabellen, vises metada
 
 ## Lyssensorfiler i prosjektet ditt
 
-* `.daq`- og `.csv`-filer vises i filbrowseren, men er ikke klikkbare bilder — de angir nedadgående irradians for reflektanskalibrering.
-* Hver importert `.daq`/`.csv`-fil vises i **Prosjektinnstillinger → DAQ-lyssensor**, der du kan se hvilken diffusorhettekorreksjon som gjelder for hver fil. Se [Justere prosjektinnstillinger](adjusting-project-settings.md).
+* `.daq`- og `.csv`-filer vises i filbrowseren, men er ikke bilder du kan klikke på — de gir nedadgående irradians for reflektanskalibrering.
+* Hver importert `.daq`/`.csv`-fil vises i **Prosjektinnstillinger → DAQ-lyssensor**, hvor du kan se hvilken diffusorhettekorreksjon som gjelder for hver fil. Se [Justere prosjektinnstillinger](adjusting-project-settings.md).
 * Opptak du gjør i fanen **Lyssensorer** legges automatisk til i det åpne prosjektet – ingen manuell import er nødvendig.***
 
-## Administrere filer i prosjektet
+## Administrere filer i prosjektet ditt
 
 ### Fjerne filer
 
 Slik fjerner du uønskede bilder fra prosjektet:
 
-1. Velg ett eller flere bilder i tabellen i filbrowseren
-2. Klikk på **«Fjern valgte»**-<img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line">knappen
+1. Velg ett eller flere bilder i tabellen Filbrowser
+2. Klikk på **«Fjern valgte»**-knappen <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line">
 3. Bekreft fjerningen (filene slettes ikke fra disken, men fjernes kun fra prosjektet)
 
 ### Sortering og filtrering
 
-* **Sorter etter kolonne**: Klikk på en hvilken som helst kolonneoverskrift for å sortere bilder
+* **Sorter etter kolonne**: Klikk på en hvilken som helst kolonneoverskrift for å sortere bildene
 * **Sortering etter tidsstempel**: Nyttig for å organisere kronologiske opptaksserier
-* **Filter etter kameramodell**: Gruppér bilder etter kameratype hvis du bruker flere kameraer***
+* **Filter etter kameramodell**: Grupper bilder etter kameratype hvis du bruker flere kameraer***
 
 ## Forhåndsvisning av bilder
 
 ### Vise hele bildet
 
-Klikk på en hvilken som helst miniatyrbilde i filbrowseren for å vise det i hovedforhåndsvisningsområdet:
+Klikk på et hvilket som helst miniatyrbilde i filbrowseren for å vise det i hovedforhåndsvisningsområdet:
 
 1. Bildet vises i det sentrale forhåndsvisningspanelet
-2. Bruk zoomkontrollene for å se nærmere på bildedetaljer
+2. Bruk zoomkontrollene til å se nærmere på bildedetaljer
 3. Naviger mellom bildene ved hjelp av piltastene
 
 ### Hurtignavigering
@@ -145,7 +148,7 @@ Chloros oppdager og ignorerer automatisk dupliserte filer:
 * Advarselsmelding vises når duplikater oppdages
 
 {% hint style="warning" %}
-**Viktig**: Ikke endre navn på eller modifiser de originale bildefilene før import. Chloros er avhengig av originale filnavn og metadata for korrekt behandling.
+**Viktig**: Ikke gi originale bildefiler nye navn eller endre dem før import. Chloros er avhengig av originale filnavn og metadata for korrekt behandling.
 {% endhint %}
 
 ***
@@ -159,15 +162,15 @@ Hvis prosjektet ditt inneholder bilder fra flere MAPIR-kameraer:
 3. Filbrowseren viser kameramodellen i kolonnen «Kameramodell»
 4. Hvert kamera får sin egen utdatamappestruktur når det behandles
 
-**Eksempler på scenarier**: Survey3W RGN + Survey3N OCN oppsett med to kameraer, eller et LATTICE-array med en RGB-master og flere smalbåndsmoduler***
+**Eksempler på scenarier**: Survey3W RGN + Survey3N OCN-oppsett med to kameraer, eller et LATTICE-array med en RGB-master og flere smalbåndsmoduler***
 
 ## Anbefalte fremgangsmåter
 
 ### Organiser før import
 
-* Oppbevar kalibreringsmålbildene i samme mappe som kartleggingsbildene
+* Oppbevar kalibreringsmålbildene i samme mappe som opptakene
 * Oppbevar lyssensorfilene `.daq` / `.csv` fra hver opptakssesjon sammen med bildene fra den aktuelle sesjonen
-* Bevar den opprinnelige mappestrukturen fra kameraet/SD-kortet/huben
+* Behold den opprinnelige mappestrukturen fra kameraet/SD-kortet/huben
 * Ikke bland datasett fra forskjellige opptakssesjoner i ett prosjekt
 
 ### Filnavngivning
@@ -178,10 +181,10 @@ Hvis prosjektet ditt inneholder bilder fra flere MAPIR-kameraer:
 
 ### Kalibreringsmålbilder
 
-* Inkluder alltid 1–2 kalibreringsmålbilder per sesjon (Survey3; for LATTICE kan en DAQ-opptak erstatte dette — se [Velge målbilder](choosing-target-images.md))
+* Inkluder alltid 1–2 kalibreringsmålbilder per økt (Survey3; for LATTICE kan en DAQ-opptak erstatte dette — se [Velge målbilder](choosing-target-images.md))
 * Ta bilder av målene før og etter opptakssesjonen
 * Plasser målene under de samme lysforholdene som opptaksområdet
-* Merk målbildene ved å bruke avmerkingsboksen «Mål»
+* Merk målbildene ved å merke av i avmerkingsboksen «Target»
 
 ***
 
@@ -192,12 +195,12 @@ Hvis prosjektet ditt inneholder bilder fra flere MAPIR-kameraer:
 **Mulige årsaker:**
 
 * Filformatet støttes ikke (se listen over støttede filtyper øverst på denne siden)
-* Bildene er fra kameraer som ikke er av typen MAPIR (se [Støttede kameraer](../supported-cameras.md))
-* Filskade eller ufullstendig overføring fra SD-kort
+* Bildene er fra kameraer som ikke er fra MAPIR (se [Støttede kameraer](../supported-cameras.md))
+* Filen er ødelagt eller overføringen fra SD-kortet er ufullstendig
 
-**Løsning**: Kontroller at filformatet og kameramodellen er kompatible, og se på advarselen om filinnlasting for å finne ut nøyaktig hvilke filer som mislyktes
+**Løsning**: Kontroller at filformatet og kameramodellen er kompatible, og se på advarselen ved filinnlasting for å finne ut nøyaktig hvilke filer som ikke ble importert
 
-### Kameramodell oppdages ikke
+### Kameramodellen ble ikke gjenkjent
 
 **Mulige årsaker:**
 
@@ -205,7 +208,7 @@ Hvis prosjektet ditt inneholder bilder fra flere MAPIR-kameraer:
 * Bilder redigert i ekstern programvare
 * Ufullstendig filoverføring
 
-**Løsning**: Importer originale, uendrede filer på nytt fra kameraet/SD-kortet
+**Løsning**: Importer de originale, uendrede filene på nytt fra kameraet/SD-kortet
 
 ### Manglende tidsstempler
 
@@ -218,13 +221,13 @@ Hvis prosjektet ditt inneholder bilder fra flere MAPIR-kameraer:
 
 ### Gjenåpnet prosjekt rapporterer manglende filer
 
-Hvis kildefilene er flyttet eller slettet siden prosjektet sist ble åpnet, vil Chloros vise deg **hvilke** filer som mangler, i stedet for å åpne et tomt rutenett. Gjenopprett filene til de opprinnelige stiene, eller fjern de manglende oppføringene og importer på nytt.***
+Hvis kildefilene er flyttet eller slettet siden prosjektet sist ble åpnet, vil Chloros fortelle deg **hvilke**filer som mangler, i stedet for å åpne et tomt rutenett. Hvis selve prosjektmappen er flyttet, omdirigerer Chloros kildestiene til mappen der `project.json` nå befinner seg, og lagrer en sikkerhetskopi (`project.json.before-relink-<date>-<time>`). Når filene ikke blir funnet, viser vinduet**Kildefiler ikke funnet**alternativet**Bla gjennom**til den nye plasseringen, deretter**Nytt prosjekt**eller**Slett prosjekt**. Fra CLI bruker du `chloros-cli project open PATH --relink FOLDER`; fra SDK bruker du `open_project(path, relink=...)`.***
 
 ## Neste trinn
 
 Når filene er importert:
 
-1. **Gjennomgå fillisten** – Sørg for at alle bildene er lastet inn riktig
+1. **Gjennomgå fillisten** – Sjekk at alle bildene er lastet inn riktig
 2. **Sjekk kameramodeller** – Kontroller at kameraene er gjenkjent riktig
 3. **Merk målbilder** – Se [Velge målbilder](choosing-target-images.md)
 4. **Juster innstillingene** – Konfigurer behandlingsalternativene i [Prosjektinnstillinger](adjusting-project-settings.md)
