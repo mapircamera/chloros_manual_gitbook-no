@@ -10,7 +10,8 @@ Chloros 1.3.0 tilbyr innebygd Linux-støtte for **CLI**og**Python SDK** – mult
 
 ## Plattformstøttematrise
 
-| Funksjon | Windows (GUI) | Windows (CLI/SDK) | Linux amd64 (CLI/ --- | --- | --- | --- |
+| Funksjon | Windows (GUI) | Windows (CLI/SDK) | Linux amd64 (CLI/SDK) | Linux arm64 / Jetson (CLI/SDK) |
+| --- | --- | --- | --- | --- |
 | **GUI for skrivebord** | Ja | Ikke aktuelt | Nei | Nei |
 | **CLI** (`chloros-cli`) | Ja | Ja | Ja | Ja |
 | **Python SDK** (`chloros-sdk`) | Ja | Ja | Ja | Ja |
@@ -22,7 +23,9 @@ Chloros 1.3.0 tilbyr innebygd Linux-støtte for **CLI**og**Python SDK** – mult
 | **Teksturbevisst debayer** (krever en CUDA-GPU) | Ja (Chloros+) | Ja (Chloros+) | Ja (Chloros+) | Ja (Chloros+) |
 | **Dynamisk beregnings tilpasning** | Ja | Ja | Ja | Ja |
 | **Backend som systemtjeneste** (`chloros-backend@<user>.service`) | Nei | Nei | Ja (valgfritt) | Ja (valgfritt) |
-| **Oppdatering på stedet** (`chloros-cli update`) | Nei (kjør installasjonsprogrammet) | Nei (kjør installasjonsprogrammet) | Ja | Ja |***
+| **Oppdatering på stedet** (`chloros-cli update`) | Nei (kjør installasjonsprogrammet) | Nei (kjør installasjonsprogrammet) | Ja | Ja |
+
+***
 
 ## Støttede arkitekturer
 
@@ -35,7 +38,9 @@ Chloros 1.3.0 tilbyr innebygd Linux-støtte for **CLI**og**Python SDK** – mult
 
 * **Ubuntu 22.04 LTS eller nyere** (amd64)
 * **Debian 12 eller nyere** (amd64)
-* **NVIDIA JetPack 6** (arm64 — Jetson Orin-plattformer)***
+* **NVIDIA JetPack 6** (arm64 — Jetson Orin-plattformer)
+
+***
 
 ## Hva Linux-brukere får
 
@@ -54,7 +59,9 @@ Chloros 1.3.0 tilbyr innebygd Linux-støtte for **CLI**og**Python SDK** – mult
 
 * **GUI for skrivebordet** — ingen grafisk brukergrensesnitt; all interaksjon skjer via CLI eller Python-SDK
 * **Bildeviser** — ingen interaktiv bildeviser, rutenettvisning eller kartmarkører
-* **Visuell prosjektstyring** — prosjekter opprettes og styres via CLI-kommandoer og SDK-kall (selve maskinvaren — kameraer, sensorer, opptak — kan fortsatt styres fullt ut fra terminalen)***
+* **Visuell prosjektstyring** — prosjekter opprettes og styres via CLI-kommandoer og SDK-kall (selve maskinvaren — kameraer, sensorer, opptak — kan fortsatt styres fullt ut fra terminalen)
+
+***
 
 ## Lisenskrav
 

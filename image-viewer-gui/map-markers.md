@@ -76,7 +76,9 @@ Hvert bilde med GPS-data får en markør på sine koordinater.
 | Leverandør        | Merknader                                                                                                                                                             |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Google Maps** | Bred verdensomspennende dekning; støtter alle fire flisetyper                                                                                                            |
-| **Esri ArcGIS**| Ofte luftbilder med høyere oppløsning i bestemte regioner. Flisetypen**Terrain** tilbys ikke for Esri, og knappen for denne er deaktivert når Esri er valgt |***
+| **Esri ArcGIS**| Ofte luftbilder med høyere oppløsning i bestemte regioner. Flisetypen**Terrain** tilbys ikke for Esri, og knappen for denne er deaktivert når Esri er valgt |
+
+***
 
 ## Kartflisetyper
 
@@ -91,7 +93,9 @@ Velg kartlagstype med knappene (fra venstre til høyre):
 | **Satellitt**        | Detaljerte satellittbilder, uten etiketter — alternativet med høyest båndbredde |
 | **Hybrid** (standard) | Satellittbilder med veier og etiketter lagt over                |
 
-Fanen «Kart» åpnes på **Hybrid**. Valget ditt overføres til leverandørbytte der leverandøren støtter dette.***
+Fanen «Kart» åpnes på **Hybrid**. Valget ditt overføres til leverandørbytte der leverandøren støtter dette.
+
+***
 
 ## Kartnavigering
 
@@ -139,7 +143,9 @@ Fanen «Kart» åpnes på **Hybrid**. Valget ditt overføres til leverandørbytt
 
 ### Kartet er tomt eller flisene slutter å lastes inn
 
-Fliseleverandørene er nettbaserte tjenester. Hvis flisene slutter å komme inn, må du sjekke maskinens nettverkstilkobling og deretter prøve å bytte leverandør. Hvis du hadde zoomet veldig langt inn, trykker du på **×**-tilbakestillingsknappen for å gå tilbake til et normalt zoomnivå og la kartet be om flisene på nytt.***
+Fliseleverandørene er nettbaserte tjenester. Hvis flisene slutter å komme inn, må du sjekke maskinens nettverkstilkobling og deretter prøve å bytte leverandør. Hvis du hadde zoomet veldig langt inn, trykker du på **×**-tilbakestillingsknappen for å gå tilbake til et normalt zoomnivå og la kartet be om flisene på nytt.
+
+***
 
 ## Relaterte sider
 

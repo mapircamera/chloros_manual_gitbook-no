@@ -154,7 +154,9 @@ Denne seksjonen vises **kun** når minst ett bilde i prosjektet har den modul-ti
 
 * **Bruk matrisejustering** (standard: på): forvrenger hvert bearbeidet produkt (debayered / forhåndsvisning / radiance / reflektans / indeks) til matrisens felles referansegeometri. Av = eksporter i sensorens opprinnelige geometri.
 * **Beskjær til felles overlapping** (standard: på): beskjær justerte eksporter til området alle modulene deler, slik at hvert bånd har samme fotavtrykk. Av beholder hele sensorområdet (svart utfylling utenfor kilden).
-* **Resampling**:**Bilineær (jevn, standard)**,**Nærmeste (bevarer eksakte verdier)**— ingen blanding mellom piksler, for streng radiometrisk analyse — eller**Kubisk (skarpest)**.***
+* **Resampling**:**Bilineær (jevn, standard)**,**Nærmeste (bevarer eksakte verdier)**— ingen blanding mellom piksler, for streng radiometrisk analyse — eller**Kubisk (skarpest)**.
+
+***
 
 ## Lagre og laste inn innstillinger
 

@@ -196,7 +196,9 @@ Alt i denne delen gjelder **kun visningssiden**— det endrer det du ser i live-
 | **Metning** | 0–200 (100 = nøytral) | 100 | Kun RGB | HSV-metning i live-forhåndsvisningen. |
 | **Kontrast** | 0–200 (100 = nøytral) | 100 | Kun RGB | Lineær kontrast rundt midtgrått i liveforhåndsvisningen. |
 | **Speil H / Speil V** | Avmerkingsbokser | Av | Alle | Speilvend forhåndsvisningen horisontalt / vertikalt. |
-| **Rotasjon**| 0° / 90° / 180° / 270° | 0° | Alle | Roter forhåndsvisningen. Retningen brukes på slutten av forhåndsvisningskjeden i backend.**Lagrede opptak (1.3.0):**Forhåndsvisning, Radiance, Reflectance og Index-produkter fra et frittstående kamera roteres ved hjelp av Speil/Rotasjon, mens**Raw og Debayered beholder kameraets opprinnelige orientering**; hver opptaksfil lagrer innstillingen i sin XMP, slik at bearbeiding av en raw-fil senere anvender den på samme måte.**Filer i et array beholder sin opprinnelige orientering** (innstillingen lagres, men brukes ikke), og sammensatte visninger av arrayet ignorerer den. |**Semantikk for fargeprofiler** (RGB-kameraer):
+| **Rotasjon**| 0° / 90° / 180° / 270° | 0° | Alle | Roter forhåndsvisningen. Retningen brukes på slutten av forhåndsvisningskjeden i backend.**Lagrede opptak (1.3.0):**Forhåndsvisning, Radiance, Reflectance og Index-produkter fra et frittstående kamera roteres ved hjelp av Speil/Rotasjon, mens**Raw og Debayered beholder kameraets opprinnelige orientering**; hver opptaksfil lagrer innstillingen i sin XMP, slik at bearbeiding av en raw-fil senere anvender den på samme måte.**Filer i et array beholder sin opprinnelige orientering** (innstillingen lagres, men brukes ikke), og sammensatte visninger av arrayet ignorerer den. |
+
+**Semantikk for fargeprofiler** (RGB-kameraer):
 
 * **Raw** — omgår behandlingskjeden fullstendig.
 * **Lineær** — mørksignal + flatfelt + hvitbalanse; ingen fargematrise, ingen gamma.

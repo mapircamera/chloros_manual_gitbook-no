@@ -136,7 +136,9 @@ To regler styrer tallene:
 * En tråd som er den **eneste** aktive, tildeles profilens maksimale tildeling.
 * Når mer enn én *tung* GPU-oppgave er aktiv, deles hver tung oppgaves grunnleggende tildeling mellom dem (aldri under det konfigurerte minimumet).
 
-Verdien som faktisk brukes under kjøring, er den **laveste** av tildelingen i plattformprofilen og den sanntidsanbefalingen fra GPU-minnemonitoren, så et travlt kort vinner alltid over en optimistisk profil.***
+Verdien som faktisk brukes under kjøring, er den **laveste** av tildelingen i plattformprofilen og den sanntidsanbefalingen fra GPU-minnemonitoren, så et travlt kort vinner alltid over en optimistisk profil.
+
+***
 
 ## Teksturbevisst behandling
 

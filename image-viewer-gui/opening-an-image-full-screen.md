@@ -55,7 +55,9 @@ Når den effektive forstørrelsen overstiger **60×**, tegner Chloros en uthevet
 | **←**                           | Fullskjerm | Forrige bilde                      |
 | **Ctrl + R**                    | Fullskjerm | Tilbakestill indeks/LUT-sandkassen         |
 | **Ctrl + `+`**/**Ctrl + `=`** | Rutenett        | Større miniatyrbilder (4 px per trykk)  |
-| **Ctrl + `−`**                  | Rutenett        | Mindre miniatyrbilder (4 px per trykk) |***
+| **Ctrl + `−`**                  | Rutenett        | Mindre miniatyrbilder (4 px per trykk) |
+
+***
 
 ## Markørverdier
 
@@ -98,7 +100,9 @@ Visningsprogrammet, indeks-/LUT-sandkassen og indekseksporten beregner alle skal
 To konsekvenser det er verdt å vite:
 
 * En **32-biters prosent**TIFF lagrer DN/65535 som et flytende tall, og en**8-biters** PNG/JPG-eksport lagrer DN × 255/65535 — visningsprogrammet konverterer begge tilbake før det skriver ut en prosentverdi.
-* Ett tilfelle kan ikke gjenopprettes: en **8-biters TIFF-eksport av et opptak med 8-biters kilde** blir beskåret til 0–255 i stedet for å bli omskalert, og har bevisst ingen skaleringsmerking. For disse filene viser panelet kun DN, uten prosentkolonne. Dette er det ærlige svaret, ikke en feil.***
+* Ett tilfelle kan ikke gjenopprettes: en **8-biters TIFF-eksport av et opptak med 8-biters kilde** blir beskåret til 0–255 i stedet for å bli omskalert, og har bevisst ingen skaleringsmerking. For disse filene viser panelet kun DN, uten prosentkolonne. Dette er det ærlige svaret, ikke en feil.
+
+***
 
 ## Lagets histogram
 
@@ -124,7 +128,9 @@ Over histogrammet finnes tre knapper:
 | **INDEX**| På      | Vises kun mens en indeks er aktiv. Bytt histogrammet fra kildebåndene til**indeksverdifordelingen**, der de to klippeterskelverdiene er tegnet som oransje stiplede linjer og markørens indeksverdi som en hvit linje                                                          |
 | **RGB**| Av     | Veksler fra den kombinerte kurven til kurver per kanal. På en monosensor viser denne knappen**MONO** og er deaktivert — det er bare én kanal å vise                                                                                                                                  |
 
-Histogrammet beregnes ut fra **blokkene du ser**, ikke kildepikslene bak dem: endrer du GSD-blokkstørrelsen, og fordelingen beregnes på nytt, slik at histogrammet, markøren og det viste bildet alltid stemmer overens.***
+Histogrammet beregnes ut fra **blokkene du ser**, ikke kildepikslene bak dem: endrer du GSD-blokkstørrelsen, og fordelingen beregnes på nytt, slik at histogrammet, markøren og det viste bildet alltid stemmer overens.
+
+***
 
 ## GSD-blokkstørrelse
 
@@ -183,7 +189,9 @@ Bruk multispektrale indekser og farge-LUT-er fra sidepanelet:
 
 3. Velg kameraets filter og en indeksformel, og dra deretter kanalsirklene inn i formelens felt
 4. Legg til en LUT og velg en gradient, terskelverdier og en klippemodus
-5. Les av verdiene ved markøren, og lagre resultatet med **Eksporter/Lagre bilde(r)**Se [Index/LUT Sandbox](index-lut-sandbox.md) for en fullstendig gjennomgang.***
+5. Les av verdiene ved markøren, og lagre resultatet med **Eksporter/Lagre bilde(r)**Se [Index/LUT Sandbox](index-lut-sandbox.md) for en fullstendig gjennomgang.
+
+***
 
 ## Feilsøking
 

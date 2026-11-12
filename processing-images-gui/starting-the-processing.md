@@ -180,7 +180,9 @@ Når den er startet, kjører hele rørledningen automatisk:
 * En stoppet kjøring rapporterer nøyaktig hva den har fullført (se linjene `[RUN-SUMMARY]` i loggen)
 * En ny kjøring starter prosesskjeden fra begynnelsen
 
-**Planleggingstips:** For svært store prosjekter bør du vurdere å behandle i batcher eller bruke CLI for bedre kontroll.***
+**Planleggingstips:** For svært store prosjekter bør du vurdere å behandle i batcher eller bruke CLI for bedre kontroll.
+
+***
 
 ## Overvåke behandlingen
 

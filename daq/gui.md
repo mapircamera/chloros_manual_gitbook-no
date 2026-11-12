@@ -192,7 +192,9 @@ For kvantitative strålingsstyrketall må du beregne gjennomsnittet av minst 15 
 
 * Kombiner flere sensorer på ett diagram (delte akser), behold separate diagrammer (automatisk rutenettoppsett), flytt sensorer mellom diagrammer, dra og omorganiser rader/ruter, og skjul enkeltstående sensorer med øye-knappen.
 * Chloros lagrer følgende per prosjekt: enhetsnavn, grafikkfarger, diagramstørrelse, visningsmodus og hver sensors innstillinger (integrasjonstid, rammeutjevning, AE-tilstand, kapselvalg).
-* **Når du åpner et prosjekt på nytt, kobles sensorene automatisk til igjen** via adresse – COM-port for DAQ-U, BLE-enhet for DAQ-M, mDNS-vertsnavn for DAQ-E (løses selv om enhetens IP-adresse har endret seg) – og bruker på nytt hver sensors lagrede cap-profil, rammeutjevning, AE-tilstand og manuell integrasjonstid.***
+* **Når du åpner et prosjekt på nytt, kobles sensorene automatisk til igjen** via adresse – COM-port for DAQ-U, BLE-enhet for DAQ-M, mDNS-vertsnavn for DAQ-E (løses selv om enhetens IP-adresse har endret seg) – og bruker på nytt hver sensors lagrede cap-profil, rammeutjevning, AE-tilstand og manuell integrasjonstid.
+
+***
 
 ## Kameraparring (DLS)
 

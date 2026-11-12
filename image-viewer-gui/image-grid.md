@@ -10,7 +10,9 @@ Bruk zoomglidebryteren øverst til høyre for å justere størrelsen på bildemi
 * **Ctrl + `+`**/**Ctrl + `=`**og**Ctrl + `−`** endrer størrelsen med 4 px per trykk. Tastaturkommandoene stopper ved 64 px i den minste enden og, i den største enden, ved den størrelsen som passer nøyaktig to miniatyrbilder per rad i det aktuelle vinduet.
 * Størrelsen du velger, lagres sammen med prosjektet (`UI → Grid thumbnail size` i `project.json`, standard `160`), slik at den gjenopprettes når du åpner prosjektet på nytt.
 
-<figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>Miniatyrbildets *oppløsning* er en egen innstilling, atskilt fra miniatyrbildets *størrelse*: se **Visning → Oppløsning for miniatyrbilder** i [Prosjektinnstillinger](../project-settings/project-settings.md) (standard 512 px på den lange siden). Størrelse angir hvor stor ruten tegnes; oppløsning angir hvor mye detalj som hentes inn for å fylle den.***
+<figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>Miniatyrbildets *oppløsning* er en egen innstilling, atskilt fra miniatyrbildets *størrelse*: se **Visning → Oppløsning for miniatyrbilder** i [Prosjektinnstillinger](../project-settings/project-settings.md) (standard 512 px på den lange siden). Størrelse angir hvor stor ruten tegnes; oppløsning angir hvor mye detalj som hentes inn for å fylle den.
+
+***
 
 ## Rutenettverktøylinjen
 

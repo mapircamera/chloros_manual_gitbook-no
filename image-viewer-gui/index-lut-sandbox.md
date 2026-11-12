@@ -71,7 +71,9 @@ For den fullstendige formelreferansen – alle tre forhåndsinnstilte lister og 
 
 ### Med «Indeks» merket av, men uten LUT
 
-Bildet tegnes i **gråtoner**, strukket mellom de to terskelverdiene. Dette er bevisst: indeksbildet er skalardata, og gråtoner er den mest naturtro gjengivelsen av det. Legg til en LUT når du ønsker farge.***
+Bildet tegnes i **gråtoner**, strukket mellom de to terskelverdiene. Dette er bevisst: indeksbildet er skalardata, og gråtoner er den mest naturtro gjengivelsen av det. Legg til en LUT når du ønsker farge.
+
+***
 
 ## Arbeide med LUT-er (oppslagstabeller)
 
@@ -137,7 +139,9 @@ Eksempel på NDVI-vinduer:
 | Kun sunn vegetasjon                 | 0,5  | 0,9 |
 | Fremhev stress                        | 0,2  | 0,5 |
 
-Ved å innsnevre vinduet øker du kontrasten innenfor området du er interessert i, og alt annet havner utenfor området — hvor **klippemodus** avgjør hva som skjer med det.***
+Ved å innsnevre vinduet øker du kontrasten innenfor området du er interessert i, og alt annet havner utenfor området — hvor **klippemodus** avgjør hva som skjer med det.
+
+***
 
 ## Klippemodus
 

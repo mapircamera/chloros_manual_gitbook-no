@@ -100,4 +100,4 @@ Detaljer for brukere som krever streng synkronisering:
 | Broadcast-domene | Vert og sensor på samme L2-segment; mDNS ruter ikke |
 | Brannmur | Windows: installasjonsprogrammets **Chloros Backend (UDP-In)**-regel slipper inn DAQ-E-strøm (UDP 5002), mDNS (5353) og PTP (319/320); en tredjeparts brannmur må ha de samme innstillingene. Linux: `.deb` åpner disse portene i `ufw` / `firewalld` bare hvis brannmuren var aktiv ved installasjon – tillat dem selv i en brannmur som aktiveres senere |
 | Vert med flere nettverkskort | Oppdagingsfunksjonen søker i mDNS med ARP som reserve; `--eth-host <ip-or-hostname>` hopper over oppdagingen og kobler seg til direkte |
-| Ny skanning via GUI | Oppdagingsfunksjonen kjører bare mens tilkoblingsdialogen er åpen; bruk Oppdater |</version>
+| Ny skanning via GUI | Oppdagingsfunksjonen kjører bare mens tilkoblingsdialogen er åpen; bruk Oppdater |

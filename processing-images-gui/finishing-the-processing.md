@@ -110,7 +110,9 @@ Refleksjonsverdien lagres som et heltall (DN), og **den DN-verdien som tilsvarer
 | LATTICE (M3C/M3M) | **32768** (margin opp til ρ 2,0) | XMP-taggen `Chloros:PixelScale=32768` er merket på filen |
 | Survey3          | **65535** (avskåret ved ρ 1,0)     | Ingen `Chloros:PixelScale`-tag – fraværet er selve signalet (Survey3-produkter har andre `Chloros:*`-behandlings-tagger) |
 
-**Les `Chloros:PixelScale`-taggen og del med den** i stedet for å anta en fast verdi på 65535 — å dele LATTICE-reflektansen med 65535 halverer stille alle verdiene. En reflektansfil fra før versjon 1.3.0 som er skrevet som 8-bit, ble beskåret, ikke omskalert, og har ingen skalatag: eksporter den på nytt i 16-bit eller 32-bit i stedet for å dele den. Se [Utdataformater](../output-image-formats.md) for hele historien.***
+**Les `Chloros:PixelScale`-taggen og del med den** i stedet for å anta en fast verdi på 65535 — å dele LATTICE-reflektansen med 65535 halverer stille alle verdiene. En reflektansfil fra før versjon 1.3.0 som er skrevet som 8-bit, ble beskåret, ikke omskalert, og har ingen skalatag: eksporter den på nytt i 16-bit eller 32-bit i stedet for å dele den. Se [Utdataformater](../output-image-formats.md) for hele historien.
+
+***
 
 ## Metadata som overføres til eksportene
 
@@ -164,7 +166,9 @@ For å beholde en oversikt over behandlingen eller for å sende den til MAPIR-su
 3. Legg den ved prosjektdokumentasjonen
 4. Send til MAPIR-support hvis det oppstår problemer
 
-For å sende et problem direkte til MAPIR, bruk feilikonet (**Rapporter en feil**) øverst på fanen «Debug Log» — se [Rapportere en feil fra loggfanen](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
+For å sende et problem direkte til MAPIR, bruk feilikonet (**Rapporter en feil**) øverst på fanen «Debug Log» — se [Rapportere en feil fra loggfanen](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).
+
+***
 
 ## Vanlige utdataproblemer og løsninger
 

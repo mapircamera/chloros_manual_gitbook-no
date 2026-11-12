@@ -34,7 +34,9 @@ i venstre sidepanel
 * **Alternativer**: `Default (512 px)`, `1024 px`, `2048 px`, `Full resolution`
 * **Standard**: Standard (512 px)
 * **Beskrivelse**: Oppløsning (lengste kant, i piksler) som miniatyrbildene i bilde-rutenettet vises med. Høyere verdier ser skarpere ut når man zoomer inn, men laster tregere og bruker mer minne. Full oppløsning gir den opprinnelige bildestørrelsen.
-* **Merk**: Kun for visning — dette påvirker aldri behandlingen eller eksporterte filer.***
+* **Merk**: Kun for visning — dette påvirker aldri behandlingen eller eksporterte filer.
+
+***
 
 ## Målgjenkjenning
 
@@ -184,7 +186,9 @@ Den lagrede verdien matches uten å skille mellom store og små bokstaver, og no
   * Ett kamera + én pinne: Pinne 2 settes automatisk til «Ikke bruk»
   * Ett kamera + to pinner: Pinne 2 settes automatisk til «Ikke bruk»
   * Flere kameraer: Manuell valg kreves
-* **Merk**: Det samme kameraet kan ikke tilordnes både pinne 1 og pinne 2 samtidig.***
+* **Merk**: Det samme kameraet kan ikke tilordnes både pinne 1 og pinne 2 samtidig.
+
+***
 
 ## DAQ-lyssensor
 
@@ -205,7 +209,9 @@ Hver rad viser filen, sensormodellen og diffusorhettekorreksjonen som faktisk gj
 * **Beskrivelse**: `Auto` bruker den registrerte hetten for hver fil (det antas at det er en Sunshine-hette der ingenting er registrert, men DAQ-U, DAQ-M og DAQ-E leveres uten hette, og Chloros kan ikke se hva som er montert, så behandlingen gir en advarsel om en antatt kappe: velg den kappen som var montert). Å velge en spesifikk kappe overstyrer **alle** nedstrømsfiler i prosjektet unntatt en DAQ-E-S, der diffusoren er en del av kalibreringen; et prosjekt som kun består av DAQ-E-S viser ingen rullegardinmeny: råopptak korrigeres med den, og opptak som allerede har en hette, blir referert på nytt (den innspilte korreksjonen blir tilbakestilt, og den valgte blir brukt).
 * **Viktig**: Den valgte hetten må samsvare med den hetten som fysisk var montert under opptaket. Verken sensoren eller programvaren kan oppdage den fysiske hetten – en feilaktig hette-ID fører til feil korreksjon av spektrene.
 
-Det er bevisst **én** prosjektomfattende innstilling i stedet for rullegardinmenyer per fil: innstillingen gjelder for alle nedadrettede kilder i prosjektet.***
+Det er bevisst **én** prosjektomfattende innstilling i stedet for rullegardinmenyer per fil: innstillingen gjelder for alle nedadrettede kilder i prosjektet.
+
+***
 
 ## Array-justering
 
