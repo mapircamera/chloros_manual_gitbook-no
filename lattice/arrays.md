@@ -206,7 +206,7 @@ Opptaksoverflatene for matriser deles tydelig inn i **overvåkingskvalitet**(ta 
 
 | Arbeidsflyt | Kvalitet | Hva lagres | GUI | CLI |
 | --- | --- | --- | --- | --- |
-| **Opptak**(stillbilder) | Analyse | Én synkronisert bildegruppe per gjennomgang; filer per kamera på hvert valgt eksportnivå (rådata/debayered/radiance/reflektans/forhåndsvisning/indeks) + `.daq` sidecar |****Capture All**-knapp + innstillinger for opptak | `lattice array-capture` |
+| **Opptak**(stillbilder) | Analyse | Én synkronisert bildegruppe per gjennomgang; filer per kamera på hvert valgt eksportnivå (rådata/debayered/radiance/reflektans/forhåndsvisning/indeks) + `.daq` sidecar |**Capture All**-knapp + innstillinger for opptak | `lattice array-capture` |
 | **Ta opp indeksvideo** | Overvåking | Den kombinerte live-indekskomposisjonen slik den vises — 8-bit, forhåndsvisningsoppløsning, LUT innebygd. Fra CLI-en uten åpen GUI-visning renderer backenden matrisens NDVI (eller `--expr`) så snart matrisen er justert; en opptak som ikke skriver noen ramme mislykkes | ● Ta opp indeksvideo (kombinerte matriser) | `lattice array-record` |
 | **Rå burst → lag video**| Analyse | Rå sensorbilder med full opptakshastighet + manifest + `.daq`, deretter offline rekonstruksjon til kalibrert strålings-/refleksjons-/indeksvideo, tidsjustert til DAQ-målinger | ⦿ Ta opp rå burst →**Lag video** | `lattice array-burst` → `lattice array-build-video` |
 
