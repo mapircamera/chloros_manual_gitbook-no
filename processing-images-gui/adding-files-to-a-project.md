@@ -57,7 +57,11 @@ output/
 └── *.daq          the downwelling reading matched to the capture
 ```
 
-**Velg «Legg til mappe» i rotmappen for opptakene** (`output/` ovenfor). Når den valgte mappen ikke inneholder bilder i seg selv, men har undermapper, går Chloros automatisk ned i dem — undermappene på det aktuelle nivået og rotmappen `.daq` hentes alle på én gang.**Slik importeres opptak:*** Hvert opptak importeres som et **enkelt bilde**, gruppert etter opptak (ikke én oppføring per nivå). De andre nivåene i det samme opptaket vises som visningsmoduser for det ene bildet.
+**Velg «Legg til mappe» i rotmappen for opptakene** (`output/` ovenfor). Når den valgte mappen ikke inneholder bilder i seg selv, men har undermapper, går Chloros automatisk ned i dem — undermappene på det aktuelle nivået og rotmappen `.daq` hentes alle på én gang.
+
+**Slik importeres opptak:**
+
+* Hvert opptak importeres som et **enkelt bilde**, gruppert etter opptak (ikke én oppføring per nivå). De andre nivåene i det samme opptaket vises som visningsmoduser for det ene bildet.
 * **Behandlingen starter alltid fra råbildet.** De andre nivåene kan vises, men kun `raw` blir noensinne sendt gjennom behandlingsprosessen — å behandle et allerede behandlet produkt på nytt ville føre til at korreksjonene ble brukt to ganger, så Chloros avviser dette. En reimportert eksport kan aldri ta en opptakss råfilplass.
 * En opptaksmappe som er lagret **uten** råfiler, importeres og vises normalt, men behandlingen hopper over den og oppgir dette i loggen. (CLI-flagget `--input-level` kan tvinge frem et inngangspunkt for dette tilfellet – se [CLI-referansen](../reference/cli-reference.md#what-a-captures-folder-looks-like).)
 * Fra og med versjon 1.3.0 kan en opptakmappe også inneholde en `clamp_masks/`-mappe (masker per piksel for strålings- og refleksjonsnivåer — se [Utdataformater for bilder](../output-image-formats.md#clamp-masks)). Masker er ikke bilder av scenen, og Chloros hopper over dem ved import uansett hvor de befinner seg.

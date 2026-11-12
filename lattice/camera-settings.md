@@ -228,7 +228,7 @@ Disse finnes kun i brukergrensesnittet — de legges over videoen, uten å påvi
 ### Spotmåler
 
 * **Klikk for å ta prøve**-avkryssingsrute: klikk på livebildet for å ta en prøve av en enkelt piksel (et kryssmerke markerer den), eller klikk og dra over et område for å beregne et pikselgjennomsnitt.**Tøm**fjerner prøven og kryssmerket. Kan ikke brukes samtidig med AE-ROI**Sikt**-modus.
-* ****Vis**-rullegardin:**Raw (bitdybde)**— opprinnelige digitale tall med sensorens bitdybde (f.eks. 12-bit → 0..4095) — eller**Visning (8-bit)**(standard). Når en live-indeks er aktiv, viser**Display** i stedet den beregnede indeksverdien (f.eks. NDVI).
+* **Vis** -rullegardin:**Raw (bitdybde)**— opprinnelige digitale tall med sensorens bitdybde (f.eks. 12-bit → 0..4095) — eller**Visning (8-bit)**(standard). Når en live-indeks er aktiv, viser**Display** i stedet den beregnede indeksverdien (f.eks. NDVI).
 * Avlesningspanelet viser pikselkoordinater, bildestørrelse, pikselformat, bitdybde og en kanaltabell (Chan / Value / %) med båndbetegnelser og bølgelengder; Bayer-grønne par blir gjennomsnittsberegnet; regionprøver viser «N px avg».
 
 Spotmeter-tilstanden gjelder kun for den aktuelle økten.
@@ -375,7 +375,7 @@ Et skrivebeskyttet panel som oppdateres hvert 5. sekund:
 
 * **Nivåbetegnelse**: «Samtidig opptak» (grønn) · «Samtidig opptak (FTD-forsinket utsending)» (grønn) · «Forsinket opptak (100 ms avvik)» (gul) · «Konfigurasjonen er for stor» (rød).
 * **Rammestatus**: «x,xx % ufullstendig» — grønn under 1 %, gul under 5 %, rød ved 5 % eller mer.
-* ****Linklinje**: «NIC {mbps} Mbps – vedvarende {MB/s} MB/s».
+* **Linklinje**: «NIC {mbps} Mbps – vedvarende {MB/s} MB/s».
 
 Dette er arrayets sanntids båndbreddebudsjett. For den underliggende fps- og nettverksmodellen — og hva du bør endre når nivået blir gult eller rødt — se [Flerkamera-arrayer](arrays.md) og [CLI-referansen](../reference/cli-reference.md).
 
@@ -401,7 +401,7 @@ Hurtigreferanse for hva som finnes hvor når et kamera er medlem av et array:
 Annen tverrgående funksjonalitet:
 
 * **Kombinert vs. separat visning** velges ved tilkobling av matrise: kombinert = én justert sammensatt flis (medlemmer sender kun via delt visning); separat = hvert medlem viser sin egen synkroniserte flis. Et kamera viser aldri både en frittstående strøm og en matriseflis samtidig.
-* ****Automatisk tilkobling**: når du åpner et lagret prosjekt, gjenopprettes kameraene og matrisene, og alle lagrede innstillinger brukes på nytt på backend før strømmene gjenopptas.
+* **Automatisk tilkobling**: når du åpner et lagret prosjekt, gjenopprettes kameraene og matrisene, og alle lagrede innstillinger brukes på nytt på backend før strømmene gjenopptas.
 * **Opptakskontroll**: skjulte eller pausede kameraer ekskluderes fra «Capture All»; en matrise blokkeres fullstendig bare når ALLE medlemmene er skjulte/pausede. Se [Innstillinger og moduser for opptak](capture.md).
 
 ## Hvordan innstillingene lagres

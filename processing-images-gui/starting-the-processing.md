@@ -78,7 +78,11 @@ Chloros opererer i to forskjellige behandlingsmoduser, avhengig av lisensen din:
 1. **Detektering** (tråd 1) – Finne kalibreringsmål
 2. **Analyse** (tråd 2) – Undersøkelse av bildemetadata og beregning av kalibrering
 3. **Kalibrering** (tråd 3) – Debayering, vignettkorrigering, kalibrering, indeksberegning
-4. **Eksport** (tråd 4) – Lagring av behandlede bilder og indekser**Interaksjon med fremdriftslinjen:*** **Hold musepekeren** over linjen for å se et detaljert nedtrekkspanel med de fire trinnene
+4. **Eksport** (tråd 4) – Lagring av behandlede bilder og indekser
+
+**Interaksjon med fremdriftslinjen:**
+
+* **Hold musepekeren** over linjen for å se et detaljert nedtrekkspanel med de fire trinnene
 * **Klikk** på fremdriftslinjen for å fryse nedtrekkspanelet på plass
 * **Klikk igjen** for å oppheve frysingen og skjule panelet**Behandlingstid:**
 
@@ -116,7 +120,9 @@ Chloros opererer i to forskjellige behandlingsmoduser, avhengig av lisensen din:
 
 ### Trinn 3: Kalibrering
 
-**Hva Chloros gjør:*** **Vignettkorrigering**: Fjerner mørkningen ved kantene
+**Hva Chloros gjør:**
+
+* **Vignettkorrigering**: Fjerner mørkningen ved kantene
 * **Refleksjonskalibrering**: Normaliserer ved hjelp av målrefleksjonsverdier og/eller DAQ-data for nedadgående stråling
 * Anvender korreksjoner på tvers av alle bånd/kanaler
 * Bruker passende kalibreringsreferanse for hvert bilde basert på tidsstempel

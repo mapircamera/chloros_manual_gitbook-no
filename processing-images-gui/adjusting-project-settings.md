@@ -44,7 +44,9 @@ Panelet «Prosjektinnstillinger» er organisert i seksjonene nedenfor. To tilleg
 
 Styrer hvordan Chloros identifiserer kalibreringsmål i bildene dine.
 
-**Viktige innstillinger:*** **Minimumsareal for kalibreringsprøve (px)**: Størrelsesterskel for målgjenkjenning (standard:**25**, område 0–10 000)
+**Viktige innstillinger:**
+
+* **Minimumsareal for kalibreringsprøve (px)**: Størrelsesterskel for målgjenkjenning (standard:**25**, område 0–10 000)
 * **Minimum målgruppering (0–100)**: Likhetsgrense for gruppering av målområder (standard:**60**)**Når du bør justere:**
 
 * Øk prøveområdet hvis du får falske deteksjoner
@@ -59,19 +61,26 @@ Disse innstillingene er nedtonet når **refleksjonskalibrering / hvitbalanse** e
 
 Hovedalternativer for bildebehandling og kalibrering.
 
-**Viktige innstillinger:*** **Vignettkorreksjon**: Kompenserer for mørkere kanter på bildet ✅ Anbefalt
+**Viktige innstillinger:**
+
+* **Vignettkorreksjon**: Kompenserer for mørkere kanter på bildet ✅ Anbefalt
 * **Refleksjonskalibrering / hvitbalanse**: Kalibrerer bilder ved hjelp av oppdagede mål (Survey3) og/eller data fra DAQ-lyssensoren (LATTICE) ✅ Anbefalt
 * **Debayer-metode**: Algoritme for konvertering av RAW til 3-kanals multispektralt
 * **Minimalt rekalibreringsintervall**: Minimumstid i sekunder mellom bruk av kalibreringsmål (standard:**0** = bruk alle, område 0–3600)**Ukalibrerte reserveprodukter:**Når et bilde ikke kan refleksjonskalibreres (ingen mål tilgjengelig, eller kalibrering deaktivert), eksporteres det som ett av to reserveprodukter —**nøyaktig ett av paret finnes per kjøring**, valgt av bryteren for vignettkorreksjon:
 
-* **Eksporter sensorrespons**: skriver `Sensor_Response_Images` — brukes når vignettkorreksjon er**av*** **Eksporter vignettkorrigert**: skriver `Vignette_Corrected_Images` — brukes når vignettkorreksjon er**på**Avmerkingsboksen som ikke er i bruk, er nedtonet. Hvis du fjerner merket fra den aktive, vil ikke den filen bli skrevet i det hele tatt.**LATTICE-eksportprodukter** (vises for hvert prosjekt; gjelder LATTICE-opptak):
+* **Eksporter sensorrespons**: skriver `Sensor_Response_Images` — brukes når vignettkorreksjon er**av**
+* **Eksporter vignettkorrigert**: skriver `Vignette_Corrected_Images` — brukes når vignettkorreksjon er**på**Avmerkingsboksen som ikke er i bruk, er nedtonet. Hvis du fjerner merket fra den aktive, vil ikke den filen bli skrevet i det hele tatt.**LATTICE-eksportprodukter** (vises for hvert prosjekt; gjelder LATTICE-opptak):
 
 * **Eksporter debayert**: det lineære debayered-bildet (`Debayered_Images`): kalibreringspakkens mørkeforskyvning fjernes, deretter demosaicert, uten flatfelt eller unmix — den samme filen som en opptak lagrer på sitt debayered-nivå — i sensorens opprinnelige orientering. Gjelder for RGB- og multispektrale moduler.
 * **Eksporter forhåndsvisning**: skjermforhåndsvisningen (`Preview_Images`). RGB = hvitbalanse (DAQ-lysstyrke når tilgjengelig, ellers gråverden) + gamma; multispektral = strekking av falske farger.
 * **Eksporter radianse**: float32 spektral radianse (`Radiance_Images`, W/m²/sr/nm). Kun multispektrale moduler — gjelder ikke for RGB-masterfiler.
 * **Eksporter reflektans**: uint16-reflektans (`Reflectance_Calibrated_Images`, DN 32768 = ρ 1,0) når en `.daq`-nedstrålingsmåling eller et mål innenfor bildet dekker bildet. Gjelder kun multispektrale moduler.
 
-Alle fire er **aktivert som standard**— én importert LATTICE-råramme fordeles til alle aktiverte og relevante produkter i én enkelt behandlingsomgang. Avkrysningsruten**Eksporter reflektans** er nedtonet når reflektanskalibrering er deaktivert. Innstillinger som er umulige å bruke på grunn av en overordnet innstilling, er alltid nedtonet med et verktøytips som angir hvilken innstilling som må endres.**Avanserte innstillinger:*** **Tidssoneforskyvning for lyssensor**: Antall timer fra UTC for tidsjustering av lyssensoren (standard: 0, område −12 til +12)
+Alle fire er **aktivert som standard**— én importert LATTICE-råramme fordeles til alle aktiverte og relevante produkter i én enkelt behandlingsomgang. Avkrysningsruten**Eksporter reflektans** er nedtonet når reflektanskalibrering er deaktivert. Innstillinger som er umulige å bruke på grunn av en overordnet innstilling, er alltid nedtonet med et verktøytips som angir hvilken innstilling som må endres.
+
+**Avanserte innstillinger:**
+
+* **Tidssoneforskyvning for lyssensor**: Antall timer fra UTC for tidsjustering av lyssensoren (standard: 0, område −12 til +12)
 * **Bruk PPK-korreksjoner**: Bruker GPS-/eksponeringspin-data fra `.daq`-filer (standard: av)
 * **Eksponeringspin 1/2**: Tilordner kameraer til eksponeringspinner for oppsett med to kameraer
 
@@ -105,7 +114,9 @@ Konfigurer hvilke vegetasjonsindekser som skal beregnes og eksporteres. Nedtrekk
 3. Konfigurer visualiseringsinnstillinger (LUT-farger, verdiområder)
 4. Legg til flere indekser etter behov
 
-**Populære indekser:*** **NDVI**: Generell vegetasjonshelse (mest vanlig)
+**Populære indekser:**
+
+* **NDVI**: Generell vegetasjonshelse (mest vanlig)
 * **NDRE**: Tidlig påvisning av stress med RedEdge
 * **GNDVI**: Følsom for klorofyllkonsentrasjon
 * **OSAVI**: Fungerer godt med synlig jord
@@ -216,7 +227,11 @@ Hvis du bruker MAPIR DAQ-opptakere med GPS for presis geolokalisering:
 3. Angi**«Tidssoneforskjell for lyssensor»** om nødvendig (standard: 0 for UTC)
 4. Tilordne kameraer til eksponeringspinnene:
    * **Ett kamera**: Tilordnes automatisk til pinne 1
-   * **To kameraer**: Tilordne hvert kamera manuelt til riktig pinne**Tildeling av eksponeringspinner:*** **Eksponeringspinne 1**: Velg kameramodell fra rullegardinmenyen
+   * **To kameraer**: Tilordne hvert kamera manuelt til riktig pinne
+
+**Tildeling av eksponeringspinner:**
+
+* **Eksponeringspinne 1**: Velg kameramodell fra rullegardinmenyen
 * **Eksponeringspinne 2**: Velg det andre kameraet eller «Ikke bruk»
 * Samme kamera kan ikke tilordnes begge pinnene
 

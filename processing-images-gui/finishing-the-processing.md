@@ -81,7 +81,9 @@ Ikke regn etter en formel — antall utdata avhenger av hvilke produkter som var
 
 ### Forhåndsvisning i eksterne bildevisere
 
-**Anbefalte visere:*** **QGIS** – Gratis GIS-programvare (best egnet for georeferert multispektral analyse)
+**Anbefalte visere:**
+
+* **QGIS** – Gratis GIS-programvare (best egnet for georeferert multispektral analyse)
 * **IrfanView** – Rask, lettvektig bildeviser (støtter TIFF)
 * **Adobe Photoshop** – Profesjonell redigering (støtter TIFF)
 * **GIMP** – Gratis alternativ til Photoshop
@@ -220,7 +222,9 @@ For å sende et problem direkte til MAPIR, bruk feilikonet (**Rapporter en feil*
 
 ### Problem: NDVI-verdiene ser ut til å være feil
 
-**Forventede NDVI-verdier:*** **Vann, stein, jord**: -0,1 til 0,2
+**Forventede NDVI-verdier:**
+
+* **Vann, stein, jord**: -0,1 til 0,2
 * **Sparsom/usunn vegetasjon**: 0,2 til 0,4
 * **Moderat vegetasjon**: 0,4 til 0,6
 * **Sunn, tett vegetasjon**: 0,6 til 0,9**Hvis verdiene ligger utenfor disse områdene:**
@@ -274,12 +278,18 @@ For å sende et problem direkte til MAPIR, bruk feilikonet (**Rapporter en feil*
 
 ### Anbefalt strategi for sikkerhetskopiering
 
-**Hva du bør lagre:*** ✅ **Originale RAW-/JPG-bilder eller LATTICE-råopptak** – Arkiver på separat stasjon/i skyen; rådataene er kilden til behandlingsprosessen, og alt annet kan gjenskapes ut fra dem
+**Hva du bør lagre:**
+
+* ✅ **Originale RAW-/JPG-bilder eller LATTICE-råopptak** – Arkiver på separat stasjon/i skyen; rådataene er kilden til behandlingsprosessen, og alt annet kan gjenskapes ut fra dem
 * ✅ **`.daq` / `.csv` lyssensorfiler** – Nødvendig for å beregne reflektans på nytt senere
 * ✅ **Bearbeidede resultater** – Behold kalibrerte bilder og indekser
 * ✅ **Prosjektmappe** (`project.json` og tilhørende filer) – Inneholder alle innstillinger for ombehandling ved behov
 * ✅ **Feilsøkingslogg** – Dokumenterer detaljer om behandlingen
-* ✅ **Kalibreringsmålbilder** – For verifisering og ombehandling**Anbefalinger for lagring:*** **Umiddelbar sikkerhetskopiering**: Ekstern harddisk
+* ✅ **Kalibreringsmålbilder** – For verifisering og ombehandling
+
+**Anbefalinger for lagring:**
+
+* **Umiddelbar sikkerhetskopiering**: Ekstern harddisk
 * **Langtidsarkiv**: Skylagring (Google Drive, Dropbox osv.)
 * **Kritiske data**: Oppbevar 2–3 kopier på forskjellige steder***
 

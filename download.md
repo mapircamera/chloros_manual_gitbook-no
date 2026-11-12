@@ -255,10 +255,15 @@ Chloros søker etter oppdateringer, varsler når en ny versjon er tilgjengelig o
 
 **Utgivelsesdato: 10. februar 2026**
 
-**Nye funksjoner*** **Teksturbevisst debayer-metode \[Kun Chloros+] -** Teksturbevisst bruker en kantbevisst debayer av høy kvalitet kombinert med en AI/ML-støyreduksjonsmodell som fjerner nesten all debayer-støy.
-* **Støtte for T4P-kalibreringsmål*** **Raskere Chloros+ GPU-behandling, bedre minnestyring**
+**Nye funksjoner**
 
-**Feilrettinger*** Helt nytt brukergrensesnitt (GUI), bør nå fungere på alle Windows-datamaskiner.
+* **Teksturbevisst debayer-metode \[Kun Chloros+] -** Teksturbevisst bruker en kantbevisst debayer av høy kvalitet kombinert med en AI/ML-støyreduksjonsmodell som fjerner nesten all debayer-støy.
+* **Støtte for T4P-kalibreringsmål**
+* **Raskere Chloros+ GPU-behandling, bedre minnestyring**
+
+**Feilrettinger**
+
+* Helt nytt brukergrensesnitt (GUI), bør nå fungere på alle Windows-datamaskiner.
 
 </details>
 
@@ -268,14 +273,18 @@ Chloros søker etter oppdateringer, varsler når en ny versjon er tilgjengelig o
 
 **Utgivelsesdato: 5. januar 2026**
 
-**Nye funksjoner*** **Veksling mellom bilde og metadata**: Lagt til veksling i filbrowseren for å vise metadata for det valgte bildet i en tabell i stedet for i bildeoversikten
+**Nye funksjoner**
+
+* **Veksling mellom bilde og metadata**: Lagt til veksling i filbrowseren for å vise metadata for det valgte bildet i en tabell i stedet for i bildeoversikten
 * **Zoomglidebryter for bildeoversikt**: Ny glidebryter i brukergrensesnittet for å justere størrelsen på miniatyrbildene (støtter også CTRL + mushjul)
 * **Eksportknapper for bildegitter**: Knapper i øverste rad for å bytte miniatyrbilder fra JPG til bearbeidede eksporter (Targets, Reflectance, Index, LUT)
 * **Kartfanen**: Nytt interaktivt 2D-kart som viser GPS-posisjonsmarkører for bildene
   * Støtter Google Maps og ESRI-kartfliser (velger automatisk den beste flisetjenesten basert på tilgjengelighet på zoomnivå)
   * Forhåndsvisning av miniatyrbilder ved å holde musepekeren over kartmarkører
 
-**Feilrettinger*** Forbedret støtte for installasjon av Chloros på datamaskiner med andre språk enn engelsk
+**Feilrettinger**
+
+* Forbedret støtte for installasjon av Chloros på datamaskiner med andre språk enn engelsk
 
 </details>
 
@@ -285,13 +294,21 @@ Chloros søker etter oppdateringer, varsler når en ny versjon er tilgjengelig o
 
 **Utgivelsesdato: 20. desember 2025**
 
-**Nye funksjoner*** Første lansering
+**Nye funksjoner**
 
-**Forbedringer*** Første lansering
+* Første lansering
 
-**Feilrettinger*** Første lansering
+**Forbedringer**
 
-**Kjente problemer*** Første lansering
+* Første lansering
+
+**Feilrettinger**
+
+* Første lansering
+
+**Kjente problemer**
+
+* Første lansering
 
 </details>
 
